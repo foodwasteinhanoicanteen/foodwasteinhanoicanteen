@@ -37,7 +37,7 @@ npm run dev             # http://localhost:5173, rebuilds on save (refresh the p
 
 ### Website: edit mode → publish
 
-1. Click **Turn on** in the dark bar at the bottom right. Anyone can do this; there is no PIN. Every yellow box has an **edit** button, every photo or video slot an **Upload photo or video** button. Survey data goes in page 04, tab "Enter data".
+1. Every photo or video slot has an **Upload photo or video** button. To change text, click **Turn on** in the dark bar at the bottom right: every yellow box then gets an **edit** button. Anyone can do this; there is no PIN. Survey data goes in page 04, tab "Enter data".
 2. Your edits save **only in your browser**. To publish them, click **Export content.json**, put the file in `public/` (replace the old one), commit and push.
 3. **Discard local edits** shows the published content again. Do this after someone else publishes, so you start from their version.
 

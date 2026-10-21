@@ -59,10 +59,10 @@ export function EditModeProvider({ children }: { children: ReactNode }) {
   const [cur, setCur] = useState<{ id: string; ph: string; v: string } | null>(null);
   const [slot, setSlot] = useState<string | null>(null);
 
-  const ctx: EditCtx | null = site.editing ? {
+  const ctx: EditCtx = {
     editField(id, ph) { setCur({ id, ph, v: site.fields[id] || "" }); (document.getElementById("dlg") as HTMLDialogElement | null)?.close(); dlg.current?.showModal(); },
     pickFile(s) { setSlot(s); if (file.current) { file.current.value = ""; file.current.click(); } },
-  } : null;
+  };
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
@@ -89,10 +89,10 @@ export function EditModeProvider({ children }: { children: ReactNode }) {
       <input type="file" ref={file} accept="image/png,image/jpeg,image/webp,image/gif,video/mp4,video/webm" hidden
         onChange={(e) => { const f = e.target.files?.[0]; if (f && slot) site.uploadMedia(slot, f); }} />
       <div className="editbar show">
-        <span>{site.editing ? "Editing: click “edit” or “Upload”" : "Edit mode"}</span>
+        <span>{site.editing ? "Editing: click “edit” on a yellow box" : "Edit text"}</span>
         <button type="button" onClick={() => site.setEditing(!site.editing)}>{site.editing ? "Turn off" : "Turn on"}</button>
-        {site.editing && <button type="button" onClick={site.exportContent} title="Put the downloaded file in public/ and push to publish your edits">Export content.json</button>}
-        {site.editing && site.localEdits && <button type="button" style={{ background: "transparent", border: "1px solid currentColor" }} onClick={site.discardEdits}>Discard local edits</button>}
+        {site.localEdits && <button type="button" onClick={site.exportContent} title="Put the downloaded file in public/ and push to publish your edits">Export content.json</button>}
+        {site.localEdits && <button type="button" style={{ background: "transparent", border: "1px solid currentColor" }} onClick={site.discardEdits}>Discard local edits</button>}
       </div>
     </Ctx.Provider>
   );
