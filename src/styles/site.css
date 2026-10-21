@@ -264,7 +264,7 @@ body.editing .edit-btn{display:inline-block}
 .media .ph b{font-family:var(--f-display);font-size:1rem}
 .media.has{border-style:solid;padding:0;background:#000}
 .media.has .ph{display:none}
-.media img,.media video{width:100%;height:100%;object-fit:cover;display:block}
+.media img,.media video{width:100%;height:100%;object-fit:contain;display:block}
 .media .up{display:block;position:absolute;right:10px;bottom:10px;font:inherit;font-size:.8rem;font-weight:700;border:none;background:var(--ink);color:var(--panel);border-radius:8px;padding:7px 11px;cursor:pointer}
 figure{margin:0;display:grid;gap:6px}
 figcaption{font-size:.82rem;color:var(--muted)}
@@ -443,7 +443,6 @@ svg.ic.lg{width:30px;height:30px}
 .ph-nav button.on{color:var(--leaf)}
 .ph-alert{border-radius:12px;padding:12px;background:var(--fill-bg);border:1px solid var(--fill-line);display:grid;gap:6px}
 .phonepair{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.demo-wrap{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
 .protocol h4{margin-top:18px;font-size:1.05rem;color:var(--leaf)}
 .protocol{display:grid;gap:8px}
 .protocol p,.protocol li{font-size:.92rem}

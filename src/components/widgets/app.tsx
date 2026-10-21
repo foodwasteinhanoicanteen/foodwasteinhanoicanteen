@@ -1,102 +1,12 @@
-/* Page 6 (CampusMeal app): phone preview, function list, kitchen forecast calculator, protocol download. */
-import { useState, type CSSProperties, type ReactNode } from "react";
+/* Page 6 (CampusMeal app): function list, kitchen forecast calculator, protocol download. */
+import { type CSSProperties, type ReactNode } from "react";
 import { createStore } from "../../state/createStore";
 import { downloadText } from "../../api/client";
 import { Card, FilterButtons } from "../ui/Cards";
-import { CANTEENS, DASH_ROWS, DEMO, FEATS, PORT, PREVIEW_WEEK } from "../../data/content";
+import { DASH_ROWS, FEATS } from "../../data/content";
 import { quickForecast } from "../../../shared/campusmeal/logic";
 
 type Attrs = { className?: string; style?: CSSProperties; children?: ReactNode; hidden?: boolean; type?: "button" };
-const PhIcon = ({ n }: { n: string }) => <svg viewBox="0 0 24 24"><use href={"#i-" + n} /></svg>;
-
-/* ---------- phone preview of the student side ---------- */
-type Screen = "today" | "order" | "placed" | "menu" | "last" | "check" | "impact";
-const screen = createStore<Screen>("today");
-const TABS: [Screen, string, string][] = [["today", "Today", "plate"], ["menu", "Week", "cal"], ["last", "Last call", "tag"], ["check", "Finish", "check"], ["impact", "Impact", "leaf"]];
-
-export function DemoText({ part }: { part: "h" | "p" | "s" }) {
-  const s = screen.use(), D = DEMO[s === "placed" ? "order" : s] || DEMO.today;
-  if (part === "h") return <h3 id="demo-h">{D.h}</h3>;
-  if (part === "p") return <p className="small" id="demo-p">{D.p}</p>;
-  return <span id="demo-s">{D.s}</span>;
-}
-
-export function PhonePreview({ className }: Attrs) {
-  const scr = screen.use();
-  const [can, setCan] = useState(0), [dish, setDish] = useState(0), [port, setPort] = useState("R");
-  const [rate, setRate] = useState<Record<string, number>>({}), [finish, setFinish] = useState<string | null>(null), [reasons, setReasons] = useState<string[]>([]);
-  const c = CANTEENS[can], d = c.dishes[dish], portName = PORT.find((p) => p[0] === port)![1];
-  const title = scr === "order" ? "Order" : TABS.find((t) => t[0] === scr)?.[1] || "";
-
-  let body: ReactNode = null;
-  if (scr === "today") body = <>
-    <div className="ph-chips">{CANTEENS.map((x, i) => <button key={x.k} type="button" className={"ph-chip" + (i === can ? " on" : "")} onClick={() => setCan(i)}>{x.n}</button>)}</div>
-    <div className="ph-note">Pre-order closes at <b>10:00</b>. Walk-ins are always welcome.</div>
-    {c.dishes.map((x, i) => (
-      <button key={x[0]} type="button" className="ph-dish" onClick={() => { setDish(i); screen.set("order"); }}>
-        <span className="ph-thumb" style={{ background: x[1] }}><PhIcon n="plate" /></span>
-        <div><b>{x[0]}</b><span>{x[2].map((t) => <span key={t} className="ph-tag">{t}</span>)}{c.n}</span></div>
-        <span style={{ color: "var(--leaf)", fontWeight: 700 }}>›</span>
-      </button>
-    ))}
-  </>;
-  if (scr === "order") body = <>
-    <button type="button" className="ph-chip" onClick={() => screen.set("today")}>‹ Back</button>
-    <div className="ph-thumb" style={{ width: "100%", height: 110, background: d[1] }}><PhIcon n="plate" /></div>
-    <b style={{ fontSize: "1.05rem" }}>{d[0]}</b><span className="ph-note">{c.n} · pickup 11:00–12:30</span>
-    <b>Choose your portion</b>
-    <div className="ph-portion">{PORT.map((p) => <button key={p[0]} type="button" className={p[0] === port ? "on" : ""} onClick={() => setPort(p[0])}><b>{p[1]}</b><br /><span style={{ fontSize: ".68rem", color: "var(--muted)" }}>{p[2]}</span></button>)}</div>
-    <div className="ph-note">Free refill of rice and vegetables at the counter, so a smaller portion is never “less”.</div>
-    <button type="button" className="ph-btn" onClick={() => screen.set("placed")}>Pre-order {portName} portion</button>
-  </>;
-  if (scr === "placed") body = <>
-    <div className="ph-alert" style={{ background: "var(--leaf-soft)", borderColor: "var(--leaf)" }}><b>Pre-order placed</b><span>{d[0]} · {portName}</span><span className="small">The kitchen now counts your meal in today’s forecast. Reminder at 11:30.</span></div>
-    <button type="button" className="ph-btn alt" onClick={() => screen.set("today")}>Back to today</button>
-  </>;
-  if (scr === "menu") body = <>
-    <div className="ph-note">How interested are you? 1 = not really, 5 = very. Ratings help the kitchen plan, and are anonymous.</div>
-    {PREVIEW_WEEK.map(([dy, ds], i) => (
-      <div key={dy} style={{ display: "grid", gap: 6, borderBottom: "1px solid var(--line)", paddingBottom: 8 }}><b>{dy}</b>
-        {ds.map((w, j) => { const k = i + "-" + j; return (
-          <div key={k} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}><span>{w}</span>
-            <span className="ph-stars">{[1, 2, 3, 4, 5].map((v) => <button key={v} type="button" className={rate[k] >= v ? "on" : ""} aria-label={`${w} ${v} of 5`} onClick={() => setRate((r) => ({ ...r, [k]: v }))}>{v}</button>)}</span>
-          </div>); })}
-      </div>
-    ))}
-  </>;
-  if (scr === "last") body = <>
-    <div className="ph-alert"><b>Last call · Little Kitchen</b><span><b>12</b> portions of teriyaki chicken, <b>40% off</b></span><span className="small">Cooked at 11:30, kept hot. Collect before 13:45.</span><button type="button" className="ph-btn">Reserve one</button></div>
-    <div className="ph-note">Last calls only happen when there is real surplus, so they cannot be predicted. The kitchen never cooks extra for them.</div>
-    <div className="ph-note">Anything still left after 13:45 that is safe and untouched is packed for our partner food bank (Solution C).</div>
-  </>;
-  if (scr === "check") body = <>
-    <b>How much of your teriyaki chicken did you finish?</b>
-    <div className="ph-portion" style={{ gridTemplateColumns: "repeat(2,1fr)" }}>{["All", "Most", "Half", "A little"].map((o) => <button key={o} type="button" className={finish === o ? "on" : ""} onClick={() => setFinish(o)}>{o}</button>)}</div>
-    {finish && finish !== "All" && <><b>Why not? (optional)</b>
-      <div className="ph-chips" style={{ flexWrap: "wrap" }}>{["Portion too large", "Didn’t like the taste", "Too cold", "Too salty", "Not hungry"].map((w) => <button key={w} type="button" className={"ph-chip" + (reasons.includes(w) ? " on" : "")} onClick={() => setReasons((r) => (r.includes(w) ? r.filter((x) => x !== w) : [...r, w]))}>{w}</button>)}</div></>}
-    {finish && <div className="ph-note" style={{ background: "var(--leaf-soft)" }}>Thanks. Answers are pooled; the kitchen never sees who said what.</div>}
-  </>;
-  if (scr === "impact") body = <>
-    <div className="ph-note">Only you can see this page.</div>
-    <div className="ph-row big"><span>Meals finished this week</span><b>4 / 5</b></div>
-    <div className="ph-row"><span>Portion you chose most</span><b>Regular</b></div>
-    <b>Campus this week</b>
-    <div className="ph-row"><span>Waste per meal</span><b style={{ color: "var(--leaf)" }}>−18%</b></div>
-    <div className="ph-bar"><i style={{ width: "62%" }} /></div>
-    <div className="ph-row"><span>Meals shared with partners</span><b>36</b></div>
-    <div className="ph-note">Example numbers for the prototype.</div>
-  </>;
-
-  return (
-    <div className={className} id="phone">
-      <div className="ph-top"><b>CampusMeal</b><span id="ph-title">{title}</span></div>
-      <div className="ph-body" id="ph-body" key={scr}>{body}</div>
-      <nav className="ph-nav" id="ph-nav">
-        {TABS.map((t) => <button key={t[0]} type="button" className={scr === t[0] || (scr === "order" && t[0] === "today") ? "on" : ""} onClick={() => screen.set(t[0])}><PhIcon n={t[2]} />{t[1]}</button>)}
-      </nav>
-    </div>
-  );
-}
 
 /* ---------- all functions ---------- */
 const SOL_BG: Record<string, string> = { A: "var(--cA)", B: "var(--cB)", C: "var(--cC)" };

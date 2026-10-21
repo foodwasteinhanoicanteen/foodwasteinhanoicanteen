@@ -15,7 +15,7 @@ export function TopBar() {
   return (
     <header className="topbar">
       <div className="wrap">
-        <a className="brand" href="#home" data-go="home"><span className="brand-mark">g</span><b>Wasted by Design</b></a>
+        <a className="brand" href="#home" data-go="home"><span className="brand-mark">g</span><b>Food Waste in Hanoi canteen</b></a>
         <nav className="mainnav" id="mainnav" aria-label="Project pages" ref={nav}>
           {PAGES.map((p) => (
             <a key={p.id} href={"#" + p.id} data-go={p.id} aria-current={p.id === page ? "page" : undefined}>

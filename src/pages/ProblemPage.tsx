@@ -82,6 +82,12 @@ export default function ProblemPage() {
           <div className="tier">
             <span>World</span>
           </div>
+          <MediaSlot id="scale_world" className="media wide" style={{ marginBottom: "14px" }}>
+            <div className="ph">
+              <span className="ic">Photo</span>
+              <b>Food waste around the world</b>
+            </div>
+          </MediaSlot>
           <div className="stats">
             <div className="stat">
               <div className="v">1.05 bn t</div>
@@ -111,6 +117,12 @@ export default function ProblemPage() {
           <div className="tier">
             <span>Vietnam</span>
           </div>
+          <MediaSlot id="scale_vietnam" className="media wide" style={{ marginBottom: "14px" }}>
+            <div className="ph">
+              <span className="ic">Photo</span>
+              <b>Food waste in Vietnam</b>
+            </div>
+          </MediaSlot>
           <div className="stats">
             <div className="stat">
               <div className="v">&gt; 8 m t</div>
@@ -141,6 +153,12 @@ export default function ProblemPage() {
           <div className="tier">
             <span>Hanoi</span>
           </div>
+          <MediaSlot id="scale_hanoi" className="media wide" style={{ marginBottom: "14px" }}>
+            <div className="ph">
+              <span className="ic">Photo</span>
+              <b>Food waste in Hanoi</b>
+            </div>
+          </MediaSlot>
           <div className="stats">
             <div className="stat">
               <div className="v">7,300 t</div>

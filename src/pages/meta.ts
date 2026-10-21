@@ -1,7 +1,8 @@
 /* The ten pages, their design-thinking stage and their sub-tabs (order = the order shown on the site). */
 export interface PageMeta {
   id: string; n: string; label: string; stage?: string; ic?: string; rub: string; desc: string;
-  tabs: readonly (readonly [id: string, label: string])[];
+  /** a tab with an href opens that page instead of showing a sub-tab */
+  tabs: readonly (readonly [id: string, label: string, href?: string])[];
 }
 
 export const PAGES: PageMeta[] = [
@@ -16,8 +17,8 @@ export const PAGES: PageMeta[] = [
     tabs: [["design", "The survey"], ["enter", "Enter data"], ["who", "Respondents"], ["ratings", "Ratings"], ["anova", "ANOVA"], ["tukey", "Tukey post-hoc"], ["robust", "Robustness"], ["choice", "Forced choice"], ["conclusion", "Conclusion"]] },
   { id: "decision", n: "05", label: "Our decision", stage: "Decide", ic: "check", rub: "Rubrics 2, 5", desc: "B is best, and A and C complete it: the evidence, combined system, theory of change, fit, creativity, safeguards.",
     tabs: [["verdict", "Our decision"], ["system", "How they fit together"], ["toc", "Theory of change"], ["fit", "Fits the people"], ["creative", "What’s new about it"], ["safeguards", "Ethical safeguards"]] },
-  { id: "app", n: "06", label: "CampusMeal app", stage: "Prototype", ic: "plate", rub: "Rubrics 2, 3", desc: "Our working pilot app: preview, 14 functions, kitchen forecast, operating protocol, build plan.",
-    tabs: [["overview", "What it is"], ["demo", "Quick preview"], ["features", "All functions"], ["kitchen", "Kitchen forecast"], ["protocol", "App protocol"], ["rollout", "Build & test plan"]] },
+  { id: "app", n: "06", label: "CampusMeal app", stage: "Prototype", ic: "plate", rub: "Rubrics 2, 3", desc: "Our working pilot app: the Pilot App, 14 functions, kitchen forecast, operating protocol, build plan.",
+    tabs: [["overview", "What it is"], ["features", "All functions"], ["kitchen", "Kitchen forecast"], ["protocol", "App protocol"], ["rollout", "Build & test plan"], ["pilot", "Pilot App", "campusmeal.html"]] },
   { id: "plan", n: "07", label: "Action plans", stage: "Act", ic: "play", rub: "Rubric 3", desc: "One roadmap and a full plan for each solution, KPIs, team, risks, evidence of action.",
     tabs: [["roadmap", "Roadmap"], ["solb", "Plan · Solution B"], ["sola", "Plan · Solution A"], ["solc", "Plan · Solution C"], ["kpis", "How we measure"], ["team", "Our team"], ["risks", "Risks"], ["actions", "Evidence of action"]] },
   { id: "results", n: "08", label: "Results & learning", stage: "Learn", ic: "book", rub: "Rubric 4", desc: "Our numbers, before vs after, difference made, feedback, lessons, next steps.",

@@ -20,17 +20,17 @@ export function Field({ id, children, className }: { id: string; children?: Reac
   );
 }
 
-/** Photo or video slot. Placeholder children show until the team uploads a file. */
+/** Photo or video slot. Shows public/minions.jpg until the team uploads a file. */
 export function MediaSlot({ id, className, style, children }: { id: string; className?: string; style?: CSSProperties; children?: ReactNode }) {
   const { media } = useSite();
   const edit = useContext(Ctx);
   const m = media[id];
   const [broken, setBroken] = useState<string | null>(null);
-  const src = m ? m.src : null;
+  const src = m ? m.src : "minions.jpg";
   const has = !!src && broken !== src;
   return (
     <div className={(className || "media") + (has ? " has" : "")} style={style}>
-      {has && (m!.kind === "video"
+      {has && (m?.kind === "video"
         ? <video src={src!} controls playsInline preload="metadata" onError={() => setBroken(src)} />
         : <img src={src!} alt={altOf(children) || "Project photo"} loading="lazy" onError={() => setBroken(src)} />)}
       {children}

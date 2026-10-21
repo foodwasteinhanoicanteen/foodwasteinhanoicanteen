@@ -445,50 +445,13 @@ export default function SurveyPage() {
           </p>
           <div className="panel stack">
             <div style={{ display: "flex", justifyContent: "space-between", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
-              <span className="eyebrow">Tiếng Việt</span>
-              <CopyButton target="concl-vi" className="btn ghost" type="button">
-                Copy
-              </CopyButton>
-            </div>
-            <Conclusion lang="vi" className="conclusion" />
-          </div>
-          <div className="panel stack" style={{ marginTop: "14px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
-              <span className="eyebrow">English</span>
+              <span className="eyebrow">Conclusion</span>
               <CopyButton target="concl-en" className="btn ghost" type="button">
                 Copy
               </CopyButton>
             </div>
             <Conclusion lang="en" className="conclusion" />
           </div>
-          <details className="acc" style={{ marginTop: "16px" }} open>
-            <summary>How to write the conclusion yourself</summary>
-            <div className="in">
-              <p>
-                <b>1. State the ANOVA result:</b> “There was a significant difference in perceived effectiveness between the three
-                solutions, F(2, 147) = …, p &lt; .05.”
-              </p>
-              <p>
-                <b>2. Name the pairs Tukey found significant,</b> with the mean difference and p: “B was rated higher than A (difference =
-                …, p = …) and higher than C (…).”
-              </p>
-              <p>
-                <b>3. Say which pairs did not differ:</b> “A and C did not differ (p = …).”
-              </p>
-              <p>
-                <b>4. Interpret:</b> because B targets the root cause (over-production) while A and C handle surplus that already exists, a
-                higher rating for B means respondents value prevention more.
-              </p>
-              <p>
-                <b>5. Report the trade-off honestly:</b> if another solution scored higher on feasibility, say so, and explain how your plan
-                handles it.
-              </p>
-              <p>
-                <b>Careful:</b> only claim “B is more effective than A” if the Tukey p for that pair is below .05. If it is not, write “B
-                had the highest mean, but the difference from A was not statistically significant.”
-              </p>
-            </div>
-          </details>
         </Tab>
         <Pager />
       </div>

@@ -2,7 +2,6 @@
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
 import {
   CopyButton,
-  DemoText,
   FeatureFilters,
   FeatureGrid,
   Field,
@@ -12,7 +11,6 @@ import {
   ForecastOut,
   ForecastTable,
   MediaSlot,
-  PhonePreview,
   ProtocolDownload,
 } from "../components";
 
@@ -94,9 +92,6 @@ export default function AppPage() {
                 <a className="btn" href="campusmeal.html">
                   Open the working app ↗
                 </a>
-                <button className="btn ghost" data-go="app-demo">
-                  Quick preview
-                </button>
                 <button className="btn ghost" data-go="app-protocol">
                   Read the protocol
                 </button>
@@ -247,40 +242,6 @@ export default function AppPage() {
                 <Field id="cap_app_shot_2">caption</Field>
               </figcaption>
             </figure>
-          </div>
-        </Tab>
-        <Tab id="demo" label="Quick preview">
-          <div className="tab-title">
-            <h2>Quick preview</h2>
-          </div>
-          <p className="tab-intro">
-            A phone-sized preview of the student side. The <b>full working app</b> is separate: students pre-order, choose portions and rate
-            menus, and the kitchen gets a live forecast, pickup list, last call, donation log, waste log, insights and a weekly report.
-          </p>
-          <div className="callout g" style={{ marginBottom: "16px", display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-            <span>
-              <b>CampusMeal is built and working.</b> Try the demo: it starts with six weeks of sample data, and everything you do stays in your own browser.
-            </span>
-            <a className="btn" href="campusmeal.html">
-              Open CampusMeal ↗
-            </a>
-          </div>
-          <div className="demo-wrap">
-            <PhonePreview className="phone" />
-            <div className="stack" style={{ maxWidth: "46ch" }}>
-              <div className="panel stack">
-                <span className="eyebrow">What this screen does</span>
-                <DemoText part="h" />
-                <DemoText part="p" />
-                <p className="small">
-                  <b>Supports:</b> <DemoText part="s" />
-                </p>
-              </div>
-              <p className="small muted">
-                Dish names come from our CampusMeal overview. V-food and V-Halal dishes are left for the team to insert. Prices are not
-                shown because they are set by each canteen.
-              </p>
-            </div>
           </div>
         </Tab>
         <Tab id="features" label="All functions">

@@ -25,6 +25,8 @@ export function RouterProvider({ children }: { children: ReactNode }) {
   cur.current = route;
   const show = useCallback((page: string, tab: string | null = null) => {
     const next = parseToken(tab ? `${page}-${tab}` : page);
+    const href = pageById(next.page)?.tabs.find((t) => t[0] === next.tab)?.[2];
+    if (href) { location.assign(href); return; }
     const changedPage = cur.current.page !== next.page;
     setRoute(next);
     requestAnimationFrame(() => {

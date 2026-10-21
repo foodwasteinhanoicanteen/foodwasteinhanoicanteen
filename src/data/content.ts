@@ -159,18 +159,6 @@ export const FEATS: [name: string, audience: string, status: string, sol: string
  ["Surplus and donation log","For the kitchen","New","C","Safety checklist, labels with time cooked, partner pickup record.","Makes safe redistribution traceable and accountable."],
  ["Impact view and weekly report","Reporting","New","Learn","Private impact for each student; KPI report for the canteen manager.","Measures the difference made and keeps reporting honest."]];
 
-export const CANTEENS: { k: string; n: string; dishes: [name: string, color: string, tags: string[]][] }[] = [{k:"LK",n:"Little Kitchen",dishes:[["Teriyaki chicken","#D99A2B",["Popular"]],["Sweet & sour chicken with fried rice","#D06A3F",[]]]},
- {k:"FD",n:"Foodology",dishes:[["Chicken salad","#5E9E58",["Light"]],["Fish noodle soup","#3F8FA6",[]]]},
- {k:"OH",n:"Our Home",dishes:[["V-food: dish of the day","#7C6BC4",["Team to add"]],["V-Halal: dish of the day","#2F7D6B",["Halal"]]]}];
-
-export const PORT: [k: string, name: string, rice: string][] = [["S","Small","100 g rice"],["R","Regular","150 g rice"],["L","Large","200 g rice"]];
-
-export const DEMO: Record<string, { h: string; p: string; s: string }> = {today:{h:"Today’s meals",p:"Students see every canteen’s dishes for today and can pre-order before the 10:00 cut-off. Pre-orders tell the kitchen how much to cook.",s:"Solution B (forecast)"},
- order:{h:"Pre-order with portion choice",p:"Students choose Small, Regular or Large, with a free refill of rice and vegetables. This tackles oversized portions, the second root cause.",s:"Solution B (portions)"},
- menu:{h:"Next week’s menu, rated 1–5",p:"From our original overview: students rate how interested they are in each dish. Ratings adjust the walk-in estimate in the kitchen forecast and flag unpopular dishes early.",s:"Solution B (forecast, menu planning)"},
- last:{h:"Last call",p:"Sent only when genuine surplus is left after service, kept hot and cooked within 2 hours. At most once a day, never planned in advance.",s:"Solution A"},
- check:{h:"Finish-check",p:"One tap after lunch: how much did you finish, and why not? Answers are anonymous and pooled, and help the kitchen fix portions and recipes.",s:"Solution B (learning from plate waste)"},
- impact:{h:"My impact",p:"A private summary for each student plus the campus total. No leaderboards and no shaming. Also shows when surplus was shared with a partner.",s:"Learning; Solution C (shared meals)"}};
 /** Ethics › Voices. Entries with `field` are filled in by the team (see <Field>). */
 export const QUOTES: { q: string; w: string; s: string; field?: [quoteId: string, quotePh: string, whoId: string, whoPh: string] }[] = [
   { q: "Food waste is a global tragedy. Millions will go hungry today as food is wasted across the world.", w: "Inger Andersen, Executive Director, UN Environment Programme", s: "UN News (2024)" },
@@ -180,12 +168,6 @@ export const QUOTES: { q: string; w: string; s: string; field?: [quoteId: string
   { q: "A thing is right when it tends to preserve the integrity, stability, and beauty of the biotic community.", w: "Aldo Leopold, ecologist", s: "Leopold (1949, p. 224)" },
   { q: "", w: "", s: "Team survey", field: ["cq_student", "Add a quote from a student in our survey or interview", "cq_student_who", "e.g. 2nd-year student"] },
   { q: "", w: "", s: "Team interview", field: ["cq_staff", "Add a quote from the canteen manager or kitchen staff", "cq_staff_who", "role"] },
-];
-
-/** App › Quick preview: the week shown in the phone mock-up. */
-export const PREVIEW_WEEK: [day: string, dishes: string[]][] = [
-  ["Mon", ["Teriyaki chicken", "Chicken salad"]], ["Tue", ["Fish noodle soup", "Sweet & sour chicken"]], ["Wed", ["Chicken salad", "Teriyaki chicken"]],
-  ["Thu", ["Sweet & sour chicken", "Fish noodle soup"]], ["Fri", ["Teriyaki chicken", "Fish noodle soup"]],
 ];
 
 /** App › Kitchen forecast: example dashboard rows [canteen, dish, pre-orders, avg walk-ins, interest, old habit]. */
