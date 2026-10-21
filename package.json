@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "tsx scripts/dev.ts",
     "build": "tsx scripts/build.ts",
+    "preview": "npm run build && esbuild --servedir=dist --serve=4173",
     "test": "tsx --test shared/*.test.ts shared/**/*.test.ts src/**/*.test.ts",
     "typecheck": "tsc --noEmit"
   },

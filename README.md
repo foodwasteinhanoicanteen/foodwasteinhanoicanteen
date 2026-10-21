@@ -55,6 +55,7 @@ To start over, clear the site's data in the browser (site settings → clear dat
 |---|---|
 | `npm run dev` | Development: rebuild on save + local web server |
 | `npm run build` | Build the static site into `dist/` |
+| `npm run preview` | Build, then serve `dist/` at http://localhost:4173 to check the GitHub Pages version. Don't open `dist/index.html` by double-clicking: browsers show a blank page for `file://`. |
 | `npm test` | Unit tests: statistics vs scipy, survey import, forecast rules, data rules and uploads |
 | `npm run typecheck` | TypeScript check of `src/`, `shared/`, `scripts/` |
 
