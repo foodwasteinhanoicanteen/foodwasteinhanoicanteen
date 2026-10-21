@@ -1,7 +1,7 @@
-/* Website data from the local server: team-edited text, uploaded media, saved survey rows,
-   and whether this browser is unlocked for team editing (STAFF_PIN). */
+/* Website data: team-edited text, uploaded media, saved survey rows (published content.json plus this
+   browser's unpublished edits), and whether this browser is unlocked for team editing (STAFF_PIN). */
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { ApiError, api, getPin, setPin } from "../api/client";
+import { ApiError, api, downloadText, getPin, setPin } from "../api/client";
 import type { SiteState } from "../../shared/schemas/site";
 import type { SurveyRow } from "../../shared/survey";
 import { normRow } from "../../shared/survey";
@@ -21,6 +21,10 @@ interface SiteCtx {
   saveField: (id: string, v: string) => Promise<void>;
   uploadMedia: (id: string, file: File) => Promise<void>;
   saveSurvey: (rows: SurveyRow[], okMsg: string) => Promise<boolean>;
+  /** This browser has edits that are not in the published content.json yet. */
+  localEdits: boolean;
+  exportContent: () => void;
+  discardEdits: () => Promise<void>;
 }
 const Ctx = createContext<SiteCtx | null>(null);
 
@@ -53,6 +57,7 @@ export function SiteProvider({ children }: { children: ReactNode }) {
     media: data?.media || {},
     savedRows: (data?.survey?.rows || []).map((r) => normRow(r).row).filter((r): r is SurveyRow => !!r),
     staff, editingEnabled, editing, setEditing,
+    localEdits: !!data?.local,
     async unlock(pin) {
       setPin(pin);
       try {
@@ -78,6 +83,15 @@ export function SiteProvider({ children }: { children: ReactNode }) {
     async saveSurvey(rows, okMsg) {
       try { accept(await api<SiteState>("PUT", "/api/site/survey", { rows })); toast(okMsg); return true; }
       catch (e) { fail(e, "Could not save"); return false; }
+    },
+    exportContent() {
+      const { fields = {}, media = {}, survey = null } = data || {};
+      downloadText("content.json", JSON.stringify({ fields, media, survey }), "application/json");
+      toast("Downloaded content.json. Put it in public/ and push to publish.");
+    },
+    async discardEdits() {
+      try { accept(await api<SiteState>("DELETE", "/api/site")); toast("Showing the published content again"); }
+      catch (e) { fail(e, "Could not discard"); }
     },
   }), [data, staff, editingEnabled, editing, accept, toast, fail]);
 

@@ -2,16 +2,13 @@
   "name": "wasted-by-design",
   "version": "1.0.0",
   "private": true,
-  "description": "MANA3021 Team Mini Social Impact Project website and the CampusMeal pilot app. Runs fully on your own computer.",
+  "description": "MANA3021 Team Mini Social Impact Project website and the CampusMeal pilot app. A static site for GitHub Pages.",
   "type": "module",
   "engines": { "node": ">=20.12" },
   "scripts": {
     "dev": "tsx scripts/dev.ts",
     "build": "tsx scripts/build.ts",
-    "start": "tsx server/main.ts",
-    "seed": "tsx server/seed.ts",
-    "seed:demo": "tsx server/seed.ts --demo",
-    "test": "tsx --test shared/*.test.ts shared/**/*.test.ts server/*.test.ts",
+    "test": "tsx --test shared/*.test.ts shared/**/*.test.ts src/**/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-/* CampusMeal data from the local server, plus write helpers and the toast. */
+/* CampusMeal data (kept in this browser), plus write helpers and the toast. */
 import { createContext, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from "react";
 import { ApiError, api, clientId } from "../api/client";
 import { usePolled } from "../state/usePolled";
@@ -38,7 +38,7 @@ export function CmProvider({ authKey, children }: { authKey: string; children: R
       return true;
     } catch (e) {
       console.warn(e);
-      toast(e instanceof ApiError && e.status === 403 ? "You don’t have permission to change this." : e instanceof ApiError && e.status === 400 ? "Could not save: " + e.message : "Could not save. Check that the local server is running and try again.");
+      toast(e instanceof ApiError && e.status === 403 ? "You don’t have permission to change this." : e instanceof ApiError && e.status === 400 ? "Could not save: " + e.message : "Could not save: " + (e as Error).message);
       return false;
     }
   }, [accept, toast]);

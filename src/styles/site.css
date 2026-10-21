@@ -270,7 +270,7 @@ body.editing .media .up{display:block}
 figure{margin:0;display:grid;gap:6px}
 figcaption{font-size:.82rem;color:var(--muted)}
 .editbar{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:none;gap:8px;align-items:center;background:var(--ink);color:var(--panel);padding:8px 8px 8px 14px;border-radius:999px;box-shadow:var(--shadow);font-size:.85rem}
-.editbar.show{display:flex}
+.editbar.show{display:flex;flex-wrap:wrap;max-width:calc(100vw - 32px)}
 .editbar button{font:inherit;font-weight:700;border:none;border-radius:999px;padding:7px 12px;cursor:pointer;background:var(--waste);color:#fff}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:90;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:10px;font-size:.88rem;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.show{opacity:1}

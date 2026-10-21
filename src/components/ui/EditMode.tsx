@@ -1,5 +1,5 @@
 /* Team-editable content: yellow <Field> boxes, <MediaSlot> photo/video slots, and the edit bar.
-   Saved values come from the local server (data/db.json); uploads go to assets/uploads/. */
+   Edits save in this browser; "Export" downloads content.json, which publishes them once committed to public/. */
 import { createContext, useContext, useRef, useState, type CSSProperties, type FormEvent, type ReactNode } from "react";
 import { useSite } from "../../state/site";
 
@@ -26,7 +26,7 @@ export function MediaSlot({ id, className, style, children }: { id: string; clas
   const edit = useContext(Ctx);
   const m = media[id];
   const [broken, setBroken] = useState<string | null>(null);
-  const src = m ? "/assets/uploads/" + m.file : null;
+  const src = m ? m.src : null;
   const has = !!src && broken !== src;
   return (
     <div className={(className || "media") + (has ? " has" : "")} style={style}>
@@ -95,7 +95,7 @@ export function EditModeProvider({ children }: { children: ReactNode }) {
       <dialog ref={pin} aria-labelledby="pin-title">
         <form className="dlg-body" style={{ paddingTop: 22 }} onSubmit={tryPin}>
           <h3 id="pin-title">Unlock team edit mode</h3>
-          <label className="small muted" htmlFor="pin-input">Enter the team PIN (STAFF_PIN in the .env file).</label>
+          <label className="small muted" htmlFor="pin-input">Enter the team PIN.</label>
           <input id="pin-input" name="pin" type="password" autoComplete="off" required
             style={{ font: "inherit", padding: 10, border: "1px solid var(--line)", borderRadius: 8, background: "var(--paper)", color: "var(--ink)" }} />
           {pinErr && <p className="small" style={{ color: "var(--waste)" }}>{pinErr}</p>}
@@ -113,6 +113,8 @@ export function EditModeProvider({ children }: { children: ReactNode }) {
           {!site.staff
             ? <button type="button" onClick={() => { setPinErr(""); pin.current?.showModal(); }}>Unlock</button>
             : <button type="button" onClick={() => site.setEditing(!site.editing)}>{site.editing ? "Turn off" : "Turn on"}</button>}
+          {site.staff && <button type="button" onClick={site.exportContent} title="Put the downloaded file in public/ and push to publish your edits">Export content.json</button>}
+          {site.staff && site.localEdits && <button type="button" style={{ background: "transparent", border: "1px solid currentColor" }} onClick={site.discardEdits}>Discard local edits</button>}
           {site.staff && <button type="button" style={{ background: "transparent", border: "1px solid currentColor" }} onClick={site.lock}>Lock</button>}
         </div>
       )}

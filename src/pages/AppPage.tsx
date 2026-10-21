@@ -91,7 +91,7 @@ export default function AppPage() {
                 </div>
               </div>
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                <a className="btn" href="/campusmeal">
+                <a className="btn" href="campusmeal.html">
                   Open the working app ↗
                 </a>
                 <button className="btn ghost" data-go="app-demo">
@@ -259,9 +259,9 @@ export default function AppPage() {
           </p>
           <div className="callout g" style={{ marginBottom: "16px", display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
             <span>
-              <b>CampusMeal is built and working.</b> Try it with sample data (npm run seed:demo), or run it on a laptop on the campus network for the pilot.
+              <b>CampusMeal is built and working.</b> Try the demo: it starts with six weeks of sample data, and everything you do stays in your own browser.
             </span>
-            <a className="btn" href="/campusmeal">
+            <a className="btn" href="campusmeal.html">
               Open CampusMeal ↗
             </a>
           </div>
@@ -742,7 +742,7 @@ export default function AppPage() {
               <div>
                 <h4>Pilot app + usability test</h4>
                 <p className="small">
-                  The working <a href="/campusmeal">CampusMeal pilot app</a> tested with 5–8 students and the kitchen supervisor. Tasks:
+                  The working <a href="campusmeal.html">CampusMeal pilot app</a> tested with 5–8 students and the kitchen supervisor. Tasks:
                   find today’s meal, pre-order a Small portion, rate next week’s menu, answer the finish-check; for staff, record a batch
                   and mark a pickup. Success: each task completed in under one minute without help.
                 </p>

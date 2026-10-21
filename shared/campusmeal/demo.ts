@@ -1,5 +1,5 @@
 /* Sample data for trying CampusMeal: 6 weeks of service with a pilot starting 2 weeks ago.
-   Loaded only by `npm run seed:demo`; deterministic (seeded random numbers). */
+   Loaded into a new browser so the CampusMeal demo is not empty; deterministic (seeded random numbers). */
 import type { CmData, DayLog, FeedbackDoc, OrderDoc, RatingDoc } from "../schemas/campusmeal";
 import { COLORS, DEFAULTS, REASONS, STARTER, addDays, clamp, hash, monday, round1, todayStr, wd } from "./logic";
 

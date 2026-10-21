@@ -57,7 +57,7 @@ function Shell({ onAuth }: { onAuth: () => void }) {
     <NavContext.Provider value={{ S, set, go }}>
       <header className="top"><div className="top-in">
         <div className="logo"><i><svg className="i"><use href="#i-plate" /></svg></i>CampusMeal</div>
-        <span className={"badge " + (error ? "demo" : "live")}>{error ? "Server not reachable" : staff ? "Local · kitchen staff" : "Local"}</span>
+        <span className={"badge " + (error ? "demo" : "live")}>{error ? "Storage unavailable" : staff ? "Demo · kitchen staff" : "Demo"}</span>
         <span className="spacer" />
         {staff ? (
           <div className="seg" role="group" aria-label="View as">
@@ -84,7 +84,7 @@ function Shell({ onAuth }: { onAuth: () => void }) {
         </nav>
         <main id="main" tabIndex={-1}>
           <div className="view">
-            {!loaded ? <div className="empty">{error ? <><b>Cannot reach the local server.</b><span>{error}</span></> : "Loading CampusMeal…"}</div>
+            {!loaded ? <div className="empty">{error ? <><b>Could not load the saved data.</b><span>{error}</span></> : "Loading CampusMeal…"}</div>
               : <ScreenBoundary key={S.view + role}><View /></ScreenBoundary>}
           </div>
         </main>

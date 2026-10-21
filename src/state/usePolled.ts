@@ -1,7 +1,5 @@
-/* Load JSON from the local server and refresh it every few seconds, so two laptops
-   on the same server see each other's changes (replaces the old realtime database).
-   shortcut: polling instead of push updates; fine on a local network, switch to
-   server-sent events if many people keep the page open at once. */
+/* Load data from the in-browser store and refresh it every few seconds, so other open tabs
+   in this browser see each other's changes. */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "../api/client";
 
