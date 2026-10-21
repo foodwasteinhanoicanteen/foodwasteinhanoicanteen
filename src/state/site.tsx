@@ -1,7 +1,7 @@
 /* Website data: team-edited text, uploaded media, saved survey rows (published content.json plus this
-   browser's unpublished edits), and whether this browser is unlocked for team editing (STAFF_PIN). */
+   browser's unpublished edits), and whether edit mode is on. Anyone can edit. */
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { ApiError, api, downloadText, getPin, setPin } from "../api/client";
+import { api, downloadText } from "../api/client";
 import type { SiteState } from "../../shared/schemas/site";
 import type { SurveyRow } from "../../shared/survey";
 import { normRow } from "../../shared/survey";
@@ -12,12 +12,8 @@ interface SiteCtx {
   fields: Record<string, string>;
   media: SiteState["media"];
   savedRows: SurveyRow[];
-  staff: boolean;
-  editingEnabled: boolean;
   editing: boolean;
   setEditing: (on: boolean) => void;
-  unlock: (pin: string) => Promise<boolean>;
-  lock: () => void;
   saveField: (id: string, v: string) => Promise<void>;
   uploadMedia: (id: string, file: File) => Promise<void>;
   saveSurvey: (rows: SurveyRow[], okMsg: string) => Promise<boolean>;
@@ -37,37 +33,17 @@ export function useSite() {
 export function SiteProvider({ children }: { children: ReactNode }) {
   const { toast } = useOverlay();
   const { data, accept } = usePolled<SiteState>("/api/site", 5000);
-  const [staff, setStaff] = useState(false);
-  const [editingEnabled, setEditingEnabled] = useState(false);
   const [editing, setEditing] = useState(false);
+  useEffect(() => { document.body.classList.toggle("editing", editing); }, [editing]);
 
-  useEffect(() => {
-    api<{ staff: boolean; editingEnabled: boolean }>("GET", "/api/session")
-      .then((s) => { setStaff(s.staff); setEditingEnabled(s.editingEnabled); if (!s.staff && getPin()) setPin(null); })
-      .catch(() => undefined);
-  }, []);
-  useEffect(() => { document.body.classList.toggle("editing", editing && staff); }, [editing, staff]);
-
-  const fail = useCallback((e: unknown, what: string) => {
-    toast(e instanceof ApiError && e.status === 403 ? "Only the team can save changes. Unlock edit mode first." : `${what}: ${(e as Error).message}`);
-  }, [toast]);
+  const fail = useCallback((e: unknown, what: string) => toast(`${what}: ${(e as Error).message}`), [toast]);
 
   const value = useMemo<SiteCtx>(() => ({
     fields: data?.fields || {},
     media: data?.media || {},
     savedRows: (data?.survey?.rows || []).map((r) => normRow(r).row).filter((r): r is SurveyRow => !!r),
-    staff, editingEnabled, editing, setEditing,
+    editing, setEditing,
     localEdits: !!data?.local,
-    async unlock(pin) {
-      setPin(pin);
-      try {
-        const s = await api<{ staff: boolean }>("GET", "/api/session");
-        if (!s.staff) { setPin(null); return false; }
-        setStaff(true); setEditing(true);
-        return true;
-      } catch (e) { setPin(null); toast((e as Error).message); return false; }
-    },
-    lock() { setPin(null); setStaff(false); setEditing(false); },
     async saveField(id, v) {
       try {
         accept(v ? await api<SiteState>("PUT", `/api/site/fields/${encodeURIComponent(id)}`, { v }) : await api<SiteState>("DELETE", `/api/site/fields/${encodeURIComponent(id)}`));
@@ -93,7 +69,7 @@ export function SiteProvider({ children }: { children: ReactNode }) {
       try { accept(await api<SiteState>("DELETE", "/api/site")); toast("Showing the published content again"); }
       catch (e) { fail(e, "Could not discard"); }
     },
-  }), [data, staff, editingEnabled, editing, accept, toast, fail]);
+  }), [data, editing, accept, toast, fail]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

@@ -4,7 +4,7 @@
    a team member's edits stay local until they export content.json and commit it to public/. */
 import { ZodError } from "zod";
 import { demoSeed } from "../../shared/campusmeal/demo";
-import { COLLECTIONS, emptyCm, isCollection, type CmData, type Collection } from "../../shared/schemas/campusmeal";
+import { COLLECTIONS, emptyCm, isCollection, type CmData } from "../../shared/schemas/campusmeal";
 import { FieldValue, MediaUpload, SurveyPayload, slotId, type SiteContent } from "../../shared/schemas/site";
 
 export interface Db {
@@ -13,35 +13,28 @@ export interface Db {
   site: SiteContent | null;
   cm: CmData;
 }
-export interface Req { method: string; path: string; body?: unknown; staff: boolean; editingEnabled: boolean; uid: string | null }
+export interface Req { method: string; path: string; body?: unknown; uid: string | null }
 
 export class HttpError extends Error {
   constructor(readonly status: number, message: string) { super(message); }
 }
 
 export const emptySite = (): SiteContent => ({ fields: {}, media: {}, survey: null });
-const PRIVATE: Collection[] = ["orders", "ratings", "feedback"];
 
 /** Run one request against `d`. Mutates `d` on writes and reports whether it did. Pure, so it is testable in Node. */
 export function handle(d: Db, published: SiteContent | null, r: Req): { out: unknown; changed: boolean } {
   const site = () => ({ rev: d.rev, local: !!d.site, ...(d.site || published || emptySite()) });
-  const cmView = () => {
-    const cm: CmData = { ...d.cm };
-    if (!r.staff) for (const c of PRIVATE) (cm as unknown as Record<string, unknown>)[c] = r.uid && d.cm[c][r.uid] ? { [r.uid]: d.cm[c][r.uid] } : {};
-    return { rev: d.rev, staff: r.staff, uid: r.uid, cm };
-  };
-  const staffOnly = () => { if (!r.staff) throw new HttpError(403, r.editingEnabled ? "Only the team can change this. Unlock edit mode with the PIN." : "Editing is off: this build has no STAFF_PIN."); };
+  const cmView = () => ({ rev: d.rev, uid: r.uid, cm: d.cm });
   // first local edit starts from what everyone currently sees
-  const editSite = () => { staffOnly(); return (d.site ??= structuredClone(published || emptySite())); };
+  const editSite = () => (d.site ??= structuredClone(published || emptySite()));
   const obj = (b: unknown) => { if (!b || typeof b !== "object" || Array.isArray(b)) throw new HttpError(400, "Send an object."); return b as Record<string, unknown>; };
 
   const { method: m, path: p } = r;
   let g: RegExpExecArray | null;
-  if (m === "GET" && p === "/api/session") return { out: { staff: r.staff, editingEnabled: r.editingEnabled }, changed: false };
   if (m === "GET" && p === "/api/site") return { out: site(), changed: false };
   if (m === "GET" && p === "/api/cm") return { out: cmView(), changed: false };
 
-  if (m === "DELETE" && p === "/api/site") { staffOnly(); d.site = null; return { out: site(), changed: true }; }
+  if (m === "DELETE" && p === "/api/site") { d.site = null; return { out: site(), changed: true }; }
   if ((g = /^\/api\/site\/fields\/([^/]+)$/.exec(p)) && (m === "PUT" || m === "DELETE")) {
     const key = slotId.parse(decodeURIComponent(g[1])), s = editSite();
     if (m === "PUT") s.fields[key] = FieldValue.parse(r.body).v; else delete s.fields[key];
@@ -61,8 +54,6 @@ export function handle(d: Db, published: SiteContent | null, r: Req): { out: unk
   if ((g = /^\/api\/cm\/([a-z]+)\/([^/]+)$/.exec(p)) && ["PUT", "PATCH", "DELETE"].includes(m)) {
     const col = g[1], key = slotId.parse(decodeURIComponent(g[2]));
     if (!isCollection(col)) throw new HttpError(404, "Unknown collection.");
-    if (COLLECTIONS[col].staffOnly && !r.staff) throw new HttpError(403, "Only kitchen staff can change this.");
-    if (!COLLECTIONS[col].staffOnly && !r.staff && r.uid !== key) throw new HttpError(403, "You can only change your own orders, ratings and feedback.");
     const docs = d.cm[col] as Record<string, unknown>;
     if (m === "DELETE") delete docs[key];
     else {

@@ -20,8 +20,7 @@ It is a **static website** (HTML, CSS and JavaScript only) published with **GitH
 ## 1. Publish on GitHub Pages
 
 1. In the repository: **Settings → Pages → Source: GitHub Actions**.
-2. Optional: **Settings → Secrets and variables → Actions → New repository secret**, name `STAFF_PIN`, value = your team PIN. Without it, edit mode and the kitchen login are turned off on the live site.
-3. Push to `main`. `.github/workflows/deploy.yml` runs the tests, builds and publishes `dist/`.
+2. Push to `main`. `.github/workflows/deploy.yml` runs the tests, builds and publishes `dist/`.
 
 The address is `https://<account>.github.io/<repo>/`. For the account's own address (`https://<account>.github.io/`), name the repository `<account>.github.io`.
 
@@ -31,24 +30,22 @@ You need **Node.js 20.12 or newer**.
 
 ```bash
 npm install             # once
-cp .env.example .env    # then set STAFF_PIN in .env
 npm run dev             # http://localhost:5173, rebuilds on save (refresh the page)
 ```
 
 ## 3. Everyday use
 
-### Website: team edit mode → publish
+### Website: edit mode → publish
 
-1. Click **Unlock** in the dark bar at the bottom right and enter the team PIN.
-2. Click **Turn on**. Every yellow box has an **edit** button, every photo or video slot an **Upload photo or video** button. Survey data goes in page 04, tab "Enter data".
-3. Your edits save **only in your browser**. To publish them, click **Export content.json**, put the file in `public/` (replace the old one), commit and push.
-4. **Discard local edits** shows the published content again. Do this after someone else publishes, so you start from their version.
+1. Click **Turn on** in the dark bar at the bottom right. Anyone can do this; there is no PIN. Every yellow box has an **edit** button, every photo or video slot an **Upload photo or video** button. Survey data goes in page 04, tab "Enter data".
+2. Your edits save **only in your browser**. To publish them, click **Export content.json**, put the file in `public/` (replace the old one), commit and push.
+3. **Discard local edits** shows the published content again. Do this after someone else publishes, so you start from their version.
 
 Accepted files are JPG, PNG, WebP, GIF, MP4 and WebM, up to 20 MB each. They are stored inside `content.json`, so keep videos short or compressed.
 
 ### CampusMeal
 
-A demo that runs in each visitor's browser. A new browser starts with six weeks of **sample** data. Students need no login. Kitchen staff click **Kitchen login** and enter the same PIN.
+A demo that runs in each visitor's browser. A new browser starts with six weeks of **sample** data. Anyone can switch between the **Student** and **Kitchen** screens at the top; there is no login.
 
 To start over, clear the site's data in the browser (site settings → clear data).
 
@@ -57,7 +54,7 @@ To start over, clear the site's data in the browser (site settings → clear dat
 | Command | What it does |
 |---|---|
 | `npm run dev` | Development: rebuild on save + local web server |
-| `npm run build` | Build the static site into `dist/` (uses `STAFF_PIN` from `.env` or the environment) |
+| `npm run build` | Build the static site into `dist/` |
 | `npm test` | Unit tests: statistics vs scipy, survey import, forecast rules, data rules and uploads |
 | `npm run typecheck` | TypeScript check of `src/`, `shared/`, `scripts/` |
 
@@ -82,7 +79,7 @@ src/
   campusmeal/        app shell (App.tsx), data hook (store.tsx), screen state (nav.tsx), views/student + views/staff
   data/content.ts    text and data for the widgets (charts, laws, dilemmas, references, roadmap…)
   state/             hash router, website data provider, polling hook, tiny shared-store helper
-  api/client.ts      api() helper (adds the anonymous browser id and the PIN check)
+  api/client.ts      api() helper (adds the anonymous browser id)
   api/local.ts       the data rules that used to be the server, saving to IndexedDB
   styles/            site.css and campusmeal.css (unchanged from the original), fonts.ts
 shared/              rules, schemas and analysis code
@@ -113,6 +110,6 @@ scripts/             build.ts (static build) and dev.ts (rebuild on save + local
 ## 6. Known limits
 
 - **No shared data:** each browser keeps its own CampusMeal orders and edits. A real canteen pilot, where students and the kitchen see the same orders, needs a server and a database again.
-- **PIN:** checked in the browser against a hash built into the page. It hides the editing screens, but it is not security: anyone can still change data in their own browser. A short PIN can also be guessed from the hash.
+- **No login:** every visitor can turn on edit mode and open the kitchen screens. That is safe only because nothing a visitor does leaves their own browser.
 - **Publishing edits:** one person's edits reach visitors only after they export `content.json` and push it. Two people editing at the same time will overwrite each other's export.
 - **Clearing the browser:** a student who clears browser data loses their orders and gets a new anonymous id.

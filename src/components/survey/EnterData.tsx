@@ -22,9 +22,6 @@ export function EnterData() {
     if (await site.saveSurvey(rows, msg)) ui.set((s) => ({ ...s, mode }));
   };
 
-  if (!site.staff) {
-    return <div className="callout"><b>Only team editors can add or change survey data.</b> Unlock team edit mode (bottom right) with the PIN. You can still explore the analysis on the other tabs.</div>;
-  }
   return (
     <div className="stack-lg">
       <div className="panel stack">

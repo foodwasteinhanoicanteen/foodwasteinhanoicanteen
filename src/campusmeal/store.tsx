@@ -1,12 +1,12 @@
 /* CampusMeal data (kept in this browser), plus write helpers and the toast. */
 import { createContext, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from "react";
-import { ApiError, api, clientId } from "../api/client";
+import { api, clientId } from "../api/client";
 import { usePolled } from "../state/usePolled";
 import { emptyCm, type CmData, type Collection } from "../../shared/schemas/campusmeal";
 
-interface CmState { rev: number; staff: boolean; uid: string | null; cm: CmData }
+interface CmState { rev: number; uid: string | null; cm: CmData }
 interface CmCtx {
-  D: CmData; staff: boolean; uid: string; loaded: boolean; error: string | null;
+  D: CmData; uid: string; loaded: boolean; error: string | null;
   /** Merge a partial update into a document (like the original update()). */
   patch: (col: Collection, id: string, p: object, okMsg?: string) => Promise<boolean>;
   /** Replace a whole document (like the original set()). */
@@ -21,8 +21,8 @@ export function useCm() {
   return c;
 }
 
-export function CmProvider({ authKey, children }: { authKey: string; children: ReactNode }) {
-  const { data, error, accept, reload } = usePolled<CmState>("/api/cm", 4000, [authKey]);
+export function CmProvider({ children }: { children: ReactNode }) {
+  const { data, error, accept, reload } = usePolled<CmState>("/api/cm", 4000);
   const [msg, setMsg] = useState({ text: "", on: false });
   const t = useRef<number>(undefined);
   const toast = useCallback((text: string) => {
@@ -38,13 +38,13 @@ export function CmProvider({ authKey, children }: { authKey: string; children: R
       return true;
     } catch (e) {
       console.warn(e);
-      toast(e instanceof ApiError && e.status === 403 ? "You don’t have permission to change this." : e instanceof ApiError && e.status === 400 ? "Could not save: " + e.message : "Could not save: " + (e as Error).message);
+      toast("Could not save: " + (e as Error).message);
       return false;
     }
   }, [accept, toast]);
 
   const value = useMemo<CmCtx>(() => ({
-    D: data?.cm || emptyCm(), staff: !!data?.staff, uid: data?.uid || clientId(), loaded: !!data, error,
+    D: data?.cm || emptyCm(), uid: data?.uid || clientId(), loaded: !!data, error,
     patch: (c, id, p, ok) => write("PATCH", c, id, p, ok),
     put: (c, id, d, ok) => write("PUT", c, id, d, ok),
     toast, reload: () => reload(true),
