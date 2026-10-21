@@ -302,10 +302,6 @@ figcaption{font-size:.82rem;color:var(--muted)}
 .flow div.top{border-color:var(--leaf);background:var(--leaf-soft)}
 
 /* survey analysis */
-.srcbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel)}
-.srcbar.example{border-color:var(--fill-line);background:var(--fill-bg)}
-.srcbar .lbl{font-weight:700}
-.srcbar .switch{margin:0}
 .critpills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .critpills button{font:inherit;font-size:.85rem;font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer}
 .critpills button[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
@@ -340,7 +336,6 @@ figcaption{font-size:.82rem;color:var(--muted)}
 .sig{font-family:var(--f-mono);font-size:.72rem;font-weight:700;padding:2px 7px;border-radius:6px}
 .sig.y{background:var(--leaf-soft);color:var(--leaf)}
 .sig.n{background:var(--panel-2);color:var(--muted)}
-textarea.paste{font-family:var(--f-mono);font-size:.8rem;width:100%;min-height:150px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
 .formgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
 .formgrid label{display:grid;gap:4px;font-size:.82rem;font-weight:600}
 .formgrid select{font:inherit;font-size:.88rem;padding:7px 8px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);width:100%}

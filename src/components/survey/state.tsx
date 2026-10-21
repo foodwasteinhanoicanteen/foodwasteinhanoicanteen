@@ -1,11 +1,11 @@
-/* Survey page state: which data set is shown (example vs ours), which criterion, cached analyses. */
-import { createContext, useContext, useEffect, useMemo, useRef, type ReactNode } from "react";
+/* Survey page state: the survey data (saved rows, or the 50 example rows until others are saved), which criterion, cached analyses. */
+import { createContext, useContext, useMemo, type ReactNode } from "react";
 import { createStore } from "../../state/createStore";
 import { useSite } from "../../state/site";
 import { EXAMPLE, analyse, type Analysis, type CritKey, type SurveyRow } from "../../../shared/survey";
 import { conclusion, svValues } from "../../../shared/surveyReport";
 
-export const ui = createStore<{ mode: "example" | "ours"; crit: CritKey; lkCrit: CritKey }>({ mode: "example", crit: "eff", lkCrit: "eff" });
+export const ui = createStore<{ crit: CritKey; lkCrit: CritKey }>({ crit: "eff", lkCrit: "eff" });
 
 const cache = new WeakMap<SurveyRow[], Map<string, unknown>>();
 function memo<T>(rows: SurveyRow[], key: string, fn: () => T): T {
@@ -16,7 +16,7 @@ function memo<T>(rows: SurveyRow[], key: string, fn: () => T): T {
 }
 
 interface SurveyCtx {
-  rows: SurveyRow[]; saved: SurveyRow[]; isExample: boolean;
+  rows: SurveyRow[]; saved: SurveyRow[];
   analysis: (c: CritKey) => Analysis;
   sv: Record<string, string>;
   concl: () => { vi: string; en: string };
@@ -30,25 +30,17 @@ export function useSurvey() {
 
 export function SurveyProvider({ children }: { children: ReactNode }) {
   const { savedRows } = useSite();
-  const { mode } = ui.use();
-  const had = useRef(0);
-  useEffect(() => {
-    // switch to our data the first time it appears, back to the example when it is deleted
-    if (!had.current && savedRows.length) ui.set((s) => ({ ...s, mode: "ours" }));
-    if (!savedRows.length) ui.set((s) => ({ ...s, mode: "example" }));
-    had.current = savedRows.length;
-  }, [savedRows]);
 
   const value = useMemo<SurveyCtx>(() => {
-    const isExample = mode !== "ours" || !savedRows.length;
-    const rows = isExample ? EXAMPLE : savedRows;
+    // the 50 example rows count as our survey data until the team saves other rows
+    const rows = savedRows.length ? savedRows : EXAMPLE;
     return {
-      rows, saved: savedRows, isExample,
+      rows, saved: rows,
       analysis: (c) => memo(rows, "a:" + c, () => analyse(rows, c)),
-      sv: memo(rows, "sv:" + isExample, () => svValues(rows, isExample)),
-      concl: () => memo(rows, "c:" + isExample, () => conclusion(rows, isExample)),
+      sv: memo(rows, "sv", () => svValues(rows, false)),
+      concl: () => memo(rows, "c", () => conclusion(rows, false)),
     };
-  }, [mode, savedRows]);
+  }, [savedRows]);
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 

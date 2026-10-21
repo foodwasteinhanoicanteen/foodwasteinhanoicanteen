@@ -37,7 +37,7 @@ npm run dev             # http://localhost:5173, rebuilds on save (refresh the p
 
 ### Website: edit mode → publish
 
-1. Every photo or video slot has an **Upload photo or video** button. To change text, click **Turn on** in the dark bar at the bottom right: every yellow box then gets an **edit** button. Anyone can do this; there is no PIN. Survey data goes in page 04, tab "Enter data".
+1. Every photo or video slot has an **Upload photo or video** button. To change text, click **Turn on** in the dark bar at the bottom right: every yellow box then gets an **edit** button. Anyone can do this; there is no PIN. Single survey responses can be added or deleted in page 04, tab "Enter data".
 2. Your edits save **only in your browser**. To publish them, click **Export content.json**, put the file in `public/` (replace the old one), commit and push.
 3. **Discard local edits** shows the published content again. Do this after someone else publishes, so you start from their version.
 
@@ -75,7 +75,7 @@ src/
     widgets/         interactive pieces per page: problem (calculator, donut, bars, food journey, law timeline),
                      ethics (flip cards, dilemmas, quotes, verdict grid), plan (scoring, roadmap, team, references),
                      app (phone preview, functions, kitchen forecast, protocol download)
-    survey/          survey state (example vs our data), all analysis panels, the Enter data screen
+    survey/          survey state (the 50 responses or saved rows), all analysis panels, the Enter data screen
   campusmeal/        app shell (App.tsx), data hook (store.tsx), screen state (nav.tsx), views/student + views/staff
   data/content.ts    text and data for the widgets (charts, laws, dilemmas, references, roadmap…)
   state/             hash router, website data provider, polling hook, tiny shared-store helper

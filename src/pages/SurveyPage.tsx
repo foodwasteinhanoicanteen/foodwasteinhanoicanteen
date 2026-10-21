@@ -16,7 +16,6 @@ import {
   DescTable,
   EnterData,
   ExtraStats,
-  Field,
   FriedmanBox,
   LikertChart,
   LikertLegend,
@@ -28,7 +27,6 @@ import {
   RmNote,
   RmTable,
   SV,
-  SourceBar,
   TukeyQ,
   TukeyTable,
   TukeyTitle,
@@ -91,7 +89,6 @@ export default function SurveyPage() {
         <p className="small" style={{ marginTop: "10px", fontWeight: "600", color: "var(--gold)" }}>
           <SV k="srcnote"></SV>
         </p>
-        <SourceBar className="srcbar" />
       </div>
       <SubTabs />
       <div className="wrap">
@@ -203,7 +200,7 @@ export default function SurveyPage() {
               </li>
               <li>
                 <b>Respondents under 18:</b> the form allows an “Under 18” answer. Their responses are excluded from the analysis unless
-                parental consent was obtained. <Field id="eth_u18">State how many were excluded.</Field>
+                parental consent was obtained.
               </li>
               <li>
                 <b>Interviews and photos:</b> verbal consent is recorded before interviewing staff; no faces appear in photos without
@@ -246,7 +243,7 @@ export default function SurveyPage() {
             <h2>Enter our survey data</h2>
           </div>
           <p className="tab-intro">
-            Paste responses straight from the Google Forms response sheet. Everything on this page recalculates automatically.
+            The survey uses our 50 responses. Add or delete single responses below; everything on this page recalculates automatically.
           </p>
           <EnterData />
         </Tab>

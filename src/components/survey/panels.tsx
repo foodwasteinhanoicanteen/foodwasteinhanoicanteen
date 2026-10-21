@@ -19,19 +19,6 @@ function useTip() {
   return (content: ReactNode) => ({ onMouseMove: (e: MouseEvent) => tipShow(content, e), onMouseLeave: tipHide });
 }
 
-export function SourceBar({ className }: Attrs) {
-  const { isExample, saved } = useSurvey();
-  return (
-    <div className={className + (isExample ? " example" : "")} id="srcbar">
-      <span className="lbl">{isExample ? "Showing EXAMPLE data: 50 made-up responses for practice. Replace with our real survey data before presenting." : `Showing our survey data: n = ${saved.length} responses.`}</span>
-      <span className="switch" role="group" aria-label="Data source" style={{ marginLeft: "auto" }}>
-        <button type="button" aria-pressed={isExample} onClick={() => ui.set((s) => ({ ...s, mode: "example" }))}>Example (50)</button>
-        <button type="button" aria-pressed={!isExample} disabled={!saved.length} onClick={() => ui.set((s) => ({ ...s, mode: "ours" }))}>Our data{saved.length ? ` (${saved.length})` : " (none yet)"}</button>
-      </span>
-    </div>
-  );
-}
-
 export function CritPills({ group, className }: Attrs & { group: string }) {
   const s = ui.use(), lk = group === "lk";
   const list = lk ? CRITERIA.filter((c) => c.idx) : CRITERIA, cur = lk ? s.lkCrit : s.crit;
@@ -345,5 +332,5 @@ export function VerdictChart({ className }: Attrs) {
 }
 export function VerdictNote({ className }: Attrs) {
   const S = useSurvey(), R = S.analysis("eff");
-  return <p className={className} id="verdict-note">Mean “this solution could effectively reduce food waste” rating, 1–5, n = {S.rows.length}{S.isExample ? " (example data until our survey data is entered)" : ""}. {R.an.p < 0.05 ? "The difference is significant (" + S.sv.anstat + ")." : "The difference is not significant."}</p>;
+  return <p className={className} id="verdict-note">Mean “this solution could effectively reduce food waste” rating, 1–5, n = {S.rows.length}. {R.an.p < 0.05 ? "The difference is significant (" + S.sv.anstat + ")." : "The difference is not significant."}</p>;
 }
