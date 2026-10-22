@@ -309,38 +309,6 @@ export default function SurveyPage() {
               </p>
             </div>
           </div>
-          <details className="acc" style={{ marginTop: "16px" }}>
-            <summary>How one-way ANOVA works, step by step</summary>
-            <div className="in">
-              <p>
-                <b>1. Hypotheses.</b> H₀: the three solutions have the same mean rating. H₁: at least one mean is different.
-              </p>
-              <p>
-                <b>2. Split the variation.</b> Between groups (how far each solution’s mean is from the grand mean) and within groups (how
-                much people disagree about the same solution).
-              </p>
-              <div className="formula">
-                SS
-                <sub>between</sub> = Σ nⱼ (x̄ⱼ − x̄)² SS
-                <sub>within</sub> = Σ Σ (xᵢⱼ − x̄ⱼ)²
-                <br />
-                MS = SS ÷ df F = MS
-                <sub>between</sub> ÷ MS
-                <sub>within</sub> df = (k − 1, N − k)
-              </div>
-              <p>
-                <b>3. Decide.</b> A large F means the solutions differ more than people disagree with each other. If p &lt; .05, reject H₀.
-              </p>
-              <p>
-                <b>4. Then ask which ones differ.</b> ANOVA only says “at least one differs”. Tukey’s test (next tab) compares every pair
-                while keeping the overall error rate at 5%.
-              </p>
-              <p>
-                <b>In Excel:</b> Data → Data Analysis → <i>Anova: Single Factor</i>, with the three columns as input. <b>In SPSS:</b>{" "}
-                Analyze → Compare Means → One-Way ANOVA, Post Hoc → Tukey.
-              </p>
-            </div>
-          </details>
         </Tab>
         <Tab id="tukey" label="Tukey post-hoc">
           <div className="tab-title">
@@ -365,25 +333,6 @@ export default function SurveyPage() {
               <TukeyVerdict className="chart-detail" />
             </div>
           </div>
-          <details className="acc" style={{ marginTop: "16px" }}>
-            <summary>How Tukey’s HSD works</summary>
-            <div className="in">
-              <p>
-                For each pair, Tukey divides the difference between the two means by its standard error and compares it with the{" "}
-                <b>studentized range</b> distribution, which accounts for making three comparisons at once.
-              </p>
-              <div className="formula">
-                SE = √(MS
-                <sub>within</sub> ÷ 2 × (1/nᵢ + 1/nⱼ)) q = |x̄ᵢ − x̄ⱼ| ÷ SE
-                <br />
-                95% CI = (x̄ᵢ − x̄ⱼ) ± q<sub>crit</sub> × SE
-              </div>
-              <p>
-                If q is bigger than q<sub>crit</sub>, the pair differs significantly. A plain t-test for each pair would raise the chance of
-                a false positive to about 14% across three tests; Tukey keeps it at 5%.
-              </p>
-            </div>
-          </details>
         </Tab>
         <Tab id="robust" label="Robustness">
           <div className="tab-title">
