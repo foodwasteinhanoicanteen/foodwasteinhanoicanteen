@@ -1,6 +1,6 @@
 /* Website data: team-edited text, uploaded media, saved survey rows (published content.json plus this
-   browser's unpublished edits), and whether edit mode is on. Anyone can edit. */
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+   browser's unpublished uploads). Anyone can upload. */
+import { createContext, useCallback, useContext, useMemo, type ReactNode } from "react";
 import { api, downloadText } from "../api/client";
 import type { SiteState } from "../../shared/schemas/site";
 import type { SurveyRow } from "../../shared/survey";
@@ -12,9 +12,6 @@ interface SiteCtx {
   fields: Record<string, string>;
   media: SiteState["media"];
   savedRows: SurveyRow[];
-  editing: boolean;
-  setEditing: (on: boolean) => void;
-  saveField: (id: string, v: string) => Promise<void>;
   uploadMedia: (id: string, file: File) => Promise<void>;
   saveSurvey: (rows: SurveyRow[], okMsg: string) => Promise<boolean>;
   /** This browser has edits that are not in the published content.json yet. */
@@ -33,8 +30,6 @@ export function useSite() {
 export function SiteProvider({ children }: { children: ReactNode }) {
   const { toast } = useOverlay();
   const { data, accept } = usePolled<SiteState>("/api/site", 5000);
-  const [editing, setEditing] = useState(false);
-  useEffect(() => { document.body.classList.toggle("editing", editing); }, [editing]);
 
   const fail = useCallback((e: unknown, what: string) => toast(`${what}: ${(e as Error).message}`), [toast]);
 
@@ -42,14 +37,7 @@ export function SiteProvider({ children }: { children: ReactNode }) {
     fields: data?.fields || {},
     media: data?.media || {},
     savedRows: (data?.survey?.rows || []).map((r) => normRow(r).row).filter((r): r is SurveyRow => !!r),
-    editing, setEditing,
     localEdits: !!data?.local,
-    async saveField(id, v) {
-      try {
-        accept(v ? await api<SiteState>("PUT", `/api/site/fields/${encodeURIComponent(id)}`, { v }) : await api<SiteState>("DELETE", `/api/site/fields/${encodeURIComponent(id)}`));
-        toast(v ? "Saved" : "Cleared");
-      } catch (e) { fail(e, "Could not save"); }
-    },
     async uploadMedia(id, file) {
       if (file.size > 20 * 1024 * 1024) { toast("File is over 20 MB. Compress it and try again."); return; }
       toast("Uploading…");
@@ -69,7 +57,7 @@ export function SiteProvider({ children }: { children: ReactNode }) {
       try { accept(await api<SiteState>("DELETE", "/api/site")); toast("Showing the published content again"); }
       catch (e) { fail(e, "Could not discard"); }
     },
-  }), [data, editing, accept, toast, fail]);
+  }), [data, accept, toast, fail]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
