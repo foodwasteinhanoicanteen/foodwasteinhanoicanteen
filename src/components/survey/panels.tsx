@@ -1,6 +1,10 @@
 /* Survey page panels: data source bar, criterion pills, respondents, ratings, ANOVA, Tukey,
    robustness checks, forced choice, conclusion, and the effectiveness chart on the decision page. */
+import { cx } from "@/utils/cx";
 import type { CSSProperties, MouseEvent, ReactNode } from "react";
+import { Badge } from "@/components/base/badges/badges";
+import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
+import { Table } from "@/components/application/table/table";
 import { useOverlay } from "../ui/Overlays";
 import { Html } from "../ui/Html";
 import { ui, useSurvey } from "./state";
@@ -11,7 +15,25 @@ import {
 
 type Attrs = { className?: string; style?: CSSProperties; children?: ReactNode };
 const critName = (k: CritKey) => CRITERIA.find((c) => c.k === k)!.n;
-const Sig = ({ yes, y = "Yes", n = "No" }: { yes: boolean; y?: string; n?: string }) => <span className={"sig " + (yes ? "y" : "n")}>{yes ? y : n}</span>;
+const Sig = ({ yes, y = "Yes", n = "No" }: { yes: boolean; y?: string; n?: string }) => <Badge size="sm" color={yes ? "success" : "gray"}>{yes ? y : n}</Badge>;
+
+/** Untitled UI table for the analysis tables. cols: [heading, numeric?]; each row gives one cell per column. */
+export function StatTable({ id, label, cols, rows }: { id: string; label: string; cols: [ReactNode, boolean?][]; rows: { id: string; className?: string; cells: ReactNode[] }[] }) {
+  return (
+    <Table id={id} aria-label={label} size="sm">
+      <Table.Header>
+        {cols.map(([h, num], i) => <Table.Head key={i} id={"c" + i} isRowHeader={i === 0} className={cx("px-3", num && "[&>div]:justify-end")}><span className="text-xs font-semibold whitespace-nowrap text-quaternary">{h}</span></Table.Head>)}
+      </Table.Header>
+      <Table.Body>
+        {rows.map((r) => (
+          <Table.Row key={r.id} id={r.id} className={r.className}>
+            {r.cells.map((c, i) => <Table.Cell key={i} className={cx("px-3 py-2.5", cols[i][1] && "text-right whitespace-nowrap tabular-nums")}>{c}</Table.Cell>)}
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  );
+}
 
 /** Tooltip on hover (charts on this page). */
 function useTip() {
@@ -24,7 +46,10 @@ export function CritPills({ group, className }: Attrs & { group: string }) {
   const list = lk ? CRITERIA.filter((c) => c.idx) : CRITERIA, cur = lk ? s.lkCrit : s.crit;
   return (
     <div className={className}>
-      {list.map((c) => <button key={c.k} type="button" aria-pressed={c.k === cur} onClick={() => ui.set((x) => (lk ? { ...x, lkCrit: c.k } : { ...x, crit: c.k }))}>{c.n}</button>)}
+      <ButtonGroup size="sm" className="flex-wrap" disallowEmptySelection selectedKeys={[cur]}
+        onSelectionChange={(s) => { const k = [...s][0] as CritKey | undefined; if (k) ui.set((x) => (lk ? { ...x, lkCrit: k } : { ...x, crit: k })); }}>
+        {list.map((c) => <ButtonGroupItem key={c.k} id={c.k}>{c.n}</ButtonGroupItem>)}
+      </ButtonGroup>
     </div>
   );
 }
@@ -128,13 +153,11 @@ export function LikertNote({ className }: Attrs) {
 export function DescTable() {
   const d = useSurvey().rows;
   return (
-    <table id="desctable">
-      <thead><tr><th>Criterion</th>{SOL.map((s) => <th key={s} className="n">{s} mean (SD)</th>)}<th>Highest</th></tr></thead>
-      <tbody>{CRITERIA.map((c) => {
+    <StatTable id="desctable" label="Mean ratings by criterion" cols={[["Criterion"], ...SOL.map((s): [string, boolean] => [s + " mean (SD)", true]), ["Highest"]]}
+      rows={CRITERIA.map((c) => {
         const g = scores(d, c.k), m = g.map(mean), s = g.map(sd), b = m.indexOf(Math.max(...m));
-        return <tr key={c.k}><td><b>{c.n}</b></td>{m.map((x, i) => <td key={i} className="n" style={i === b ? { fontWeight: 700 } : undefined}>{f2(x)} ({f2(s[i])})</td>)}<td>{SOL[b]}</td></tr>;
-      })}</tbody>
-    </table>
+        return { id: c.k, cells: [<b>{c.n}</b>, ...m.map((x, i) => (i === b ? <b>{f2(x)} ({f2(s[i])})</b> : `${f2(x)} (${f2(s[i])})`)), SOL[b]] };
+      })} />
   );
 }
 export function ExtraStats({ className }: Attrs) {
@@ -156,14 +179,11 @@ export function AnovaHyp({ className }: Attrs) {
 export function AnovaTable() {
   const a = useCrit().R.an;
   return (
-    <table id="antable">
-      <thead><tr><th>Source</th><th className="n">SS</th><th className="n">df</th><th className="n">MS</th><th className="n">F</th><th className="n">p</th><th className="n">η²</th></tr></thead>
-      <tbody>
-        <tr><td>Between solutions</td><td className="n">{f2(a.ssb)}</td><td className="n">{a.dfb}</td><td className="n">{f2(a.msb)}</td><td className="n" style={{ fontWeight: 700 }}>{f2(a.F)}</td><td className="n" style={{ fontWeight: 700 }}>{pShort(a.p)}</td><td className="n">{noLead(a.eta2, 3)}</td></tr>
-        <tr><td>Within (error)</td><td className="n">{f2(a.ssw)}</td><td className="n">{a.dfw}</td><td className="n">{f2(a.msw)}</td><td /><td /><td /></tr>
-        <tr><td>Total</td><td className="n">{f2(a.sst)}</td><td className="n">{a.dfb + a.dfw}</td><td /><td /><td /><td /></tr>
-      </tbody>
-    </table>
+    <StatTable id="antable" label="One-way ANOVA" cols={[["Source"], ["SS", true], ["df", true], ["MS", true], ["F", true], ["p", true], ["η²", true]]} rows={[
+      { id: "between", cells: ["Between solutions", f2(a.ssb), a.dfb, f2(a.msb), <b>{f2(a.F)}</b>, <b>{pShort(a.p)}</b>, noLead(a.eta2, 3)] },
+      { id: "within", cells: ["Within (error)", f2(a.ssw), a.dfw, f2(a.msw), "", "", ""] },
+      { id: "total", cells: ["Total", f2(a.sst), a.dfb + a.dfw, "", "", "", ""] },
+    ]} />
   );
 }
 export function AnovaVerdict({ className }: Attrs) {
@@ -180,11 +200,9 @@ export function AnovaVerdict({ className }: Attrs) {
 export function AnovaSummary() {
   const { crit, S } = useCrit();
   return (
-    <table id="ansummary">
-      <thead><tr><th>Criterion</th><th className="n">F</th><th className="n">p</th><th className="n">η²</th><th>Result</th></tr></thead>
-      <tbody>{CRITERIA.map((c) => { const x = S.analysis(c.k).an; return (
-        <tr key={c.k} className={c.k === crit ? "win" : undefined}><td>{c.n}</td><td className="n">{f2(x.F)}</td><td className="n">{pShort(x.p)}</td><td className="n">{noLead(x.eta2)}</td><td><Sig yes={x.p < 0.05} y="Differ" n="No difference" /></td></tr>); })}</tbody>
-    </table>
+    <StatTable id="ansummary" label="ANOVA on every criterion" cols={[["Criterion"], ["F", true], ["p", true], ["η²", true], ["Result"]]}
+      rows={CRITERIA.map((c) => { const x = S.analysis(c.k).an; return (
+        { id: c.k, className: c.k === crit ? "win" : undefined, cells: [c.n, f2(x.F), pShort(x.p), noLead(x.eta2), <Sig yes={x.p < 0.05} y="Differ" n="No difference" />] }); })} />
   );
 }
 
@@ -193,12 +211,10 @@ export function TukeyTitle() { return <h3 id="tk-title">{useCrit().C.n}: pairwis
 export function TukeyTable() {
   const { R } = useCrit();
   return (
-    <table id="tktable">
-      <thead><tr><th>Pair</th><th className="n">Mean diff.</th><th className="n">SE</th><th className="n">q</th><th className="n">p adj</th><th className="n">95% CI</th><th>Sig.</th></tr></thead>
-      <tbody>{R.tk.pairs.map((p) => (
-        <tr key={p.pair}><td><b>{p.pair}</b></td><td className="n">{p.diff > 0 ? "+" : ""}{f2(p.diff)}</td><td className="n">{p.se.toFixed(3)}</td><td className="n">{f2(p.q)}</td><td className="n" style={{ fontWeight: 700 }}>{pShort(p.p)}</td><td className="n">[{f2(p.lo)}, {f2(p.hi)}]</td><td><Sig yes={p.p < 0.05} /></td></tr>
-      ))}</tbody>
-    </table>
+    <StatTable id="tktable" label="Tukey HSD pairwise comparisons" cols={[["Pair"], ["Mean diff.", true], ["SE", true], ["q", true], ["p adj", true], ["95% CI", true], ["Sig."]]}
+      rows={R.tk.pairs.map((p) => (
+        { id: p.pair, cells: [<b>{p.pair}</b>, (p.diff > 0 ? "+" : "") + f2(p.diff), p.se.toFixed(3), f2(p.q), <b>{pShort(p.p)}</b>, `[${f2(p.lo)}, ${f2(p.hi)}]`, <Sig yes={p.p < 0.05} />] }
+      ))} />
   );
 }
 export function TukeyQ({ className }: Attrs) {
@@ -240,14 +256,11 @@ export function TukeyVerdict({ className }: Attrs) {
 export function RmTable() {
   const { R } = useCrit(), rm = R.rm;
   return (
-    <table id="rmtable">
-      <thead><tr><th>Source</th><th className="n">SS</th><th className="n">df</th><th className="n">F</th><th className="n">p</th><th className="n">p (GG)</th><th className="n">partial η²</th></tr></thead>
-      <tbody>
-        <tr><td>Solution</td><td className="n">{f2(rm.ssc)}</td><td className="n">{rm.dfc}</td><td className="n" style={{ fontWeight: 700 }}>{f2(rm.F)}</td><td className="n" style={{ fontWeight: 700 }}>{pShort(rm.p)}</td><td className="n">{pShort(rm.pGG)}</td><td className="n">{noLead(rm.peta2)}</td></tr>
-        <tr><td>Error</td><td className="n">{f2(rm.sse)}</td><td className="n">{rm.dfe}</td><td /><td /><td /><td /></tr>
-        <tr><td>Respondents</td><td className="n">{f2(rm.sss)}</td><td className="n">{R.n - 1}</td><td /><td /><td /><td /></tr>
-      </tbody>
-    </table>
+    <StatTable id="rmtable" label="Repeated-measures ANOVA" cols={[["Source"], ["SS", true], ["df", true], ["F", true], ["p", true], ["p (GG)", true], ["partial η²", true]]} rows={[
+      { id: "solution", cells: ["Solution", f2(rm.ssc), rm.dfc, <b>{f2(rm.F)}</b>, <b>{pShort(rm.p)}</b>, pShort(rm.pGG), noLead(rm.peta2)] },
+      { id: "error", cells: ["Error", f2(rm.sse), rm.dfe, "", "", "", ""] },
+      { id: "respondents", cells: ["Respondents", f2(rm.sss), R.n - 1, "", "", "", ""] },
+    ]} />
   );
 }
 export function RmNote({ className }: Attrs) {
@@ -258,10 +271,8 @@ export function PairTable() {
   const { R } = useCrit();
   const P = ([[0, 1], [0, 2], [1, 2]] as const).map(([i, j]) => { const t = pairedT(R.g[i], R.g[j]); return { pair: SOL[i] + " – " + SOL[j], ...t, pb: Math.min(1, t.p * 3) }; });
   return (
-    <table id="pairtable">
-      <thead><tr><th>Pair</th><th className="n">Mean diff.</th><th className="n">t({R.n - 1})</th><th className="n">p (Bonferroni)</th><th className="n">d<sub>z</sub></th><th>Sig.</th></tr></thead>
-      <tbody>{P.map((p) => <tr key={p.pair}><td><b>{p.pair}</b></td><td className="n">{p.md > 0 ? "+" : ""}{f2(p.md)}</td><td className="n">{f2(p.t)}</td><td className="n" style={{ fontWeight: 700 }}>{pShort(p.pb)}</td><td className="n">{f2(p.dz)}</td><td><Sig yes={p.pb < 0.05} /></td></tr>)}</tbody>
-    </table>
+    <StatTable id="pairtable" label="Paired t-tests" cols={[["Pair"], ["Mean diff.", true], [<>t({R.n - 1})</>, true], ["p (Bonferroni)", true], [<>d<sub>z</sub></>, true], ["Sig."]]}
+      rows={P.map((p) => ({ id: p.pair, cells: [<b>{p.pair}</b>, (p.md > 0 ? "+" : "") + f2(p.md), f2(p.t), <b>{pShort(p.pb)}</b>, f2(p.dz), <Sig yes={p.pb < 0.05} />] }))} />
   );
 }
 export function FriedmanBox() {

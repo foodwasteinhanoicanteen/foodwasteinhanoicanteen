@@ -1,47 +1,32 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
-import { Card, Field, FilterButtons, Front, MediaSlot, More, SV, ScoreBars, ScoreCalc, WeightReset, WeightSliders } from "../components";
+import { Badge, Card, CardOpen, Field, FilterButtons, Front, MediaSlot, More, SV, ScoreBars, ScoreCalc, WeightReset, WeightSliders } from "../components";
 
 export default function SolutionPage() {
   return (
     <PageSection id="solution">
       <div className="wrap phead">
         <StageStepper current={3} />
-        <div className="eyebrow">
-          <span>Step 3 · Ideate</span>
-          <span className="rubric">Rubric 2 · Idea &amp; creativity</span>
-        </div>
         <h1>Our solutions</h1>
         <p className="lede">
           We present our three shortlisted solutions, what each does and where it falls short, then analyse them against four weighted
           criteria before asking people in the survey.
         </p>
+        <p className="stage-note">Design thinking: Ideate. Rubric 2: Idea &amp; creativity.</p>
         <div className="takeaways">
           <div>
-            <svg className="ic">
-              <use href="#i-tag"></use>
-            </svg>
             <b>A</b>
             <span>sells surplus that already exists</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-target"></use>
-            </svg>
             <b>B</b>
             <span>prevents waste at the root cause</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-truck"></use>
-            </svg>
             <b>C</b>
             <span>shares what is left with people in need</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-chart"></use>
-            </svg>
             <b>4.30 / 5</b>
             <span>B’s score in our weighted analysis</span>
           </div>
@@ -57,9 +42,6 @@ export default function SolutionPage() {
           <ol className="steps panel" style={{ padding: "6px 20px" }}>
             <li>
               <span className="wk">
-                <svg className="ic">
-                  <use href="#i-search"></use>
-                </svg>
                 <br />
                 Empathise
               </span>
@@ -80,9 +62,6 @@ export default function SolutionPage() {
             </li>
             <li>
               <span className="wk">
-                <svg className="ic">
-                  <use href="#i-flag"></use>
-                </svg>
                 <br />
                 Define
               </span>
@@ -100,9 +79,6 @@ export default function SolutionPage() {
             </li>
             <li>
               <span className="wk">
-                <svg className="ic">
-                  <use href="#i-bulb"></use>
-                </svg>
                 <br />
                 Ideate
               </span>
@@ -117,9 +93,6 @@ export default function SolutionPage() {
             </li>
             <li>
               <span className="wk">
-                <svg className="ic">
-                  <use href="#i-flask"></use>
-                </svg>
                 <br />
                 Test ideas
               </span>
@@ -137,9 +110,6 @@ export default function SolutionPage() {
             </li>
             <li>
               <span className="wk">
-                <svg className="ic">
-                  <use href="#i-play"></use>
-                </svg>
                 <br />
                 Prototype
               </span>
@@ -151,9 +121,6 @@ export default function SolutionPage() {
             </li>
             <li>
               <span className="wk">
-                <svg className="ic">
-                  <use href="#i-book"></use>
-                </svg>
                 <br />
                 Learn
               </span>
@@ -173,7 +140,6 @@ export default function SolutionPage() {
               A
             </span>
             <div>
-              <div className="eyebrow">Handles leftovers · sell the surplus</div>
               <h2>Last-Hour Food Rescue</h2>
               <p className="muted">
                 Meals that are still safe but unsold near closing time are sold at a discount instead of being thrown away.
@@ -183,9 +149,6 @@ export default function SolutionPage() {
           <div className="grid g2f">
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-tag"></use>
-                </svg>
                 <h3>How it works</h3>
               </div>
               <div className="flow" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,130px),1fr))" }}>
@@ -211,9 +174,6 @@ export default function SolutionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-plate"></use>
-                </svg>
                 <h3>Example</h3>
               </div>
               <p className="small">
@@ -225,9 +185,6 @@ export default function SolutionPage() {
           <div className="grid g3" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-check"></use>
-                </svg>
                 <h3>Strengths</h3>
               </div>
               <ul className="clean small">
@@ -238,9 +195,6 @@ export default function SolutionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-alert"></use>
-                </svg>
                 <h3>Weaknesses</h3>
               </div>
               <ul className="clean small">
@@ -253,9 +207,6 @@ export default function SolutionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-scale"></use>
-                </svg>
                 <h3>Ethical risk</h3>
               </div>
               <ul className="clean small">
@@ -275,7 +226,6 @@ export default function SolutionPage() {
               B
             </span>
             <div>
-              <div className="eyebrow">Tackles the root cause · prevent</div>
               <h2>Demand Forecasting &amp; Portion Control</h2>
               <p className="muted">
                 Cook to demand, serve portions that fit, and learn from what is left. Three features, each aimed at a root cause from Page
@@ -285,8 +235,8 @@ export default function SolutionPage() {
           </div>
           <div className="grid g3">
             <div className="panel stack">
-              <span className="eyebrow">Feature 1 · fixes overproduction</span>
               <h3>Demand forecasting</h3>
+              <p className="small muted">Fixes overproduction</p>
               <p>
                 Record every dish as: <b>Day → Time → Menu item → Prepared → Sold → Left over.</b> Cook to data, not habit.
               </p>
@@ -326,8 +276,8 @@ export default function SolutionPage() {
               </p>
             </div>
             <div className="panel stack">
-              <span className="eyebrow">Feature 2 · fixes oversized portions</span>
               <h3>Flexible portions</h3>
+              <p className="small muted">Fixes oversized portions</p>
               <p>
                 Small / Regular / Large, or a smaller default with a <span className="hl">free refill</span>: for example{" "}
                 <b>150 g of rice instead of 200 g</b>.
@@ -347,18 +297,18 @@ export default function SolutionPage() {
               </p>
             </div>
             <div className="panel stack">
-              <span className="eyebrow">Feature 3 · fixes menu problems</span>
               <h3>Learning from plate waste</h3>
+              <p className="small muted">Fixes menu problems</p>
               <p>
                 A QR survey asks: <em>Why didn’t you finish this food?</em>
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                <span className="pill">Portion too large</span>
-                <span className="pill">Don’t like the taste</span>
-                <span className="pill">Food too cold</span>
-                <span className="pill">Too salty</span>
-                <span className="pill">Poor combination</span>
-                <span className="pill">Not hungry</span>
+                <Badge size="sm">Portion too large</Badge>
+                <Badge size="sm">Don’t like the taste</Badge>
+                <Badge size="sm">Food too cold</Badge>
+                <Badge size="sm">Too salty</Badge>
+                <Badge size="sm">Poor combination</Badge>
+                <Badge size="sm">Not hungry</Badge>
               </div>
               <p className="small muted">
                 In Hanoi schools, vegetables were wasted most (46%) and meat least (about 18–20%), and disliked mixed vegetables nearly
@@ -394,9 +344,6 @@ export default function SolutionPage() {
           <div className="grid g3" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-check"></use>
-                </svg>
                 <h3>Strengths</h3>
               </div>
               <ul className="clean small">
@@ -409,9 +356,6 @@ export default function SolutionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-alert"></use>
-                </svg>
                 <h3>Weaknesses</h3>
               </div>
               <ul className="clean small">
@@ -422,9 +366,6 @@ export default function SolutionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-scale"></use>
-                </svg>
                 <h3>Ethical risk</h3>
               </div>
               <ul className="clean small">
@@ -447,7 +388,6 @@ export default function SolutionPage() {
               C
             </span>
             <div>
-              <div className="eyebrow">Handles leftovers · share the rest</div>
               <h2>Safe Redistribution of Surplus</h2>
               <p className="muted">
                 Food that is safe, unserved and untouched is passed to charities, food banks or community organisations.
@@ -457,9 +397,6 @@ export default function SolutionPage() {
           <div className="grid g2f">
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-truck"></use>
-                </svg>
                 <h3>How it works</h3>
               </div>
               <div className="flow" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,110px),1fr))" }}>
@@ -491,9 +428,6 @@ export default function SolutionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-heart"></use>
-                </svg>
                 <h3>Example</h3>
               </div>
               <p className="small">
@@ -505,9 +439,6 @@ export default function SolutionPage() {
           <div className="grid g3" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-check"></use>
-                </svg>
                 <h3>Strengths</h3>
               </div>
               <ul className="clean small">
@@ -518,9 +449,6 @@ export default function SolutionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-alert"></use>
-                </svg>
                 <h3>Weaknesses</h3>
               </div>
               <ul className="clean small">
@@ -531,9 +459,6 @@ export default function SolutionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-scale"></use>
-                </svg>
                 <h3>Ethical risk</h3>
               </div>
               <ul className="clean small">
@@ -573,7 +498,7 @@ export default function SolutionPage() {
                   <b>Decision:</b> kept as step 2 of our combined system.
                 </p>
               </More>
-              <button className="open">Pros, cons, decision</button>
+              <CardOpen>Pros, cons, decision</CardOpen>
             </Card>
             <Card
               title="Demand Forecasting & Portion Control"
@@ -602,7 +527,7 @@ export default function SolutionPage() {
                   <b>Decision:</b> chosen as our main solution.
                 </p>
               </More>
-              <button className="open">Pros, cons, decision</button>
+              <CardOpen>Pros, cons, decision</CardOpen>
             </Card>
             <Card title="Safe Redistribution of Surplus" tag="Shortlisted · Solution C" group="ideas" cat="Shortlisted">
               <div className="tagline">Shortlisted · Solution C</div>
@@ -624,7 +549,7 @@ export default function SolutionPage() {
                   <b>Decision:</b> kept as step 3, only with a trained partner.
                 </p>
               </More>
-              <button className="open">Pros, cons, decision</button>
+              <CardOpen>Pros, cons, decision</CardOpen>
             </Card>
             <Card title="Fines for food left on plates" tag="Rejected" group="ideas" cat="Rejected">
               <div className="tagline">Rejected</div>
@@ -640,7 +565,7 @@ export default function SolutionPage() {
                   to reduce satisfaction. A free refill achieves the goal more fairly.
                 </p>
               </More>
-              <button className="open">Why we rejected it</button>
+              <CardOpen>Why we rejected it</CardOpen>
             </Card>
             <Card title="Awareness posters only" tag="Rejected as main solution" group="ideas" cat="Rejected">
               <div className="tagline">Rejected as main solution</div>
@@ -656,7 +581,7 @@ export default function SolutionPage() {
                   awareness alone rarely changes default behaviour. We kept it as supporting communication for Solution B.
                 </p>
               </More>
-              <button className="open">Why we rejected it</button>
+              <CardOpen>Why we rejected it</CardOpen>
             </Card>
             <Card title="AI waste-tracking cameras" tag="Rejected for the pilot" group="ideas" cat="Rejected">
               <div className="tagline">Rejected for the pilot</div>
@@ -672,7 +597,7 @@ export default function SolutionPage() {
                   and a spreadsheet give the same baseline. A possible later upgrade.
                 </p>
               </More>
-              <button className="open">Why we rejected it</button>
+              <CardOpen>Why we rejected it</CardOpen>
             </Card>
           </div>
         </Tab>

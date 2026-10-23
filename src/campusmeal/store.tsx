@@ -53,7 +53,7 @@ export function CmProvider({ children }: { children: ReactNode }) {
   return (
     <Ctx.Provider value={value}>
       {children}
-      <div className={"toast" + (msg.on ? " show" : "")} role="status">{msg.text}</div>
+      <div className={"toast rounded-lg bg-primary-solid text-sm font-semibold text-white shadow-lg" + (msg.on ? " show" : "")} role="status">{msg.text}</div>
     </Ctx.Provider>
   );
 }

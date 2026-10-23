@@ -1,5 +1,12 @@
 /* Pages 3, 7 and 9: weighted scoring model, roadmap (Gantt), plan steps, team, action log, references. */
 import type { CSSProperties, ReactNode } from "react";
+import { SearchLg } from "@untitledui/icons";
+import { Button as AriaButton } from "react-aria-components";
+import { Button } from "@/components/base/buttons/button";
+import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
+import { Input } from "@/components/base/input/input";
+import { Slider } from "@/components/base/slider/slider";
+import { Badge } from "@/components/base/badges/badges";
 import { createStore } from "../../state/createStore";
 import { Field, MediaSlot } from "../ui/EditMode";
 import { Html } from "../ui/Html";
@@ -20,16 +27,17 @@ export function WeightSliders({ className }: Attrs) {
     <div className={className} id="sliders">
       {CRIT.map((c, i) => (
         <div className="sl" key={c}>
-          <label htmlFor={"w" + i}>{c}</label>
-          <input type="range" id={"w" + i} min="0" max="60" step="5" value={w[i]} onChange={(e) => weights.set((x) => x.map((v, j) => (j === i ? +e.target.value : v)))} />
+          <label id={"wl" + i}>{c}</label>
+          <Slider aria-labelledby={"wl" + i} minValue={0} maxValue={60} step={5} value={w[i]} formatOptions={{ style: "decimal" }}
+            onChange={(v) => weights.set((x) => x.map((old, j) => (j === i ? (v as number) : old)))} />
           <output id={"wo" + i}>{Math.round(n[i] * 100)}%</output>
         </div>
       ))}
     </div>
   );
 }
-export function WeightReset({ className, style, children }: Attrs) {
-  return <button className={className} style={style} onClick={() => weights.set([...DEFW])}>{children ?? "Reset to our weights (35 / 25 / 25 / 15)"}</button>;
+export function WeightReset({ children }: Attrs) {
+  return <Button color="secondary" size="sm" className="justify-self-start" onPress={() => weights.set([...DEFW])}>{children ?? "Reset to our weights (35 / 25 / 25 / 15)"}</Button>;
 }
 export function ScoreBars({ className }: Attrs) {
   const { sc, best } = scored(weights.use());
@@ -72,7 +80,7 @@ export function Gantt({ className }: Attrs) {
   ROAD.forEach((s, i) => {
     cells.push(<div key={"l" + i} className="gl"><span className="mono" style={{ color: SCOL[s.sol], fontWeight: 700 }}>{s.sol}{s.n}</span> {s.k}</div>);
     for (let w = 1; w <= 12; w++) {
-      if (w === s.a) cells.push(<button key={i + "-" + w} className={"gb" + (sel === i ? " sel" : "")} style={{ gridColumn: `span ${s.b - s.a + 1}`, background: SCOL[s.sol] }} aria-label={`${s.sol}${s.n} ${s.k}, ${wk(s)}`} onClick={() => ganttSel.set(i)}>{wkShort(s)}</button>);
+      if (w === s.a) cells.push(<AriaButton key={i + "-" + w} className={"gb cursor-pointer outline-focus-ring focus-visible:outline-2" + (sel === i ? " sel" : "")} style={{ gridColumn: `span ${s.b - s.a + 1}`, background: SCOL[s.sol] }} aria-label={`${s.sol}${s.n} ${s.k}, ${wk(s)}`} onPress={() => ganttSel.set(i)}>{wkShort(s)}</AriaButton>);
       else if (w < s.a || w > s.b) cells.push(<div key={i + "-" + w} />);
     }
   });
@@ -117,7 +125,7 @@ export function TeamCards({ className }: Attrs) {
         <div className="panel stack" key={role}>
           <MediaSlot id={"team_" + (i + 1)} className="media tall" style={{ aspectRatio: "1/1" }}><div className="ph"><span className="ic">Photo</span><b>Team member {i + 1}</b></div></MediaSlot>
           <h3><Field id={"team_name_" + (i + 1)}>Name</Field></h3>
-          <span className="pill hi" style={{ justifySelf: "start" }}>{role}</span>
+          <Badge size="sm" color="brand" className="justify-self-start">{role}</Badge>
           <p className="small">{duty}</p>
           <p className="small"><b>Contribution:</b> <Field id={"team_contrib_" + (i + 1)}>what they did, with evidence</Field></p>
         </div>
@@ -143,13 +151,15 @@ const refs = createStore({ q: "", cat: "All" });
 const TYPES = ["All", "Academic", "Reports", "Business", "News"];
 export function RefSearch({ style }: Attrs) {
   const r = refs.use();
-  return <input id="refsearch" type="search" placeholder="Search sources…" aria-label="Search sources" style={style} value={r.q} onChange={(e) => refs.set((x) => ({ ...x, q: e.target.value }))} />;
+  return <div style={style}><Input id="refsearch" type="search" icon={SearchLg} placeholder="Search sources…" aria-label="Search sources" value={r.q} onChange={(q) => refs.set((x) => ({ ...x, q }))} /></div>;
 }
 export function RefFilters({ className, style }: Attrs) {
   const r = refs.use();
   return (
     <div className={className} style={style}>
-      {TYPES.map((t) => <button key={t} aria-pressed={r.cat === t} onClick={() => refs.set((x) => ({ ...x, cat: t }))}>{t}{t === "All" ? "" : ` · ${REFS.filter((x) => x[0] === t).length}`}</button>)}
+      <ButtonGroup size="sm" className="flex-wrap" disallowEmptySelection selectedKeys={[r.cat]} onSelectionChange={(k) => { const cat = [...k][0]; if (cat != null) refs.set((x) => ({ ...x, cat: String(cat) })); }}>
+        {TYPES.map((t) => <ButtonGroupItem key={t} id={t}>{t}{t === "All" ? "" : ` · ${REFS.filter((x) => x[0] === t).length}`}</ButtonGroupItem>)}
+      </ButtonGroup>
     </div>
   );
 }
@@ -159,7 +169,7 @@ export function RefList({ className, style }: Attrs) {
   const list = REFS.filter((x) => (r.cat === "All" || x[0] === r.cat) && (!q || x[1].toLowerCase().includes(q)));
   return (
     <ol className={className} style={style} id="reflist">
-      {list.length ? list.map((x) => <li key={x[1]} className="small" style={{ paddingLeft: 4 }}><span className="pill" style={{ marginRight: 6 }}>{x[0]}</span><Html html={linkify(x[1])} /></li>)
+      {list.length ? list.map((x) => <li key={x[1]} className="small" style={{ paddingLeft: 4 }}><Badge size="sm" className="mr-1.5 inline-flex">{x[0]}</Badge><Html html={linkify(x[1])} /></li>)
         : <li className="muted">No sources match.</li>}
     </ol>
   );

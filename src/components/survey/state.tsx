@@ -1,5 +1,7 @@
 /* Survey page state: the survey data (saved rows, or the 50 example rows until others are saved), which criterion, cached analyses. */
 import { createContext, useContext, useMemo, type ReactNode } from "react";
+import { Badge } from "@/components/base/badges/badges";
+import { cx } from "@/utils/cx";
 import { createStore } from "../../state/createStore";
 import { useSite } from "../../state/site";
 import { EXAMPLE, analyse, type Analysis, type CritKey, type SurveyRow } from "../../../shared/survey";
@@ -33,12 +35,12 @@ export function SurveyProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<SurveyCtx>(() => {
     // the 50 example rows count as our survey data until the team saves other rows
-    const rows = savedRows.length ? savedRows : EXAMPLE;
+    const isExample = !savedRows.length, rows = isExample ? EXAMPLE : savedRows;
     return {
-      rows, saved: rows,
+      rows, saved: savedRows,
       analysis: (c) => memo(rows, "a:" + c, () => analyse(rows, c)),
-      sv: memo(rows, "sv", () => svValues(rows, false)),
-      concl: () => memo(rows, "c", () => conclusion(rows, false)),
+      sv: memo(rows, "sv", () => svValues(rows, isExample)),
+      concl: () => memo(rows, "c", () => conclusion(rows, isExample)),
     };
   }, [savedRows]);
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
@@ -50,7 +52,8 @@ export function SV({ k, children }: { k: string; children?: ReactNode }) {
   return <>{v ?? children}</>;
 }
 /** Pill showing which solution scores highest (overall or feasibility). */
+const PILL_BG: Record<string, string> = { A: "bg-[var(--cA)]", B: "bg-[var(--cB)]", C: "bg-[var(--cC)]" };
 export function SVPill({ k, className }: { k: "otop" | "ftop"; className?: string }) {
   const L = useSurvey().sv[k];
-  return <span className={className} style={{ background: `var(--c${L})`, color: "#fff" }}>{L}</span>;
+  return <Badge size="sm" className={cx(className, PILL_BG[L], "text-white ring-transparent")}>{L}</Badge>;
 }

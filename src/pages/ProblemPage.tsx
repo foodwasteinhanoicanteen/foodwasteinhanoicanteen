@@ -6,6 +6,7 @@ import {
   CalcInput,
   CalcOut,
   Card,
+  CardOpen,
   CountUp,
   DonutChart,
   DonutDetail,
@@ -18,6 +19,7 @@ import {
   LawDetail,
   LawTimeline,
   MediaSlot,
+  Photo,
   More,
 } from "../components";
 
@@ -26,41 +28,26 @@ export default function ProblemPage() {
     <PageSection id="problem">
       <div className="wrap phead">
         <StageStepper current={1} />
-        <div className="eyebrow">
-          <span>Step 1 · Empathise</span>
-          <span className="rubric">Rubric 1 · Understanding the problem</span>
-        </div>
         <h1>The problem</h1>
         <p className="lede">
           Large amounts of safe, edible food are thrown away by Hanoi’s food businesses: restaurants, hotel buffets, wedding venues,
           supermarkets and institutional canteens like ours. Here is how big it is, where it happens, why, and who pays.
         </p>
+        <p className="stage-note">Design thinking: Empathise. Rubric 1: Understanding the problem.</p>
         <div className="takeaways">
           <div>
-            <svg className="ic">
-              <use href="#i-bin"></use>
-            </svg>
             <b>1.05 bn t</b>
             <span>food wasted worldwide in 2022</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-store"></use>
-            </svg>
             <b>40%</b>
             <span>of it from food service and retail</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-plate"></use>
-            </svg>
             <b>29%</b>
             <span>of Hanoi school-lunch food is thrown away</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-cloud"></use>
-            </svg>
             <b>5×</b>
             <span>Nam Sơn landfill was over its design capacity</span>
           </div>
@@ -82,7 +69,7 @@ export default function ProblemPage() {
           <div className="tier">
             <span>World</span>
           </div>
-          <MediaSlot id="scale_world" className="media wide" style={{ marginBottom: "14px" }}>
+          <MediaSlot id="scale_world" className="media wide" fallback={{ src: "leftovers-bin.jpg", alt: "A restaurant bin for food leftovers next to diners", caption: "A restaurant leftovers bin in Keelung, Taiwan. Photo: Borbomeyla, CC BY-SA 3.0." }} style={{ marginBottom: "14px" }}>
             <div className="ph">
               <span className="ic">Photo</span>
               <b>Food waste around the world</b>
@@ -117,7 +104,7 @@ export default function ProblemPage() {
           <div className="tier">
             <span>Vietnam</span>
           </div>
-          <MediaSlot id="scale_vietnam" className="media wide" style={{ marginBottom: "14px" }}>
+          <MediaSlot id="scale_vietnam" className="media wide" fallback={{ src: "rice-paddy.jpg", alt: "A green rice paddy in Vietnam under a hazy sky", caption: "A rice paddy in Vietnam: each wasted bowl wastes this land and water. Photo: Mig Gilbert, CC BY-SA 2.0." }} style={{ marginBottom: "14px" }}>
             <div className="ph">
               <span className="ic">Photo</span>
               <b>Food waste in Vietnam</b>
@@ -153,7 +140,7 @@ export default function ProblemPage() {
           <div className="tier">
             <span>Hanoi</span>
           </div>
-          <MediaSlot id="scale_hanoi" className="media wide" style={{ marginBottom: "14px" }}>
+          <MediaSlot id="scale_hanoi" className="media wide" fallback={{ src: "hanoi-vendor.jpg", alt: "A Hanoi food vendor among baskets and buckets of produce", caption: "A food vendor in Hanoi. Photo: CEphoto, Uwe Aranas, CC BY-SA 3.0." }} style={{ marginBottom: "14px" }}>
             <div className="ph">
               <span className="ic">Photo</span>
               <b>Food waste in Hanoi</b>
@@ -190,7 +177,7 @@ export default function ProblemPage() {
             <p className="prose">
               How much would a single canteen throw away if it wasted food at the Hanoi school rate? Change the numbers.
             </p>
-            <div className="calc">
+            <div className="calc" data-ui>
               <label htmlFor="c-meals">
                 Meals per day
                 <CalcInput name="meals" type="number" min="0" defaultValue="1000" />
@@ -226,6 +213,10 @@ export default function ProblemPage() {
               Default values are illustrative: 118 g is the Hanoi school benchmark (Pham et al., 2025). Our own baseline is on the Results
               page.
             </p>
+          </div>
+          <div className="photos">
+            <Photo src="vegetable-carrier.jpg" alt="A woman carrying two baskets of vegetables on a shoulder pole across a Hanoi street" caption="Food reaches the city by hand and by motorbike. Photo: Rudolph.A.Furtado, CC0." />
+            <Photo src="com-tam.jpg" alt="A plate of broken rice with grilled pork, egg cake and pickled vegetables" caption="One plate, one standard portion: cơm tấm in Da Nang. Photo: Christopher Crouzet, CC BY-SA 4.0." />
           </div>
         </Tab>
         <Tab id="where" label="Where it happens">
@@ -301,7 +292,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">Pham et al. (2025)</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Menu design changes waste" tag="Finding">
               <div className="tagline">Finding</div>
@@ -322,7 +313,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">Pham et al. (2025)</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Eating out: the menu decides" tag="Finding">
               <div className="tagline">Finding</div>
@@ -346,7 +337,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">Liu &amp; Nguyen (2020). Self-reported, so moderate reliability.</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
           </div>
           <div className="grid g2" style={{ marginTop: "16px" }}>
@@ -457,7 +448,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">UNEP (2024); IPCC (2021); Decision 942/QĐ-TTg</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Wasted land, water and labour" tag="Environment" group="impact" cat="Environment">
               <div className="tagline">Environment</div>
@@ -471,7 +462,7 @@ export default function ProblemPage() {
                 <p>Globally, food that is lost or wasted uses about 1.4 billion hectares of land and 250 km³ of water a year.</p>
                 <p className="src">FAO (2013)</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Money lost by businesses" tag="Economy" group="impact" cat="Economy">
               <div className="tagline">Economy</div>
@@ -488,7 +479,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">Tuổi Trẻ News (2025); Champions 12.3 (2019)</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Hunger next to waste" tag="Society" group="impact" cat="Society">
               <div className="tagline">Society</div>
@@ -506,7 +497,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">World Bank &amp; UNICEF (2019); Báo Pháp luật (2025)</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Landfill neighbours" tag="Health" group="impact" cat="Health">
               <div className="tagline">Health</div>
@@ -524,7 +515,7 @@ export default function ProblemPage() {
                 <p>They live with foul odours that get worse in summer.</p>
                 <p className="src">VietNamNet (2019); Giảm rác nhựa (2020)</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Informal waste workers" tag="Health" group="impact" cat="Health">
               <div className="tagline">Health</div>
@@ -541,7 +532,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">Vu (2023), Eco-Business</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
           </div>
         </Tab>
@@ -594,7 +585,7 @@ export default function ProblemPage() {
                   tracking system (VOV, n.d.).
                 </p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Kitchen and store staff" tag="Inside the business" group="who" cat="Inside the business">
               <div className="tagline">Inside the business</div>
@@ -616,7 +607,7 @@ export default function ProblemPage() {
                   <b>Evidence:</b> <Field id="ev_staff">add a quote or result from our staff interview</Field>
                 </p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Students and customers" tag="Customers" group="who" cat="Customers">
               <div className="tagline">Customers</div>
@@ -638,7 +629,7 @@ export default function ProblemPage() {
                   survey: <Field id="ev_students">add our key survey result</Field>
                 </p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Food-insecure people in Hanoi" tag="Community" group="who" cat="Community">
               <div className="tagline">Community</div>
@@ -661,7 +652,7 @@ export default function ProblemPage() {
                   2022).
                 </p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Landfill neighbours" tag="Community" group="who" cat="Community">
               <div className="tagline">Community</div>
@@ -680,7 +671,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">VietNamNet (2019); Giảm rác nhựa (2020)</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Informal waste workers" tag="Community" group="who" cat="Community">
               <div className="tagline">Community</div>
@@ -699,7 +690,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">Vu (2023)</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Environment and future generations" tag="Environment" group="who" cat="Environment">
               <div className="tagline">Environment</div>
@@ -715,7 +706,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">UNEP (2024); IPCC (2021); FAO (2013)</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
             <Card title="Government and university management" tag="Decision makers" group="who" cat="Environment">
               <div className="tagline">Decision makers</div>
@@ -731,7 +722,7 @@ export default function ProblemPage() {
                 </p>
                 <p className="src">Decision 942/QĐ-TTg (2022); Law No. 110/2025/QH15</p>
               </More>
-              <button className="open">Read details</button>
+              <CardOpen>Read details</CardOpen>
             </Card>
           </div>
           <h3 style={{ margin: "28px 0 12px" }}>Power and interest</h3>

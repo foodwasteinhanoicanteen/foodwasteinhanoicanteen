@@ -1,32 +1,23 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
-import { SV, SVPill, VerdictChart, VerdictNote } from "../components";
+import { Badge, GoButton, SV, SVPill, VerdictChart, VerdictNote } from "../components";
 
 export default function DecisionPage() {
   return (
     <PageSection id="decision">
       <div className="wrap phead">
         <StageStepper current={5} />
-        <div className="eyebrow">
-          <span>Step 5 · Decide</span>
-          <span className="rubric">Rubrics 2 &amp; 5 · Idea, creativity, ethics</span>
-        </div>
         <h1>Our decision</h1>
         <p className="lede">
           Putting the analysis, the survey and the ethics together: Solution B is the best choice, and Solutions A and C make it complete.
         </p>
+        <p className="stage-note">Design thinking: Decide. Rubrics 2 &amp; 5: Idea, creativity, ethics.</p>
         <div className="takeaways">
           <div>
-            <svg className="ic">
-              <use href="#i-check"></use>
-            </svg>
             <b>B</b>
             <span>the core solution</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-chart"></use>
-            </svg>
             <b>
               <span>
                 <SV k="bmean">4.26</SV>
@@ -35,9 +26,6 @@ export default function DecisionPage() {
             <span>B’s mean effectiveness rating</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-flask"></use>
-            </svg>
             <b>
               <span>
                 <SV k="tk">B &gt; A, C</SV>
@@ -46,9 +34,6 @@ export default function DecisionPage() {
             <span>Tukey post-hoc result</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-target"></use>
-            </svg>
             <b>3 in 1</b>
             <span>solutions combined into one system</span>
           </div>
@@ -118,9 +103,9 @@ export default function DecisionPage() {
                   </td>
                   <td>B 4.30 · A 3.85 · C 3.20, and B first under all four weightings</td>
                   <td>
-                    <span className="pill" style={{ background: "var(--cB)", color: "#fff" }}>
+                    <Badge size="sm" className="bg-[var(--cB)] text-white ring-transparent">
                       B
-                    </span>
+                    </Badge>
                   </td>
                 </tr>
                 <tr>
@@ -137,9 +122,9 @@ export default function DecisionPage() {
                     </span>
                   </td>
                   <td>
-                    <span className="pill" style={{ background: "var(--cB)", color: "#fff" }}>
+                    <Badge size="sm" className="bg-[var(--cB)] text-white ring-transparent">
                       B
-                    </span>
+                    </Badge>
                   </td>
                 </tr>
                 <tr>
@@ -153,9 +138,9 @@ export default function DecisionPage() {
                     </span>
                   </td>
                   <td>
-                    <span className="pill" style={{ background: "var(--cB)", color: "#fff" }}>
+                    <Badge size="sm" className="bg-[var(--cB)] text-white ring-transparent">
                       B
-                    </span>
+                    </Badge>
                   </td>
                 </tr>
                 <tr>
@@ -186,9 +171,9 @@ export default function DecisionPage() {
                   </td>
                   <td>All eight lenses favour prevention over handling surplus; prevention is the only step every lens agrees on</td>
                   <td>
-                    <span className="pill" style={{ background: "var(--cB)", color: "#fff" }}>
+                    <Badge size="sm" className="bg-[var(--cB)] text-white ring-transparent">
                       B
-                    </span>
+                    </Badge>
                   </td>
                 </tr>
                 <tr>
@@ -224,9 +209,9 @@ export default function DecisionPage() {
                     comfortable with safe surplus going to people in need
                   </td>
                   <td>
-                    <span className="pill" style={{ background: "var(--cC)", color: "#fff" }}>
+                    <Badge size="sm" className="bg-[var(--cC)] text-white ring-transparent">
                       C
-                    </span>
+                    </Badge>
                   </td>
                 </tr>
               </tbody>
@@ -237,9 +222,9 @@ export default function DecisionPage() {
             <p style={{ marginTop: "8px" }}>
               B is rated most effective and is the only solution that tackles the root cause. A is the most feasible and catches surplus on
               days the forecast is wrong. C gives what is still left to people in need. The{" "}
-              <button className="linkbtn" data-go="app">
+              <GoButton to="app" color="link-color" size="md">
                 CampusMeal app
-              </button>{" "}
+              </GoButton>{" "}
               connects all three.
             </p>
           </div>
@@ -498,12 +483,12 @@ export default function DecisionPage() {
                     left
                   </td>
                   <td>
-                    <span className="pill" style={{ background: "var(--cB)", color: "#fff" }}>
+                    <Badge size="sm" className="bg-[var(--cB)] text-white ring-transparent">
                       B
-                    </span>{" "}
-                    <span className="pill" style={{ background: "var(--cA)", color: "#fff" }}>
+                    </Badge>{" "}
+                    <Badge size="sm" className="bg-[var(--cA)] text-white ring-transparent">
                       A
-                    </span>
+                    </Badge>
                   </td>
                 </tr>
                 <tr>
@@ -513,12 +498,12 @@ export default function DecisionPage() {
                   <td>Lower costs; confidence customers stay happy</td>
                   <td>Buys and cooks less; recovers revenue from surplus; sees the numbers every day</td>
                   <td>
-                    <span className="pill" style={{ background: "var(--cB)", color: "#fff" }}>
+                    <Badge size="sm" className="bg-[var(--cB)] text-white ring-transparent">
                       B
-                    </span>{" "}
-                    <span className="pill" style={{ background: "var(--cA)", color: "#fff" }}>
+                    </Badge>{" "}
+                    <Badge size="sm" className="bg-[var(--cA)] text-white ring-transparent">
                       A
-                    </span>
+                    </Badge>
                   </td>
                 </tr>
                 <tr>
@@ -528,12 +513,12 @@ export default function DecisionPage() {
                   <td>Clear, fair rules; no blame</td>
                   <td>Weighing built into paid shifts; data used to improve, never to blame; a safe staff-meal rule for surplus</td>
                   <td>
-                    <span className="pill" style={{ background: "var(--cB)", color: "#fff" }}>
+                    <Badge size="sm" className="bg-[var(--cB)] text-white ring-transparent">
                       B
-                    </span>{" "}
-                    <span className="pill" style={{ background: "var(--cC)", color: "#fff" }}>
+                    </Badge>{" "}
+                    <Badge size="sm" className="bg-[var(--cC)] text-white ring-transparent">
                       C
-                    </span>
+                    </Badge>
                   </td>
                 </tr>
                 <tr>
@@ -543,9 +528,9 @@ export default function DecisionPage() {
                   <td>Safe food, delivered with dignity</td>
                   <td>Untouched, labelled surplus collected by a trained partner</td>
                   <td>
-                    <span className="pill" style={{ background: "var(--cC)", color: "#fff" }}>
+                    <Badge size="sm" className="bg-[var(--cC)] text-white ring-transparent">
                       C
-                    </span>
+                    </Badge>
                   </td>
                 </tr>
                 <tr>
@@ -581,9 +566,9 @@ export default function DecisionPage() {
               <SV k="ccomfort">__</SV>
             </b>{" "}
             are comfortable with safe surplus going to people in need.{" "}
-            <button className="linkbtn" data-go="survey-ratings">
+            <GoButton to="survey-ratings" color="link-color" size="md">
               See the survey ratings
-            </button>
+            </GoButton>
           </div>
         </Tab>
         <Tab id="creative" label="What’s new about it">
@@ -594,9 +579,6 @@ export default function DecisionPage() {
           <div className="grid g3">
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-plate"></use>
-                </svg>
                 <h3>Change the default, not the person</h3>
               </div>
               <p className="small">
@@ -606,9 +588,6 @@ export default function DecisionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-chart"></use>
-                </svg>
                 <h3>Plate waste becomes feedback</h3>
               </div>
               <p className="small">
@@ -618,9 +597,6 @@ export default function DecisionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-target"></use>
-                </svg>
                 <h3>A chain, not a one-off fix</h3>
               </div>
               <p className="small">
@@ -630,9 +606,6 @@ export default function DecisionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-scale"></use>
-                </svg>
                 <h3>Low-cost tools anyone can copy</h3>
               </div>
               <p className="small">
@@ -641,9 +614,6 @@ export default function DecisionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-shield"></use>
-                </svg>
                 <h3>Ethics designed in from the start</h3>
               </div>
               <p className="small">
@@ -653,9 +623,6 @@ export default function DecisionPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-heart"></use>
-                </svg>
                 <h3>Partner, don’t duplicate</h3>
               </div>
               <p className="small">
@@ -706,13 +673,13 @@ export default function DecisionPage() {
           <p className="tab-intro">Every solution can create new ethical problems. Here is how we designed against each one.</p>
           <div className="grid g2">
             <div className="panel stack">
-              <span className="pill lo">Risk</span>
+              <Badge size="sm" color="error">Risk</Badge>
               <h4>Food quality or choice reduced</h4>
               <p className="small">Portion sizes may change; quality may not. A free refill and a large option are always available.</p>
               <p className="who">Kant · autonomy</p>
             </div>
             <div className="panel stack">
-              <span className="pill lo">Risk</span>
+              <Badge size="sm" color="error">Risk</Badge>
               <h4>Unfair workload for staff</h4>
               <p className="small">
                 Weighing and recording are part of paid shifts; data is used to improve the system, <b>never to blame individuals</b>.
@@ -720,7 +687,7 @@ export default function DecisionPage() {
               <p className="who">Stakeholder theory · Rawls</p>
             </div>
             <div className="panel stack">
-              <span className="pill lo">Risk</span>
+              <Badge size="sm" color="error">Risk</Badge>
               <h4>Privacy</h4>
               <p className="small">
                 If pre-orders or student data are used, only aggregated sales data is kept, no personal data is shared, and students are
@@ -729,13 +696,13 @@ export default function DecisionPage() {
               <p className="who">Kant · respect</p>
             </div>
             <div className="panel stack">
-              <span className="pill lo">Risk</span>
+              <Badge size="sm" color="error">Risk</Badge>
               <h4>Moral hazard</h4>
               <p className="small">Prevention is the main KPI; discounts are not offered every day; nothing is cooked “for donation”.</p>
               <p className="who">Virtue · Carroll</p>
             </div>
             <div className="panel stack">
-              <span className="pill lo">Risk</span>
+              <Badge size="sm" color="error">Risk</Badge>
               <h4>Food safety and recipients’ dignity</h4>
               <p className="small">
                 “If in doubt, do not donate.” Only untouched, labelled food handled under the WHO Five Keys to Safer Food (WHO, 2006); a
@@ -744,13 +711,13 @@ export default function DecisionPage() {
               <p className="who">Kant · Rawls</p>
             </div>
             <div className="panel stack">
-              <span className="pill lo">Risk</span>
+              <Badge size="sm" color="error">Risk</Badge>
               <h4>Unfair demands on small businesses</h4>
               <p className="small">Low-cost steps first; donation only where a partner collects for free.</p>
               <p className="who">Young · proportional responsibility</p>
             </div>
             <div className="panel stack">
-              <span className="pill lo">Risk</span>
+              <Badge size="sm" color="error">Risk</Badge>
               <h4>CSR-washing</h4>
               <p className="small">Report grams wasted per meal alongside any meals donated.</p>
               <p className="who">Kant · honesty</p>

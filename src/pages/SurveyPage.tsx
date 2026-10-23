@@ -39,47 +39,32 @@ export default function SurveyPage() {
     <PageSection id="survey">
       <div className="wrap phead">
         <StageStepper current={4} />
-        <div className="eyebrow">
-          <span>Step 4 · Test ideas with people</span>
-          <span className="rubric">Rubrics 1, 2 &amp; 4 · Evidence from people</span>
-        </div>
         <h1>Survey &amp; analysis</h1>
         <p className="lede">
           We asked people to rate all three solutions on effectiveness, feasibility, ethics and support. One-way ANOVA tells us whether the
           solutions are rated differently; Tukey’s post-hoc test tells us which ones.
         </p>
+        <p className="stage-note">Design thinking: Test ideas with people. Rubrics 1, 2 &amp; 4: Evidence from people.</p>
         <div className="takeaways">
           <div>
-            <svg className="ic">
-              <use href="#i-users"></use>
-            </svg>
             <b>
               <SV k="n">50</SV>
             </b>
             <span>survey responses analysed</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-chart"></use>
-            </svg>
             <b>
               <SV k="bmean">4.26</SV>
             </b>
             <span>Solution B’s mean effectiveness rating (of 5)</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-flask"></use>
-            </svg>
             <b>
               <SV k="anp">p &lt; .001</SV>
             </b>
             <span>ANOVA: solutions are rated differently</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-check"></use>
-            </svg>
             <b>
               <SV k="tk">B &gt; A, C</SV>
             </b>
@@ -102,8 +87,8 @@ export default function SurveyPage() {
           </p>
           <div className="grid g3">
             <div className="panel stack">
-              <span className="eyebrow">Section 1 · 6 questions</span>
               <h3>Background and behaviour</h3>
+              <p className="small muted">6 questions</p>
               <p className="small">
                 Gender, age, occupation, how often they eat out, how often they left edible food in the past 7 days (1–5), and whether they
                 understand the term “food waste”.
@@ -111,8 +96,8 @@ export default function SurveyPage() {
               <p className="who">Describes who answered</p>
             </div>
             <div className="panel stack">
-              <span className="eyebrow">Section 2 · 15 ratings</span>
               <h3>Evaluation of A, B and C</h3>
+              <p className="small muted">15 ratings</p>
               <p className="small">
                 For each solution: <b>effective</b>, <b>feasible</b>, <b>ethical</b>, <b>support</b>, plus one solution-specific item (A:
                 would buy a discounted meal; B: would choose a matching portion; C: comfortable with redistribution).
@@ -120,8 +105,8 @@ export default function SurveyPage() {
               <p className="who">Tested with ANOVA and Tukey</p>
             </div>
             <div className="panel stack">
-              <span className="eyebrow">Section 3 · 2 choices</span>
               <h3>Comparison</h3>
+              <p className="small muted">2 choices</p>
               <p className="small">Which solution should be prioritised, and which one they would choose if resources allowed only one.</p>
               <p className="who">Tested with chi-square</p>
             </div>

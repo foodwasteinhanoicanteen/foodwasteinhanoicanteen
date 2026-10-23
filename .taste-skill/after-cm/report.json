@@ -1,0 +1,1288 @@
+{
+ "url": "http://127.0.0.1:4173/campusmeal.html",
+ "at": "2026-10-23T15:17:55.734Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.49
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 900,
+     "screens": 1,
+     "words": 99,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 9,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Today · Fri 23 Oct",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 27,
+     "vw": 1.9,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": 0,
+     "leading": 1.15,
+     "top": 81,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Today · Fri 23 Oct",
+     "words": 5,
+     "lines": 1,
+     "size": 27.2,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [],
+    "headingSummary": {
+     "count": 0,
+     "maxLines": 0,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.68,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.32,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      27
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 15,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 91,
+     "max": {
+      "size": 27.2,
+      "vw": 1.9,
+      "font": "Bricolage Grotesque",
+      "text": "Today · Fri 23 Oct"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.13,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#525252",
+       "share": 0.57
+      },
+      {
+       "color": "#171717",
+       "share": 0.32
+      },
+      {
+       "color": "#404040",
+       "share": 0.05
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.03
+      },
+      {
+       "color": "#008236",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#087443",
+      "hsl": {
+       "h": 153,
+       "s": 0.87,
+       "l": 0.24
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 40,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Student",
+      "Today",
+      "Pre-order"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.top 1440px",
+      "nav.rail 220px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 6,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 59,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 900,
+    "margins": {
+     "left": 10,
+     "right": 34
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Today · Fri 23 Oct",
+      "size": 27,
+      "top": 81,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 290,
+      "n": 4
+     },
+     {
+      "x": 460,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 15,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.33,
+    "voidBox": {
+     "x": 0,
+     "y": 600,
+     "w": 1440,
+     "h": 300
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#fafafa",
+    "sidebar": {
+     "w": 220,
+     "tag": "nav",
+     "links": 6,
+     "share": 0.15
+    },
+    "topbar": {
+     "h": 59
+    },
+    "canvas": {
+     "left": 70,
+     "right": 20
+    },
+    "hero": {
+     "text": "Today · Fri 23 Oct",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 27,
+     "vw": 1.9,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": 0,
+     "leading": 1.15,
+     "top": 81,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 7,
+     "firstScreen": 7,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 7,
+     "radii": [
+      [
+       12,
+       6
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 1,
+     "hues": 1,
+     "samples": [
+      {
+       "hue": 153,
+       "size": 30,
+       "radius": "9px"
+      }
+     ]
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.08,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      27
+     ]
+    },
+    "title": {
+     "text": "Today · Fri 23 Oct",
+     "size": 27,
+     "top": 81
+    },
+    "colourShare": 0.005
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.48
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1024,
+     "screens": 1,
+     "words": 98,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 9,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Today · Fri 23 Oct",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 27,
+     "vw": 3.5,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": 0,
+     "leading": 1.15,
+     "top": 138,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Today · Fri 23 Oct",
+     "words": 5,
+     "lines": 1,
+     "size": 27.2,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Today · Fri 23 Oct",
+      "words": 5,
+      "chars": 18,
+      "lines": 1,
+      "size": 27.2,
+      "vw": 3.5,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": 0,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 138,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.68,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.32,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      27
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 15,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 91,
+     "max": {
+      "size": 27.2,
+      "vw": 3.5,
+      "font": "Bricolage Grotesque",
+      "text": "Today · Fri 23 Oct"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.13,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#525252",
+       "share": 0.56
+      },
+      {
+       "color": "#171717",
+       "share": 0.32
+      },
+      {
+       "color": "#404040",
+       "share": 0.05
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.03
+      },
+      {
+       "color": "#008236",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#087443",
+      "hsl": {
+       "h": 153,
+       "s": 0.87,
+       "l": 0.24
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 40,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Student",
+      "Today",
+      "Pre-order"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.top 768px",
+      "nav.rail 768px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 6,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 59,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1024,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Today · Fri 23 Oct",
+      "size": 27,
+      "top": 138,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 4
+     },
+     {
+      "x": 186,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 15,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#fafafa",
+    "sidebar": null,
+    "topbar": {
+     "h": 59
+    },
+    "canvas": {
+     "left": 16,
+     "right": 16
+    },
+    "hero": {
+     "text": "Today · Fri 23 Oct",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 27,
+     "vw": 3.5,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": 0,
+     "leading": 1.15,
+     "top": 138,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 6,
+     "firstScreen": 6,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 6,
+     "radii": [
+      [
+       12,
+       6
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 1,
+     "hues": 1,
+     "samples": [
+      {
+       "hue": 153,
+       "size": 30,
+       "radius": "9px"
+      }
+     ]
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.07,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      27
+     ]
+    },
+    "title": {
+     "text": "Today · Fri 23 Oct",
+     "size": 27,
+     "top": 138
+    },
+    "colourShare": 0.011
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.8,
+    0.71
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 1145,
+     "screens": 1.4,
+     "words": 98,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 9,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Today · Fri 23 Oct",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 27,
+     "vw": 7,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": 0,
+     "leading": 1.15,
+     "top": 178,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Today · Fri 23 Oct",
+     "words": 5,
+     "lines": 1,
+     "size": 27.2,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Today · Fri 23 Oct",
+      "words": 5,
+      "chars": 18,
+      "lines": 1,
+      "size": 27.2,
+      "vw": 7,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": 0,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 178,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.68,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.32,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      27
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 15,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 48,
+     "max": {
+      "size": 27.2,
+      "vw": 7,
+      "font": "Bricolage Grotesque",
+      "text": "Today · Fri 23 Oct"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.13,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [],
+     "textColors": [
+      {
+       "color": "#525252",
+       "share": 0.56
+      },
+      {
+       "color": "#171717",
+       "share": 0.32
+      },
+      {
+       "color": "#404040",
+       "share": 0.05
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.03
+      },
+      {
+       "color": "#008236",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#087443",
+      "hsl": {
+       "h": 153,
+       "s": 0.87,
+       "l": 0.24
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 40,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Student",
+      "Today",
+      "Pre-order"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.top 390px",
+      "nav.rail 390px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 6,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": true,
+     "height": 99,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 1145,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "div.hd",
+      "tag": "div",
+      "top": 178,
+      "height": 132,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Today · Fri 23 Oct",
+       "size": 27,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 23,
+      "textLeft": 16,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid",
+      "tag": "section",
+      "top": 328,
+      "height": 250,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Little Kitchen",
+       "size": 17,
+       "tag": "h3"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 34,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid",
+      "tag": "section",
+      "top": 596,
+      "height": 225,
+      "words": 18,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Foodology",
+       "size": 17,
+       "tag": "h3"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 85,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid",
+      "tag": "section",
+      "top": 839,
+      "height": 225,
+      "words": 24,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Our Home",
+       "size": 17,
+       "tag": "h3"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 85,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Today · Fri 23 Oct",
+      "size": 27,
+      "top": 178,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 5
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 15,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#fafafa",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 16,
+     "right": -348
+    },
+    "hero": {
+     "text": "Today · Fri 23 Oct",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 27,
+     "vw": 7,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": 0,
+     "leading": 1.15,
+     "top": 178,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 6,
+     "firstScreen": 4,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 6,
+     "radii": [
+      [
+       12,
+       6
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 1,
+     "hues": 1,
+     "samples": [
+      {
+       "hue": 153,
+       "size": 30,
+       "radius": "9px"
+      }
+     ]
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.07,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      27
+     ]
+    },
+    "title": {
+     "text": "Today · Fri 23 Oct",
+     "size": 27,
+     "top": 178
+    },
+    "colourShare": 0.025
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "hero-void",
+   "width": 1440,
+   "message": "33% of the first screen is one empty block (1440×300px at 0,600).",
+   "fix": "Place the void on purpose or fill it: move the picture, the film or one fact into it, grow the headline to meet it, or shrink the screen to its content. A void reads as placed only when something closes it on the far side and it is the screen's one rest."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-cm/desktop-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-cm/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-cm/tablet-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-cm/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-cm/mobile-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-cm/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

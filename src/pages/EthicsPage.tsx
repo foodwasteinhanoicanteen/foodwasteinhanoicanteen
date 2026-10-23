@@ -2,11 +2,13 @@
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
 import {
   Card,
+  CardOpen,
   DilemmaScore,
   Dilemmas,
   ExcuseFlips,
   Field,
   FilterButtons,
+  GoButton,
   FlipAllButton,
   Front,
   MediaSlot,
@@ -21,41 +23,26 @@ export default function EthicsPage() {
     <PageSection id="ethics">
       <div className="wrap phead">
         <StageStepper current={2} />
-        <div className="eyebrow">
-          <span>Step 2 · Define</span>
-          <span className="rubric">Rubric 5 · Connections to ethics</span>
-        </div>
         <h1>Why is it an ethical problem?</h1>
         <p className="lede">
           When a restaurant, hotel, wedding venue, canteen or supermarket throws away food that was safe to eat, a business is making a
           moral choice, not “Hanoi” in the abstract. We test that claim against eight theories from the course.
         </p>
+        <p className="stage-note">Design thinking: Define. Rubric 5: Connections to ethics.</p>
         <div className="takeaways">
           <div>
-            <svg className="ic">
-              <use href="#i-scale"></use>
-            </svg>
             <b>8 of 8</b>
             <span>ethical lenses find routine binning of safe food wrong (1 only partly)</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-law"></use>
-            </svg>
             <b>0</b>
             <span>Vietnamese laws penalise food waste or protect donors</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-users"></use>
-            </svg>
             <b>2,000+</b>
             <span>families near Nam Sơn bear costs they did not choose</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-coin"></use>
-            </svg>
             <b>$6–7</b>
             <span>saved per $1 spent on prevention, so waste is a choice</span>
           </div>
@@ -84,7 +71,7 @@ export default function EthicsPage() {
                   made inside the firm.
                 </p>
               </More>
-              <button className="open">Read the argument</button>
+              <CardOpen>Read the argument</CardOpen>
             </Card>
             <Card title="Cost shifting" tag="Reason 2">
               <div className="tagline">Reason 2</div>
@@ -103,7 +90,7 @@ export default function EthicsPage() {
                   bear them. Economists call these <b>negative externalities</b>.
                 </p>
               </More>
-              <button className="open">Read the argument</button>
+              <CardOpen>Read the argument</CardOpen>
             </Card>
             <Card title="Neglected stakeholders" tag="Reason 3">
               <div className="tagline">Reason 3</div>
@@ -116,7 +103,7 @@ export default function EthicsPage() {
               <More>
                 <p>Customers pay for portions larger than many want, staff are told to bin edible food, and people in need are bypassed.</p>
               </More>
-              <button className="open">Read the argument</button>
+              <CardOpen>Read the argument</CardOpen>
             </Card>
             <Card title="The law does not close the gap" tag="Reason 4">
               <div className="tagline">Reason 4</div>
@@ -134,7 +121,7 @@ export default function EthicsPage() {
                   begins.
                 </p>
               </More>
-              <button className="open">Read the argument</button>
+              <CardOpen>Read the argument</CardOpen>
             </Card>
             <Card title="Prevention usually pays" tag="Reason 5">
               <div className="tagline">Reason 5</div>
@@ -155,7 +142,7 @@ export default function EthicsPage() {
                   clear.
                 </p>
               </More>
-              <button className="open">Read the argument</button>
+              <CardOpen>Read the argument</CardOpen>
             </Card>
             <Card
               title="8 lenses, 1 verdict"
@@ -171,9 +158,9 @@ export default function EthicsPage() {
                   Business theories, classical ethics, justice and environmental ethics. Every lens reached the same conclusion.
                 </p>
               </Front>
-              <button className="open" data-go="ethics-verdict">
+              <GoButton to="ethics-verdict" color="link-color" size="sm" className="open">
                 See the verdict
-              </button>
+              </GoButton>
             </Card>
           </div>
         </Tab>
@@ -342,7 +329,7 @@ export default function EthicsPage() {
                   <b>Limit.</b> Friedman gives no reason to help people outside the firm.
                 </p>
               </More>
-              <button className="open">Open the full analysis</button>
+              <CardOpen>Open the full analysis</CardOpen>
             </Card>
             <Card
               title="Freeman · stakeholder theory"
@@ -431,7 +418,7 @@ export default function EthicsPage() {
                   <b>Limit.</b> The salience ratings are our team’s judgement.
                 </p>
               </More>
-              <button className="open">Open the full analysis</button>
+              <CardOpen>Open the full analysis</CardOpen>
             </Card>
             <Card title="Carroll · CSR pyramid" tag="Carroll · CSR pyramid" group="lens" showFront cat="Business theories" lens="carroll">
               <div className="tagline">Carroll · CSR pyramid</div>
@@ -472,7 +459,7 @@ export default function EthicsPage() {
                   ethics: a firm that over-produces and then donates for publicity has the pyramid upside down.
                 </p>
               </More>
-              <button className="open">Open the full analysis</button>
+              <CardOpen>Open the full analysis</CardOpen>
             </Card>
             <Card
               title="Bentham, Mill, Singer · utilitarianism"
@@ -531,7 +518,7 @@ export default function EthicsPage() {
                   too.
                 </p>
               </More>
-              <button className="open">Open the full analysis</button>
+              <CardOpen>Open the full analysis</CardOpen>
             </Card>
             <Card title="Kant · deontology" tag="Kant · deontology" group="lens" showFront cat="Classical ethics" lens="kant">
               <div className="tagline">Kant · deontology</div>
@@ -571,7 +558,7 @@ export default function EthicsPage() {
                   <b>Limit.</b> Kant says we must help, but not how much, and protects nature only indirectly.
                 </p>
               </More>
-              <button className="open">Open the full analysis</button>
+              <CardOpen>Open the full analysis</CardOpen>
             </Card>
             <Card title="Rawls, Young, Sen · justice" tag="Rawls, Young, Sen · justice" group="lens" showFront cat="Justice" lens="rawls">
               <div className="tagline">Rawls, Young, Sen · justice</div>
@@ -609,7 +596,7 @@ export default function EthicsPage() {
                   <b>prevention above donation</b>.
                 </p>
               </More>
-              <button className="open">Open the full analysis</button>
+              <CardOpen>Open the full analysis</CardOpen>
             </Card>
             <Card
               title="Aristotle, Solomon · virtue ethics"
@@ -652,7 +639,7 @@ export default function EthicsPage() {
                   <b>Limit.</b> No precise rules, so it must be combined with measurable targets.
                 </p>
               </More>
-              <button className="open">Open the full analysis</button>
+              <CardOpen>Open the full analysis</CardOpen>
             </Card>
             <Card
               title="Leopold, Naess · environmental ethics"
@@ -691,7 +678,7 @@ export default function EthicsPage() {
                   <b>Verdict.</b> Dumping avoidable waste harms non-human life and future generations, who cannot consent.
                 </p>
               </More>
-              <button className="open">Open the full analysis</button>
+              <CardOpen>Open the full analysis</CardOpen>
             </Card>
           </div>
         </Tab>

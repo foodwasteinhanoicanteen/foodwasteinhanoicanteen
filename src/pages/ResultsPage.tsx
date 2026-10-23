@@ -1,43 +1,31 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
-import { BAShow, BAToggle, Field, MediaSlot, SV } from "../components";
+import { BAShow, BAToggle, Field, GoButton, MediaSlot, SV } from "../components";
 
 export default function ResultsPage() {
   return (
     <PageSection id="results">
       <div className="wrap phead">
         <StageStepper current={8} />
-        <div className="eyebrow">
-          <span>Step 8 · Learn</span>
-          <span className="rubric">Rubric 4 · Results &amp; learning</span>
-        </div>
         <h1>Results &amp; learning</h1>
         <p className="lede">
           What happened, what difference it made, and what we learned. Every number here comes from our own audit, sales records and survey.
         </p>
+        <p className="stage-note">Design thinking: Learn. Rubric 4: Results &amp; learning.</p>
         <div className="takeaways">
           <div>
-            <svg className="ic">
-              <use href="#i-scale"></use>
-            </svg>
             <b>
               <Field id="tk_red">__%</Field>
             </b>
             <span>less food wasted per meal</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-leaf"></use>
-            </svg>
             <b>
               <Field id="tk_kg">__ kg</Field>
             </b>
             <span>food kept out of the bin</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-users"></use>
-            </svg>
             <b>
               <span>
                 <SV k="n">50</SV>
@@ -46,9 +34,6 @@ export default function ResultsPage() {
             <span>people surveyed</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-book"></use>
-            </svg>
             <b>9</b>
             <span>lessons we learned</span>
           </div>
@@ -234,9 +219,6 @@ export default function ResultsPage() {
           <div className="impact">
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-store"></use>
-                </svg>
                 <h3>For the canteen</h3>
               </div>
               <ul className="clean small">
@@ -253,9 +235,6 @@ export default function ResultsPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-users"></use>
-                </svg>
                 <h3>For students</h3>
               </div>
               <ul className="clean small">
@@ -272,9 +251,6 @@ export default function ResultsPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-heart"></use>
-                </svg>
                 <h3>For the community</h3>
               </div>
               <ul className="clean small">
@@ -291,9 +267,6 @@ export default function ResultsPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-leaf"></use>
-                </svg>
                 <h3>For the environment</h3>
               </div>
               <ul className="clean small">
@@ -336,9 +309,9 @@ export default function ResultsPage() {
           </div>
           <p className="tab-intro">
             Survey results and quotes from students and staff. The full statistical analysis is on the{" "}
-            <button className="btn ghost" style={{ padding: "2px 10px" }} data-go="survey-anova">
+            <GoButton to="survey-anova" color="secondary" size="xs">
               Survey &amp; analysis
-            </button>{" "}
+            </GoButton>{" "}
             page.
           </p>
           <div className="tbl">

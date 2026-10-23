@@ -1,5 +1,7 @@
 /* Info cards with a "Read details" button that opens the shared dialog, plus filter buttons. */
-import { Children, isValidElement, type CSSProperties, type MouseEvent, type ReactElement, type ReactNode } from "react";
+import { Children, createContext, isValidElement, useContext, type CSSProperties, type ReactElement, type ReactNode } from "react";
+import { Button } from "@/components/base/buttons/button";
+import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
 import { useOverlay } from "./Overlays";
 import { createStore } from "../../state/createStore";
 
@@ -17,9 +19,18 @@ export function FilterButtons({ group, cats, className = "filters", style }: { g
   const cur = useFilter(group);
   return (
     <div className={className} style={style}>
-      {["All", ...cats].map((c) => <button key={c} aria-pressed={cur === c} onClick={() => setFilter(group, c)}>{c}</button>)}
+      <ButtonGroup size="sm" className="flex-wrap" disallowEmptySelection selectedKeys={[cur]} onSelectionChange={(k) => { const c = [...k][0]; if (c != null) setFilter(group, String(c)); }}>
+        {["All", ...cats].map((c) => <ButtonGroupItem key={c} id={c}>{c}</ButtonGroupItem>)}
+      </ButtonGroup>
     </div>
   );
+}
+
+/** Opens the surrounding card's dialog. */
+const CardCtx = createContext<(() => void) | null>(null);
+export function CardOpen({ children = "Read details" }: { children?: ReactNode }) {
+  const open = useContext(CardCtx);
+  return <Button color="link-color" size="sm" className="open" onPress={() => open?.()}>{children}</Button>;
 }
 
 interface CardProps {
@@ -27,7 +38,7 @@ interface CardProps {
   className?: string; style?: CSSProperties; children?: ReactNode;
 }
 
-/** Original markup: .card > .tagline, .verdict?, .front, .more, button.open */
+/** Original markup: .card > .tagline, .verdict?, .front, .more, <CardOpen /> */
 export function Card({ title, tag = "", group, cat, lens, showFront, className, style, children }: CardProps) {
   const { openCard } = useOverlay();
   const filter = useFilter(group || "");
@@ -35,17 +46,17 @@ export function Card({ title, tag = "", group, cat, lens, showFront, className, 
   const kids = Children.toArray(children) as ReactElement<{ children?: ReactNode; className?: string }>[];
   const find = (t: unknown) => kids.find((k) => isValidElement(k) && k.type === t);
 
-  const onClick = (e: MouseEvent) => {
-    const b = (e.target as Element).closest("button.open");
-    if (!b || b.hasAttribute("data-go")) return; // data-go buttons navigate instead
+  const open = () => {
     const v = find(Verdict), f = find(Front), m = find(More);
     openCard({ title, tag, body: <>{v && <Verdict className={v.props.className!}>{v.props.children}</Verdict>}{showFront && f && <div>{f.props.children}</div>}{m?.props.children}</> });
   };
 
   return (
-    <div className={"card" + (className ? " " + className : "")} style={style} hidden={hidden} data-lens={lens} onClick={onClick}>
-      {children}
-    </div>
+    <CardCtx.Provider value={open}>
+      <div className={"card" + (className ? " " + className : "")} style={style} hidden={hidden} data-lens={lens}>
+        {children}
+      </div>
+    </CardCtx.Provider>
   );
 }
 

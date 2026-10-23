@@ -1,13 +1,19 @@
 /* Student screens: Today, Pre-order, Rate menu, Last call, Finish-check, My impact. */
+import { Button as AriaButton, ToggleButton } from "react-aria-components";
+import { Button } from "@/components/base/buttons/button";
+import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
 import { useCm } from "../store";
 import { activeLastCalls, activeMine, canOrderOn, orderDates, pendingFeedback, useNav } from "../nav";
-import { Empty, Hd, I, Kpi, Tags, Thumb } from "../ui";
+import { Empty, Hd, I, Kpi, StatusBadge, Tags, Thumb } from "../ui";
 import type { Order } from "../../../shared/models/Order";
 import {
   AMOUNTS, PORT, REASONS, addDays, canteenName, dayStats, dishesOf, fmtDay, fmtT, hash, monday, noShows, settingsOf, todayStr,
 } from "../../../shared/campusmeal/logic";
 
 const iso = () => new Date().toISOString();
+const DISH = "dish rounded-xl bg-primary ring-1 ring-secondary ring-inset hover:bg-primary_hover selected:ring-2 selected:ring-brand cursor-pointer outline-brand focus-visible:outline-2";
+/** First key of a single-selection change. */
+const first = (k: Iterable<unknown>) => [...k][0];
 
 function Ticket({ date, o }: { date: string; o: Order }) {
   const { D, uid, patch } = useCm(), d = D.dishes[o.dish], st = settingsOf(D);
@@ -16,9 +22,9 @@ function Ticket({ date, o }: { date: string; o: Order }) {
       <span className="small" style={{ fontWeight: 700 }}>YOUR ORDER · {fmtDay(date)}</span>
       <span className="code">{o.code}</span>
       <span><b>{d?.name || ""}</b> · {PORT[o.portion]} ({st.portions[o.portion]} g rice) · {canteenName(D, o.canteen)}</span>
-      <span className="small">Show this code at the counter between {st.serviceStart} and 12:30. Free refill of rice and vegetables. <span className={"st " + o.status}>{o.status}</span></span>
+      <span className="small">Show this code at the counter between {st.serviceStart} and 12:30. Free refill of rice and vegetables. <StatusBadge status={o.status} /></span>
       {o.status === "placed" && canOrderOn(D, date) && (
-        <div><button className="btn sm o" onClick={() => patch("orders", uid, { byDate: { [date]: { [o.oid]: { status: "cancelled", statusAt: iso() } } } }, "Order cancelled")}>Cancel order</button></div>
+        <div><Button size="sm" color="secondary" onPress={() => patch("orders", uid, { byDate: { [date]: { [o.oid]: { status: "cancelled", statusAt: iso() } } } }, "Order cancelled")}>Cancel order</Button></div>
       )}
     </div>
   );
@@ -29,7 +35,7 @@ export function Today() {
   const st = settingsOf(D), t = todayStr(), ids = dishesOf(D, t), mine = activeMine(D, uid, t), lcs = activeLastCalls(D), pf = pendingFeedback(D, uid);
   return (
     <>
-      <Hd title={`Today · ${fmtDay(t)}`} right={<button className="btn g" onClick={() => go("order")}><I n="cart" /> Pre-order</button>}>
+      <Hd title={`Today · ${fmtDay(t)}`} right={<Button size="md" iconLeading={<I n="cart" />} onPress={() => go("order")}>Pre-order</Button>}>
         {ids.length ? <>Pre-order before <b>{st.cutoff}</b> so the kitchen cooks the right amount. Walk-ins are always welcome.</> : "No menu has been published for today yet."}
       </Hd>
       {lcs.map((x) => (
@@ -40,7 +46,7 @@ export function Today() {
         </div>
       ))}
       {mine && <Ticket date={t} o={mine} />}
-      {pf.length > 0 && <div className="note a">You have {pf.length} meal{pf.length > 1 ? "s" : ""} to give quick feedback on. <button className="btn sm a" onClick={() => go("finish")}>Finish-check</button></div>}
+      {pf.length > 0 && <div className="note a">You have {pf.length} meal{pf.length > 1 ? "s" : ""} to give quick feedback on. <Button size="sm" color="secondary" onPress={() => go("finish")}>Finish-check</Button></div>}
       {!ids.length ? <Empty icon="cal"><b>No meals published for today.</b><span>Check the order screen for upcoming days.</span></Empty>
         : st.canteens.map((c) => {
           const list = ids.filter((id) => D.dishes[id].canteen === c.k);
@@ -49,9 +55,9 @@ export function Today() {
             <section className="grid" style={{ gap: 8 }} key={c.k}>
               <h3>{c.n}</h3>
               <div className="grid g2">{list.map((id) => { const d = D.dishes[id]; return (
-                <button key={id} className="dish" onClick={() => { set({ orderDate: t, sel: { dish: id, portion: "R" }, canteen: d.canteen }); go("order"); }}>
+                <AriaButton key={id} className={DISH} onPress={() => { set({ orderDate: t, sel: { dish: id, portion: "R" }, canteen: d.canteen }); go("order"); }}>
                   <Thumb d={d} /><div><b>{d.name}</b><div><Tags d={d} /></div><span className="small muted">{canOrderOn(D, t) ? "Tap to pre-order" : "Pre-order closed · walk-in only"}</span></div>
-                </button>); })}</div>
+                </AriaButton>); })}</div>
             </section>
           );
         })}
@@ -65,7 +71,11 @@ export function PreOrder() {
   const date = S.orderDate && dates.includes(S.orderDate) ? S.orderDate : dates.find((d) => canOrderOn(D, d)) || dates[0] || todayStr();
   const head = <Hd title="Pre-order">Choose a day, a dish and your portion. Pre-orders close at {st.cutoff} on the day.</Hd>;
   if (!dates.length) return <>{head}<Empty icon="cal"><b>No menus published yet.</b></Empty></>;
-  const chips = <div className="chips">{dates.map((d) => <button key={d} className="chip" aria-pressed={d === date} onClick={() => set({ orderDate: d, sel: { ...S.sel, dish: null } })}>{fmtDay(d)}{d === todayStr() ? " · today" : ""}</button>)}</div>;
+  const chips = (
+    <ButtonGroup size="sm" className="flex-wrap" aria-label="Day" disallowEmptySelection selectedKeys={[date]} onSelectionChange={(k) => { const d = first(k); if (d) set({ orderDate: String(d), sel: { ...S.sel, dish: null } }); }}>
+      {dates.map((d) => <ButtonGroupItem key={d} id={d}>{fmtDay(d)}{d === todayStr() ? " · today" : ""}</ButtonGroupItem>)}
+    </ButtonGroup>
+  );
   const mine = activeMine(D, uid, date);
   if (mine) return <>{head}{chips}<Ticket date={date} o={mine} /><p className="small muted">One pre-order per day. Cancel it to choose something else.</p></>;
   if (!canOrderOn(D, date)) return <>{head}{chips}<div className="note">Pre-ordering for this day is closed. You can still buy at the counter.</div></>;
@@ -88,15 +98,19 @@ export function PreOrder() {
   return (
     <>
       {head}{chips}
-      <div className="chips">{cans.map((c) => <button key={c.k} className="chip" aria-pressed={c.k === canteen} onClick={() => set({ canteen: c.k, sel: { ...S.sel, dish: null } })}>{c.n}</button>)}</div>
+      <ButtonGroup size="sm" className="flex-wrap" aria-label="Canteen" disallowEmptySelection selectedKeys={canteen ? [canteen] : []} onSelectionChange={(k) => { const c = first(k); if (c) set({ canteen: String(c), sel: { ...S.sel, dish: null } }); }}>
+        {cans.map((c) => <ButtonGroupItem key={c.k} id={c.k}>{c.n}</ButtonGroupItem>)}
+      </ButtonGroup>
       <div className="grid g2">{list.map((id) => { const d = D.dishes[id]; return (
-        <button key={id} className="dish" aria-pressed={S.sel.dish === id} onClick={() => set({ sel: { ...S.sel, dish: id } })}><Thumb d={d} /><div><b>{d.name}</b><div><Tags d={d} /></div></div></button>); })}</div>
+        <ToggleButton key={id} className={DISH} isSelected={S.sel.dish === id} onChange={() => set({ sel: { ...S.sel, dish: id } })}><Thumb d={d} /><div><b>{d.name}</b><div><Tags d={d} /></div></div></ToggleButton>); })}</div>
       {dish && (
         <div className="card">
           <h3>Choose your portion</h3>
-          <div className="portion">{(["S", "R", "L"] as const).map((p) => <button key={p} aria-pressed={S.sel.portion === p} onClick={() => set({ sel: { ...S.sel, portion: p } })}><b>{PORT[p]}</b><span className="small muted">{st.portions[p]} g rice</span></button>)}</div>
+          <ButtonGroup size="md" className="w-full" aria-label="Portion" disallowEmptySelection selectedKeys={[S.sel.portion]} onSelectionChange={(k) => { const p = first(k) as "S" | "R" | "L" | undefined; if (p) set({ sel: { ...S.sel, portion: p } }); }}>
+            {(["S", "R", "L"] as const).map((p) => <ButtonGroupItem key={p} id={p} className="flex-1 flex-col gap-0"><b>{PORT[p]}</b><span className="small muted">{st.portions[p]} g rice</span></ButtonGroupItem>)}
+          </ButtonGroup>
           <div className="note g">Free refill of rice and vegetables at the counter, so a smaller portion is never “less food”. Take what you can finish, come back if you are still hungry.</div>
-          <button className="btn g" onClick={place}><I n="check" /> Pre-order {PORT[S.sel.portion]} {dish.name}</button>
+          <Button size="md" iconLeading={<I n="check" />} onPress={place}>Pre-order {PORT[S.sel.portion]} {dish.name}</Button>
         </div>
       )}
     </>
@@ -114,14 +128,18 @@ export function RateMenu() {
   return (
     <>
       <Hd title="Rate the menu">How interested are you in each dish, from 1 (not really) to 5 (very)? Ratings are anonymous. They adjust the kitchen’s forecast and flag unpopular dishes before they are cooked.</Hd>
-      <div className="chips">{wks.map((w, i) => <button key={w} className="chip" aria-pressed={w === wk} onClick={() => set({ rateWeek: w })}>{i ? "Next week" : "This week"} · from {fmtDay(w)}</button>)}</div>
+      <ButtonGroup size="sm" className="flex-wrap" aria-label="Week" disallowEmptySelection selectedKeys={[wk]} onSelectionChange={(k) => { const w = first(k); if (w) set({ rateWeek: String(w) }); }}>
+        {wks.map((w, i) => <ButtonGroupItem key={w} id={w}>{i ? "Next week" : "This week"} · from {fmtDay(w)}</ButtonGroupItem>)}
+      </ButtonGroup>
       {rows.length ? (
         <div className="grid g2">{rows.map((id) => { const x = D.dishes[id]; return (
           <div className="card" key={id} style={{ gridTemplateColumns: "auto 1fr", alignItems: "center" }}>
             <Thumb d={x} size={48} />
             <div style={{ display: "grid", gap: 6 }}>
               <div><b>{x.name}</b> <span className="small muted">· {canteenName(D, x.canteen)}</span></div>
-              <div className="rate">{[1, 2, 3, 4, 5].map((v) => <button key={v} aria-pressed={mine[id] === v} aria-label={`${x.name}: ${v} of 5`} onClick={() => patch("ratings", uid, { byWeek: { [wk]: { [id]: v } } })}>{v}</button>)}</div>
+              <ButtonGroup size="sm" aria-label={`Interest in ${x.name}`} disallowEmptySelection selectedKeys={mine[id] ? [mine[id]] : []} onSelectionChange={(k) => { const v = first(k); if (v) patch("ratings", uid, { byWeek: { [wk]: { [id]: Number(v) } } }); }}>
+                {[1, 2, 3, 4, 5].map((v) => <ButtonGroupItem key={v} id={v} aria-label={`${x.name}: ${v} of 5`}>{v}</ButtonGroupItem>)}
+              </ButtonGroup>
             </div>
           </div>); })}</div>
       ) : <Empty icon="cal"><b>No menu published for this week yet.</b></Empty>}
@@ -162,12 +180,16 @@ export function FinishCheck() {
           return (
             <div className="card" key={k}>
               <div style={{ display: "flex", gap: 12, alignItems: "center" }}><Thumb d={d} size={48} /><div><b>{d?.name || ""}</b><div className="small muted">{fmtDay(o.date)} · {PORT[o.portion]}</div></div></div>
-              <div className="chips">{AMOUNTS.map((x) => <button key={x} className="chip" aria-pressed={a.amount === x} onClick={() => draft(k, { amount: x })}>{x}</button>)}</div>
+              <ButtonGroup size="sm" className="flex-wrap" aria-label="How much did you finish?" disallowEmptySelection selectedKeys={a.amount ? [a.amount] : []} onSelectionChange={(s) => { const x = first(s); if (x) draft(k, { amount: String(x) }); }}>
+                {AMOUNTS.map((x) => <ButtonGroupItem key={x} id={x}>{x}</ButtonGroupItem>)}
+              </ButtonGroup>
               {a.amount && a.amount !== "All" && <>
                 <span className="small muted">Why not? (optional)</span>
-                <div className="chips">{REASONS.map((x) => { const on = (a.reasons || []).includes(x); return <button key={x} className="chip" aria-pressed={on} onClick={() => draft(k, { reasons: on ? (a.reasons || []).filter((y) => y !== x) : [...(a.reasons || []), x] })}>{x}</button>; })}</div>
+                <ButtonGroup size="sm" className="flex-wrap" aria-label="Why not?" selectionMode="multiple" selectedKeys={a.reasons || []} onSelectionChange={(s) => draft(k, { reasons: REASONS.filter((x) => s.has(x)) })}>
+                  {REASONS.map((x) => <ButtonGroupItem key={x} id={x}>{x}</ButtonGroupItem>)}
+                </ButtonGroup>
               </>}
-              <div><button className="btn g sm" disabled={!a.amount} onClick={send}>Send</button></div>
+              <div><Button size="sm" isDisabled={!a.amount} onPress={send}>Send</Button></div>
             </div>
           );
         })}

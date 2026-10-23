@@ -175,3 +175,4 @@ export const DASH_ROWS: [string, string, number, number, number, number][] = [
   ["Little Kitchen", "Teriyaki chicken", 40, 60, 3.6, 130], ["Little Kitchen", "Sweet & sour chicken", 22, 45, 3.1, 90], ["Foodology", "Chicken salad", 18, 30, 2.6, 60],
   ["Foodology", "Fish noodle soup", 25, 40, 3.4, 80], ["Our Home", "V-food dish", 12, 25, 3.0, 50], ["Our Home", "V-Halal dish", 15, 20, 3.2, 45],
 ];
+

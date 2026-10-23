@@ -1,0 +1,2780 @@
+{
+ "url": "dist/index.html",
+ "at": "2026-10-23T14:48:44.540Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    0.63,
+    0.59,
+    0.47,
+    0.59,
+    0.48
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 3846,
+     "screens": 4.3,
+     "words": 848,
+     "img": 34,
+     "video": 0,
+     "canvas": 0,
+     "svg": 241,
+     "sections": 68,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "minions.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+     "words": 13,
+     "chars": 58,
+     "lines": 3,
+     "size": 54.4,
+     "vw": 3.8,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.02,
+     "leading": 1.15,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.4,
+     "top": 141,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+     "words": 13,
+     "lines": 3,
+     "size": 54.4,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+      "words": 13,
+      "chars": 58,
+      "lines": 3,
+      "size": 54.4,
+      "vw": 3.8,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 141,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "118",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "JetBrains Mono",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": true,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.04,
+      "top": 355,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Our challenge",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 31.2,
+      "vw": 2.2,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.14,
+      "top": 1073,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "What we set out to achieve",
+      "words": 6,
+      "chars": 26,
+      "lines": 1,
+      "size": 31.2,
+      "vw": 2.2,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.28,
+      "top": 1500,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Our journey in eight steps",
+      "words": 5,
+      "chars": 26,
+      "lines": 1,
+      "size": 31.2,
+      "vw": 2.2,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.27,
+      "top": 1989,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Where to find each requirement",
+      "words": 5,
+      "chars": 30,
+      "lines": 1,
+      "size": 31.2,
+      "vw": 2.2,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.33,
+      "top": 2778,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Four things to know",
+      "words": 4,
+      "chars": 19,
+      "lines": 1,
+      "size": 31.2,
+      "vw": 2.2,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.21,
+      "top": 3220,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "40%",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 43.2,
+      "vw": 3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 3315,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "118 g",
+      "words": 2,
+      "chars": 5,
+      "lines": 1,
+      "size": 43.2,
+      "vw": 3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 3315,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 43.2,
+      "vw": 3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.16,
+      "top": 3315,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "$7 : $1",
+      "words": 3,
+      "chars": 7,
+      "lines": 1,
+      "size": 43.2,
+      "vw": 3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.16,
+      "top": 3315,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "What went into this project",
+      "words": 5,
+      "chars": 27,
+      "lines": 1,
+      "size": 31.2,
+      "vw": 2.2,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.28,
+      "top": 3546,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 3,
+     "over2Lines": 1,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.8,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.1,
+       "mono": false
+      },
+      {
+       "family": "JetBrains Mono",
+       "share": 0.1,
+       "mono": true
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      26,
+      31,
+      32,
+      43,
+      54
+     ],
+     "sizeCount": 15,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 13.8,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.4
+     },
+     "measureChars": 65,
+     "max": {
+      "size": 54.4,
+      "vw": 3.8,
+      "font": "Bricolage Grotesque",
+      "text": "Almost a third of a Hanoi school lunch e"
+     },
+     "monoShare": 0.1,
+     "monoProseShare": 0.1,
+     "monoFamilies": [
+      "JetBrains Mono"
+     ],
+     "monoSamples": [
+      "g",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05"
+     ],
+     "microLabels": 15,
+     "microLabelShare": 0.061,
+     "microSamples": [
+      "MANA3021 Business Ethics · Team Mini Soc",
+      "One school lunch, per child · Hanoi, 202",
+      "The brief",
+      "Our “How might we…” question",
+      "Aim and objectives",
+      "Objective"
+     ],
+     "upperShare": 0.09,
+     "centerShare": 0.08,
+     "smallText": 16
+    },
+    "eyebrows": [
+     {
+      "text": "eaten thrown away (waste rate)",
+      "above": "118",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 13.8,
+      "top": 311
+     },
+     {
+      "text": "The brief",
+      "above": "Our challenge",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 11.8,
+      "top": 1054
+     },
+     {
+      "text": "Aim and objectives",
+      "above": "What we set out to achieve",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 11.8,
+      "top": 1481
+     },
+     {
+      "text": "Design thinking",
+      "above": "Our journey in eight steps",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 11.8,
+      "top": 1970
+     },
+     {
+      "text": "Brief and rubric",
+      "above": "Where to find each requirement",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 11.8,
+      "top": 2759
+     },
+     {
+      "text": "In numbers",
+      "above": "Four things to know",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 11.8,
+      "top": 3201
+     },
+     {
+      "text": "Effort",
+      "above": "What went into this project",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 11.8,
+      "top": 3527
+     }
+    ],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "02",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "03",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "04",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "05",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "06",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "07",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "08",
+      "size": 11.8,
+      "top": 23
+     }
+    ],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#000000",
+       "top": 547,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 1550,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#171717",
+       "share": 0.48
+      },
+      {
+       "color": "#525252",
+       "share": 0.26
+      },
+      {
+       "color": "#404040",
+       "share": 0.19
+      },
+      {
+       "color": "#087443",
+       "share": 0.06
+      },
+      {
+       "color": "#ffffff",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#099250",
+      "hsl": {
+       "h": 151,
+       "s": 0.88,
+       "l": 0.3
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Home",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      },
+      {
+       "text": "Start the journey →",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 3,
+     "radius": 8,
+     "height": 36,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Home",
+      "Start the journey →",
+      "See our action plans"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 12,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "button#react-aria8422146750-_r_k_.group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "button#react-aria8422146750-_r_m_.group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.tray → rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+      "button#react-aria8422146750-_r_o_.group.inline-flex → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "header.topbar 1440px",
+      "div#effort.effort 1088px",
+      "footer.site 1440px"
+     ],
+     "outlinedBoxes": 8,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 18,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 12,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 547
+      },
+      {
+       "count": 8,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 2079
+      },
+      {
+       "count": 4,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 3270
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.29
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 64,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro",
+     "jetbrains mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 3846,
+    "margins": {
+     "left": 176,
+     "right": 176
+    },
+    "sections": [
+     {
+      "sel": "div.hero",
+      "tag": "div",
+      "top": 64,
+      "height": 483,
+      "words": 112,
+      "media": 0,
+      "middle": 56,
+      "heading": {
+       "text": "Almost a third of a Hanoi school lunch ends up",
+       "size": 54,
+       "tag": "h1"
+      },
+      "left": 176,
+      "right": 198,
+      "textLeft": 176,
+      "textRight": 198,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.media.wide",
+      "tag": "div",
+      "top": 547,
+      "height": 466,
+      "words": 4,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 1044,
+      "right": 188,
+      "textLeft": 1082,
+      "textRight": 202,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.grid.g2",
+      "tag": "div",
+      "top": 1122,
+      "height": 318,
+      "words": 131,
+      "media": 0,
+      "middle": 59,
+      "heading": null,
+      "left": 197,
+      "right": 199,
+      "textLeft": 197,
+      "textRight": 199,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.tbl",
+      "tag": "div",
+      "top": 1550,
+      "height": 381,
+      "words": 137,
+      "media": 0,
+      "middle": 34,
+      "heading": null,
+      "left": 189,
+      "right": 189,
+      "textLeft": 189,
+      "textRight": 189,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div#homecards.dt",
+      "tag": "div",
+      "top": 2079,
+      "height": 640,
+      "words": 181,
+      "media": 0,
+      "middle": 12,
+      "heading": null,
+      "left": 176,
+      "right": 176,
+      "textLeft": 194,
+      "textRight": 195,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.tbl",
+      "tag": "div",
+      "top": 2828,
+      "height": 334,
+      "words": 110,
+      "media": 0,
+      "middle": 46,
+      "heading": null,
+      "left": 189,
+      "right": 231,
+      "textLeft": 189,
+      "textRight": 231,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.stats",
+      "tag": "div",
+      "top": 3270,
+      "height": 217,
+      "words": 64,
+      "media": 0,
+      "middle": 92,
+      "heading": {
+       "text": "40%",
+       "size": 43,
+       "tag": "div"
+      },
+      "left": 195,
+      "right": 225,
+      "textLeft": 195,
+      "textRight": 225,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div#effort.effort",
+      "tag": "div",
+      "top": 3596,
+      "height": 126,
+      "words": 21,
+      "media": 0,
+      "middle": 47,
+      "heading": {
+       "text": "50",
+       "size": 26,
+       "tag": "b"
+      },
+      "left": 176,
+      "right": 315,
+      "textLeft": 176,
+      "textRight": 315,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+      "size": 54,
+      "top": 141,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "CampusMeal app",
+      "side": "right",
+      "px": 9
+     }
+    ],
+    "edges": [
+     {
+      "x": 218,
+      "n": 6
+     },
+     {
+      "x": 176,
+      "n": 3
+     },
+     {
+      "x": 197,
+      "n": 1
+     },
+     {
+      "x": 393,
+      "n": 1
+     },
+     {
+      "x": 749,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 12,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.07,
+    "voidBox": {
+     "x": 0,
+     "y": 120,
+     "w": 120,
+     "h": 780
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    0.83,
+    0.81,
+    0.83,
+    0.64,
+    0.48
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 4355,
+     "screens": 4.3,
+     "words": 848,
+     "img": 34,
+     "video": 0,
+     "canvas": 0,
+     "svg": 241,
+     "sections": 68,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "minions.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+     "words": 13,
+     "chars": 58,
+     "lines": 2,
+     "size": 35.3,
+     "vw": 4.6,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.02,
+     "leading": 1.15,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.96,
+     "top": 141,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+     "words": 13,
+     "lines": 2,
+     "size": 35.3,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+      "words": 13,
+      "chars": 58,
+      "lines": 2,
+      "size": 35.3,
+      "vw": 4.6,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 141,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "118",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "JetBrains Mono",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": true,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.08,
+      "top": 608,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "40%",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 3561,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "118 g",
+      "words": 2,
+      "chars": 5,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.26,
+      "top": 3561,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.26,
+      "top": 3561,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "$7 : $1",
+      "words": 3,
+      "chars": 7,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 3781,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 6,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.8,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.1,
+       "mono": false
+      },
+      {
+       "family": "JetBrains Mono",
+       "share": 0.1,
+       "mono": true
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      23,
+      26,
+      32,
+      35
+     ],
+     "sizeCount": 14,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 13.8,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.4
+     },
+     "measureChars": 82,
+     "max": {
+      "size": 35.3,
+      "vw": 4.6,
+      "font": "Bricolage Grotesque",
+      "text": "Almost a third of a Hanoi school lunch e"
+     },
+     "monoShare": 0.1,
+     "monoProseShare": 0.1,
+     "monoFamilies": [
+      "JetBrains Mono"
+     ],
+     "monoSamples": [
+      "g",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05"
+     ],
+     "microLabels": 15,
+     "microLabelShare": 0.061,
+     "microSamples": [
+      "MANA3021 Business Ethics · Team Mini Soc",
+      "One school lunch, per child · Hanoi, 202",
+      "The brief",
+      "Our “How might we…” question",
+      "Aim and objectives",
+      "Objective"
+     ],
+     "upperShare": 0.09,
+     "centerShare": 0.08,
+     "smallText": 16
+    },
+    "eyebrows": [
+     {
+      "text": "eaten thrown away (waste rate)",
+      "above": "118",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 13.8,
+      "top": 564
+     }
+    ],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "02",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "03",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "04",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "05",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "06",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "07",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "08",
+      "size": 11.8,
+      "top": 23
+     }
+    ],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 1634,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#171717",
+       "share": 0.48
+      },
+      {
+       "color": "#525252",
+       "share": 0.26
+      },
+      {
+       "color": "#404040",
+       "share": 0.19
+      },
+      {
+       "color": "#087443",
+       "share": 0.06
+      },
+      {
+       "color": "#ffffff",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#099250",
+      "hsl": {
+       "h": 151,
+       "s": 0.88,
+       "l": 0.3
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Home",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      },
+      {
+       "text": "Start the journey →",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": 8,
+     "height": 36,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Home",
+      "Start the journey →",
+      "See our action plans",
+      "Upload photo or video"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 12,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "button#react-aria4469886079-_r_k_.group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "button#react-aria4469886079-_r_m_.group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.tray → rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+      "button#react-aria4469886079-_r_o_.group.inline-flex → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "header.topbar 768px",
+      "div#effort.effort 736px",
+      "footer.site 768px"
+     ],
+     "outlinedBoxes": 8,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 18,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 12,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 8,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 2225
+      },
+      {
+       "count": 4,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 3516
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.25
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 64,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro",
+     "jetbrains mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 4355,
+    "margins": {
+     "left": 16,
+     "right": 29
+    },
+    "sections": [
+     {
+      "sel": "div.hero",
+      "tag": "div",
+      "top": 64,
+      "height": 686,
+      "words": 112,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Almost a third of a Hanoi school lunch ends up",
+       "size": 35,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 49,
+      "textLeft": 16,
+      "textRight": 49,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.media.wide",
+      "tag": "div",
+      "top": 750,
+      "height": 315,
+      "words": 4,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 532,
+      "right": 28,
+      "textLeft": 570,
+      "textRight": 42,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.grid.g2",
+      "tag": "div",
+      "top": 1165,
+      "height": 370,
+      "words": 131,
+      "media": 0,
+      "middle": 62,
+      "heading": null,
+      "left": 37,
+      "right": 37,
+      "textLeft": 37,
+      "textRight": 37,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.tbl",
+      "tag": "div",
+      "top": 1634,
+      "height": 452,
+      "words": 137,
+      "media": 0,
+      "middle": 33,
+      "heading": null,
+      "left": 29,
+      "right": 29,
+      "textLeft": 29,
+      "textRight": 29,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div#homecards.dt",
+      "tag": "div",
+      "top": 2225,
+      "height": 688,
+      "words": 181,
+      "media": 0,
+      "middle": 12,
+      "heading": null,
+      "left": 16,
+      "right": 16,
+      "textLeft": 34,
+      "textRight": 43,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.tbl",
+      "tag": "div",
+      "top": 3012,
+      "height": 404,
+      "words": 110,
+      "media": 0,
+      "middle": 58,
+      "heading": null,
+      "left": 29,
+      "right": 42,
+      "textLeft": 29,
+      "textRight": 42,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.stats",
+      "tag": "div",
+      "top": 3516,
+      "height": 404,
+      "words": 64,
+      "media": 0,
+      "middle": 57,
+      "heading": {
+       "text": "40%",
+       "size": 32,
+       "tag": "div"
+      },
+      "left": 35,
+      "right": 49,
+      "textLeft": 35,
+      "textRight": 49,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div#effort.effort",
+      "tag": "div",
+      "top": 4020,
+      "height": 177,
+      "words": 21,
+      "media": 0,
+      "middle": 34,
+      "heading": {
+       "text": "50",
+       "size": 26,
+       "tag": "b"
+      },
+      "left": 16,
+      "right": 122,
+      "textLeft": 16,
+      "textRight": 122,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+      "size": 35,
+      "top": 141,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 58,
+      "n": 6
+     },
+     {
+      "x": 16,
+      "n": 3
+     },
+     {
+      "x": 37,
+      "n": 1
+     },
+     {
+      "x": 377,
+      "n": 1
+     },
+     {
+      "x": 413,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 12,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.74,
+    0.82,
+    0.89,
+    0.81,
+    0.86,
+    0.85,
+    0.76,
+    0.54
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 6663,
+     "screens": 7.9,
+     "words": 848,
+     "img": 34,
+     "video": 0,
+     "canvas": 0,
+     "svg": 241,
+     "sections": 68,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "minions.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 2,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+     "words": 13,
+     "chars": 58,
+     "lines": 3,
+     "size": 32,
+     "vw": 8.2,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.02,
+     "leading": 1.15,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 160,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+     "words": 13,
+     "lines": 3,
+     "size": 32,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+      "words": 13,
+      "chars": 58,
+      "lines": 3,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 160,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "118",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "JetBrains Mono",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": true,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.15,
+      "top": 789,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Our challenge",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 23.2,
+      "vw": 5.9,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 1164,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "What we set out to achieve",
+      "words": 6,
+      "chars": 26,
+      "lines": 1,
+      "size": 23.2,
+      "vw": 5.9,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 2015,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Our journey in eight steps",
+      "words": 5,
+      "chars": 26,
+      "lines": 1,
+      "size": 23.2,
+      "vw": 5.9,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.73,
+      "top": 2990,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Where to find each requirement",
+      "words": 5,
+      "chars": 30,
+      "lines": 2,
+      "size": 23.2,
+      "vw": 5.9,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 4447,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Four things to know",
+      "words": 4,
+      "chars": 19,
+      "lines": 1,
+      "size": 23.2,
+      "vw": 5.9,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.57,
+      "top": 5279,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "40%",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 5364,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "118 g",
+      "words": 2,
+      "chars": 5,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 5562,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 5760,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "$7 : $1",
+      "words": 3,
+      "chars": 7,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 5937,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "What went into this project",
+      "words": 5,
+      "chars": 27,
+      "lines": 1,
+      "size": 23.2,
+      "vw": 5.9,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.01,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 6113,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "50",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.08,
+      "top": 6170,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "8",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 6221,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "8",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 6272,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "6",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 6323,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "3",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.04,
+      "top": 6323,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "14",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.06,
+      "top": 6374,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "5",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.04,
+      "top": 6374,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "12",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.6,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.06,
+      "top": 6425,
+      "tag": "b",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 20,
+     "maxLines": 3,
+     "over2Lines": 1,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.8,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.1,
+       "mono": false
+      },
+      {
+       "family": "JetBrains Mono",
+       "share": 0.1,
+       "mono": true
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      23,
+      26,
+      32
+     ],
+     "sizeCount": 13,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 13.8,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.4
+     },
+     "measureChars": 40,
+     "max": {
+      "size": 32,
+      "vw": 8.2,
+      "font": "Bricolage Grotesque",
+      "text": "Almost a third of a Hanoi school lunch e"
+     },
+     "monoShare": 0.1,
+     "monoProseShare": 0.1,
+     "monoFamilies": [
+      "JetBrains Mono"
+     ],
+     "monoSamples": [
+      "g",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05"
+     ],
+     "microLabels": 15,
+     "microLabelShare": 0.061,
+     "microSamples": [
+      "MANA3021 Business Ethics · Team Mini Soc",
+      "One school lunch, per child · Hanoi, 202",
+      "The brief",
+      "Our “How might we…” question",
+      "Aim and objectives",
+      "Objective"
+     ],
+     "upperShare": 0.09,
+     "centerShare": 0.08,
+     "smallText": 16
+    },
+    "eyebrows": [
+     {
+      "text": "eaten thrown away (waste rate)",
+      "above": "118",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 13.8,
+      "top": 745
+     }
+    ],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "02",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "03",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "04",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "05",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "06",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "07",
+      "size": 11.8,
+      "top": 23
+     },
+     {
+      "text": "08",
+      "size": 11.8,
+      "top": 23
+     }
+    ],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 573,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#edfcf2",
+       "top": 1590,
+       "hsl": {
+        "h": 140,
+        "s": 0.71,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#171717",
+       "share": 0.48
+      },
+      {
+       "color": "#525252",
+       "share": 0.26
+      },
+      {
+       "color": "#404040",
+       "share": 0.19
+      },
+      {
+       "color": "#087443",
+       "share": 0.06
+      },
+      {
+       "color": "#ffffff",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#099250",
+      "hsl": {
+       "h": 151,
+       "s": 0.88,
+       "l": 0.3
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Home",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      },
+      {
+       "text": "Start the journey →",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 14,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 3,
+     "radius": 8,
+     "height": 36,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Home",
+      "Start the journey →",
+      "See our action plans"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 12,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "button#react-aria4158199295-_r_k_.group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "button#react-aria4158199295-_r_m_.group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.tray → rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+      "button#react-aria4158199295-_r_o_.group.inline-flex → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "header.topbar 390px",
+      "div#effort.effort 358px",
+      "footer.site 390px"
+     ],
+     "outlinedBoxes": 8,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 18,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 12,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 8,
+       "iconTopped": true,
+       "rounded": true,
+       "top": 3096
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 64,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro",
+     "jetbrains mono"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 6663,
+    "margins": {
+     "left": 16,
+     "right": 15
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 64,
+      "height": 6419,
+      "words": 814,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Almost a third of a Hanoi school lunch ends up",
+       "size": 32,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 0,
+      "textLeft": 16,
+      "textRight": -21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site",
+      "tag": "footer",
+      "top": 6523,
+      "height": 140,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 21,
+      "textLeft": 16,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Almost a third of a Hanoi school lunch ends up in the bin.",
+      "size": 32,
+      "top": 160,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 58,
+      "n": 6
+     },
+     {
+      "x": 16,
+      "n": 3
+     },
+     {
+      "x": 37,
+      "n": 2
+     },
+     {
+      "x": 144,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 12,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 1440,
+   "message": "1 headline(s) wrap past two lines at 1440px: \"Almost a third of a Hanoi school lunch ends up i\" → 3 lines (13 words, 54.4px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 36px or less."
+  },
+  {
+   "level": "WARN",
+   "id": "hero-words",
+   "width": 1440,
+   "message": "Hero headline is 13 words (\"Almost a third of a Hanoi school lunch ends up in the bin.\"). Gallery median is 5.",
+   "fix": "Say the one thing. Move the rest to the supporting line.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "7 eyebrow/kicker label(s) above headings: \"eaten thrown away (waste rate)\" above \"118\"; \"The brief\" above \"Our challenge\"; \"Aim and objectives\" above \"What we set out to achieve\"; \"Design thinking\" above \"Our journey in eight steps\"; \"Brief and rubric\" above \"Where to find each requirement\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "mono",
+   "width": 1440,
+   "message": "Monospace type outside code: JetBrains Mono — e.g. \"g\", \"01\", \"02\", \"03\"",
+   "fix": "Set it in the text face. Monospace is for literal code inside <pre>/<code> only.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "numbering",
+   "width": 1440,
+   "message": "Decorative index numbers: \"01\", \"02\", \"03\", \"04\", \"05\", \"06\"",
+   "fix": "Remove them. If order truly matters, write it into the words (\"First, …\") or use a real <ol>.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "15 tiny uppercase letter-spaced labels (e.g. \"MANA3021 Business Ethics · Team Mini Soc\", \"One school lunch, per child · Hanoi, 202\", \"The brief\", \"Our “How might we…” question\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "12 box-shadow(s) on elements at rest: button#react-aria8422146750-_r_k_.group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | button#react-aria8422146750-_r_m_.group.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | div.tray → rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "3 thin rule(s)/divider line(s): header.topbar 1440px | div#effort.effort 1088px | footer.site 1440px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "8 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "icon-cards",
+   "width": 1440,
+   "message": "2 row(s) of identical cards each topped with a small icon (8, 4 cards).",
+   "fix": "Replace with one composed section from the direction: a narrative split, a list set in large type, or real imagery per item.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"Home\" 4:1 needs 4.5:1; \"Start the journey →\" 4:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 1440,
+   "message": "3 typefaces in use (Be Vietnam Pro, Bricolage Grotesque, JetBrains Mono).",
+   "fix": "Two at most.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "15 different font sizes (10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 26, 31, 32, 43, 54).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "body-size",
+   "width": 1440,
+   "message": "Body text is 13.8px (the size most of the running text is set in).",
+   "fix": "Body copy 16–20px. Map small sizes from blueprints onto your body step.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 1 picture(s) on the page (1 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "FAIL",
+   "id": "small-text",
+   "width": 1440,
+   "message": "16 text blocks under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "focal-point",
+   "width": 1440,
+   "message": "The first screen has no dominant element: the largest type is 54.4px (3.8vw) and no single picture holds a third of the viewport.",
+   "fix": "Make one thing lead: the headline at display size, or one large picture. A grid of many small pictures is not one thing; in blind tests jurors marked a first screen without a headline down every time. On the strongest studied sites the largest type has a median of 8.4vw."
+  },
+  {
+   "level": "FAIL",
+   "id": "untitled-section",
+   "width": 1440,
+   "message": "4 sections carry text but no heading: div.grid.g2 at 1122px (131 words); div.tbl at 1550px (137 words); div#homecards.dt at 2079px (181 words); div.tbl at 2828px (110 words)",
+   "fix": "Give each section a short heading that names what it holds (the menu, the rooms, how it works, the price), in the heading face at the section size.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "edge-text",
+   "width": 1440,
+   "message": "1 text block(s) sit within 16px of the screen edge: \"CampusMeal app\" (9px from the right)",
+   "fix": "Keep text inside the page margin (16–32px or more). Only display type deliberately bled past the edge may touch it."
+  },
+  {
+   "level": "FAIL",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Only 0 element(s) moved while the page loaded and scrolled.",
+   "fix": "Build the motion layer (SKILL.md step 9, references/motion.md): the signature move, an entrance for the parts of every section, feedback on every control, and one moving picture. Transform and opacity only, with a reduced-motion fallback."
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 390,
+   "message": "1 headline(s) wrap past two lines at 390px: \"Almost a third of a Hanoi school lunch ends up i\" → 3 lines (13 words, 32px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 24px or less."
+  },
+  {
+   "level": "WARN",
+   "id": "side-scroll",
+   "width": 390,
+   "message": "2 row(s) scroll sideways with content past their edge.",
+   "fix": "Jurors and most visitors read a row cut at the edge as clipped, not as scrollable. Wrap it onto more lines, or end it inside the grid."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/before/desktop-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/before/desktop-page-01.jpg",
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/before/desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/before/tablet-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/before/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/before/mobile-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/before/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

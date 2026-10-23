@@ -1,5 +1,12 @@
 /* Kitchen screens: Dashboard, Pickups, Last call & donate, Waste log, Menu planner, Insights, Weekly report, Settings. */
 import { useState, type FormEvent } from "react";
+import { Button } from "@/components/base/buttons/button";
+import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
+import { Badge } from "@/components/base/badges/badges";
+import { Input } from "@/components/base/input/input";
+import { NativeSelect } from "@/components/base/select/select-native";
+import { Checkbox } from "@/components/base/checkbox/checkbox";
+import { Table, TableCard } from "@/components/application/table/table";
 import { useCm } from "../store";
 import { useNav } from "../nav";
 import { Empty, Hd, I, Kpi, Tags } from "../ui";
@@ -12,15 +19,20 @@ import {
 
 const iso = () => new Date().toISOString();
 const num = (v: FormDataEntryValue | null) => { const n = parseFloat(String(v ?? "")); return Number.isFinite(n) ? n : 0; };
+/** Numeric column head: right-aligned like the td.n cells. */
+const NH = "n [&>div]:justify-end";
+const STATUS = { placed: "blue", collected: "success", noshow: "error", cancelled: "gray" } as const;
+const one = (k: Set<unknown> | "all") => (k === "all" ? null : [...k][0]);
+const Week = ({ wk }: { wk: string }) => <Badge type="modern" color="gray" size="lg">Week of {fmtDay(wk)}</Badge>;
 
 function DateBar() {
   const { S, set } = useNav();
   return (
     <div className="chips" style={{ alignItems: "center" }}>
-      <button className="chip" aria-label="Previous day" onClick={() => set({ date: addDays(S.date, -1) })}>‹</button>
-      <input type="date" value={S.date} style={{ width: "auto" }} onChange={(e) => e.target.value && set({ date: e.target.value })} aria-label="Day" />
-      <button className="chip" aria-label="Next day" onClick={() => set({ date: addDays(S.date, 1) })}>›</button>
-      {S.date !== todayStr() && <button className="chip" onClick={() => set({ date: todayStr() })}>Today</button>}
+      <Button color="secondary" size="sm" aria-label="Previous day" onPress={() => set({ date: addDays(S.date, -1) })}>‹</Button>
+      <Input type="date" size="sm" value={S.date} onChange={(v) => v && set({ date: v })} aria-label="Day" className="w-auto" />
+      <Button color="secondary" size="sm" aria-label="Next day" onPress={() => set({ date: addDays(S.date, 1) })}>›</Button>
+      {S.date !== todayStr() && <Button color="secondary" size="sm" onPress={() => set({ date: todayStr() })}>Today</Button>}
     </div>
   );
 }
@@ -38,12 +50,12 @@ function OverrideBox({ id, f, onDone }: { id: string; f: Forecast; onDone: () =>
       <b>Override forecast: {D.dishes[id].name}</b>
       <span className="small muted">The app suggests {f.pre + f.walk}. Use an override only for known events (exams, holidays, campus events) and give a reason.</span>
       <div className="form">
-        <label className="f">New forecast<input type="number" min="0" value={val} onChange={(e) => setVal(e.target.value)} autoFocus /></label>
-        <label className="f">Reason<input type="text" maxLength={200} placeholder="e.g. exam week, half the students off campus" value={why} onChange={(e) => setWhy(e.target.value)} /></label>
+        <Input label="New forecast" type="number" value={val} onChange={setVal} autoFocus />
+        <Input label="Reason" maxLength={200} placeholder="e.g. exam week, half the students off campus" value={why} onChange={setWhy} />
       </div>
       <div className="chips">
-        <button className="btn g sm" onClick={save}>Save override</button>
-        {f.ov && <button className="btn o sm" onClick={async () => { if (await patch("log", S.date, { overrides: { [id]: { value: 0, reason: "", t: iso() } } }, "Back to the app’s forecast")) onDone(); }}>Use the app’s forecast</button>}
+        <Button size="sm" onPress={save}>Save override</Button>
+        {f.ov && <Button color="secondary" size="sm" onPress={async () => { if (await patch("log", S.date, { overrides: { [id]: { value: 0, reason: "", t: iso() } } }, "Back to the app’s forecast")) onDone(); }}>Use the app’s forecast</Button>}
       </div>
     </div>
   );
@@ -54,7 +66,7 @@ export function Dashboard() {
   const [ovr, setOvr] = useState<string | null>(null);
   const st = settingsOf(D), date = S.date, ids = dishesOf(D, date), now = nowHM(), isToday = date === todayStr();
   const head = <Hd title="Kitchen dashboard" right={<DateBar />}>Forecast = pre-orders + expected walk-ins (last 4 same weekdays × interest factor). First batch = {st.firstPct}% of forecast in batches of {st.batch}. Cook more only when the app says stock is low.</Hd>;
-  if (!ids.length) return <>{head}<Empty icon="cal"><b>No menu for {fmtDay(date)}.</b><button className="btn" onClick={() => go("menu")}>Open the menu planner</button></Empty></>;
+  if (!ids.length) return <>{head}<Empty icon="cal"><b>No menu for {fmtDay(date)}.</b><Button size="md" onPress={() => go("menu")}>Open the menu planner</Button></Empty></>;
   const F = ids.map((id) => [id, forecast(D, date, id)] as const), tot = (k: "pre" | "fc" | "cooked" | "served") => F.reduce((a, [, f]) => a + f[k], 0);
   const alerts = isToday && now >= st.serviceStart && now < st.serviceEnd ? F.filter(([, f]) => f.cooked > 0 && f.avail < st.batch && f.served + f.placed < f.fc) : [];
   return (
@@ -66,25 +78,31 @@ export function Dashboard() {
         <Kpi v={tot("served")} l="served (pre-orders collected + walk-ins + last call)" />
       </div>
       {alerts.length > 0 && <div className="note w"><b>Low stock:</b> {alerts.map(([id]) => D.dishes[id].name).join(", ")}. Cook another batch of {st.batch} if the queue is still there.</div>}
-      <div className="tbl"><table style={{ minWidth: 1000 }}>
-        <thead><tr><th style={{ minWidth: 190 }}>Dish</th><th className="n">Pre-orders<br />S / R / L</th><th className="n">Walk-ins<br />expected</th><th className="n">Interest</th><th className="n">Forecast</th><th className="n">First batch</th><th className="n">Cooked</th><th className="n">Served</th><th className="n">Available</th><th>Record</th></tr></thead>
-        <tbody>{F.map(([id, f]) => { const d = D.dishes[id], low = alerts.some((a) => a[0] === id); return (
-          <tr key={id} className={low ? "alert-row" : undefined}>
-            <td><b>{d.name}</b><div className="small muted">{canteenName(D, d.canteen)}{f.lastBatch ? ` · last batch ${fmtT(f.lastBatch)}` : ""}</div></td>
-            <td className="n">{f.pre}<div className="small muted">{f.byP.S} / {f.byP.R} / {f.byP.L}</div></td>
-            <td className="n">{f.walk}<div className="small muted">{f.hist.length ? `avg ${round1(f.walkAvg)} (${f.hist.length} wk)` : "no history"}</div></td>
-            <td className="n">{f.it.n && f.it.avg != null ? round1(f.it.avg) : "–"}<div className="small muted">n={f.it.n} · ×{f.factor.toFixed(2)}</div></td>
-            <td className="n" style={{ fontWeight: 700, color: "var(--leaf)" }}>{f.fc}{f.ov && <div className="small muted">override</div>}</td>
-            <td className="n">{f.first}</td><td className="n">{f.cooked}</td><td className="n">{f.served}</td>
-            <td className="n" style={{ fontWeight: 700, color: f.avail < 0 ? "var(--waste)" : "inherit" }}>{f.cooked ? f.avail : "–"}</td>
-            <td><div className="chips" style={{ flexWrap: "nowrap" }}>
-              <button className="btn sm g" title={`Record a batch of ${st.batch}`} onClick={() => patch("log", date, { dishes: { [id]: { batches: { [eid()]: st.batch }, lastBatchAt: iso() } } }, `Batch of ${st.batch} recorded`)}>+{st.batch} cooked</button>
-              <button className="btn sm o" onClick={() => patch("log", date, { dishes: { [id]: { walkins: { [eid()]: 1 } } } })}>+1 walk-in</button>
-              <button className="btn sm o" onClick={() => patch("log", date, { dishes: { [id]: { walkins: { [eid()]: 5 } } } })}>+5</button>
-              <button className="btn sm o" title="Override forecast" onClick={() => setOvr(id)}>Edit</button>
-            </div></td>
-          </tr>); })}</tbody>
-      </table></div>
+      <TableCard.Root size="sm"><Table aria-label="Today’s dishes" className="min-w-[1000px]">
+        <Table.Header>
+          <Table.Head id="dish" isRowHeader label="Dish" className="min-w-48" /><Table.Head id="pre" label="Pre-orders S / R / L" className={NH} />
+          <Table.Head id="walk" label="Walk-ins expected" className={NH} /><Table.Head id="int" label="Interest" className={NH} />
+          <Table.Head id="fc" label="Forecast" className={NH} /><Table.Head id="first" label="First batch" className={NH} />
+          <Table.Head id="cooked" label="Cooked" className={NH} /><Table.Head id="served" label="Served" className={NH} />
+          <Table.Head id="avail" label="Available" className={NH} /><Table.Head id="rec" label="Record" />
+        </Table.Header>
+        <Table.Body>{F.map(([id, f]) => { const d = D.dishes[id], low = alerts.some((a) => a[0] === id); return (
+          <Table.Row key={id} id={id} className={low ? "alert-row" : undefined}>
+            <Table.Cell><b>{d.name}</b><div className="small muted">{canteenName(D, d.canteen)}{f.lastBatch ? ` · last batch ${fmtT(f.lastBatch)}` : ""}</div></Table.Cell>
+            <Table.Cell className="n">{f.pre}<div className="small muted">{f.byP.S} / {f.byP.R} / {f.byP.L}</div></Table.Cell>
+            <Table.Cell className="n">{f.walk}<div className="small muted">{f.hist.length ? `avg ${round1(f.walkAvg)} (${f.hist.length} wk)` : "no history"}</div></Table.Cell>
+            <Table.Cell className="n">{f.it.n && f.it.avg != null ? round1(f.it.avg) : "–"}<div className="small muted">n={f.it.n} · ×{f.factor.toFixed(2)}</div></Table.Cell>
+            <Table.Cell className="n" style={{ fontWeight: 700, color: "var(--leaf)" }}>{f.fc}{f.ov && <div className="small muted">override</div>}</Table.Cell>
+            <Table.Cell className="n">{f.first}</Table.Cell><Table.Cell className="n">{f.cooked}</Table.Cell><Table.Cell className="n">{f.served}</Table.Cell>
+            <Table.Cell className="n" style={{ fontWeight: 700, color: f.avail < 0 ? "var(--waste)" : "inherit" }}>{f.cooked ? f.avail : "–"}</Table.Cell>
+            <Table.Cell><div className="chips" style={{ flexWrap: "nowrap" }}>
+              <Button size="sm" onPress={() => patch("log", date, { dishes: { [id]: { batches: { [eid()]: st.batch }, lastBatchAt: iso() } } }, `Batch of ${st.batch} recorded`)}>+{st.batch} cooked</Button>
+              <Button color="secondary" size="sm" onPress={() => patch("log", date, { dishes: { [id]: { walkins: { [eid()]: 1 } } } })}>+1 walk-in</Button>
+              <Button color="secondary" size="sm" onPress={() => patch("log", date, { dishes: { [id]: { walkins: { [eid()]: 5 } } } })}>+5</Button>
+              <Button color="secondary" size="sm" aria-label={`Edit forecast for ${d.name}`} onPress={() => setOvr(id)}>Edit</Button>
+            </div></Table.Cell>
+          </Table.Row>); })}</Table.Body>
+      </Table></TableCard.Root>
       <div id="ovrbox">{ovr && F.find((x) => x[0] === ovr) && <OverrideBox key={ovr + date} id={ovr} f={F.find((x) => x[0] === ovr)![1]} onDone={() => setOvr(null)} />}</div>
       <p className="small muted">Interest factor = average rating ÷ 3, kept between 0.7 and 1.3, used only with at least {st.minRatings} ratings. Without history, the dish’s baseline walk-in number from the menu planner is used.</p>
     </>
@@ -108,28 +126,30 @@ export function Pickups() {
     <>
       <Hd title="Pickups" right={<DateBar />}>Match the student’s code. The kitchen sees order codes only, never names.</Hd>
       <div className="chips" style={{ alignItems: "center" }}>
-        <button className="chip" aria-pressed={S.pickCanteen === "all"} onClick={() => set({ pickCanteen: "all" })}>All</button>
-        {st.canteens.map((c) => <button key={c.k} className="chip" aria-pressed={S.pickCanteen === c.k} onClick={() => set({ pickCanteen: c.k })}>{c.n}</button>)}
-        <input type="text" placeholder="Search code, e.g. LK-4F2A" value={S.pickQ} onChange={(e) => set({ pickQ: e.target.value })} style={{ maxWidth: 240 }} aria-label="Search order code" />
+        <ButtonGroup size="sm" className="flex-wrap" aria-label="Canteen" disallowEmptySelection selectedKeys={[S.pickCanteen]} onSelectionChange={(k) => { const c = one(k); if (c != null) set({ pickCanteen: String(c) }); }}>
+          <ButtonGroupItem id="all">All</ButtonGroupItem>
+          {st.canteens.map((c) => <ButtonGroupItem key={c.k} id={c.k}>{c.n}</ButtonGroupItem>)}
+        </ButtonGroup>
+        <Input size="sm" placeholder="Search code, e.g. LK-4F2A" value={S.pickQ} onChange={(v) => set({ pickQ: v })} className="max-w-60" aria-label="Search order code" />
       </div>
       {!os.length ? <Empty icon="qr"><b>No pre-orders{q ? " match this code" : " for this day"}.</b></Empty> : (
-        <div className="tbl"><table>
-          <thead><tr><th>Code</th><th>Dish</th><th>Portion</th><th>Status</th><th /></tr></thead>
-          <tbody>{os.map((o) => {
+        <TableCard.Root size="sm"><Table aria-label="Pre-orders">
+          <Table.Header><Table.Head id="code" isRowHeader label="Code" /><Table.Head id="dish" label="Dish" /><Table.Head id="portion" label="Portion" /><Table.Head id="status" label="Status" /><Table.Head id="act" /></Table.Header>
+          <Table.Body>{os.map((o) => {
             const setSt = (v: string) => patch("orders", o.uid, { byDate: { [date]: { [o.oid]: { status: v, statusAt: iso() } } } });
             return (
-              <tr key={o.uid + o.oid}>
-                <td className="mono" style={{ fontWeight: 700 }}>{o.code}</td><td>{D.dishes[o.dish]?.name || ""}</td><td>{PORT[o.portion]} · {st.portions[o.portion]} g</td>
-                <td><span className={"st " + o.status}>{o.status}</span></td>
-                <td><div className="chips" style={{ flexWrap: "nowrap" }}>{o.status === "placed"
-                  ? <><button className="btn sm g" onClick={() => setSt("collected")}>Collected</button><button className="btn sm o" onClick={() => setSt("noshow")}>No-show</button></>
-                  : <button className="btn sm o" onClick={() => setSt("placed")}>Undo</button>}</div></td>
-              </tr>
+              <Table.Row key={o.uid + o.oid} id={o.uid + o.oid}>
+                <Table.Cell className="mono" style={{ fontWeight: 700 }}>{o.code}</Table.Cell><Table.Cell>{D.dishes[o.dish]?.name || ""}</Table.Cell><Table.Cell>{PORT[o.portion]} · {st.portions[o.portion]} g</Table.Cell>
+                <Table.Cell><Badge size="sm" color={STATUS[o.status]}>{o.status}</Badge></Table.Cell>
+                <Table.Cell><div className="chips" style={{ flexWrap: "nowrap" }}>{o.status === "placed"
+                  ? <><Button size="sm" onPress={() => setSt("collected")}>Collected</Button><Button color="secondary" size="sm" onPress={() => setSt("noshow")}>No-show</Button></>
+                  : <Button color="secondary" size="sm" onPress={() => setSt("placed")}>Undo</Button>}</div></Table.Cell>
+              </Table.Row>
             );
-          })}</tbody>
-        </table></div>
+          })}</Table.Body>
+        </Table></TableCard.Root>
       )}
-      {placed.length > 0 && <div className="note">At 12:30, release uncollected orders for walk-in sale. <button className="btn sm o" onClick={release}>Mark {placed.length} uncollected as no-show</button></div>}
+      {placed.length > 0 && <div className="note">At 12:30, release uncollected orders for walk-in sale. <Button color="secondary" size="sm" onPress={release}>Mark {placed.length} uncollected as no-show</Button></div>}
     </>
   );
 }
@@ -148,9 +168,9 @@ function LastCallCard({ id, f }: { id: string; f: Forecast }) {
         <b>{d.name}</b><span className="small">Last call sent {fmtT(sent.sentAt)} · {sent.discount}% off · {sent.qty} portions · until {sent.until}</span>
         <div className="kpi warn" style={{ border: "none", padding: 0 }}><span className="v">{sum(sent.sold)}</span><span className="l">sold at last call</span></div>
         <div className="chips">
-          <button className="btn sm a" onClick={() => patch("log", S.date, { lastCalls: { [c]: { sold: { [eid()]: 1 } } } })}>+1 sold</button>
-          <button className="btn sm o" onClick={() => patch("log", S.date, { lastCalls: { [c]: { sold: { [eid()]: 5 } } } })}>+5</button>
-          <button className="btn sm o" onClick={() => patch("log", S.date, { lastCalls: { [c]: { until: nowHM() } } }, "Last call ended")}>End now</button>
+          <Button color="secondary" size="sm" onPress={() => patch("log", S.date, { lastCalls: { [c]: { sold: { [eid()]: 1 } } } })}>+1 sold</Button>
+          <Button color="secondary" size="sm" onPress={() => patch("log", S.date, { lastCalls: { [c]: { sold: { [eid()]: 5 } } } })}>+5</Button>
+          <Button color="secondary" size="sm" onPress={() => patch("log", S.date, { lastCalls: { [c]: { until: nowHM() } } }, "Last call ended")}>End now</Button>
         </div>
       </div>
     );
@@ -169,12 +189,12 @@ function LastCallCard({ id, f }: { id: string; f: Forecast }) {
         <li style={ok2(!sent)}>No other last call from {canteenName(D, c)} today</li>
         <li>{nowHM() >= st.lastCallAt ? "" : "Before " + st.lastCallAt + ": usually too early"}</li>
       </ul>
-      <label className="check"><input type="checkbox" checked={hot} onChange={(e) => setHot(e.target.checked)} /> Kept hot above 60 °C since cooking</label>
+      <Checkbox isSelected={hot} onChange={setHot} label="Kept hot above 60 °C since cooking" />
       <div className="form">
-        <label className="f">Discount<select value={disc} onChange={(e) => setDisc(e.target.value)}><option>30</option><option>40</option><option>50</option></select></label>
-        <label className="f">Portions offered<input type="number" min="1" value={qty} onChange={(e) => setQty(e.target.value)} /></label>
+        <NativeSelect label="Discount" value={disc} onChange={(e) => setDisc(e.target.value)} options={["30", "40", "50"].map((v) => ({ label: v, value: v }))} />
+        <Input label="Portions offered" type="number" value={qty} onChange={setQty} />
       </div>
-      <button className="btn a" disabled={!ok} onClick={send}>Send last call</button>
+      <Button color="secondary" size="md" isDisabled={!ok} onPress={send}>Send last call</Button>
     </div>
   );
 }
@@ -193,14 +213,14 @@ function DonationForm({ ids, paused }: { ids: string[]; paused: boolean }) {
   return (
     <form className="card" onSubmit={submit}>
       <div className="form">
-        <label className="f">Dish<select name="dish">{ids.map((id) => <option key={id} value={id}>{D.dishes[id].name}</option>)}</select></label>
-        <label className="f">Portions<input name="por" type="number" min="1" defaultValue="5" /></label>
-        <label className="f">Weight (kg)<input name="kg" type="number" min="0" step="0.1" defaultValue="2" /></label>
-        <label className="f">Partner<select name="partner">{st.partners.map((p) => <option key={p}>{p}</option>)}</select></label>
+        <NativeSelect label="Dish" name="dish" options={ids.map((id) => ({ label: D.dishes[id].name, value: id }))} />
+        <Input label="Portions" name="por" type="number" defaultValue="5" />
+        <Input label="Weight (kg)" name="kg" type="number" defaultValue="2" />
+        <NativeSelect label="Partner" name="partner" options={st.partners.map((p) => ({ label: p, value: p }))} />
       </div>
-      <div className="grid g2" style={{ gap: 6 }}>{CHECKS.map((t, i) => <label className="check" key={t}><input type="checkbox" checked={checks[i]} onChange={(e) => setChecks((c) => c.map((v, j) => (j === i ? e.target.checked : v)))} /> {t}</label>)}</div>
+      <div className="grid g2" style={{ gap: 6 }}>{CHECKS.map((t, i) => <Checkbox key={t} label={t} isSelected={checks[i]} onChange={(v) => setChecks((c) => c.map((x, j) => (j === i ? v : x)))} />)}</div>
       <p className="small muted">All six checks are required. If in doubt, do not donate.</p>
-      <div><button className="btn g" type="submit" disabled={paused || !ids.length}><I n="truck" /> Record donation</button></div>
+      <div><Button type="submit" size="md" isDisabled={paused || !ids.length} iconLeading={<I n="truck" />}>Record donation</Button></div>
     </form>
   );
 }
@@ -218,8 +238,8 @@ export function Surplus() {
       <Hd title="Last call & donations" right={<DateBar />}>Prevention first. A last call is only for genuine surplus (Solution A). Safe food still left after service goes to a partner (Solution C).</Hd>
       {inc.length ? <div className="note w"><b>Food-safety incident recorded at {fmtT(inc[0].t)}:</b> {inc[0].text}. Last calls and donations are paused for this day. Inform the canteen manager and partner, and review within 48 hours.</div> : (
         <details className="card"><summary style={{ cursor: "pointer", fontWeight: 700 }}>Report a food-safety concern</summary>
-          <label className="f">What happened?<input type="text" maxLength={300} placeholder="e.g. chiller above 8 °C at 13:30" value={incText} onChange={(e) => setIncText(e.target.value)} /></label>
-          <div><button className="btn w sm" onClick={() => { if (!incText.trim()) { toast("Describe what happened."); return; } patch("log", date, { incidents: { [eid()]: { text: incText.trim(), t: iso() } } }, "Incident recorded. Last calls and donations paused."); }}>Record and pause last calls and donations</button></div>
+          <Input label="What happened?" maxLength={300} placeholder="e.g. chiller above 8 °C at 13:30" value={incText} onChange={setIncText} />
+          <div><Button color="secondary-destructive" size="sm" onPress={() => { if (!incText.trim()) { toast("Describe what happened."); return; } patch("log", date, { incidents: { [eid()]: { text: incText.trim(), t: iso() } } }, "Incident recorded. Last calls and donations paused."); }}>Record and pause last calls and donations</Button></div>
         </details>
       )}
       {weekCalls > 3 && <div className="note w"><b>{weekCalls} last calls this week.</b> More than 3 suggests the forecast is too high. Review it in Insights before cooking more.</div>}
@@ -229,10 +249,10 @@ export function Surplus() {
       <h2>Donate safe surplus (Solution C)</h2>
       <DonationForm key={date} ids={ids} paused={inc.length > 0} />
       {dons.length > 0 && (
-        <div className="tbl"><table>
-          <thead><tr><th>Time</th><th>Dish</th><th className="n">Portions</th><th className="n">kg</th><th>Partner</th></tr></thead>
-          <tbody>{dons.map(([k, d]) => <tr key={k}><td className="mono">{fmtT(d.t)}</td><td>{D.dishes[d.dish]?.name || ""}</td><td className="n">{d.portions}</td><td className="n">{d.kg}</td><td>{d.partner}</td></tr>)}</tbody>
-        </table></div>
+        <TableCard.Root size="sm"><Table aria-label="Donations">
+          <Table.Header><Table.Head id="t" isRowHeader label="Time" /><Table.Head id="dish" label="Dish" /><Table.Head id="por" label="Portions" className={NH} /><Table.Head id="kg" label="kg" className={NH} /><Table.Head id="partner" label="Partner" /></Table.Header>
+          <Table.Body>{dons.map(([k, d]) => <Table.Row key={k} id={k}><Table.Cell className="mono">{fmtT(d.t)}</Table.Cell><Table.Cell>{D.dishes[d.dish]?.name || ""}</Table.Cell><Table.Cell className="n">{d.portions}</Table.Cell><Table.Cell className="n">{d.kg}</Table.Cell><Table.Cell>{d.partner}</Table.Cell></Table.Row>)}</Table.Body>
+        </Table></TableCard.Root>
       )}
     </>
   );
@@ -257,12 +277,12 @@ export function WasteLog() {
       <Hd title="Waste log" right={<DateBar />}>Weigh after service, every day, at the same time. Waste is logged per day and per type, never per staff member.</Hd>
       <form className="card" key={date + (w?.savedAt || "")} onSubmit={save}>
         <div className="form">
-          <label className="f">Preparation waste (g)<input name="prep" type="number" min="0" defaultValue={w?.prep ?? ""} placeholder="peels, trimmings" /></label>
-          <label className="f">Overproduction (g)<input name="over" type="number" min="0" defaultValue={w?.over ?? ""} placeholder="cooked, never served" /></label>
-          <label className="f">Plate waste (g)<input name="plate" type="number" min="0" defaultValue={w?.plate ?? ""} placeholder="left on plates" /></label>
-          <label className="f">Meals served<input name="meals" type="number" min="0" defaultValue={w?.meals ?? ""} placeholder={`${served} counted by the app`} /></label>
+          <Input label="Preparation waste (g)" name="prep" type="number" defaultValue={String(w?.prep ?? "")} placeholder="peels, trimmings" />
+          <Input label="Overproduction (g)" name="over" type="number" defaultValue={String(w?.over ?? "")} placeholder="cooked, never served" />
+          <Input label="Plate waste (g)" name="plate" type="number" defaultValue={String(w?.plate ?? "")} placeholder="left on plates" />
+          <Input label="Meals served" name="meals" type="number" defaultValue={String(w?.meals ?? "")} placeholder={`${served} counted by the app`} />
         </div>
-        <div><button className="btn g" type="submit"><I n="scale" /> Save today’s waste</button></div>
+        <div><Button type="submit" size="md" iconLeading={<I n="scale" />}>Save today’s waste</Button></div>
       </form>
       {d?.gpm && (
         <>
@@ -299,12 +319,12 @@ function DishForm({ editId, onDone }: { editId: string | null; onDone: () => voi
   return (
     <form key={editId || "new"} onSubmit={save} style={{ display: "contents" }}>
       <div className="form">
-        <label className="f">Name<input name="name" type="text" maxLength={80} defaultValue={d.name || ""} placeholder="e.g. Beef pho" /></label>
-        <label className="f">Canteen<select name="canteen" defaultValue={d.canteen}>{st.canteens.map((c) => <option key={c.k} value={c.k}>{c.n}</option>)}</select></label>
-        <label className="f">Labels (comma-separated)<input name="tags" type="text" defaultValue={(d.tags || []).join(", ")} placeholder="Halal, Vegetarian, Contains nuts" /></label>
-        <label className="f">Baseline walk-ins per day<input name="base" type="number" min="0" defaultValue={d.base ?? 30} /></label>
+        <Input label="Name" name="name" maxLength={80} defaultValue={d.name || ""} placeholder="e.g. Beef pho" />
+        <NativeSelect label="Canteen" name="canteen" defaultValue={d.canteen} options={st.canteens.map((c) => ({ label: c.n, value: c.k }))} />
+        <Input label="Labels (comma-separated)" name="tags" defaultValue={(d.tags || []).join(", ")} placeholder="Halal, Vegetarian, Contains nuts" />
+        <Input label="Baseline walk-ins per day" name="base" type="number" defaultValue={String(d.base ?? 30)} />
       </div>
-      <div className="chips"><button className="btn g" type="submit">{editId ? "Save changes" : "Add dish"}</button>{editId && <button className="btn o" type="button" onClick={onDone}>Cancel</button>}</div>
+      <div className="chips"><Button type="submit" size="md">{editId ? "Save changes" : "Add dish"}</Button>{editId && <Button color="secondary" size="md" onPress={onDone}>Cancel</Button>}</div>
       <p className="small muted">Labels such as Halal or allergens must be checked by the canteen before publishing.</p>
     </form>
   );
@@ -326,10 +346,10 @@ export function MenuPlanner() {
   };
   return (
     <>
-      <Hd title="Menu planner" right={<div className="chips"><button className="chip" onClick={() => set({ planWeek: addDays(wk, -7) })}>‹ Previous</button><span className="chip" style={{ cursor: "default" }}>Week of {fmtDay(wk)}</span><button className="chip" onClick={() => set({ planWeek: addDays(wk, 7) })}>Next ›</button></div>}>
+      <Hd title="Menu planner" right={<div className="chips"><Button color="secondary" size="sm" onPress={() => set({ planWeek: addDays(wk, -7) })}>‹ Previous</Button><Week wk={wk} /><Button color="secondary" size="sm" onPress={() => set({ planWeek: addDays(wk, 7) })}>Next ›</Button></div>}>
         Publish the week’s menu by Thursday 17:00 so students can rate it and pre-order.
       </Hd>
-      {!lib.length && <Empty icon="bulb"><b>No dishes yet.</b><span>Start with the six dishes from our CampusMeal overview, then edit them.</span><button className="btn g" onClick={starter}>Create starter menu</button></Empty>}
+      {!lib.length && <Empty icon="bulb"><b>No dishes yet.</b><span>Start with the six dishes from our CampusMeal overview, then edit them.</span><Button size="md" onPress={starter}>Create starter menu</Button></Empty>}
       <div style={{ overflowX: "auto" }}><div className="weekgrid">
         <div />{st.canteens.map((c) => <div key={c.k} className="h">{c.n}</div>)}
         {days.map((d) => [
@@ -338,23 +358,23 @@ export function MenuPlanner() {
             const ids = dishesOf(D, d).filter((id) => D.dishes[id].canteen === c.k), opts = lib.filter(([id, x]) => x.canteen === c.k && !ids.includes(id));
             return (
               <div className="cell" key={d + c.k}>
-                {ids.map((id) => <span className="mchip" key={id}>{D.dishes[id].name}<button aria-label="Remove" onClick={() => put("days", d, { dishes: dishesOf(D, d).filter((x) => x !== id) })}>×</button></span>)}
-                {opts.length > 0 && <select aria-label="Add dish" value="" onChange={(e) => e.target.value && put("days", d, { dishes: dishesOf(D, d).concat(e.target.value) }, "Added to the menu")}>
-                  <option value="">+ Add dish</option>{opts.map(([id, x]) => <option key={id} value={id}>{x.name}</option>)}</select>}
+                {ids.map((id) => <span className="mchip" key={id}>{D.dishes[id].name}<Button color="tertiary" size="xs" aria-label="Remove" onPress={() => put("days", d, { dishes: dishesOf(D, d).filter((x) => x !== id) })}>×</Button></span>)}
+                {opts.length > 0 && <NativeSelect size="sm" aria-label="Add dish" value="" onChange={(e) => e.target.value && put("days", d, { dishes: dishesOf(D, d).concat(e.target.value) }, "Added to the menu")}
+                  options={[{ label: "+ Add dish", value: "" }, ...opts.map(([id, x]) => ({ label: x.name, value: id }))]} />}
               </div>
             );
           }),
         ])}
       </div></div>
-      <div className="chips"><button className="btn o sm" onClick={copyLast}>Copy last week’s menu into this week</button></div>
+      <div className="chips"><Button color="secondary" size="sm" onPress={copyLast}>Copy last week’s menu into this week</Button></div>
       <h2>Dish library</h2>
-      <div className="tbl"><table>
-        <thead><tr><th>Dish</th><th>Canteen</th><th>Labels</th><th className="n">Baseline walk-ins</th><th /></tr></thead>
-        <tbody>{lib.map(([id, x]) => (
-          <tr key={id}><td><span style={{ display: "inline-block", width: 10, height: 10, borderRadius: 3, background: x.color }} /> <b>{x.name}</b></td><td>{canteenName(D, x.canteen)}</td><td><Tags d={x} /></td><td className="n">{x.base || 0}</td>
-            <td><button className="btn sm o" onClick={() => { set({ editDish: id }); setTimeout(() => document.getElementById("dishform")?.scrollIntoView({ behavior: "smooth" }), 0); }}>Edit</button></td></tr>
-        ))}</tbody>
-      </table></div>
+      <TableCard.Root size="sm"><Table aria-label="Dish library">
+        <Table.Header><Table.Head id="dish" isRowHeader label="Dish" /><Table.Head id="canteen" label="Canteen" /><Table.Head id="labels" label="Labels" /><Table.Head id="base" label="Baseline walk-ins" className={NH} /><Table.Head id="act" /></Table.Header>
+        <Table.Body>{lib.map(([id, x]) => (
+          <Table.Row key={id} id={id}><Table.Cell><span style={{ display: "inline-block", width: 10, height: 10, borderRadius: 3, background: x.color }} /> <b>{x.name}</b></Table.Cell><Table.Cell>{canteenName(D, x.canteen)}</Table.Cell><Table.Cell><Tags d={x} /></Table.Cell><Table.Cell className="n">{x.base || 0}</Table.Cell>
+            <Table.Cell><Button color="secondary" size="sm" onPress={() => { set({ editDish: id }); setTimeout(() => document.getElementById("dishform")?.scrollIntoView({ behavior: "smooth" }), 0); }}>Edit</Button></Table.Cell></Table.Row>
+        ))}</Table.Body>
+      </Table></TableCard.Root>
       <div className="card" id="dishform"><h3>{S.editDish ? "Edit dish" : "Add a dish"}</h3><DishForm editId={S.editDish} onDone={() => set({ editDish: null })} /></div>
     </>
   );
@@ -389,23 +409,26 @@ export function Insights() {
   const COL = ["var(--leaf)", "#8CC3A2", "var(--amber)", "var(--waste)"];
   return (
     <>
-      <Hd title="Menu insights" right={<div className="chips">{[14, 28, 56].map((n) => <button key={n} className="chip" aria-pressed={S.insightDays === n} onClick={() => set({ insightDays: n })}>{n} days</button>)}</div>}>
+      <Hd title="Menu insights" right={
+        <ButtonGroup size="sm" aria-label="Period" disallowEmptySelection selectedKeys={[String(S.insightDays)]} onSelectionChange={(k) => { const n = one(k); if (n != null) set({ insightDays: +String(n) }); }}>
+          {[14, 28, 56].map((n) => <ButtonGroupItem key={n} id={String(n)}>{n} days</ButtonGroupItem>)}
+        </ButtonGroup>}>
         Dishes are flagged when 30% or more of finish-checks say “Half” or “A little”, when interest is below 2.5, or when the forecast is off by more than 20%. Totals under {st.minFeedback} answers are hidden to protect privacy.
       </Hd>
       {!rows.length ? <Empty icon="bulb"><b>No dishes yet.</b></Empty> : <>
-        <div className="tbl"><table>
-          <thead><tr><th>Dish</th><th className="n">Days served</th><th className="n">Forecast vs served</th><th className="n">Interest</th><th>Finish-check</th><th>Flags</th></tr></thead>
-          <tbody>{rows.map((r) => { const n = r.fb.length, dist = AMOUNTS.map((a) => r.fb.filter((f) => f.amount === a).length); return (
-            <tr key={r.id}>
-              <td><b>{r.d.name}</b><div className="small muted">{canteenName(D, r.d.canteen)}</div></td>
-              <td className="n">{r.days}</td><td className="n">{r.err != null ? (r.err > 0 ? "+" : "") + Math.round(r.err * 100) + "%" : "–"}</td>
-              <td className="n">{r.rn >= st.minRatings && r.avgR != null ? <>{round1(r.avgR)} <span className="small muted">n={r.rn}</span></> : <span className="small muted">n={r.rn}</span>}</td>
-              <td style={{ minWidth: 180 }}>{n >= st.minFeedback ? <>
+        <TableCard.Root size="sm"><Table aria-label="Menu insights">
+          <Table.Header><Table.Head id="dish" isRowHeader label="Dish" /><Table.Head id="days" label="Days served" className={NH} /><Table.Head id="err" label="Forecast vs served" className={NH} /><Table.Head id="int" label="Interest" className={NH} /><Table.Head id="fin" label="Finish-check" /><Table.Head id="flags" label="Flags" /></Table.Header>
+          <Table.Body>{rows.map((r) => { const n = r.fb.length, dist = AMOUNTS.map((a) => r.fb.filter((f) => f.amount === a).length); return (
+            <Table.Row key={r.id} id={r.id}>
+              <Table.Cell><b>{r.d.name}</b><div className="small muted">{canteenName(D, r.d.canteen)}</div></Table.Cell>
+              <Table.Cell className="n">{r.days}</Table.Cell><Table.Cell className="n">{r.err != null ? (r.err > 0 ? "+" : "") + Math.round(r.err * 100) + "%" : "–"}</Table.Cell>
+              <Table.Cell className="n">{r.rn >= st.minRatings && r.avgR != null ? <>{round1(r.avgR)} <span className="small muted">n={r.rn}</span></> : <span className="small muted">n={r.rn}</span>}</Table.Cell>
+              <Table.Cell style={{ minWidth: 180 }}>{n >= st.minFeedback ? <>
                 <div className="stack" style={{ height: 14 }}>{dist.map((v, i) => v ? <i key={i} style={{ width: (v / n) * 100 + "%", background: COL[i] }} title={`${AMOUNTS[i]}: ${v}`} /> : null)}</div>
-                <span className="small muted">n={n} · {Math.round((r.bad / n) * 100)}% half or less</span></> : <span className="small muted">n={n} (hidden below {st.minFeedback})</span>}</td>
-              <td>{r.flags.length ? r.flags.map((f) => <span key={f} className="tag" style={{ background: "var(--waste-soft)", color: "var(--waste)" }}>{f}</span>) : <span className="tag h">OK</span>}</td>
-            </tr>); })}</tbody>
-        </table></div>
+                <span className="small muted">n={n} · {Math.round((r.bad / n) * 100)}% half or less</span></> : <span className="small muted">n={n} (hidden below {st.minFeedback})</span>}</Table.Cell>
+              <Table.Cell><div className="chips">{r.flags.length ? r.flags.map((f) => <Badge key={f} type="color" size="sm" color="error">{f}</Badge>) : <Badge type="color" size="sm" color="success">OK</Badge>}</div></Table.Cell>
+            </Table.Row>); })}</Table.Body>
+        </Table></TableCard.Root>
         <div className="legend">{AMOUNTS.map((a, i) => <span key={a}><b style={{ background: COL[i] }} />{a}</span>)}</div>
         {tr.length > 0 && <div className="card"><b>Most common reasons for leftovers</b><div className="bars">{tr.map(([k, v]) => <div className="bar" key={k}><span>{k}</span><span className="t"><i style={{ width: (v / tr[0][1]) * 100 + "%", background: "var(--amber)" }} /></span><span className="v">{v}</span></div>)}</div></div>}
       </>}
@@ -426,9 +449,9 @@ export function Report() {
   return (
     <>
       <Hd title="Weekly report" right={<div className="chips">
-        <button className="chip" onClick={() => set({ reportWeek: addDays(wk, -7) })}>‹</button><span className="chip" style={{ cursor: "default" }}>Week of {fmtDay(wk)}</span>
-        <button className="chip" onClick={() => set({ reportWeek: addDays(wk, 7) })}>›</button>
-        <button className="btn sm o" onClick={() => downloadText(`campusmeal_week_${wk}.csv`, weekCsv(D, wk), "text/csv")}>Download CSV</button></div>}>
+        <Button color="secondary" size="sm" aria-label="Previous week" onPress={() => set({ reportWeek: addDays(wk, -7) })}>‹</Button><Week wk={wk} />
+        <Button color="secondary" size="sm" aria-label="Next week" onPress={() => set({ reportWeek: addDays(wk, 7) })}>›</Button>
+        <Button color="secondary" size="sm" onPress={() => downloadText(`campusmeal_week_${wk}.csv`, weekCsv(D, wk), "text/csv")}>Download CSV</Button></div>}>
         The protocol’s KPIs for the canteen manager, every Friday.
       </Hd>
       <div className="grid g4">
@@ -449,10 +472,10 @@ export function Report() {
           ))}</div>
           {st.baseline > 0 && <div className="legend"><span><b style={{ background: "var(--waste)", width: 2 }} />Baseline {st.baseline} g</span></div>}
         </div>
-        <div className="tbl"><table>
-          <thead><tr><th>Day</th><th className="n">Meals</th><th className="n">Forecast</th><th className="n">Cooked</th><th className="n">Waste (kg)</th><th className="n">g / meal</th><th className="n">Last calls</th><th className="n">Donated</th></tr></thead>
-          <tbody>{rows.map(({ d, s }) => <tr key={d}><td>{fmtDay(d)}</td><td className="n">{s.meals}</td><td className="n">{s.fcSum}</td><td className="n">{s.cooked}</td><td className="n">{round1(s.grams / 1000)}</td><td className="n">{s.gpm ? Math.round(s.gpm) : "–"}</td><td className="n">{s.lastCalls}</td><td className="n">{s.donated}</td></tr>)}</tbody>
-        </table></div>
+        <TableCard.Root size="sm"><Table aria-label="Days this week">
+          <Table.Header><Table.Head id="day" isRowHeader label="Day" /><Table.Head id="meals" label="Meals" className={NH} /><Table.Head id="fc" label="Forecast" className={NH} /><Table.Head id="cooked" label="Cooked" className={NH} /><Table.Head id="kg" label="Waste (kg)" className={NH} /><Table.Head id="gpm" label="g / meal" className={NH} /><Table.Head id="lc" label="Last calls" className={NH} /><Table.Head id="don" label="Donated" className={NH} /></Table.Header>
+          <Table.Body>{rows.map(({ d, s }) => <Table.Row key={d} id={d}><Table.Cell>{fmtDay(d)}</Table.Cell><Table.Cell className="n">{s.meals}</Table.Cell><Table.Cell className="n">{s.fcSum}</Table.Cell><Table.Cell className="n">{s.cooked}</Table.Cell><Table.Cell className="n">{round1(s.grams / 1000)}</Table.Cell><Table.Cell className="n">{s.gpm ? Math.round(s.gpm) : "–"}</Table.Cell><Table.Cell className="n">{s.lastCalls}</Table.Cell><Table.Cell className="n">{s.donated}</Table.Cell></Table.Row>)}</Table.Body>
+        </Table></TableCard.Root>
       </>}
     </>
   );
@@ -476,27 +499,27 @@ export function Settings() {
     <form onSubmit={save} key={JSON.stringify(st)} style={{ display: "contents" }}>
       <Hd title="Settings">Rules from the CampusMeal operating protocol. Changes apply to everyone immediately.</Hd>
       <div className="card"><h3>Times</h3><div className="form">
-        <label className="f">Pre-order cut-off<input type="time" name="cutoff" defaultValue={st.cutoff} /></label>
-        <label className="f">Service starts<input type="time" name="start" defaultValue={st.serviceStart} /></label>
-        <label className="f">Last call from<input type="time" name="lc" defaultValue={st.lastCallAt} /></label>
-        <label className="f">Service ends<input type="time" name="end" defaultValue={st.serviceEnd} /></label></div>
-        <label className="check"><input type="checkbox" name="enf" defaultChecked={st.enforceCutoff} /> Enforce the cut-off (switch off only for testing)</label></div>
+        <Input label="Pre-order cut-off" type="time" name="cutoff" defaultValue={st.cutoff} />
+        <Input label="Service starts" type="time" name="start" defaultValue={st.serviceStart} />
+        <Input label="Last call from" type="time" name="lc" defaultValue={st.lastCallAt} />
+        <Input label="Service ends" type="time" name="end" defaultValue={st.serviceEnd} /></div>
+        <Checkbox name="enf" defaultSelected={st.enforceCutoff} label="Enforce the cut-off (switch off only for testing)" /></div>
       <div className="card"><h3>Forecast and batches</h3><div className="form">
-        <label className="f">Batch size (portions)<input type="number" name="batch" min="1" defaultValue={st.batch} /></label>
-        <label className="f">First batch (% of forecast)<input type="number" name="first" min="10" max="100" defaultValue={st.firstPct} /></label>
-        <label className="f">Ratings needed to use interest<input type="number" name="minr" min="1" defaultValue={st.minRatings} /></label></div></div>
+        <Input label="Batch size (portions)" type="number" name="batch" defaultValue={String(st.batch)} />
+        <Input label="First batch (% of forecast)" type="number" name="first" defaultValue={String(st.firstPct)} />
+        <Input label="Ratings needed to use interest" type="number" name="minr" defaultValue={String(st.minRatings)} /></div></div>
       <div className="card"><h3>Portions (g of rice)</h3><div className="form">
-        <label className="f">Small<input type="number" name="ps" defaultValue={st.portions.S} /></label>
-        <label className="f">Regular (default)<input type="number" name="pr" defaultValue={st.portions.R} /></label>
-        <label className="f">Large<input type="number" name="pl" defaultValue={st.portions.L} /></label></div></div>
+        <Input label="Small" type="number" name="ps" defaultValue={String(st.portions.S)} />
+        <Input label="Regular (default)" type="number" name="pr" defaultValue={String(st.portions.R)} />
+        <Input label="Large" type="number" name="pl" defaultValue={String(st.portions.L)} /></div></div>
       <div className="card"><h3>Last call and donations</h3><div className="form">
-        <label className="f">Minimum portions for a last call<input type="number" name="minlc" min="1" defaultValue={st.minLastCall} /></label>
-        <label className="f">Maximum minutes since cooking<input type="number" name="hold" min="30" defaultValue={st.maxHoldMin} /></label>
-        <label className="f">Partners (comma-separated)<input type="text" name="part" defaultValue={st.partners.join(", ")} /></label></div></div>
+        <Input label="Minimum portions for a last call" type="number" name="minlc" defaultValue={String(st.minLastCall)} />
+        <Input label="Maximum minutes since cooking" type="number" name="hold" defaultValue={String(st.maxHoldMin)} />
+        <Input label="Partners (comma-separated)" name="part" defaultValue={st.partners.join(", ")} /></div></div>
       <div className="card"><h3>Measurement</h3><div className="form">
-        <label className="f">Baseline waste per meal (g), from the audit<input type="number" name="base" min="0" defaultValue={st.baseline || ""} placeholder="e.g. 118" /></label>
-        <label className="f">Minimum answers before showing feedback<input type="number" name="minf" min="3" defaultValue={st.minFeedback} /></label></div></div>
-      <div><button className="btn g" type="submit">Save settings</button></div>
+        <Input label="Baseline waste per meal (g), from the audit" type="number" name="base" defaultValue={st.baseline ? String(st.baseline) : ""} placeholder="e.g. 118" />
+        <Input label="Minimum answers before showing feedback" type="number" name="minf" defaultValue={String(st.minFeedback)} /></div></div>
+      <div><Button type="submit" size="md">Save settings</Button></div>
     </form>
   );
 }

@@ -1,6 +1,8 @@
 /* Team content: yellow <Field> boxes (filled from content.json), <MediaSlot> photo/video slots, and the edit bar.
    Uploads save in this browser; "Export" downloads content.json, which publishes them once committed to public/. */
 import { createContext, useContext, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { Upload01 } from "@untitledui/icons";
+import { Button } from "@/components/base/buttons/button";
 import { useSite } from "../../state/site";
 
 interface EditCtx { pickFile: (slot: string) => void }
@@ -13,23 +15,27 @@ export function Field({ id, children, className }: { id: string; children?: Reac
   return <span className={"fill" + (v ? " done" : "") + (className ? " " + className : "")}>{v || children}</span>;
 }
 
-/** Photo or video slot. Shows public/minions.jpg until the team uploads a file. */
-export function MediaSlot({ id, className, style, children }: { id: string; className?: string; style?: CSSProperties; children?: ReactNode }) {
+/** A found photograph (public/img/, credited in the footer) shown until the team uploads their own. */
+export interface Fallback { src: string; alt: string; caption: string }
+
+/** Photo or video slot. Shows `fallback` (or its placeholder text) until the team uploads a file. */
+export function MediaSlot({ id, className, style, children, fallback }: { id: string; className?: string; style?: CSSProperties; children?: ReactNode; fallback?: Fallback }) {
   const { media } = useSite();
   const edit = useContext(Ctx);
   const m = media[id];
   const [broken, setBroken] = useState<string | null>(null);
-  const src = m ? m.src : "minions.jpg";
+  const src = m?.src ?? (fallback && "img/" + fallback.src);
   const has = !!src && broken !== src;
-  return (
-    <div className={(className || "media") + (has ? " has" : "")} style={style}>
+  return (<>
+    <div className={(className || "media") + (has ? " has" : "") + (!m && fallback ? " hero-photo" : "")} style={style}>
       {has && (m?.kind === "video"
         ? <video src={src!} controls playsInline preload="metadata" onError={() => setBroken(src)} />
-        : <img src={src!} alt={altOf(children) || "Project photo"} loading="lazy" onError={() => setBroken(src)} />)}
+        : <img src={src!} alt={(!m && fallback?.alt) || altOf(children) || "Project photo"} loading="lazy" onError={() => setBroken(src!)} />)}
       {children}
-      {edit && <button type="button" className="up" onClick={() => edit.pickFile(id)}>Upload photo or video</button>}
+      {edit && <Button color="secondary" size="sm" className="up absolute right-2.5 bottom-2.5" iconLeading={Upload01} onPress={() => edit.pickFile(id)}>Upload photo or video</Button>}
     </div>
-  );
+    {!m && fallback && <p className="media-cap">{fallback.caption}</p>}
+  </>);
 }
 function altOf(n: ReactNode): string {
   // use the placeholder's bold title as the alt text, like the original
@@ -62,8 +68,8 @@ export function EditModeProvider({ children }: { children: ReactNode }) {
         onChange={(e) => { const f = e.target.files?.[0]; if (f && slot) site.uploadMedia(slot, f); }} />
       {site.localEdits && (
         <div className="editbar show">
-          <button type="button" onClick={site.exportContent} title="Put the downloaded file in public/ and push to publish your uploads">Export content.json</button>
-          <button type="button" style={{ background: "transparent", border: "1px solid currentColor" }} onClick={site.discardEdits}>Discard local edits</button>
+          <Button size="sm" onPress={site.exportContent} aria-label="Export content.json: put the downloaded file in public/ and push to publish your uploads">Export content.json</Button>
+          <Button size="sm" color="secondary" onPress={site.discardEdits}>Discard local edits</Button>
         </div>
       )}
     </Ctx.Provider>

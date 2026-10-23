@@ -1,5 +1,6 @@
 /* Page 1 (The problem): calculator, "where" donut, bar charts, food journey, law timeline. */
 import type { CSSProperties, KeyboardEvent } from "react";
+import { Input } from "@/components/base/input/input";
 import { createStore } from "../../state/createStore";
 import { useOverlay } from "../ui/Overlays";
 import { CHAIN, CHARTS, DONUT, LAW } from "../../data/content";
@@ -9,10 +10,10 @@ type Attrs = { className?: string; style?: CSSProperties; "aria-label"?: string;
 /* ---------- one canteen, one year ---------- */
 const calc = createStore({ meals: 1000, g: 118, days: 200, red: 25 });
 type CalcKey = keyof ReturnType<typeof calc.get>;
-export function CalcInput({ name, ...a }: { name: CalcKey; type?: string; min?: string; max?: string; defaultValue?: string }) {
+export function CalcInput({ name }: { name: CalcKey; type?: string; min?: string; max?: string; defaultValue?: string }) {
   const v = calc.use()[name];
-  return <input id={"c-" + name} type="number" min={a.min} max={a.max} value={Number.isNaN(v) ? "" : v}
-    onChange={(e) => calc.set((c) => ({ ...c, [name]: e.target.value === "" ? NaN : +e.target.value }))} />;
+  return <Input id={"c-" + name} type="number" value={Number.isNaN(v) ? "" : String(v)}
+    onChange={(x) => calc.set((c) => ({ ...c, [name]: x === "" ? NaN : +x }))} />;
 }
 export function CalcOut({ name, className }: { name: "day" | "year" | "save"; className?: string }) {
   const c = calc.use(), n = (x: number) => x || 0;

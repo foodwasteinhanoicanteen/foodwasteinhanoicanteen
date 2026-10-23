@@ -1,5 +1,6 @@
 /* Small behaviours from the original page: counting numbers, copy buttons, before/after switch. */
 import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import { Button } from "@/components/base/buttons/button";
 import { useTabActive } from "../layout";
 import { useOverlay } from "./Overlays";
 import { createStore } from "../../state/createStore";
@@ -26,8 +27,14 @@ export function CountUp({ to, suf = "" }: { to: number; suf?: string; children?:
   return <>{v}</>;
 }
 
+/** A found photograph of the subject's world (public/img/, credited in the footer). The caption says what it shows. */
+export const Photo = ({ src, alt, caption, className }: { src: string; alt: string; caption: string; className?: string }) => (
+  <figure className={"photo" + (className ? " " + className : "")}><img src={"img/" + src} alt={alt} loading="lazy" /><figcaption>{caption}</figcaption></figure>
+);
+
 /** Copies the visible text of the element with id = target. */
-export function CopyButton({ target, className, type, children }: { target: string; className?: string; type?: "button"; children?: ReactNode }) {
+/** `className` "btn ghost" (from the page markup) picks the secondary style. */
+export function CopyButton({ target, className, children }: { target: string; className?: string; type?: "button"; children?: ReactNode }) {
   const { toast } = useOverlay();
   const copy = () => {
     const el = document.getElementById(target);
@@ -40,14 +47,14 @@ export function CopyButton({ target, className, type, children }: { target: stri
         toast("Selected: press Ctrl+C to copy");
       });
   };
-  return <button className={className} type={type || "button"} onClick={copy}>{children}</button>;
+  return <Button size="md" color={className?.includes("ghost") ? "secondary" : "primary"} onPress={copy}>{children}</Button>;
 }
 
 /* Results page: Before (baseline) / After (pilot) switch. */
 const ba = createStore<"0" | "1">("0");
 export function BAToggle({ v, children }: { v: "0" | "1"; children?: ReactNode }) {
   const cur = ba.use();
-  return <button aria-pressed={cur === v} onClick={() => ba.set(v)}>{children}</button>;
+  return <Button size="sm" color={cur === v ? "primary" : "secondary"} aria-pressed={cur === v} onPress={() => ba.set(v)}>{children}</Button>;
 }
 export function BAShow({ v, as: Tag, className, style, children }: { v: "0" | "1"; as: "td" | "th" | "div" | "span" | "p"; className?: string; style?: CSSProperties; children?: ReactNode }) {
   const cur = ba.use();

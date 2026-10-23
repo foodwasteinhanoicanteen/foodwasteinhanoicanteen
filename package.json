@@ -4,7 +4,9 @@
   "private": true,
   "description": "MANA3021 Team Mini Social Impact Project website and the CampusMeal pilot app. A static site for GitHub Pages.",
   "type": "module",
-  "engines": { "node": ">=20.12" },
+  "engines": {
+    "node": ">=20.12"
+  },
   "scripts": {
     "dev": "tsx scripts/dev.ts",
     "build": "tsx scripts/build.ts",
@@ -15,17 +17,28 @@
   "dependencies": {
     "@fontsource/be-vietnam-pro": "^5.2.6",
     "@fontsource/bricolage-grotesque": "^5.2.8",
-    "@fontsource/jetbrains-mono": "^5.2.6",
+    "@react-stately/utils": "^3.12.1",
+    "@untitledui/icons": "^0.0.23",
+    "input-otp": "^1.5.0",
     "react": "^19.2.0",
+    "react-aria": "^3.53.1",
+    "react-aria-components": "^1.22.1",
     "react-dom": "^19.2.0",
+    "react-stately": "^3.51.0",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-react-aria-components": "^2.2.0",
     "tsx": "^4.20.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^22.0.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "esbuild": "^0.25.0",
+    "postcss": "^8.5.31",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5.9.0"
   }
 }

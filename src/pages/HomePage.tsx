@@ -1,32 +1,30 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection } from "../components/layout";
-import { CountUp, HomeCards, MediaSlot, REF_COUNT } from "../components";
+import { CountUp, GoButton, HomeCards, MediaSlot, Photo, REF_COUNT } from "../components";
 
 export default function HomePage() {
   return (
     <PageSection id="home">
       <div className="wrap">
+        <h1 className="hero-title">Almost a third of lunch is binned.</h1>
         <div className="hero">
           <div className="stack">
-            <div className="eyebrow">MANA3021 Business Ethics · Team Mini Social Impact Project · Hanoi</div>
-            <h1>
-              Almost a third of a Hanoi school lunch ends up <em>in the bin.</em>
-            </h1>
-            <p style={{ fontSize: "1.12rem", color: "var(--muted)" }}>
-              Most of the decisions that cause this waste are made by businesses, not by the people eating. We studied the problem
-              ethically, designed a response with our university canteen, tested it with people, and learned from the results.
+            <p className="lead">
+              In eight Hanoi school kitchens, 29% of the food cooked for lunch was thrown away. Most of that waste is decided by
+              businesses, not by the people eating. This is our MANA3021 project: we studied it, designed a fix with our university
+              canteen, and tested it with people.
             </p>
             <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginTop: "6px" }}>
-              <button className="btn" data-go="problem">
-                Start the journey →
-              </button>{" "}
-              <button className="btn ghost" data-go="plan">
+              <GoButton size="lg" to="problem">
+                Start with the problem →
+              </GoButton>{" "}
+              <GoButton size="lg" color="secondary" to="plan">
                 See our action plans
-              </button>
+              </GoButton>
             </div>
           </div>
           <div className="tray" aria-label="One Hanoi school lunch, average waste per child">
-            <div className="eyebrow">One school lunch, per child · Hanoi, 2024</div>
+            <div className="eyebrow">One school lunch, per child, Hanoi 2024</div>
             <div className="row">
               <span>Vegetables</span>
               <span className="track">
@@ -62,18 +60,18 @@ export default function HomePage() {
               thrown away (waste rate)
             </div>
             <div className="scale">
-              <span className="mono small">IN THE BIN</span>
+              <span className="small">In the bin</span>
               <span className="num">
                 <CountUp to={118} suf="">
                   118
                 </CountUp>
               </span>
-              <span className="mono">g / child</span>
+              <span>g per child</span>
             </div>
             <div className="src">Pham et al. (2025), 8 urban Hanoi school kitchens, food weighed</div>
           </div>
         </div>
-        <MediaSlot id="home_hero" className="media wide">
+        <MediaSlot id="home_hero" className="media wide" fallback={{ src: "mam-com.jpg", alt: "A Vietnamese family tray meal seen from above: rice, braised meat, greens, soup and dipping sauce", caption: "An everyday Vietnamese family meal (mâm cơm). Photo: Hoangkid, CC BY-SA 4.0." }}>
           <div className="ph">
             <span className="ic">Photo or video</span>
             <b>Your hero image: the canteen at lunchtime, or a tray of leftovers</b>
@@ -81,11 +79,7 @@ export default function HomePage() {
           </div>
         </MediaSlot>
         <div className="sec-h">
-          <svg className="ic lg">
-            <use href="#i-target"></use>
-          </svg>
           <div>
-            <div className="eyebrow">The brief</div>
             <h2>Our challenge</h2>
           </div>
         </div>
@@ -125,12 +119,13 @@ export default function HomePage() {
             </p>
           </div>
         </div>
+        <div className="photos">
+          <Photo src="hanoi-market.jpg" alt="Baskets of chillies, garlic, cucumbers and other vegetables at a Hanoi market" caption="Where lunch starts: a fruit and vegetable market in Hanoi. Photo: Bo.botones, CC BY-SA 4.0." />
+          <Photo src="hanoi-stall.jpg" alt="Cooks preparing food in large pots at a Hanoi street kitchen" caption="Cooking for a crowd: a street kitchen in Hanoi. Photo: Esin Üstün, CC BY 2.0." />
+          <Photo src="leftovers-bin.jpg" alt="A restaurant bin for food leftovers next to diners" caption="Where it can end: a restaurant leftovers bin in Keelung, Taiwan. Photo: Borbomeyla, CC BY-SA 3.0." />
+        </div>
         <div className="sec-h">
-          <svg className="ic lg">
-            <use href="#i-flag"></use>
-          </svg>
           <div>
-            <div className="eyebrow">Aim and objectives</div>
             <h2>What we set out to achieve</h2>
           </div>
         </div>
@@ -183,11 +178,7 @@ export default function HomePage() {
           </table>
         </div>
         <div className="sec-h">
-          <svg className="ic lg">
-            <use href="#i-bulb"></use>
-          </svg>
           <div>
-            <div className="eyebrow">Design thinking</div>
             <h2>Our journey in eight steps</h2>
           </div>
         </div>
@@ -196,11 +187,7 @@ export default function HomePage() {
         </p>
         <HomeCards />
         <div className="sec-h">
-          <svg className="ic lg">
-            <use href="#i-check"></use>
-          </svg>
           <div>
-            <div className="eyebrow">Brief and rubric</div>
             <h2>Where to find each requirement</h2>
           </div>
         </div>
@@ -220,17 +207,17 @@ export default function HomePage() {
                 </td>
                 <td>1 · Understanding the problem</td>
                 <td>
-                  <button className="linkbtn" data-go="problem">
+                  <GoButton color="link-color" to="problem">
                     1 The problem
-                  </button>{" "}
+                  </GoButton>{" "}
                   ·{" "}
-                  <button className="linkbtn" data-go="problem-who">
+                  <GoButton color="link-color" to="problem-who">
                     Who is affected
-                  </button>{" "}
+                  </GoButton>{" "}
                   ·{" "}
-                  <button className="linkbtn" data-go="survey">
+                  <GoButton color="link-color" to="survey">
                     4 Survey
-                  </button>
+                  </GoButton>
                 </td>
               </tr>
               <tr>
@@ -239,13 +226,13 @@ export default function HomePage() {
                 </td>
                 <td>5 · Connections to ethics</td>
                 <td>
-                  <button className="linkbtn" data-go="ethics">
+                  <GoButton color="link-color" to="ethics">
                     2 Why it’s ethical
-                  </button>{" "}
+                  </GoButton>{" "}
                   ·{" "}
-                  <button className="linkbtn" data-go="ethics-lenses">
+                  <GoButton color="link-color" to="ethics-lenses">
                     8 lenses
-                  </button>
+                  </GoButton>
                 </td>
               </tr>
               <tr>
@@ -254,17 +241,17 @@ export default function HomePage() {
                 </td>
                 <td>2 · Idea &amp; creativity</td>
                 <td>
-                  <button className="linkbtn" data-go="solution">
+                  <GoButton color="link-color" to="solution">
                     3 Our solutions
-                  </button>{" "}
+                  </GoButton>{" "}
                   ·{" "}
-                  <button className="linkbtn" data-go="decision">
+                  <GoButton color="link-color" to="decision">
                     5 Our decision
-                  </button>{" "}
+                  </GoButton>{" "}
                   ·{" "}
-                  <button className="linkbtn" data-go="app">
+                  <GoButton color="link-color" to="app">
                     6 CampusMeal app
-                  </button>
+                  </GoButton>
                 </td>
               </tr>
               <tr>
@@ -273,13 +260,13 @@ export default function HomePage() {
                 </td>
                 <td>3 · Planning &amp; action</td>
                 <td>
-                  <button className="linkbtn" data-go="plan">
+                  <GoButton color="link-color" to="plan">
                     7 Action plans
-                  </button>
+                  </GoButton>
                   : one plan per solution ·{" "}
-                  <button className="linkbtn" data-go="app-protocol">
+                  <GoButton color="link-color" to="app-protocol">
                     App protocol
-                  </button>
+                  </GoButton>
                 </td>
               </tr>
               <tr>
@@ -288,32 +275,25 @@ export default function HomePage() {
                 </td>
                 <td>4 · Results &amp; learning</td>
                 <td>
-                  <button className="linkbtn" data-go="survey-conclusion">
+                  <GoButton color="link-color" to="survey-conclusion">
                     4 Survey results
-                  </button>{" "}
+                  </GoButton>{" "}
                   ·{" "}
-                  <button className="linkbtn" data-go="results">
+                  <GoButton color="link-color" to="results">
                     8 Results &amp; learning
-                  </button>
+                  </GoButton>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
         <div className="sec-h">
-          <svg className="ic lg">
-            <use href="#i-chart"></use>
-          </svg>
           <div>
-            <div className="eyebrow">In numbers</div>
             <h2>Four things to know</h2>
           </div>
         </div>
         <div className="stats">
           <div className="stat">
-            <svg className="ic">
-              <use href="#i-store"></use>
-            </svg>
             <div className="v">
               <CountUp to={40} suf="%">
                 40%
@@ -325,9 +305,6 @@ export default function HomePage() {
             <div className="s">UNEP (2024)</div>
           </div>
           <div className="stat">
-            <svg className="ic">
-              <use href="#i-plate"></use>
-            </svg>
             <div className="v">
               <CountUp to={118} suf=" g">
                 118 g
@@ -339,9 +316,6 @@ export default function HomePage() {
             <div className="s">Pham et al. (2025)</div>
           </div>
           <div className="stat">
-            <svg className="ic">
-              <use href="#i-law"></use>
-            </svg>
             <div className="v">0</div>
             <div className="l">
               Vietnamese laws that <b>penalise food waste or protect food donors</b>
@@ -349,9 +323,6 @@ export default function HomePage() {
             <div className="s">Harvard FLPC &amp; GFN (2024)</div>
           </div>
           <div className="stat g">
-            <svg className="ic">
-              <use href="#i-coin"></use>
-            </svg>
             <div className="v">$7 : $1</div>
             <div className="l">
               typical saving per dollar restaurants invest in <b>preventing</b> waste
@@ -360,11 +331,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="sec-h">
-          <svg className="ic lg">
-            <use href="#i-users"></use>
-          </svg>
           <div>
-            <div className="eyebrow">Effort</div>
             <h2>What went into this project</h2>
           </div>
         </div>

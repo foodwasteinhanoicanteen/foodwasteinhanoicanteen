@@ -1,6 +1,9 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
 import {
+  Badge,
+  Button,
+  GoButton,
   CopyButton,
   FeatureFilters,
   FeatureGrid,
@@ -19,41 +22,26 @@ export default function AppPage() {
     <PageSection id="app">
       <div className="wrap phead">
         <StageStepper current={6} />
-        <div className="eyebrow">
-          <span>Step 6 · Prototype</span>
-          <span className="rubric">Rubrics 2 &amp; 3 · Creativity and planning</span>
-        </div>
         <h1>CampusMeal app</h1>
         <p className="lede">
           Our app idea, a new section of the MyVinUni app, turns Solution B into something students and the kitchen use every day, and links
           in A and C.
         </p>
+        <p className="stage-note">Design thinking: Prototype. Rubrics 2 &amp; 3: Creativity and planning.</p>
         <div className="takeaways">
           <div>
-            <svg className="ic">
-              <use href="#i-users"></use>
-            </svg>
             <b>3</b>
             <span>canteens: Little Kitchen, Foodology, Our Home</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-bulb"></use>
-            </svg>
             <b>14</b>
             <span>functions: 3 core, 11 new</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-clock"></use>
-            </svg>
             <b>10:00</b>
             <span>daily pre-order cut-off</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-shield"></use>
-            </svg>
             <b>16</b>
             <span>sections in the operating protocol</span>
           </div>
@@ -64,7 +52,6 @@ export default function AppPage() {
         <Tab id="overview" label="What it is">
           <div className="grid g2" style={{ alignItems: "center" }}>
             <div className="stack">
-              <div className="eyebrow">A new section of the MyVinUni app</div>
               <h2 style={{ fontSize: "clamp(1.8rem,3.4vw,2.6rem)" }}>CampusMeal</h2>
               <p style={{ fontSize: "1.08rem" }}>
                 Students see today’s meals, pre-order, choose their portion and rate next week’s menu. The kitchen gets a forecast of how
@@ -89,12 +76,12 @@ export default function AppPage() {
                 </div>
               </div>
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                <a className="btn" href="campusmeal.html">
+                <Button size="md" href="campusmeal.html">
                   Open the working app ↗
-                </a>
-                <button className="btn ghost" data-go="app-protocol">
+                </Button>
+                <GoButton to="app-protocol" color="secondary" size="md">
                   Read the protocol
-                </button>
+                </GoButton>
               </div>
             </div>
             <div className="phonepair" aria-hidden="true">
@@ -159,9 +146,6 @@ export default function AppPage() {
           <div className="grid g3">
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-search"></use>
-                </svg>
                 <h3>Kitchens cook blind</h3>
               </div>
               <p className="small">
@@ -170,9 +154,6 @@ export default function AppPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-plate"></use>
-                </svg>
                 <h3>One portion for everyone</h3>
               </div>
               <p className="small">
@@ -181,9 +162,6 @@ export default function AppPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-bin"></use>
-                </svg>
                 <h3>Surplus is invisible</h3>
               </div>
               <p className="small">
@@ -249,7 +227,7 @@ export default function AppPage() {
             <h2>All functions</h2>
           </div>
           <p className="tab-intro">
-            <span className="pill hi">Core</span> = in our original CampusMeal overview. <span className="pill md">New</span> = added to
+            <Badge size="sm" color="brand">Core</Badge> = in our original CampusMeal overview. <Badge size="sm" color="warning">New</Badge> = added to
             make the app support Solution B fully, and to link in A and C.
           </p>
           <FeatureFilters className="filters" />
@@ -743,18 +721,12 @@ export default function AppPage() {
           <div className="grid g3" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-users"></use>
-                </svg>
                 <h3>Not everyone uses the app</h3>
               </div>
               <p className="small">Walk-in customers are always served. The forecast already includes walk-ins, so nobody is excluded.</p>
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-shield"></use>
-                </svg>
                 <h3>Privacy</h3>
               </div>
               <p className="small">
@@ -763,9 +735,6 @@ export default function AppPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-alert"></use>
-                </svg>
                 <h3>No-shows</h3>
               </div>
               <p className="small">

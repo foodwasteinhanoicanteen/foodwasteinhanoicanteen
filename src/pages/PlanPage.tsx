@@ -1,47 +1,32 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
-import { ActionLog, Field, Gantt, GanttDetail, MediaSlot, PlanSteps, SV, TeamCards } from "../components";
+import { ActionLog, Badge, Field, GoButton, Gantt, GanttDetail, MediaSlot, PlanSteps, SV, TeamCards } from "../components";
 
 export default function PlanPage() {
   return (
     <PageSection id="plan">
       <div className="wrap phead">
         <StageStepper current={7} />
-        <div className="eyebrow">
-          <span>Step 7 · Act</span>
-          <span className="rubric">Rubric 3 · Planning &amp; action</span>
-        </div>
         <h1>Action plans</h1>
         <p className="lede">
           A careful plan for each solution: what it is, who is in charge, how it connects to ethics, the difference it makes, and every step
           with resources, KPIs and risks.
         </p>
+        <p className="stage-note">Design thinking: Act. Rubric 3: Planning &amp; action.</p>
         <div className="takeaways">
           <div>
-            <svg className="ic">
-              <use href="#i-cal"></use>
-            </svg>
             <b>12 weeks</b>
             <span>one roadmap for all three solutions</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-users"></use>
-            </svg>
             <b>5–7</b>
             <span>named roles per solution</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-target"></use>
-            </svg>
             <b>≥ 15%</b>
             <span>target cut in waste per meal</span>
           </div>
           <div>
-            <svg className="ic">
-              <use href="#i-shield"></use>
-            </svg>
             <b>0</b>
             <span>food-safety incidents allowed</span>
           </div>
@@ -75,27 +60,27 @@ export default function PlanPage() {
             <GanttDetail className="chart-detail" style={{ marginTop: "14px" }} />
           </div>
           <div className="grid g3" style={{ marginTop: "16px" }}>
-            <button className="navcard" data-go="plan-solb">
+            <GoButton to="plan-solb" color="secondary" size="lg" className="navcard h-auto flex-col items-start justify-start text-left whitespace-normal *:data-text:grid *:data-text:gap-1">
               <span className="k" style={{ color: "var(--cB)" }}>
                 Main solution
               </span>
               <b style={{ fontFamily: "var(--f-display)", fontSize: "1.1rem" }}>Plan for Solution B</b>
               <span className="small muted">7 stages · weeks 1–12</span>
-            </button>{" "}
-            <button className="navcard" data-go="plan-sola">
+            </GoButton>{" "}
+            <GoButton to="plan-sola" color="secondary" size="lg" className="navcard h-auto flex-col items-start justify-start text-left whitespace-normal *:data-text:grid *:data-text:gap-1">
               <span className="k" style={{ color: "var(--cA)" }}>
                 Supporting step
               </span>
               <b style={{ fontFamily: "var(--f-display)", fontSize: "1.1rem" }}>Plan for Solution A</b>
               <span className="small muted">4 steps · weeks 7–10</span>
-            </button>{" "}
-            <button className="navcard" data-go="plan-solc">
+            </GoButton>{" "}
+            <GoButton to="plan-solc" color="secondary" size="lg" className="navcard h-auto flex-col items-start justify-start text-left whitespace-normal *:data-text:grid *:data-text:gap-1">
               <span className="k" style={{ color: "var(--cC)" }}>
                 Supporting step
               </span>
               <b style={{ fontFamily: "var(--f-display)", fontSize: "1.1rem" }}>Plan for Solution C</b>
               <span className="small muted">5 steps · weeks 3–12</span>
-            </button>
+            </GoButton>
           </div>
           <div className="callout g" style={{ marginTop: "16px" }}>
             <b>Why these targets.</b> Organisations with established programmes cut kitchen waste by{" "}
@@ -109,7 +94,6 @@ export default function PlanPage() {
               B
             </span>
             <div>
-              <div className="eyebrow">Main solution · Prevent · Weeks 1–12</div>
               <h2>Demand Forecasting &amp; Portion Control</h2>
               <p className="muted">Cook to demand, serve portions that fit, and learn from what is left.</p>
             </div>
@@ -135,9 +119,6 @@ export default function PlanPage() {
           <div className="grid g2f">
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-bulb"></use>
-                </svg>
                 <h3>What is the solution?</h3>
               </div>
               <p className="small">
@@ -160,9 +141,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-users"></use>
-                </svg>
                 <h3>Who is in charge?</h3>
               </div>
               <div className="tbl">
@@ -216,9 +194,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-scale"></use>
-                </svg>
                 <h3>Connection to ethics</h3>
               </div>
               <ul className="clean small">
@@ -245,9 +220,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-heart"></use>
-                </svg>
                 <h3>How it makes a difference</h3>
               </div>
               <ul className="clean small">
@@ -279,9 +251,6 @@ export default function PlanPage() {
           <div className="grid g3" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-coin"></use>
-                </svg>
                 <h3>Resources and cost</h3>
               </div>
               <ul className="clean small">
@@ -303,9 +272,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-target"></use>
-                </svg>
                 <h3>How we measure</h3>
               </div>
               <ul className="clean small">
@@ -320,9 +286,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-alert"></use>
-                </svg>
                 <h3>Risks and safeguards</h3>
               </div>
               <ul className="clean small">
@@ -364,7 +327,6 @@ export default function PlanPage() {
               A
             </span>
             <div>
-              <div className="eyebrow">Supporting step · Sell the surplus · Weeks 7–10</div>
               <h2>Last-Hour Food Rescue</h2>
               <p className="muted">Sell genuine end-of-service surplus at a discount instead of binning it.</p>
             </div>
@@ -390,9 +352,6 @@ export default function PlanPage() {
           <div className="grid g2f">
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-tag"></use>
-                </svg>
                 <h3>What is the solution?</h3>
               </div>
               <p className="small">
@@ -409,9 +368,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-users"></use>
-                </svg>
                 <h3>Who is in charge?</h3>
               </div>
               <div className="tbl">
@@ -455,9 +411,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-scale"></use>
-                </svg>
                 <h3>Connection to ethics</h3>
               </div>
               <ul className="clean small">
@@ -479,9 +432,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-heart"></use>
-                </svg>
                 <h3>How it makes a difference</h3>
               </div>
               <ul className="clean small">
@@ -512,9 +462,6 @@ export default function PlanPage() {
           <div className="grid g3" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-coin"></use>
-                </svg>
                 <h3>Resources and cost</h3>
               </div>
               <ul className="clean small">
@@ -530,9 +477,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-target"></use>
-                </svg>
                 <h3>How we measure</h3>
               </div>
               <ul className="clean small">
@@ -547,9 +491,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-alert"></use>
-                </svg>
                 <h3>Risks and safeguards</h3>
               </div>
               <ul className="clean small">
@@ -578,7 +519,6 @@ export default function PlanPage() {
               C
             </span>
             <div>
-              <div className="eyebrow">Supporting step · Share the rest · Weeks 3–12</div>
               <h2>Safe Redistribution of Surplus</h2>
               <p className="muted">Pass safe, untouched food that could not be sold to people who need it, through a trained partner.</p>
             </div>
@@ -604,9 +544,6 @@ export default function PlanPage() {
           <div className="grid g2f">
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-truck"></use>
-                </svg>
                 <h3>What is the solution?</h3>
               </div>
               <p className="small">Food still left after Solution A goes through a fixed process:</p>
@@ -623,9 +560,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-users"></use>
-                </svg>
                 <h3>Who is in charge?</h3>
               </div>
               <div className="tbl">
@@ -667,9 +601,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-scale"></use>
-                </svg>
                 <h3>Connection to ethics</h3>
               </div>
               <ul className="clean small">
@@ -689,9 +620,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-heart"></use>
-                </svg>
                 <h3>How it makes a difference</h3>
               </div>
               <ul className="clean small">
@@ -719,9 +647,6 @@ export default function PlanPage() {
           <div className="grid g3" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-coin"></use>
-                </svg>
                 <h3>Resources and cost</h3>
               </div>
               <ul className="clean small">
@@ -737,9 +662,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-target"></use>
-                </svg>
                 <h3>How we measure</h3>
               </div>
               <ul className="clean small">
@@ -753,9 +675,6 @@ export default function PlanPage() {
             </div>
             <div className="comp">
               <div className="comp-h">
-                <svg className="ic">
-                  <use href="#i-alert"></use>
-                </svg>
                 <h3>Risks and safeguards</h3>
               </div>
               <ul className="clean small">
@@ -887,50 +806,50 @@ export default function PlanPage() {
                 <tr>
                   <td>Canteen does not agree to the pilot</td>
                   <td>
-                    <span className="pill md">Medium</span>
+                    <Badge size="sm" color="warning">Medium</Badge>
                   </td>
                   <td>
-                    <span className="pill lo">High</span>
+                    <Badge size="sm" color="error">High</Badge>
                   </td>
                   <td>Start with 2–3 dishes; show the cost savings; involve the manager in the design.</td>
                 </tr>
                 <tr>
                   <td>Forecast is wrong on unusual days (exams, holidays)</td>
                   <td>
-                    <span className="pill md">Medium</span>
+                    <Badge size="sm" color="warning">Medium</Badge>
                   </td>
                   <td>
-                    <span className="pill md">Medium</span>
+                    <Badge size="sm" color="warning">Medium</Badge>
                   </td>
                   <td>Batch cooking; a small safety buffer; adjust weekly.</td>
                 </tr>
                 <tr>
                   <td>Students dislike smaller default portions</td>
                   <td>
-                    <span className="pill md">Medium</span>
+                    <Badge size="sm" color="warning">Medium</Badge>
                   </td>
                   <td>
-                    <span className="pill md">Medium</span>
+                    <Badge size="sm" color="warning">Medium</Badge>
                   </td>
                   <td>Free refill; clear signs; daily feedback.</td>
                 </tr>
                 <tr>
                   <td>Staff see weighing as extra work</td>
                   <td>
-                    <span className="pill md">Medium</span>
+                    <Badge size="sm" color="warning">Medium</Badge>
                   </td>
                   <td>
-                    <span className="pill md">Medium</span>
+                    <Badge size="sm" color="warning">Medium</Badge>
                   </td>
                   <td>Part of the shift; under 10 minutes; thank staff publicly.</td>
                 </tr>
                 <tr>
                   <td>Inconsistent measurement</td>
                   <td>
-                    <span className="pill md">Medium</span>
+                    <Badge size="sm" color="warning">Medium</Badge>
                   </td>
                   <td>
-                    <span className="pill lo">High</span>
+                    <Badge size="sm" color="error">High</Badge>
                   </td>
                   <td>One scale, one sheet, a fixed weighing time, trained team members.</td>
                 </tr>

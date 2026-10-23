@@ -1,12 +1,12 @@
 # Wasted by Design + CampusMeal
 
-The MANA3021 Team Mini Social Impact Project website (food waste in Hanoi, VinUni canteens) and the CampusMeal pilot app, rebuilt with **TypeScript, React and Node.js**.
+The MANA3021 Team Mini Social Impact Project website (food waste in Hanoi, VinUni canteens) and the CampusMeal pilot app, rebuilt with **TypeScript, React and Node.js**. The UI is built from [Untitled UI React](https://www.untitledui.com/react/components) components (MIT, Tailwind CSS v4 + React Aria) with a green brand theme.
 
 It is a **static website** (HTML, CSS and JavaScript only) published with **GitHub Pages**. There is no server and no database:
 
 - Visitors see the team content from `public/content.json`.
 - Anything saved on the site (team edits, CampusMeal orders, menus and logs) stays in **that browser's own storage** (IndexedDB).
-- No CDN: React and the fonts come from npm and are bundled into the app.
+- No CDN: React, Untitled UI and the fonts come from npm and are bundled into the app.
 
 | What | Where |
 |---|---|
@@ -71,7 +71,9 @@ src/
     meta.ts          page list, design-thinking stages, sub-tab names
   components/
     layout/          TopBar, PageSection, Tab, SubTabs, Pager, StageStepper, HomeCards, Footer
-    ui/              Field + MediaSlot + edit bar (EditMode), Card/More/Front (dialog cards),
+    base/, application/  Untitled UI components (Button, ButtonGroup, Badge, Input, NativeSelect, Checkbox, Slider,
+                     Tabs, Table, Modal…), copied in by its CLI. Edit them freely; they are our code now.
+    ui/              Field + MediaSlot + edit bar (EditMode), Card/CardOpen/More/Front (dialog cards),
                      FilterButtons, CountUp, CopyButton, BAToggle/BAShow, Overlays (toast, tooltip, dialog), Html
     widgets/         interactive pieces per page: problem (calculator, donut, bars, food journey, law timeline),
                      ethics (flip cards, dilemmas, quotes, verdict grid), plan (scoring, roadmap, team, references),
@@ -82,7 +84,8 @@ src/
   state/             hash router, website data provider, polling hook, tiny shared-store helper
   api/client.ts      api() helper (adds the anonymous browser id)
   api/local.ts       the data rules that used to be the server, saving to IndexedDB
-  styles/            site.css and campusmeal.css (unchanged from the original), fonts.ts
+  styles/            site.tw.css / campusmeal.tw.css (entry: Untitled UI theme + brand.css + the older CSS in a
+                     lower layer), brand.css (green brand scale, fonts), untitled/ (Untitled UI theme), fonts.ts
 shared/              rules, schemas and analysis code
   schemas/           zod schemas: what may be saved (site fields, media, survey rows, every CampusMeal document)
   models/            data classes: SurveyResponse, Order
@@ -105,7 +108,8 @@ scripts/             build.ts (static build) and dev.ts (rebuild on save + local
 | Survey questions or columns | `shared/survey.ts`. Then update the example rows in `shared/data/exampleSurvey.ts`. |
 | CampusMeal rules (forecast, batch, last-call limits) | `shared/campusmeal/logic.ts`. Defaults are also editable in the app's Settings screen. |
 | What may be saved | `shared/schemas/` |
-| Look and feel | `src/styles/site.css` or `src/styles/campusmeal.css` |
+| Look and feel | Brand colours and fonts: `src/styles/brand.css`. Components: Tailwind classes in the component files. Page layout: `src/styles/site.css` or `src/styles/campusmeal.css` |
+| Add a UI component | `npx untitledui@latest add <name> -y` (e.g. `dropdown`, `date-picker`), then `npm install` any package it lists |
 | Fixed images | Put them in `public/` (e.g. `public/logo.png`) and refer to them as `logo.png`. |
 
 ## 6. Known limits

@@ -1,0 +1,1766 @@
+{
+ "url": "http://127.0.0.1:4173/#plan-roadmap",
+ "at": "2026-10-23T15:17:14.521Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.42,
+    0.65,
+    0.59
+   ],
+   "motion": {
+    "elements": 13,
+    "css": 13,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 2669,
+     "screens": 3,
+     "words": 552,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 25,
+     "sections": 18,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Action plans",
+     "words": 2,
+     "chars": 12,
+     "lines": 1,
+     "size": 76,
+     "vw": 5.3,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.035,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.76,
+     "top": 139,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Action plans",
+     "words": 2,
+     "lines": 1,
+     "size": 76,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Action plans",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 76,
+      "vw": 5.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.035,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 139,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "12 weeks",
+      "words": 2,
+      "chars": 8,
+      "lines": 2,
+      "size": 56,
+      "vw": 3.9,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.12,
+      "top": 350,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "5–7",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 56,
+      "vw": 3.9,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.06,
+      "top": 378,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "≥ 15%",
+      "words": 2,
+      "chars": 5,
+      "lines": 1,
+      "size": 56,
+      "vw": 3.9,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.12,
+      "top": 378,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 56,
+      "vw": 3.9,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.03,
+      "top": 378,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "One roadmap, three solutions",
+      "words": 4,
+      "chars": 28,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 588,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Wasted by Design",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 129.6,
+      "vw": 9,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 2309,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.07,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      40,
+      56,
+      76,
+      130
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 20,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 97,
+     "max": {
+      "size": 129.6,
+      "vw": 9,
+      "font": "Bricolage Grotesque",
+      "text": "Wasted by Design"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.03,
+     "centerShare": 0.08,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 781,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 2261,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#171717",
+       "share": 0.48
+      },
+      {
+       "color": "#525252",
+       "share": 0.38
+      },
+      {
+       "color": "#404040",
+       "share": 0.03
+      },
+      {
+       "color": "#737373",
+       "share": 0.03
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#f5f5f5",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0.96
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Supporting step",
+       "ratio": 2.9,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#c0841a",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "W8–9",
+       "ratio": 3.2,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#ffffff",
+       "bg": "#c0841a"
+      },
+      {
+       "text": "Solution B · step 1 · Weeks 1–2",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#099250",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "Main solution",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#099250",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "W1–2",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      },
+      {
+       "text": "W5–6",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 27,
+     "inHero": 12,
+     "radius": 6,
+     "height": 28,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Action plans",
+      "Empathise",
+      "Define",
+      "Ideate",
+      "Test"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 5,
+     "boxRadius": 99,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 1663
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 63,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 2669,
+    "margins": {
+     "left": 176,
+     "right": 176
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 63,
+      "height": 2054,
+      "words": 383,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Action plans",
+       "size": 76,
+       "tag": "h1"
+      },
+      "left": 176,
+      "right": 176,
+      "textLeft": 176,
+      "textRight": 194,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site",
+      "tag": "footer",
+      "top": 2261,
+      "height": 408,
+      "words": 117,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Wasted by Design",
+       "size": 130,
+       "tag": "p"
+      },
+      "left": 176,
+      "right": 176,
+      "textLeft": 176,
+      "textRight": 176,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Action plans",
+      "size": 76,
+      "top": 139,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 176,
+      "n": 4
+     },
+     {
+      "x": 554,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.11,
+    "voidBox": {
+     "x": 1260,
+     "y": 120,
+     "w": 180,
+     "h": 780
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.59,
+    0.92,
+    0.75
+   ],
+   "motion": {
+    "elements": 13,
+    "css": 13,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 2953,
+     "screens": 2.9,
+     "words": 552,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 25,
+     "sections": 18,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Action plans",
+     "words": 2,
+     "chars": 12,
+     "lines": 1,
+     "size": 43,
+     "vw": 5.6,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.035,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.96,
+     "top": 175,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Action plans",
+     "words": 2,
+     "lines": 1,
+     "size": 43,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Action plans",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 43,
+      "vw": 5.6,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.035,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 175,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "12 weeks",
+      "words": 2,
+      "chars": 8,
+      "lines": 2,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 393,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "5–7",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.08,
+      "top": 413,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "≥ 15%",
+      "words": 2,
+      "chars": 5,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.16,
+      "top": 413,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.03,
+      "top": 564,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "One roadmap, three solutions",
+      "words": 4,
+      "chars": 28,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.51,
+      "top": 730,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Wasted by Design",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 69.1,
+      "vw": 9,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 2542,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.07,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      28,
+      40,
+      43,
+      69
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 20,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 74,
+     "max": {
+      "size": 69.1,
+      "vw": 9,
+      "font": "Bricolage Grotesque",
+      "text": "Wasted by Design"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.03,
+     "centerShare": 0.08,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 911,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 2494,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#171717",
+       "share": 0.48
+      },
+      {
+       "color": "#525252",
+       "share": 0.38
+      },
+      {
+       "color": "#404040",
+       "share": 0.03
+      },
+      {
+       "color": "#737373",
+       "share": 0.03
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#f5f5f5",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0.96
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Supporting step",
+       "ratio": 2.9,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#c0841a",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "W8–9",
+       "ratio": 3.2,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#ffffff",
+       "bg": "#c0841a"
+      },
+      {
+       "text": "Solution B · step 1 · Weeks 1–2",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#099250",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "Main solution",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#099250",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "W1–2",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      },
+      {
+       "text": "W5–6",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 17,
+     "inHero": 10,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Action plans",
+      "Empathise",
+      "Define",
+      "Ideate",
+      "Test"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 5,
+     "boxRadius": 99,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 3,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 1853
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 63,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 2953,
+    "margins": {
+     "left": 16,
+     "right": 18
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 63,
+      "height": 2335,
+      "words": 383,
+      "media": 0,
+      "middle": 79,
+      "heading": {
+       "text": "Action plans",
+       "size": 43,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 0,
+      "textLeft": 16,
+      "textRight": -210,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site",
+      "tag": "footer",
+      "top": 2494,
+      "height": 459,
+      "words": 117,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Wasted by Design",
+       "size": 69,
+       "tag": "p"
+      },
+      "left": 16,
+      "right": 55,
+      "textLeft": 16,
+      "textRight": 55,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Action plans",
+      "size": 43,
+      "top": 175,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "Our team",
+      "side": "right",
+      "px": 13
+     }
+    ],
+    "edges": [
+     {
+      "x": 16,
+      "n": 4
+     },
+     {
+      "x": 389,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    0.41,
+    0.74,
+    0.86,
+    0.61,
+    0.87
+   ],
+   "motion": {
+    "elements": 13,
+    "css": 13,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 4151,
+     "screens": 4.9,
+     "words": 552,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 25,
+     "sections": 18,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 2,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Action plans",
+     "words": 2,
+     "chars": 12,
+     "lines": 1,
+     "size": 40,
+     "vw": 10.3,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.035,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 211,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Action plans",
+     "words": 2,
+     "lines": 1,
+     "size": 40,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Action plans",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.035,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 211,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "12 weeks",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 474,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "5–7",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.16,
+      "top": 594,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "≥ 15%",
+      "words": 2,
+      "chars": 5,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 714,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 834,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "One roadmap, three solutions",
+      "words": 4,
+      "chars": 28,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1000,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Wasted by Design",
+      "words": 3,
+      "chars": 16,
+      "lines": 2,
+      "size": 48,
+      "vw": 12.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3507,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.07,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      28,
+      40,
+      48
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 20,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 36,
+     "max": {
+      "size": 48,
+      "vw": 12.3,
+      "font": "Bricolage Grotesque",
+      "text": "Wasted by Design"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.03,
+     "centerShare": 0.08,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 1365,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5f5f5",
+       "top": 1963,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#171717",
+       "share": 0.48
+      },
+      {
+       "color": "#525252",
+       "share": 0.38
+      },
+      {
+       "color": "#404040",
+       "share": 0.03
+      },
+      {
+       "color": "#737373",
+       "share": 0.03
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#f5f5f5",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0.96
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": [
+      {
+       "text": "Supporting step",
+       "ratio": 2.9,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#c0841a",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "W8–9",
+       "ratio": 3.2,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#ffffff",
+       "bg": "#c0841a"
+      },
+      {
+       "text": "Solution B · step 1 · Weeks 1–2",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#099250",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "Main solution",
+       "ratio": 3.7,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#099250",
+       "bg": "#f5f5f5"
+      },
+      {
+       "text": "W1–2",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      },
+      {
+       "text": "W5–6",
+       "ratio": 4,
+       "need": 4.5,
+       "size": 13,
+       "fg": "#ffffff",
+       "bg": "#099250"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 17,
+     "inHero": 9,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Action plans",
+      "Empathise",
+      "Define",
+      "Ideate",
+      "Test"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 5,
+     "boxRadius": 99,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 63,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 4151,
+    "margins": {
+     "left": 16,
+     "right": 12
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 63,
+      "height": 3300,
+      "words": 383,
+      "media": 0,
+      "middle": 457,
+      "heading": {
+       "text": "Action plans",
+       "size": 40,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 0,
+      "textLeft": 16,
+      "textRight": -588,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site",
+      "tag": "footer",
+      "top": 3459,
+      "height": 692,
+      "words": 117,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Wasted by Design",
+       "size": 48,
+       "tag": "p"
+      },
+      "left": 16,
+      "right": 17,
+      "textLeft": 16,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Action plans",
+      "size": 40,
+      "top": 211,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [
+     {
+      "text": "Plan · Solution A",
+      "side": "right",
+      "px": 14
+     },
+     {
+      "text": "W3–4",
+      "side": "right",
+      "px": 12
+     }
+    ],
+    "edges": [
+     {
+      "x": 16,
+      "n": 4
+     },
+     {
+      "x": 52,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"Supporting step\" 2.9:1 needs 4.5:1; \"W8–9\" 3.2:1 needs 4.5:1; \"Solution B · step 1 · Weeks 1–2\" 3.7:1 needs 4.5:1; \"Main solution\" 3.7:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "11 different font sizes (13, 14, 15, 16, 17, 18, 20, 40, 56, 76, 130).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 0 picture(s) on the page (0 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "measure",
+   "width": 1440,
+   "message": "Longest paragraph runs about 97 characters per line.",
+   "fix": "Cap paragraphs at 45–75 characters (max-width: 60ch)."
+  },
+  {
+   "level": "WARN",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Little motion: 13 element(s) moved while the page loaded and scrolled.",
+   "fix": "Give every section an entrance for its parts (not one fade of the whole block) and add one moving picture: a looping clip or a slow move on a photograph."
+  },
+  {
+   "level": "WARN",
+   "id": "side-scroll",
+   "width": 768,
+   "message": "1 row(s) scroll sideways with content past their edge.",
+   "fix": "Jurors and most visitors read a row cut at the edge as clipped, not as scrollable. Wrap it onto more lines, or end it inside the grid.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "edge-text",
+   "width": 768,
+   "message": "1 text block(s) sit within 16px of the screen edge: \"Our team\" (13px from the right)",
+   "fix": "Keep text inside the page margin (16–32px or more). Only display type deliberately bled past the edge may touch it."
+  },
+  {
+   "level": "WARN",
+   "id": "edge-text",
+   "width": 390,
+   "message": "2 text block(s) sit 12–15px from the phone's edge: \"Plan · Solution A\" (14px); \"W3–4\" (12px)",
+   "fix": "The page margin is 16–20px on a phone; the header and the corner labels sit on it too."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-plan-roadmap/desktop-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-plan-roadmap/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-plan-roadmap/tablet-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-plan-roadmap/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-plan-roadmap/mobile-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-plan-roadmap/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

@@ -2,7 +2,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles/fonts";
-import "./styles/site.css";
+import "./styles/site.tw.css";
 import { RouterProvider } from "./state/router";
 import { SiteProvider } from "./state/site";
 import { OverlayProvider } from "./components/ui/Overlays";

@@ -1,5 +1,8 @@
-/* Site-wide overlays: toast messages, the hover tooltip, and the "Read details" card dialog. */
-import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+/* Site-wide overlays: toast messages, the hover tooltip, and the "Read details" card dialog (Untitled UI modal). */
+import { createContext, useCallback, useContext, useRef, useState, type ReactNode } from "react";
+import { XClose } from "@untitledui/icons";
+import { Button } from "@/components/base/buttons/button";
+import { Dialog, Modal, ModalOverlay } from "@/components/application/modals/modal";
 
 interface OverlayCtx {
   toast: (msg: string) => void;
@@ -29,23 +32,25 @@ export function OverlayProvider({ children }: { children: ReactNode }) {
     setTip({ content, on: true, x: Math.min(e.clientX + 14, innerWidth - 300), y: Math.min(e.clientY + 14, innerHeight - 120) }), []);
   const tipHide = useCallback(() => setTip((t) => (t.on ? { ...t, on: false } : t)), []);
 
-  const dlg = useRef<HTMLDialogElement>(null);
   const [card, setCard] = useState<{ title: string; tag: string; body: ReactNode } | null>(null);
   const openCard = useCallback((c: { title: string; tag: string; body: ReactNode }) => setCard(c), []);
-  useEffect(() => { if (card && dlg.current && !dlg.current.open) dlg.current.showModal(); }, [card]);
 
   return (
     <Ctx.Provider value={{ toast, tipShow, tipHide, openCard }}>
       {children}
-      <dialog id="dlg" ref={dlg} aria-labelledby="dlg-title" onClose={() => setCard(null)} onClick={(e) => { if (e.target === dlg.current) dlg.current?.close(); }}>
-        <div className="dlg-head">
-          <div><div className="eyebrow" id="dlg-tag">{card?.tag}</div><h3 id="dlg-title">{card?.title}</h3></div>
-          <button className="x" aria-label="Close" onClick={() => dlg.current?.close()}>×</button>
-        </div>
-        <div className="dlg-body">{card?.body}</div>
-      </dialog>
-      <div className={"tip" + (tip.on ? " show" : "")} role="tooltip" style={{ left: tip.x, top: tip.y }}>{tip.content}</div>
-      <div className={"toast" + (msg.on ? " show" : "")} role="status">{msg.text}</div>
+      <ModalOverlay isDismissable isOpen={!!card} onOpenChange={(o) => { if (!o) setCard(null); }}>
+        <Modal className="max-w-[720px]">
+          <Dialog id="dlg" aria-labelledby="dlg-title">
+            <div className="dlg-head">
+              <div><div className="eyebrow" id="dlg-tag">{card?.tag}</div><h3 id="dlg-title">{card?.title}</h3></div>
+              <Button color="tertiary" size="sm" aria-label="Close" iconLeading={XClose} onPress={() => setCard(null)} />
+            </div>
+            <div className="dlg-body">{card?.body}</div>
+          </Dialog>
+        </Modal>
+      </ModalOverlay>
+      <div className={"tip bg-primary-solid text-white shadow-lg" + (tip.on ? " show" : "")} role="tooltip" style={{ left: tip.x, top: tip.y }}>{tip.content}</div>
+      <div className={"toast bg-primary-solid text-white shadow-lg" + (msg.on ? " show" : "")} role="status">{msg.text}</div>
     </Ctx.Provider>
   );
 }

@@ -6,12 +6,9 @@ export default function SourcesPage() {
   return (
     <PageSection id="sources">
       <div className="wrap phead">
-        <div className="eyebrow">
-          <span>Evidence</span>
-          <span className="rubric">Rubrics 1 &amp; 5 · Reliable evidence</span>
-        </div>
         <h1>Methods &amp; sources</h1>
         <p className="lede">How we did the research, and every source we used, in APA 7.</p>
+        <p className="stage-note">Design thinking: Evidence. Rubrics 1 &amp; 5: Reliable evidence.</p>
       </div>
       <SubTabs />
       <div className="wrap">
@@ -21,7 +18,6 @@ export default function SourcesPage() {
           </div>
           <div className="grid g2">
             <div className="panel stack">
-              <span className="eyebrow">Method 1</span>
               <h3>Desk research</h3>
               <p>
                 UN reports, peer-reviewed studies, Vietnamese law, legal analyses and news reports. Peer-reviewed and official sources were
@@ -30,7 +26,6 @@ export default function SourcesPage() {
               </p>
             </div>
             <div className="panel stack">
-              <span className="eyebrow">Method 2</span>
               <h3>Food-waste audit</h3>
               <p>Weighing waste after each lunch, separated into preparation waste, overproduction and plate waste.</p>
               <p className="small">
@@ -38,7 +33,6 @@ export default function SourcesPage() {
               </p>
             </div>
             <div className="panel stack">
-              <span className="eyebrow">Method 3</span>
               <h3>Student survey</h3>
               <p>Portion size, disliked dishes, willingness to choose smaller portions, and how ethically acceptable each solution is.</p>
               <p className="small">
@@ -46,7 +40,6 @@ export default function SourcesPage() {
               </p>
             </div>
             <div className="panel stack">
-              <span className="eyebrow">Method 4</span>
               <h3>Interviews</h3>
               <p>Canteen manager and kitchen staff.</p>
               <p className="small">

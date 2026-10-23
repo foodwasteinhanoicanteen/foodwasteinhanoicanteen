@@ -1,0 +1,1542 @@
+{
+ "url": "http://127.0.0.1:4173/#ethics-excuses",
+ "at": "2026-10-23T15:21:03.582Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.42,
+    0.5,
+    0.59
+   ],
+   "motion": {
+    "elements": 11,
+    "css": 11,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1898,
+     "screens": 2.1,
+     "words": 365,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 11,
+     "sections": 18,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Why is it an ethical problem?",
+     "words": 6,
+     "chars": 29,
+     "lines": 1,
+     "size": 76,
+     "vw": 5.3,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.035,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.76,
+     "top": 139,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Why is it an ethical problem?",
+     "words": 6,
+     "lines": 1,
+     "size": 76,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Why is it an ethical problem?",
+      "words": 6,
+      "chars": 29,
+      "lines": 1,
+      "size": 76,
+      "vw": 5.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.035,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 139,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "8 of 8",
+      "words": 3,
+      "chars": 6,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.17,
+      "top": 379,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.17,
+      "top": 379,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "2,000+",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.17,
+      "top": 379,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "$6–7",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.17,
+      "top": 379,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "What businesses say vs what the research shows",
+      "words": 8,
+      "chars": 46,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.65,
+      "top": 626,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Wasted by Design",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 129.6,
+      "vw": 9,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 1538,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.84,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.16,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      20,
+      40,
+      48,
+      76,
+      130
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 20,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 89,
+     "max": {
+      "size": 129.6,
+      "vw": 9,
+      "font": "Bricolage Grotesque",
+      "text": "Wasted by Design"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0.1,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f5f5f5",
+       "top": 1490,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#525252",
+       "share": 0.52
+      },
+      {
+       "color": "#171717",
+       "share": 0.37
+      },
+      {
+       "color": "#404040",
+       "share": 0.04
+      },
+      {
+       "color": "#737373",
+       "share": 0.04
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#f5f5f5",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0.96
+      },
+      "fg": "#404040"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 13,
+     "inHero": 11,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Why it’s ethical",
+      "Empathise",
+      "Define",
+      "Ideate",
+      "Test"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 6,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 820
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 63,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1898,
+    "margins": {
+     "left": 176,
+     "right": 143
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 63,
+      "height": 1283,
+      "words": 223,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Why is it an ethical problem?",
+       "size": 76,
+       "tag": "h1"
+      },
+      "left": 176,
+      "right": 176,
+      "textLeft": 176,
+      "textRight": 194,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site",
+      "tag": "footer",
+      "top": 1490,
+      "height": 408,
+      "words": 117,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Wasted by Design",
+       "size": 130,
+       "tag": "p"
+      },
+      "left": 176,
+      "right": 176,
+      "textLeft": 176,
+      "textRight": 176,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Why is it an ethical problem?",
+      "size": 76,
+      "top": 139,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 176,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 4,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.09,
+    "voidBox": {
+     "x": 1260,
+     "y": 120,
+     "w": 180,
+     "h": 660
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.51,
+    0.68,
+    0.69
+   ],
+   "motion": {
+    "elements": 11,
+    "css": 11,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 2125,
+     "screens": 2.1,
+     "words": 365,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 11,
+     "sections": 18,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Why is it an ethical problem?",
+     "words": 6,
+     "chars": 29,
+     "lines": 1,
+     "size": 43,
+     "vw": 5.6,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.035,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.96,
+     "top": 175,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Why is it an ethical problem?",
+     "words": 6,
+     "lines": 1,
+     "size": 43,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Why is it an ethical problem?",
+      "words": 6,
+      "chars": 29,
+      "lines": 1,
+      "size": 43,
+      "vw": 5.6,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.035,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 175,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "8 of 8",
+      "words": 3,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 411,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.29,
+      "top": 411,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "2,000+",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.29,
+      "top": 411,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "$6–7",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 600,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "What businesses say vs what the research shows",
+      "words": 8,
+      "chars": 46,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.85,
+      "top": 835,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Wasted by Design",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 69.1,
+      "vw": 9,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 1715,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.84,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.16,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      20,
+      28,
+      36,
+      43,
+      69
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 20,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 74,
+     "max": {
+      "size": 69.1,
+      "vw": 9,
+      "font": "Bricolage Grotesque",
+      "text": "Wasted by Design"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0.1,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f5f5f5",
+       "top": 1667,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#525252",
+       "share": 0.52
+      },
+      {
+       "color": "#171717",
+       "share": 0.37
+      },
+      {
+       "color": "#404040",
+       "share": 0.04
+      },
+      {
+       "color": "#737373",
+       "share": 0.04
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#f5f5f5",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0.96
+      },
+      "fg": "#404040"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 13,
+     "inHero": 11,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Why it’s ethical",
+      "Empathise",
+      "Define",
+      "Ideate",
+      "Test"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 6,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 6,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 1016
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 63,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 2125,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 63,
+      "height": 1508,
+      "words": 223,
+      "media": 0,
+      "middle": 121,
+      "heading": {
+       "text": "Why is it an ethical problem?",
+       "size": 43,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 0,
+      "textLeft": 16,
+      "textRight": -201,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site",
+      "tag": "footer",
+      "top": 1667,
+      "height": 459,
+      "words": 117,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Wasted by Design",
+       "size": 69,
+       "tag": "p"
+      },
+      "left": 16,
+      "right": 55,
+      "textLeft": 16,
+      "textRight": 55,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Why is it an ethical problem?",
+      "size": 43,
+      "top": 175,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 4,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.6,
+    0.64,
+    0.61,
+    0.87
+   ],
+   "motion": {
+    "elements": 11,
+    "css": 11,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 3276,
+     "screens": 3.9,
+     "words": 365,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 11,
+     "sections": 18,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Why is it an ethical problem?",
+     "words": 6,
+     "chars": 29,
+     "lines": 2,
+     "size": 40,
+     "vw": 10.3,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.035,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 211,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Why is it an ethical problem?",
+     "words": 6,
+     "lines": 2,
+     "size": 40,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Why is it an ethical problem?",
+      "words": 6,
+      "chars": 29,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.035,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 211,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "8 of 8",
+      "words": 3,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 595,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "0",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 762,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "2,000+",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 929,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "$6–7",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.01,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1096,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "What businesses say vs what the research shows",
+      "words": 8,
+      "chars": 46,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1309,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Wasted by Design",
+      "words": 3,
+      "chars": 16,
+      "lines": 2,
+      "size": 48,
+      "vw": 12.3,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2632,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 0.84,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.16,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      20,
+      28,
+      36,
+      40,
+      48
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 20,
+      "leading": 1.45,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.5
+     },
+     "measureChars": 36,
+     "max": {
+      "size": 48,
+      "vw": 12.3,
+      "font": "Bricolage Grotesque",
+      "text": "Wasted by Design"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0.1,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fafafa",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f5f5f5",
+       "top": 2584,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 0.96
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#525252",
+       "share": 0.52
+      },
+      {
+       "color": "#171717",
+       "share": 0.37
+      },
+      {
+       "color": "#404040",
+       "share": 0.04
+      },
+      {
+       "color": "#737373",
+       "share": 0.04
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#f5f5f5",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 0.96
+      },
+      "fg": "#404040"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 13,
+     "inHero": 9,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Why it’s ethical",
+      "Empathise",
+      "Define",
+      "Ideate",
+      "Test"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 7,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 63,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 3276,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 63,
+      "height": 2425,
+      "words": 223,
+      "media": 0,
+      "middle": 499,
+      "heading": {
+       "text": "Why is it an ethical problem?",
+       "size": 40,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 0,
+      "textLeft": 16,
+      "textRight": -579,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.site",
+      "tag": "footer",
+      "top": 2584,
+      "height": 692,
+      "words": 117,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Wasted by Design",
+       "size": 48,
+       "tag": "p"
+      },
+      "left": 16,
+      "right": 17,
+      "textLeft": 16,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Why is it an ethical problem?",
+      "size": 40,
+      "top": 211,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 4
+     }
+    ],
+    "leftBlocks": 4,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "10 different font sizes (13, 14, 15, 16, 17, 20, 40, 48, 76, 130).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 0 picture(s) on the page (0 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "measure",
+   "width": 1440,
+   "message": "Longest paragraph runs about 89 characters per line.",
+   "fix": "Cap paragraphs at 45–75 characters (max-width: 60ch)."
+  },
+  {
+   "level": "WARN",
+   "id": "off-centre",
+   "width": 1440,
+   "message": "The margins differ: 176px on the left, 143px on the right, at 1440px.",
+   "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  },
+  {
+   "level": "WARN",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Little motion: 11 element(s) moved while the page loaded and scrolled.",
+   "fix": "Give every section an entrance for its parts (not one fade of the whole block) and add one moving picture: a looping clip or a slow move on a photograph."
+  },
+  {
+   "level": "WARN",
+   "id": "side-scroll",
+   "width": 768,
+   "message": "1 row(s) scroll sideways with content past their edge.",
+   "fix": "Jurors and most visitors read a row cut at the edge as clipped, not as scrollable. Wrap it onto more lines, or end it inside the grid.",
+   "alsoAt": [
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-ethics-excuses/desktop-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-ethics-excuses/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-ethics-excuses/tablet-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-ethics-excuses/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-ethics-excuses/mobile-fold.jpg",
+   "pages": [
+    "/home/tannp/EmTit/foodwasteinhanoicanteen/.taste-skill/after-ethics-excuses/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

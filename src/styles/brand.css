@@ -1,0 +1,29 @@
+/* Brand for both apps on top of Untitled UI's theme.css: green (Untitled UI's own green scale) and the bundled fonts. */
+@theme {
+  --font-body: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Bricolage Grotesque", "Be Vietnam Pro", system-ui, sans-serif;
+  /* one text face: numbers use it with tabular figures, no monospace */
+  --font-mono: "Be Vietnam Pro", system-ui, sans-serif;
+
+  --color-brand-25: rgb(246 254 249);
+  --color-brand-50: rgb(237 252 242);
+  --color-brand-100: rgb(211 248 223);
+  --color-brand-200: rgb(170 240 196);
+  --color-brand-300: rgb(115 226 163);
+  --color-brand-400: rgb(60 203 127);
+  --color-brand-500: rgb(22 179 100);
+  --color-brand-600: rgb(9 146 80);
+  --color-brand-700: rgb(8 116 67);
+  --color-brand-800: rgb(9 92 55);
+  --color-brand-900: rgb(8 76 46);
+  --color-brand-950: rgb(5 46 28);
+
+  /* solid brand fill one step darker, so white text on it passes 4.5:1 */
+  --color-bg-brand-solid: var(--color-brand-700);
+  --color-bg-brand-solid_hover: var(--color-brand-800);
+  /* surfaces are separated by tone, not by shadow */
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow-xs-skeuomorphic: 0 0 #0000;
+  --shadow-skeuomorphic: 0 0 #0000;
+}

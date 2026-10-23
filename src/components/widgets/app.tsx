@@ -1,5 +1,10 @@
 /* Page 6 (CampusMeal app): function list, kitchen forecast calculator, protocol download. */
 import { type CSSProperties, type ReactNode } from "react";
+import { Download01 } from "@untitledui/icons";
+import { Badge } from "@/components/base/badges/badges";
+import { Button } from "@/components/base/buttons/button";
+import { Input } from "@/components/base/input/input";
+import { StatTable } from "../survey/panels";
 import { createStore } from "../../state/createStore";
 import { downloadText } from "../../api/client";
 import { Card, FilterButtons } from "../ui/Cards";
@@ -9,15 +14,15 @@ import { quickForecast } from "../../../shared/campusmeal/logic";
 type Attrs = { className?: string; style?: CSSProperties; children?: ReactNode; hidden?: boolean; type?: "button" };
 
 /* ---------- all functions ---------- */
-const SOL_BG: Record<string, string> = { A: "var(--cA)", B: "var(--cB)", C: "var(--cC)" };
+const SOL_BG: Record<string, string> = { A: "bg-[var(--cA)] text-white ring-transparent", B: "bg-[var(--cB)] text-white ring-transparent", C: "bg-[var(--cC)] text-white ring-transparent" };
 export const FeatureFilters = ({ className, style }: Attrs) => <FilterButtons group="feat" cats={["For students", "For the kitchen", "Reporting"]} className={className} style={style} />;
 export function FeatureGrid({ className }: Attrs) {
   return (
     <div className={className} id="featgrid">
       {FEATS.map((f, i) => (
         <Card key={f[0]} title={`${i + 1}. ${f[0]}`} tag={f[1]} group="feat" cat={f[1]}>
-          <div className="tagline">{f[1]} · <span className={"pill " + (f[2] === "Core" ? "hi" : "md")}>{f[2]}</span>{" "}
-            <span className="pill" style={SOL_BG[f[3]] ? { background: SOL_BG[f[3]], color: "#fff" } : undefined}>{f[3] === "Fit" || f[3] === "Learn" ? f[3] : "Solution " + f[3]}</span></div>
+          <div className="tagline flex flex-wrap items-center gap-1.5">{f[1]} · <Badge size="sm" color={f[2] === "Core" ? "brand" : "warning"}>{f[2]}</Badge>
+            <Badge size="sm" className={SOL_BG[f[3]]}>{f[3] === "Fit" || f[3] === "Learn" ? f[3] : "Solution " + f[3]}</Badge></div>
           <div className="front"><h4>{i + 1}. {f[0]}</h4><p className="small" style={{ marginTop: 6 }}>{f[4]}</p><p className="small" style={{ marginTop: 6, color: "var(--leaf)" }}><b>Why it helps:</b> {f[5]}</p></div>
         </Card>
       ))}
@@ -33,9 +38,9 @@ const useFc = () => {
   const pre = n(v.pre, 0), walk = n(v.walk, 0), rt = n(v.int, 3), b = Math.max(1, n(v.batch, 10)), old = n(v.old, 0);
   return { pre, walk, rt, b, old, x: quickForecast(pre, walk, rt, b) };
 };
-export function ForecastInput({ name, min, max, step }: { name: FcKey; type?: string; min?: string; max?: string; step?: string; defaultValue?: string }) {
+export function ForecastInput({ name }: { name: FcKey; type?: string; min?: string; max?: string; step?: string; defaultValue?: string }) {
   const v = fcIn.use()[name];
-  return <input id={"k-" + name} type="number" min={min} max={max} step={step} value={Number.isNaN(v) ? "" : v} onChange={(e) => fcIn.set((c) => ({ ...c, [name]: e.target.value === "" ? NaN : +e.target.value }))} />;
+  return <Input id={"k-" + name} type="number" value={Number.isNaN(v) ? "" : String(v)} onChange={(x) => fcIn.set((c) => ({ ...c, [name]: x === "" ? NaN : +x }))} />;
 }
 export function ForecastFormula({ className }: Attrs) {
   const { pre, walk, rt, b, x } = useFc();
@@ -62,17 +67,16 @@ export function ForecastNote({ className }: Attrs) {
 }
 export function ForecastTable() {
   return (
-    <table id="dashtable">
-      <thead><tr><th>Canteen</th><th>Dish</th><th className="n">Pre-orders</th><th className="n">Avg walk-ins</th><th className="n">Interest</th><th className="n">Forecast</th><th className="n">First batch</th><th className="n">Old habit</th></tr></thead>
-      <tbody>{DASH_ROWS.map((r) => { const x = quickForecast(r[2], r[3], r[4], 10); return (
-        <tr key={r[1]}><td>{r[0]}</td><td><b>{r[1]}</b></td><td className="n">{r[2]}</td><td className="n">{r[3]}</td><td className="n">{r[4].toFixed(1)}</td>
-          <td className="n" style={{ fontWeight: 700, color: "var(--leaf)" }}>{x.fcst}</td><td className="n">{x.first}</td><td className="n muted">{r[5]}</td></tr>); })}</tbody>
-    </table>
+    <StatTable id="dashtable" label="Kitchen forecast by dish"
+      cols={[["Canteen"], ["Dish"], ["Pre-orders", true], ["Avg walk-ins", true], ["Interest", true], ["Forecast", true], ["First batch", true], ["Old habit", true]]}
+      rows={DASH_ROWS.map((r) => { const x = quickForecast(r[2], r[3], r[4], 10); return {
+        id: r[1], cells: [r[0], <b>{r[1]}</b>, r[2], r[3], r[4].toFixed(1), <b className="text-brand-secondary">{x.fcst}</b>, x.first, <span className="muted">{r[5]}</span>],
+      }; })} />
   );
 }
 
 /* ---------- protocol as a Markdown file ---------- */
-export function ProtocolDownload({ className }: Attrs) {
+export function ProtocolDownload(_: Attrs) {
   const save = () => {
     const doc = document.getElementById("protocol-doc");
     if (!doc) return;
@@ -89,5 +93,5 @@ export function ProtocolDownload({ className }: Attrs) {
     });
     downloadText("CampusMeal_Operating_Protocol_v1.md", md, "text/markdown");
   };
-  return <button className={className} type="button" id="proto-dl" onClick={save}>Download protocol (.md)</button>;
+  return <Button size="md" id="proto-dl" iconLeading={Download01} onPress={save}>Download protocol (.md)</Button>;
 }
