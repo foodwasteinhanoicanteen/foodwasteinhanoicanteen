@@ -1,6 +1,6 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection } from "../components/layout";
-import { CountUp, GoButton, HomeCards, MediaSlot, Photo, REF_COUNT } from "../components";
+import { CountUp, GoButton, MediaSlot, Photo, REF_COUNT } from "../components";
 
 export default function HomePage() {
   return (
@@ -177,15 +177,6 @@ export default function HomePage() {
             </tbody>
           </table>
         </div>
-        <div className="sec-h">
-          <div>
-            <h2>Our journey in eight steps</h2>
-          </div>
-        </div>
-        <p className="muted" style={{ marginBottom: "14px" }}>
-          Each step is one page of this site. Click a step to open it.
-        </p>
-        <HomeCards />
         <div className="sec-h">
           <div>
             <h2>Where to find each requirement</h2>

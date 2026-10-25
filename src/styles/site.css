@@ -43,7 +43,7 @@ p{margin:0}
 .brand-mark{width:34px;height:34px;border-radius:50%;border:2.5px solid var(--ink);display:grid;place-items:center;font-family:var(--f-mono);font-size:.8125rem;font-weight:700;position:relative}
 .brand-mark::after{content:"";position:absolute;width:2px;height:11px;background:var(--waste);top:4px;left:15px;transform:rotate(38deg);transform-origin:bottom}
 .brand b{font-family:var(--f-display);font-size:1.0625rem;letter-spacing:-.01em}
-.mainnav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.mainnav{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
 .mainnav::-webkit-scrollbar{display:none}
 .mainnav .n{font-family:var(--f-mono);font-size:.8125rem;margin-right:6px;opacity:.7}
 .journey{height:3px;background:var(--line)}
@@ -131,7 +131,9 @@ tr.win td{background:var(--leaf-soft);font-weight:600}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .card{background:var(--panel);border:0;border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:10px}
 .card .tagline{font-family:var(--f-mono);font-size:.8125rem;color:var(--muted)}
-.card .front{flex:1}
+.card .front{flex:none}
+/* the open button sits at the foot of the card; everything above flows as paragraphs */
+.card .open{margin-top:auto;align-self:flex-start}
 .card .more{display:none}
 .card .open::after{content:" \2192"}
 .card[hidden]{display:none}
@@ -145,13 +147,14 @@ dialog::backdrop{background:rgba(10,18,12,.55)}
 .x{font:inherit;font-size:1.25rem;line-height:1;background:var(--panel-2);border:none;border-radius:8px;width:36px;height:36px;cursor:pointer;color:var(--ink);flex:none}
 
 /* accordions */
-details.acc{background:var(--panel);border:0;border-radius:var(--r)}
-details.acc+details.acc{margin-top:10px}
+.acc{background:var(--panel);border:0;border-radius:var(--r)}
+.acc+.acc{margin-top:10px}
 details.acc summary{cursor:pointer;padding:14px 18px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
 details.acc summary::-webkit-details-marker{display:none}
 details.acc summary::after{content:"+";font-family:var(--f-mono);font-size:1.25rem;color:var(--muted)}
 details.acc[open] summary::after{content:"\2212"}
-details.acc .in{padding:0 18px 18px;display:grid;gap:10px}
+.acc .in{padding:0 18px 18px;display:grid;gap:10px}
+.acc-head{padding:14px 18px;font-weight:700;font-family:inherit;font-size:inherit}
 
 /* journey / hotspots */
 .chain{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;position:relative;margin:10px 0 6px}
@@ -327,11 +330,6 @@ svg.ic.lg{width:30px;height:30px}
 .takeaways b{font-family:var(--f-display);font-size:1.75rem;font-weight:800;line-height:1;letter-spacing:-.01em}
 .takeaways span{font-size:.9375rem;color:var(--muted);line-height:1.35}
 .takeaways b span{font-size:inherit;color:inherit;line-height:inherit}
-.dt{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr))}
-.dt .n{font-family:var(--f-mono);font-size:.8125rem;color:var(--muted)}
-.dt .ic{width:30px;height:30px;color:var(--waste)}
-.dt b{font-family:var(--f-display);font-size:1.25rem}
-.dt .rb{font-family:var(--f-mono);font-size:.8125rem;color:var(--leaf);font-weight:700;}
 .planhead{display:flex;gap:16px;align-items:center;margin-bottom:18px}
 .badge{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:1.75rem;color:#fff;flex:none}
 .quick{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));margin-bottom:18px}
@@ -425,11 +423,6 @@ svg.ic.lg{width:30px;height:30px}
 .media.wide{aspect-ratio:21/9}
 .media:not(.has){aspect-ratio:auto;min-height:180px}
 .media-cap{margin-top:8px;font-size:.9375rem;color:var(--muted)}
-/* design-thinking steps: an ordered list set large, no boxes */
-.dt{list-style:none;margin:0;padding:0;display:grid;gap:4px 40px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
-.dt b{font-family:var(--f-display);font-size:1.75rem;letter-spacing:-.02em;color:var(--ink)}
-.dt .small{color:var(--ink);font-weight:400}
-.dt .rb{font-size:.9375rem;color:var(--leaf);font-weight:600}
 figure.photo{display:grid;gap:8px}
 figure.photo img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:var(--r)}
 figure.photo figcaption{font-size:.9375rem;color:var(--muted)}
@@ -472,3 +465,7 @@ footer.site .footname{font-family:var(--f-display);font-weight:800;font-size:cla
 .takeaways>div{grid-template-columns:1fr;align-content:start;gap:8px}
 .takeaways b{font-size:clamp(2.25rem,3.6vw,3rem);white-space:nowrap}
 .takeaways>div>span{font-size:1rem;color:var(--ink)}
+/* exactly three columns (six cards = two rows); two on tablets, one on phones */
+.g3f{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:960px){.g3f{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.g3f{grid-template-columns:1fr}}

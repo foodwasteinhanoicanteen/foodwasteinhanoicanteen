@@ -27,7 +27,7 @@ export default function AppPage() {
           Our app idea, a new section of the MyVinUni app, turns Solution B into something students and the kitchen use every day, and links
           in A and C.
         </p>
-        <p className="stage-note">Design thinking: Prototype. Rubrics 2 &amp; 3: Creativity and planning.</p>
+        {/* <p className="stage-note">Design thinking: Prototype. Rubrics 2 &amp; 3: Creativity and planning.</p> */}
         <div className="takeaways">
           <div>
             <b>3</b>
@@ -653,10 +653,10 @@ export default function AppPage() {
           <div className="tab-title">
             <h2>How we build and test it</h2>
           </div>
-          <p className="tab-intro">
+          {/* <p className="tab-intro">
             Design thinking says: prototype cheaply, test with real users, then build. We do not need a finished app to start reducing
             waste.
-          </p>
+          </p> */}
           <ol className="steps panel" style={{ padding: "6px 20px" }}>
             <li>
               <span className="wk">

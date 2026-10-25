@@ -12,7 +12,7 @@ export default function PlanPage() {
           A careful plan for each solution: what it is, who is in charge, how it connects to ethics, the difference it makes, and every step
           with resources, KPIs and risks.
         </p>
-        <p className="stage-note">Design thinking: Act. Rubric 3: Planning &amp; action.</p>
+        {/* <p className="stage-note">Design thinking: Act. Rubric 3: Planning &amp; action.</p> */}
         <div className="takeaways">
           <div>
             <b>12 weeks</b>

@@ -33,7 +33,7 @@ export const options: esbuild.BuildOptions = {
   target: "es2020",
   jsx: "automatic",
   sourcemap: true,
-  loader: { ".woff2": "file", ".woff": "file" },
+  loader: { ".woff2": "file", ".woff": "file", ".csv": "text" },
   assetNames: "fonts/[name]-[hash]",
   publicPath: "",
   logLevel: "info",

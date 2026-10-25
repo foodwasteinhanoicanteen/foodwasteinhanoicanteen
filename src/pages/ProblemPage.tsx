@@ -33,7 +33,7 @@ export default function ProblemPage() {
           Large amounts of safe, edible food are thrown away by Hanoi’s food businesses: restaurants, hotel buffets, wedding venues,
           supermarkets and institutional canteens like ours. Here is how big it is, where it happens, why, and who pays.
         </p>
-        <p className="stage-note">Design thinking: Empathise. Rubric 1: Understanding the problem.</p>
+        {/* <p className="stage-note">Design thinking: Empathise. Rubric 1: Understanding the problem.</p> */}
         <div className="takeaways">
           <div>
             <b>1.05 bn t</b>
@@ -426,8 +426,8 @@ export default function ProblemPage() {
           <div className="tab-title">
             <h2>Why it matters: the consequences</h2>
           </div>
-          <p className="tab-intro">Filter by type of harm. Open a card for the full evidence.</p>
-          <FilterButtons group="impact" cats={["Environment", "Economy", "Society", "Health"]} className="filters" />
+          {/* <p className="tab-intro">Filter by type of harm. Open a card for the full evidence.</p> */}
+          {/* <FilterButtons group="impact" cats={["Environment", "Economy", "Society", "Health"]} className="filters" /> */}
           <div className="grid g3" data-cards="impact">
             <Card title="Methane and climate" tag="Environment" group="impact" cat="Environment">
               <div className="tagline">Environment</div>

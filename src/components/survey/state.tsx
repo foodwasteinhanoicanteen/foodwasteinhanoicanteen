@@ -4,7 +4,8 @@ import { Badge } from "@/components/base/badges/badges";
 import { cx } from "@/utils/cx";
 import { createStore } from "../../state/createStore";
 import { useSite } from "../../state/site";
-import { EXAMPLE, analyse, type Analysis, type CritKey, type SurveyRow } from "../../../shared/survey";
+import surveyCsv from "../../../data/survey_data.csv";
+import { analyse, parseText, type Analysis, type CritKey, type SurveyRow } from "../../../shared/survey";
 import { conclusion, svValues } from "../../../shared/surveyReport";
 
 export const ui = createStore<{ crit: CritKey; lkCrit: CritKey }>({ crit: "eff", lkCrit: "eff" });
@@ -30,17 +31,22 @@ export function useSurvey() {
   return c;
 }
 
+/** The real survey responses (Google Forms export). Rows that fail validation are dropped and logged. */
+const SURVEY = parseText(surveyCsv);
+if (SURVEY.errs.length) console.warn("data/survey_data.csv:", SURVEY.errs);
+const SURVEY_ROWS = SURVEY.rows;
+
 export function SurveyProvider({ children }: { children: ReactNode }) {
   const { savedRows } = useSite();
 
   const value = useMemo<SurveyCtx>(() => {
-    // the 50 example rows count as our survey data until the team saves other rows
-    const isExample = !savedRows.length, rows = isExample ? EXAMPLE : savedRows;
+    // our survey (data/survey_data.csv, bundled at build time) until this browser saves other rows
+    const rows = savedRows.length ? savedRows : SURVEY_ROWS;
     return {
-      rows, saved: savedRows,
+      rows, saved: rows,
       analysis: (c) => memo(rows, "a:" + c, () => analyse(rows, c)),
-      sv: memo(rows, "sv", () => svValues(rows, isExample)),
-      concl: () => memo(rows, "c", () => conclusion(rows, isExample)),
+      sv: memo(rows, "sv", () => svValues(rows, false)),
+      concl: () => memo(rows, "c", () => conclusion(rows, false)),
     };
   }, [savedRows]);
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

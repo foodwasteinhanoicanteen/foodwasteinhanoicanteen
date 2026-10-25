@@ -11,7 +11,7 @@ export default function DecisionPage() {
         <p className="lede">
           Putting the analysis, the survey and the ethics together: Solution B is the best choice, and Solutions A and C make it complete.
         </p>
-        <p className="stage-note">Design thinking: Decide. Rubrics 2 &amp; 5: Idea, creativity, ethics.</p>
+        {/* <p className="stage-note">Design thinking: Decide. Rubrics 2 &amp; 5: Idea, creativity, ethics.</p> */}
         <div className="takeaways">
           <div>
             <b>B</b>
@@ -48,15 +48,15 @@ export default function DecisionPage() {
           <div className="tab-title">
             <h2>Solution B is the best choice, and A and C make it complete</h2>
           </div>
-          <p className="tab-intro">
+          {/* <p className="tab-intro">
             We combined three kinds of evidence: our own analysis, the survey and the ethical analysis. They point the same way, with one
             honest trade-off on feasibility.
-          </p>
+          </p> */}
           <div className="grid g2">
             <div className="panel stack">
               <h3>Effectiveness, as rated in our survey</h3>
               <VerdictChart className="bars" />
-              <VerdictNote className="small muted" />
+              {/* <VerdictNote className="small muted" /> */}
             </div>
             <div className="panel stack">
               <h3>Our weighted analysis (out of 5)</h3>
@@ -83,7 +83,7 @@ export default function DecisionPage() {
                   <span className="val">3.20</span>
                 </div>
               </div>
-              <p className="small muted">B ranks first under every weighting we tested (Solutions page → Analysis).</p>
+              {/* <p className="small muted">B ranks first under every weighting we tested (Solutions page → Analysis).</p> */}
             </div>
           </div>
           <h3 style={{ margin: "26px 0 12px" }}>The evidence, side by side</h3>
@@ -228,7 +228,7 @@ export default function DecisionPage() {
               connects all three.
             </p>
           </div>
-          <div className="grid g3" style={{ marginTop: "18px" }}>
+          {/* <div className="grid g3" style={{ marginTop: "18px" }}>
             <div className="comp" style={{ borderColor: "var(--cB)" }}>
               <div className="comp-h">
                 <span
@@ -300,7 +300,7 @@ export default function DecisionPage() {
                 <li>Only through a trained partner, with strict safety rules</li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </Tab>
         <Tab id="system" label="How they fit together">
           <div className="tab-title">

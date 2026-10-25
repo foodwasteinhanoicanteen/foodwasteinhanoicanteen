@@ -1,4 +1,4 @@
-/* Survey › Enter data: the survey uses the 50 example rows; add one response, list, download, delete.
+/* Survey › Enter data: the survey uses data/survey_data.csv until rows are saved here; add one response, list, download, delete.
    Every saved row is still validated by the data rules (shared/schemas/site.ts). */
 import { useState } from "react";
 import { Badge } from "@/components/base/badges/badges";
@@ -43,15 +43,15 @@ export function EnterData() {
           </div>
         </div>
         {confirm && (
-          <div className="callout"><p><b>Delete all saved responses?</b> The survey goes back to the 50 example responses.</p>
+          <div className="callout"><p><b>Delete all saved responses?</b> The survey goes back to the responses in data/survey_data.csv.</p>
             <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
-              <Button size="md" color="primary-destructive" onPress={() => { setConfirm(false); save([], "Reset to the 50 example responses"); }}>Yes, delete all</Button>
+              <Button size="md" color="primary-destructive" onPress={() => { setConfirm(false); save([], "Reset to the survey data file"); }}>Yes, delete all</Button>
               <Button size="md" color="secondary" onPress={() => setConfirm(false)}>Cancel</Button>
             </div>
           </div>
         )}
         <div className="tbl" style={{ maxHeight: 420, overflow: "auto" }}>
-          {!saved.length ? <p className="muted" id="savedtable">No responses saved yet. The analysis is using the example data.</p> : (
+          {!saved.length ? <p className="muted" id="savedtable">No survey responses found.</p> : (
             <StatTable id="savedtable" label="Saved responses" cols={[["#"], ["Gender"], ["Age"], ["Occupation"], ["A (5 items)", true], ["B (5 items)", true], ["C (5 items)", true], ["Priority"], ["One"], [<span className="sr-only">Delete</span>]]}
               rows={saved.map((row, i) => {
                 const r = SurveyResponse.fromRow(row), five = (x: typeof r.ratings.A) => [x.effective, x.feasible, x.ethical, x.support, x.extra].join(" ");

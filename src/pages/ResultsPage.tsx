@@ -11,7 +11,7 @@ export default function ResultsPage() {
         <p className="lede">
           What happened, what difference it made, and what we learned. Every number here comes from our own audit, sales records and survey.
         </p>
-        <p className="stage-note">Design thinking: Learn. Rubric 4: Results &amp; learning.</p>
+        {/* <p className="stage-note">Design thinking: Learn. Rubric 4: Results &amp; learning.</p> */}
         <div className="takeaways">
           <div>
             <b>
@@ -450,7 +450,7 @@ export default function ResultsPage() {
             </div>
           </details>
           <details className="acc">
-            <summary>7. Design thinking: talking to people changed our design</summary>
+            {/* <summary>7. Design thinking: talking to people changed our design</summary> */}
             <div className="in">
               <p>
                 <Field id="l_dt">

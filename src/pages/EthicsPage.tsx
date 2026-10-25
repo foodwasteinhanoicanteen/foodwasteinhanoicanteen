@@ -15,7 +15,6 @@ import {
   More,
   QuoteCarousel,
   Verdict,
-  VerdictGrid,
 } from "../components";
 
 export default function EthicsPage() {
@@ -28,7 +27,7 @@ export default function EthicsPage() {
           When a restaurant, hotel, wedding venue, canteen or supermarket throws away food that was safe to eat, a business is making a
           moral choice, not “Hanoi” in the abstract. We test that claim against eight theories from the course.
         </p>
-        <p className="stage-note">Design thinking: Define. Rubric 5: Connections to ethics.</p>
+        {/* <p className="stage-note">Design thinking: Define. Rubric 5: Connections to ethics.</p>
         <div className="takeaways">
           <div>
             <b>8 of 8</b>
@@ -46,7 +45,7 @@ export default function EthicsPage() {
             <b>$6–7</b>
             <span>saved per $1 spent on prevention, so waste is a choice</span>
           </div>
-        </div>
+        </div> */}
       </div>
       <SubTabs />
       <div className="wrap">
@@ -55,7 +54,7 @@ export default function EthicsPage() {
             <h2>Five reasons it is an ethical problem</h2>
           </div>
           <p className="tab-intro">Not just an operating cost. Open each reason for the argument behind it.</p>
-          <div className="grid g3">
+          <div className="grid g3f">
             <Card title="Control" tag="Reason 1">
               <div className="tagline">Reason 1</div>
               <Front>
@@ -64,14 +63,15 @@ export default function EthicsPage() {
                   The firm decides how much to buy, cook, portion, display and discard.
                 </p>
               </Front>
-              <More>
-                <p>
+              {/* <More> */}
+                {/* <p> */}
+                <p className="small" style={{ marginTop: "3px" }}>
                   Moral responsibility follows the capacity to act, usually summarised as “ought implies can”. The more control an agent has
                   over an outcome, the stronger its responsibility for it. In almost every stage of the food journey, the decisive choice is
                   made inside the firm.
                 </p>
-              </More>
-              <CardOpen>Read the argument</CardOpen>
+              {/* </More> */}
+              {/* <CardOpen>Read the argument</CardOpen> */}
             </Card>
             <Card title="Cost shifting" tag="Reason 2">
               <div className="tagline">Reason 2</div>
@@ -81,16 +81,20 @@ export default function EthicsPage() {
                   The firm keeps the benefits of over-provision; <span className="hl">others pay the costs</span>.
                 </p>
               </Front>
-              <More>
-                <p>
+              {/* <More>
+                <p> */}
+
+                <p className="small" style={{ marginTop: "3px" }}>
                   <b>Benefits to the firm:</b> no stock-outs, an image of abundance, simple operations, no donation risk.
                 </p>
-                <p>
+                {/* <p> */}
+
+                <p className="small" style={{ marginTop: "3px" }}>
                   <b>Costs to others:</b> landfill neighbours, waste workers, the climate and future generations, none of whom agreed to
                   bear them. Economists call these <b>negative externalities</b>.
                 </p>
-              </More>
-              <CardOpen>Read the argument</CardOpen>
+              {/* </More> */}
+              {/* <CardOpen>Read the argument</CardOpen> */}
             </Card>
             <Card title="Neglected stakeholders" tag="Reason 3">
               <div className="tagline">Reason 3</div>
@@ -100,10 +104,13 @@ export default function EthicsPage() {
                   Customers, staff and hungry people are treated as if they do not count.
                 </p>
               </Front>
-              <More>
-                <p>Customers pay for portions larger than many want, staff are told to bin edible food, and people in need are bypassed.</p>
-              </More>
-              <CardOpen>Read the argument</CardOpen>
+              {/* <More> */}
+
+                <p className="small">
+                Customers pay for portions larger than many want, staff are told to bin edible food, and people in need are bypassed.
+                </p>
+              {/* </More> */}
+              {/* <CardOpen>Read the argument</CardOpen> */}
             </Card>
             <Card title="The law does not close the gap" tag="Reason 4">
               <div className="tagline">Reason 4</div>
@@ -113,15 +120,17 @@ export default function EthicsPage() {
                   No penalty for waste, <span className="hl">no protection for donors</span>, no clear date labels.
                 </p>
               </Front>
-              <More>
-                <p>
+              {/* <More> */}
+                {/* <p> */}
+
+                <p className="small" style={{ marginTop: "6px" }}>
                   Vietnamese law does not penalise food waste, does not protect donors from liability, and does not separate safety dates
                   from quality dates (Harvard FLPC &amp; GFN, 2024). The new Law on Thrift and Anti-Waste (No. 110/2025/QH15) only{" "}
                   <em>encourages</em> thrift in private business. Where the law stops, Carroll’s (1991) ethical layer of responsibility
                   begins.
                 </p>
-              </More>
-              <CardOpen>Read the argument</CardOpen>
+              {/* </More> */}
+              {/* <CardOpen>Read the argument</CardOpen> */}
             </Card>
             <Card title="Prevention usually pays" tag="Reason 5">
               <div className="tagline">Reason 5</div>
@@ -131,18 +140,19 @@ export default function EthicsPage() {
                   Firms typically save <span className="hl">US$6–7 per US$1</span> invested in cutting waste.
                 </p>
               </Front>
-              <More>
-                <p>
+              {/* <More> */}
+                {/* <p> */}
+                <p className="small" style={{ marginTop: "6px" }}>
                   In benchmark studies, restaurants, hotels and caterers saved about US$6–7 for every US$1 invested in measuring and
                   preventing waste (Champions 12.3, 2018a, 2018b, 2019). So continuing to waste usually reflects habit and lack of
                   measurement, not necessity.
                 </p>
-                <p>
+                <p className="small" style={{ marginTop: "6px" }}>
                   These are international firms that chose to measure their waste, so a Hanoi canteen may save less, but the direction is
                   clear.
                 </p>
-              </More>
-              <CardOpen>Read the argument</CardOpen>
+              {/* </More> */}
+              {/* <CardOpen>Read the argument</CardOpen> */}
             </Card>
             <Card
               title="8 lenses, 1 verdict"
@@ -247,17 +257,18 @@ export default function EthicsPage() {
             business designs the choice, so it carries the larger share.
           </div>
           <h3 style={{ margin: "30px 0 12px" }}>Can a company be morally responsible at all?</h3>
-          <details className="acc" open>
-            <summary>The objection</summary>
+          <div className="acc">
+            <h4 className="acc-head">The objection</h4>
             <div className="in">
               <p>
                 <b>Velasquez (1983):</b> only people have minds and act. A corporation cannot be morally responsible; only the individuals
                 inside it can.
               </p>
             </div>
-          </details>
-          <details className="acc">
-            <summary>Two replies</summary>
+          </div>
+          <div className="acc">
+            {/* <summary>Two replies</summary> */}
+            <h4 className="acc-head">Two replies</h4>
             <div className="in">
               <p>
                 <b>French (1979):</b> a corporation has a Corporate Internal Decision Structure: policies, procedures and lines of
@@ -269,9 +280,10 @@ export default function EthicsPage() {
                 be built into corporate policy.
               </p>
             </div>
-          </details>
-          <details className="acc">
-            <summary>Our position</summary>
+          </div>
+          <div className="acc">
+            {/* <summary>Our position</summary> */}
+            <h4 className="acc-head">Our position</h4>
             <div className="in">
               <p>
                 We treat the firm as responsible for its policies, while individual managers remain accountable in their roles. Rules like
@@ -279,7 +291,7 @@ export default function EthicsPage() {
                 front-line staff should not carry the blame.
               </p>
             </div>
-          </details>
+          </div>
         </Tab>
         <Tab id="lenses" label="8 ethical lenses">
           <div className="tab-title">
@@ -791,8 +803,8 @@ export default function EthicsPage() {
           <div className="tab-title">
             <h2>The verdict</h2>
           </div>
-          <p className="tab-intro">Tap a tile to reopen that lens.</p>
-          <VerdictGrid className="vgrid" />
+          {/* <p className="tab-intro">Tap a tile to reopen that lens.</p> */}
+          {/* <VerdictGrid className="vgrid" /> */}
           <div className="grid g2" style={{ marginTop: "20px" }}>
             <div className="panel stack">
               <h3>Where the lenses agree</h3>
@@ -826,8 +838,8 @@ export default function EthicsPage() {
               <span className="hl">prevent first, rescue second, redistribute safely third, recycle the rest.</span>
             </p>
           </div>
-          <h3 style={{ margin: "26px 0 12px" }}>Six principles that shaped our solution</h3>
-          <div className="grid g3">
+          {/* <h3 style={{ margin: "26px 0 12px" }}>Six principles that shaped our solution</h3> */}
+          {/* <div className="grid g3">
             <div className="panel">
               <b>1. Lead with prevention.</b> Where every lens agrees and firms save money.
             </div>
@@ -846,7 +858,7 @@ export default function EthicsPage() {
             <div className="panel">
               <b>6. Measure and report honestly.</b> Grams wasted per meal, even if targets are missed.
             </div>
-          </div>
+          </div> */}
         </Tab>
         <Pager />
       </div>

@@ -44,7 +44,7 @@ export default function SurveyPage() {
           We asked people to rate all three solutions on effectiveness, feasibility, ethics and support. One-way ANOVA tells us whether the
           solutions are rated differently; Tukey’s post-hoc test tells us which ones.
         </p>
-        <p className="stage-note">Design thinking: Test ideas with people. Rubrics 1, 2 &amp; 4: Evidence from people.</p>
+        {/* <p className="stage-note">Design thinking: Test ideas with people. Rubrics 1, 2 &amp; 4: Evidence from people.</p> */}
         <div className="takeaways">
           <div>
             <b>
@@ -71,9 +71,9 @@ export default function SurveyPage() {
             <span>Tukey: which solution was rated higher</span>
           </div>
         </div>
-        <p className="small" style={{ marginTop: "10px", fontWeight: "600", color: "var(--gold)" }}>
+        {/* <p className="small" style={{ marginTop: "10px", fontWeight: "600", color: "var(--gold)" }}>
           <SV k="srcnote"></SV>
-        </p>
+        </p> */}
       </div>
       <SubTabs />
       <div className="wrap">
@@ -111,7 +111,7 @@ export default function SurveyPage() {
               <p className="who">Tested with chi-square</p>
             </div>
           </div>
-          <h3 style={{ margin: "26px 0 12px" }}>From hypothesis to test</h3>
+          {/* <h3 style={{ margin: "26px 0 12px" }}>From hypothesis to test</h3>
           <div className="tbl">
             <table>
               <thead>
@@ -166,13 +166,13 @@ export default function SurveyPage() {
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div className="callout g" style={{ marginTop: "16px" }}>
+          </div> */}
+          {/* <div className="callout g" style={{ marginTop: "16px" }}>
             <b>Why B is the “root-cause” solution.</b> Solutions A and C deal with food that has already been over-produced: A sells it, C
             gives it away. Solution B stops the over-production and oversized portions that create the waste in the first place. So if B is
             rated significantly more effective than both A and C, the data supports the claim that{" "}
             <b>people rate tackling the root cause higher than handling the leftovers</b>.
-          </div>
+          </div> */}
           <div className="panel stack" style={{ marginTop: "16px" }}>
             <h3>Research ethics</h3>
             <ul className="clean small">
@@ -352,7 +352,7 @@ export default function SurveyPage() {
             </div>
           </div>
         </Tab>
-        <Tab id="choice" label="Forced choice">
+        {/* <Tab id="choice" label="Forced choice">
           <div className="tab-title">
             <h2>When people had to choose</h2>
           </div>
@@ -369,7 +369,7 @@ export default function SurveyPage() {
               <ChoiceTest which="one" className="chart-detail" />
             </div>
           </div>
-        </Tab>
+        </Tab> */}
         <Tab id="conclusion" label="Conclusion">
           <div className="tab-title">
             <h2>Conclusion</h2>

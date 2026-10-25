@@ -24,10 +24,10 @@ export function TopBar() {
   return (
     <header className="topbar">
       <div className="wrap">
-        <a className="brand" href="#home" data-go="home"><span className="brand-mark">g</span><b>Wasted by Design</b></a>
+        <a className="brand" href="#home" data-go="home"><span className="brand-mark">g</span><b>Food Waste in Hanoi canteen</b></a>
         <nav className="mainnav" id="mainnav" aria-label="Project pages" ref={nav}>
           {PAGES.filter((p) => p.id !== "home").map((p) => (
-            <GoButton key={p.id} to={p.id} size="sm" color={p.id === page ? "primary" : "tertiary"} aria-current={p.id === page ? "page" : undefined} className="flex-none">
+            <GoButton key={p.id} to={p.id} size="sm" color={p.id === page ? "primary" : "tertiary"} aria-current={p.id === page ? "page" : undefined} className="flex-none px-2.5">
               {p.label}
             </GoButton>
           ))}
@@ -42,7 +42,7 @@ export function Footer() {
   return (
     <footer className="site">
       <div className="wrap">
-        <p className="footname">Wasted by Design</p>
+        <p className="footname">Food Waste in Hanoi canteen</p>
         <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
           <span>MANA3021 Business Ethics · Team Mini Social Impact Project</span>
           <span id="footnote">Yellow boxes mark content the team adds.</span>
@@ -131,22 +131,5 @@ export function StageStepper({ current }: { current: number }) {
         </GoButton>
       ))}
     </div>
-  );
-}
-
-/** Home page cards: one per design-thinking step. */
-export function HomeCards() {
-  return (
-    <ol className="dt" id="homecards">
-      {STEPS.map((p) => (
-        <li key={p.id}>
-          <GoButton to={p.id} color="tertiary" size="lg" className="h-auto w-full items-start justify-start whitespace-normal text-left *:data-text:grid *:data-text:gap-1">
-            <b>{p.stage}</b>
-            <span className="small"><b style={{ fontSize: "inherit", fontFamily: "inherit", letterSpacing: 0 }}>{p.label}.</b> {p.desc}</span>
-            <span className="rb">{p.rub}</span>
-          </GoButton>
-        </li>
-      ))}
-    </ol>
   );
 }

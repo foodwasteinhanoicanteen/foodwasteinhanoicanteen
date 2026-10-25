@@ -8,7 +8,7 @@ export default function SourcesPage() {
       <div className="wrap phead">
         <h1>Methods &amp; sources</h1>
         <p className="lede">How we did the research, and every source we used, in APA 7.</p>
-        <p className="stage-note">Design thinking: Evidence. Rubrics 1 &amp; 5: Reliable evidence.</p>
+        {/* <p className="stage-note">Design thinking: Evidence. Rubrics 1 &amp; 5: Reliable evidence.</p> */}
       </div>
       <SubTabs />
       <div className="wrap">

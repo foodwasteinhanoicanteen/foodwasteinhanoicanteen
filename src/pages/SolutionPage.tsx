@@ -12,7 +12,7 @@ export default function SolutionPage() {
           We present our three shortlisted solutions, what each does and where it falls short, then analyse them against four weighted
           criteria before asking people in the survey.
         </p>
-        <p className="stage-note">Design thinking: Ideate. Rubric 2: Idea &amp; creativity.</p>
+        {/* <p className="stage-note">Design thinking: Ideate. Rubric 2: Idea &amp; creativity.</p> */}
         <div className="takeaways">
           <div>
             <b>A</b>

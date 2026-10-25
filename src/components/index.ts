@@ -2,7 +2,7 @@
 export { Field, MediaSlot } from "./ui/EditMode";
 export { Card, CardOpen, More, Front, Verdict, FilterButtons } from "./ui/Cards";
 export { CountUp, CopyButton, BAToggle, BAShow, Photo } from "./ui/Misc";
-export { GoButton, HomeCards } from "./layout";
+export { GoButton } from "./layout";
 export { Button } from "./base/buttons/button";
 export { Badge } from "./base/badges/badges";
 export * from "./widgets/problem";
