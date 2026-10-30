@@ -469,3 +469,12 @@ footer.site .footname{font-family:var(--f-display);font-weight:800;font-size:cla
 .g3f{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:960px){.g3f{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.g3f{grid-template-columns:1fr}}
+.card.card-ok{background:var(--color-bg-success-secondary)}
+.card.card-no{background:var(--color-bg-error-secondary)}
+.card.card-no .open{color:var(--color-text-error-primary)!important}
+.pim{display:grid;grid-template-columns:auto 1fr 1fr;gap:8px}
+.pim-y{grid-row:1/3;writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-weight:700;color:var(--muted)}
+.pim-x{grid-column:2/4;text-align:center;font-weight:700;color:var(--muted)}
+.pim-q{background:var(--panel-2);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px;min-height:150px}
+.pim-q.hi{background:var(--leaf-soft)}
+.pim-q.lo{background:var(--waste-soft)}

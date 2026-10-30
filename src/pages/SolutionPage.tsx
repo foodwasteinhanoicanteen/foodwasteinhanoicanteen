@@ -55,9 +55,9 @@ export default function SolutionPage() {
                   </span>{" "}
                   people.
                 </p>
-                <p className="out">
+                {/* <p className="out">
                   Found: waste is decided by the business (portions, quantities), and the people most affected have the least say.
-                </p>
+                </p> */}
               </div>
             </li>
             <li>
@@ -74,7 +74,7 @@ export default function SolutionPage() {
                     students pay more or eat less?
                   </em>
                 </p>
-                <p className="out">Decided: prevention first, rescue second, redistribute safely third.</p>
+                {/* <p className="out">Decided: prevention first, rescue second, redistribute safely third.</p> */}
               </div>
             </li>
             <li>
@@ -88,7 +88,7 @@ export default function SolutionPage() {
                   Six ideas, from fines to AI cameras. Each judged on effectiveness, feasibility, ethics and support, with weights and a
                   stress test.
                 </p>
-                <p className="out">Shortlisted A, B and C; chose B as the main solution and combined all three.</p>
+                {/* <p className="out">Shortlisted A, B and C; chose B as the main solution and combined all three.</p> */}
               </div>
             </li>
             <li>
@@ -99,13 +99,13 @@ export default function SolutionPage() {
               <div>
                 <h4>Ask the people affected</h4>
                 <p className="small">Survey ratings analysed with one-way ANOVA and Tukey post-hoc tests, plus robustness checks.</p>
-                <p className="out">
+                {/* <p className="out">
                   Result:{" "}
                   <span>
                     <SV k="tk">B &gt; A, C</SV>
                   </span>{" "}
                   on effectiveness; A seen as most feasible, so B is phased in step by step.
-                </p>
+                </p> */}
               </div>
             </li>
             <li>
@@ -116,7 +116,7 @@ export default function SolutionPage() {
               <div>
                 <h4>Plan and pilot</h4>
                 <p className="small">A 12-week roadmap with a careful plan for each solution: owner, steps, resources, KPIs and risks.</p>
-                <p className="out">See the Action plans page.</p>
+                {/* <p className="out">See the Action plans page.</p> */}
               </div>
             </li>
             <li>
@@ -129,7 +129,7 @@ export default function SolutionPage() {
                 <p className="small">
                   Before/after measurement of grams wasted per meal, feedback from students and staff, and honest reflection.
                 </p>
-                <p className="out">See the Results &amp; learning page.</p>
+                {/* <p className="out">See the Results &amp; learning page.</p> */}
               </div>
             </li>
           </ol>
@@ -479,8 +479,7 @@ export default function SolutionPage() {
           <p className="tab-intro">Filter to see the shortlist or the ideas we rejected, and why.</p>
           <FilterButtons group="ideas" cats={["Shortlisted", "Rejected"]} className="filters" />
           <div className="grid g3" data-cards="ideas">
-            <Card title="Last-Hour Food Rescue" tag="Shortlisted · Solution A" group="ideas" cat="Shortlisted">
-              <div className="tagline">Shortlisted · Solution A</div>
+            <Card title="Last-Hour Food Rescue" group="ideas" cat="Shortlisted" className="card-ok">
               <Front>
                 <h3>Last-Hour Food Rescue</h3>
                 <p className="small" style={{ marginTop: "6px" }}>
@@ -502,14 +501,11 @@ export default function SolutionPage() {
             </Card>
             <Card
               title="Demand Forecasting & Portion Control"
-              tag="Shortlisted · Solution B · Chosen"
+             
               group="ideas"
-              cat="Shortlisted"
+              cat="Shortlisted" className="card-ok"
               style={{ borderColor: "var(--leaf)", borderWidth: "2px" }}
             >
-              <div className="tagline" style={{ color: "var(--leaf)" }}>
-                Shortlisted · Solution B · Chosen
-              </div>
               <Front>
                 <h3>Demand Forecasting &amp; Portion Control</h3>
                 <p className="small" style={{ marginTop: "6px" }}>
@@ -529,8 +525,7 @@ export default function SolutionPage() {
               </More>
               <CardOpen>Pros, cons, decision</CardOpen>
             </Card>
-            <Card title="Safe Redistribution of Surplus" tag="Shortlisted · Solution C" group="ideas" cat="Shortlisted">
-              <div className="tagline">Shortlisted · Solution C</div>
+            <Card title="Safe Redistribution of Surplus" group="ideas" cat="Shortlisted" className="card-ok">
               <Front>
                 <h3>Safe Redistribution of Surplus</h3>
                 <p className="small" style={{ marginTop: "6px" }}>
@@ -551,8 +546,7 @@ export default function SolutionPage() {
               </More>
               <CardOpen>Pros, cons, decision</CardOpen>
             </Card>
-            <Card title="Fines for food left on plates" tag="Rejected" group="ideas" cat="Rejected">
-              <div className="tagline">Rejected</div>
+            <Card title="Fines for food left on plates" group="ideas" cat="Rejected" className="card-no">
               <Front>
                 <h3>Fines for food left on plates</h3>
                 <p className="small" style={{ marginTop: "6px" }}>
@@ -567,8 +561,7 @@ export default function SolutionPage() {
               </More>
               <CardOpen>Why we rejected it</CardOpen>
             </Card>
-            <Card title="Awareness posters only" tag="Rejected as main solution" group="ideas" cat="Rejected">
-              <div className="tagline">Rejected as main solution</div>
+            <Card title="Awareness posters only" group="ideas" cat="Rejected" className="card-no">
               <Front>
                 <h3>Awareness posters only</h3>
                 <p className="small" style={{ marginTop: "6px" }}>
@@ -583,8 +576,7 @@ export default function SolutionPage() {
               </More>
               <CardOpen>Why we rejected it</CardOpen>
             </Card>
-            <Card title="AI waste-tracking cameras" tag="Rejected for the pilot" group="ideas" cat="Rejected">
-              <div className="tagline">Rejected for the pilot</div>
+            <Card title="AI waste-tracking cameras" group="ideas" cat="Rejected" className="card-no">
               <Front>
                 <h3>AI waste-tracking cameras</h3>
                 <p className="small" style={{ marginTop: "6px" }}>

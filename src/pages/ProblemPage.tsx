@@ -726,32 +726,34 @@ export default function ProblemPage() {
             </Card>
           </div>
           <h3 style={{ margin: "28px 0 12px" }}>Power and interest</h3>
-          <div className="grid g2">
-            <div className="panel" style={{ background: "var(--panel-2)" }}>
-              <div className="eyebrow">High power · lower interest</div>
-              <p style={{ marginTop: "6px" }}>
-                <b>Government regulators.</b> Keep satisfied.
-              </p>
+          <div className="pim" role="group" aria-label="Power and interest matrix">
+            <span className="pim-y">Power ↑</span>
+            <div className="pim-q">
+              <div className="eyebrow">High power · low interest</div>
+              <h4>Keep satisfied</h4>
+              <p>Government regulators.</p>
             </div>
-            <div className="panel" style={{ borderColor: "var(--ink)" }}>
+            <div className="pim-q hi">
               <div className="eyebrow">High power · high interest</div>
-              <p style={{ marginTop: "6px" }}>
-                <b>Canteen management, university operations.</b> <span className="hl-g">Manage closely: they decide.</span>
+              <h4>Manage closely</h4>
+              <p>
+                Canteen management, university operations. <span className="hl-g">They decide.</span>
               </p>
             </div>
-            <div className="panel" style={{ background: "var(--panel-2)" }}>
-              <div className="eyebrow">Low power · no voice</div>
-              <p style={{ marginTop: "6px" }}>
-                <b>Environment and future generations.</b>
-              </p>
+            <div className="pim-q">
+              <div className="eyebrow">Low power · low interest</div>
+              <h4>Monitor</h4>
+              <p>Environment and future generations.</p>
             </div>
-            <div className="panel" style={{ borderColor: "var(--waste)", background: "var(--waste-soft)" }}>
+            <div className="pim-q lo">
               <div className="eyebrow">Low power · high interest</div>
-              <p style={{ marginTop: "6px" }}>
-                <b>Students, kitchen staff, food-insecure people, landfill neighbours, waste workers.</b>{" "}
+              <h4>Keep informed</h4>
+              <p>
+                Students, kitchen staff, food-insecure people, landfill neighbours, waste workers.{" "}
                 <span className="hl">Most affected, least heard.</span>
               </p>
             </div>
+            <span className="pim-x">Interest →</span>
           </div>
           <p className="prose muted" style={{ marginTop: "12px" }}>
             The people most affected by food waste have the least power over it. That imbalance is where the ethical analysis begins.

@@ -18,7 +18,7 @@ export const PAGES: PageMeta[] = [
   { id: "decision", n: "05", label: "Our decision", stage: "Decide", ic: "check", rub: "Rubrics 2, 5", desc: "B is best, and A and C complete it: the evidence, combined system, theory of change, fit, creativity, safeguards.",
     tabs: [["verdict", "Our decision"], ["system", "How they fit together"], ["toc", "Theory of change"], ["fit", "Fits the people"], ["creative", "What’s new about it"]] },
   { id: "app", n: "06", label: "CampusMeal app", stage: "Prototype", ic: "plate", rub: "Rubrics 2, 3", desc: "Our working pilot app: the Pilot App, 14 functions, kitchen forecast, operating protocol, build plan.",
-    tabs: [["overview", "What it is"], ["features", "All functions"], ["kitchen", "Kitchen forecast"], ["protocol", "App protocol"], ["rollout", "Build & test plan"], ["pilot", "Pilot App", "campusmeal.html"]] },
+    tabs: [["overview", "What it is"], ["features", "All functions"], ["kitchen", "Kitchen forecast"], ["protocol", "App protocol"], ["pilot", "Pilot App", "campusmeal.html"]] },
   { id: "plan", n: "07", label: "Action plans", stage: "Act", ic: "play", rub: "Rubric 3", desc: "One roadmap and a full plan for each solution, KPIs, team, risks, evidence of action.",
     tabs: [["roadmap", "Roadmap"], ["solb", "Plan · Solution B"], ["sola", "Plan · Solution A"], ["solc", "Plan · Solution C"], ["kpis", "How we measure"], ["team", "Our team"], ["risks", "Risks"], ["actions", "Evidence of action"]] },
   { id: "results", n: "08", label: "Results & learning", stage: "Learn", ic: "book", rub: "Rubric 4", desc: "Our numbers, before vs after, difference made, feedback, lessons, next steps.",

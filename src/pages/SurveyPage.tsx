@@ -196,7 +196,15 @@ export default function SurveyPage() {
               </li>
             </ul>
           </div>
-          <details className="acc" style={{ marginTop: "16px" }}>
+          <div className="panel stack" style={{ marginTop: "16px" }}>
+            {/* <h3>Link to survey</h3> */}
+            <h3>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSffurquFlcCm053eiJXetws9ecLaJTswY8uEzxHtJcwgmM1lA/viewform" target="_blank" rel="noopener noreferrer">
+                Take our survey
+              </a>
+            </h3>
+          </div>
+          {/* <details className="acc" style={{ marginTop: "16px" }}>
             <summary>Survey limitations to mention in the report</summary>
             <div className="in">
               <p>
@@ -221,7 +229,7 @@ export default function SurveyPage() {
                 <b>Typo:</b> C’s feasibility question reads “Hano” instead of “Hanoi”.
               </p>
             </div>
-          </details>
+          </details> */}
         </Tab>
         <Tab id="enter" label="Enter data">
           <div className="tab-title">
