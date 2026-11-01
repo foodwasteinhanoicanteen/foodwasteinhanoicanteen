@@ -6,14 +6,11 @@ import {
   DilemmaScore,
   Dilemmas,
   ExcuseFlips,
-  Field,
   FilterButtons,
   GoButton,
   FlipAllButton,
   Front,
-  MediaSlot,
   More,
-  QuoteCarousel,
   Verdict,
 } from "../components";
 
@@ -704,38 +701,6 @@ export default function EthicsPage() {
             <span className="small muted">Green marks the option our analysis supports.</span>
           </div>
           <Dilemmas className="stack" />
-        </Tab>
-        <Tab id="voices" label="Voices">
-          <div className="tab-title">
-            <h2>Voices</h2>
-          </div>
-          <p className="tab-intro">What experts, the law and the people closest to the problem say.</p>
-          <QuoteCarousel className="carousel" aria-live="polite" />
-          <div className="grid g2" style={{ marginTop: "18px" }}>
-            <figure>
-              <MediaSlot id="voice_video" className="media">
-                <div className="ph">
-                  <span className="ic">Video</span>
-                  <b>Short interview with a student or kitchen staff member</b>
-                  <span className="small muted">MP4 or WebM, under 20 MB</span>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                Caption: <Field id="cap_voice_video">who is speaking and when</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="voice_photo" className="media">
-                <div className="ph">
-                  <span className="ic">Photo</span>
-                  <b>Interview or survey in progress</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                Caption: <Field id="cap_voice_photo">add a caption</Field>
-              </figcaption>
-            </figure>
-          </div>
         </Tab>
 
         <Tab id="sdgs" label="SDGs">

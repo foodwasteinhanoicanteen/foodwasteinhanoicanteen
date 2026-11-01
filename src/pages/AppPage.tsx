@@ -7,13 +7,11 @@ import {
   CopyButton,
   FeatureFilters,
   FeatureGrid,
-  Field,
   ForecastFormula,
   ForecastInput,
   ForecastNote,
   ForecastOut,
   ForecastTable,
-  MediaSlot,
   ProtocolDownload,
 } from "../components";
 
@@ -196,30 +194,6 @@ export default function AppPage() {
               <b>Feedback &amp; data</b>
               <span className="small">Finish-check, waste log, weekly report</span>
             </div>
-          </div>
-          <div className="grid g2" style={{ marginTop: "18px" }}>
-            <figure>
-              <MediaSlot id="app_shot_1" className="media">
-                <div className="ph">
-                  <span className="ic">Screenshot</span>
-                  <b>Our app design (Figma or Canva)</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_app_shot_1">caption</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="app_shot_2" className="media">
-                <div className="ph">
-                  <span className="ic">Screenshot or video</span>
-                  <b>App walkthrough</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_app_shot_2">caption</Field>
-              </figcaption>
-            </figure>
           </div>
         </Tab>
         <Tab id="features" label="All functions">

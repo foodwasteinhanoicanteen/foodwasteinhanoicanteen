@@ -1,15 +1,14 @@
 /* Page 2 (Why it's ethical): excuse flip cards, dilemmas quiz, quotes carousel, verdict grid. */
-import { useState, type CSSProperties, type ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Button as AriaButton, ToggleButton } from "react-aria-components";
 import { Button } from "@/components/base/buttons/button";
 import { Badge } from "@/components/base/badges/badges";
 import { cx } from "@/utils/cx";
 import { createStore } from "../../state/createStore";
 import { useRouter } from "../../state/router";
-import { Field } from "../ui/EditMode";
 import { Html } from "../ui/Html";
 import { openLens } from "../ui/Cards";
-import { DIL, FLIPS, QUOTES, VERD } from "../../data/content";
+import { DIL, FLIPS, VERD } from "../../data/content";
 
 type Attrs = { className?: string; style?: CSSProperties; "aria-live"?: "polite" };
 
@@ -63,24 +62,6 @@ export function Dilemmas({ className }: Attrs) {
 export function DilemmaScore(_: Attrs) {
   const n = Object.keys(picks.use()).length;
   return <span id="qscore"><Badge color="brand" size="sm">{n} / {DIL.length} answered</Badge></span>;
-}
-
-/* ---------- voices ---------- */
-export function QuoteCarousel({ className, ...a }: Attrs) {
-  const [i, setI] = useState(0);
-  const q = QUOTES[i], mv = (d: number) => setI((i + d + QUOTES.length) % QUOTES.length);
-  return (
-    <div className={className} id="carousel" aria-live={a["aria-live"]}>
-      <div className="eyebrow" style={{ color: "var(--paper)", opacity: 0.7 }}>Voice {i + 1} of {QUOTES.length}</div>
-      <p className="quote">“{q.field ? <Field id={q.field[0]}>{q.field[1]}</Field> : q.q}”</p>
-      <p className="who2">{q.field ? <Field id={q.field[2]}>{q.field[3]}</Field> : q.w} · {q.s}</p>
-      <div className="cnav">
-        <Button color="secondary" size="sm" aria-label="Previous quote" onPress={() => mv(-1)}>← Prev</Button>
-        <Button color="secondary" size="sm" aria-label="Next quote" onPress={() => mv(1)}>Next →</Button>
-        <div className="dots">{QUOTES.map((_, j) => <i key={j} className={j === i ? "on" : ""} />)}</div>
-      </div>
-    </div>
-  );
 }
 
 /* ---------- the verdict ---------- */

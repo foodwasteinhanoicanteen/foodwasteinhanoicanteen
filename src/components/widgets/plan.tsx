@@ -10,7 +10,7 @@ import { Badge } from "@/components/base/badges/badges";
 import { createStore } from "../../state/createStore";
 import { Field } from "../ui/EditMode";
 import { Html } from "../ui/Html";
-import { A_STEPS, C_STEPS, CRIT, DEFW, LOG, REFS, SOL, STAGES, type PlanStep } from "../../data/content";
+import { A_STEPS, C_STEPS, CRIT, DEFW, REFS, SOL, STAGES, type PlanStep } from "../../data/content";
 
 type Attrs = { className?: string; style?: CSSProperties; children?: ReactNode };
 
@@ -100,7 +100,8 @@ export function GanttDetail({ className, style }: Attrs) {
     </div>
   );
 }
-export function PlanSteps({ sol, className, style }: Attrs & { sol: "A" | "B" | "C" }) {
+/** `status` fixes every step's status; without it the team fills each one in. */
+export function PlanSteps({ sol, status, className, style }: Attrs & { sol: "A" | "B" | "C"; status?: string }) {
   return (
     <ol className={className} style={style} id={"steps-" + sol.toLowerCase()}>
       {ROAD.filter((s) => s.sol === sol).map((s) => (
@@ -109,25 +110,11 @@ export function PlanSteps({ sol, className, style }: Attrs & { sol: "A" | "B" | 
           <div>
             <h4>{s.n}. {s.k}</h4><p className="small">{s.act}</p>
             <p className="small muted"><b>Who:</b> {s.own} · <b>Needs:</b> {s.res}</p>
-            <p className="out">Target: {s.kpi} · Status: <Field id={s.key}>Done / In progress / Planned</Field></p>
+            <p className="out">Target: {s.kpi} · Status: {status ?? <Field id={s.key}>Done / In progress / Planned</Field>}</p>
           </div>
         </li>
       ))}
     </ol>
-  );
-}
-
-/* ---------- team and evidence of action ---------- */
-export function ActionLog() {
-  return (
-    <tbody id="actionlog">
-      {LOG.map((l, i) => (
-        <tr key={l}>
-          <td><Field id={"log_date_" + (i + 1)}>dd/mm</Field></td><td><Field id={"log_act_" + (i + 1)}>{l}</Field></td>
-          <td><Field id={"log_who_" + (i + 1)}>names</Field></td><td><Field id={"log_ev_" + (i + 1)}>photo / notes / link</Field></td>
-        </tr>
-      ))}
-    </tbody>
   );
 }
 

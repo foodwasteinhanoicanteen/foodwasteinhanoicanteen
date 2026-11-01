@@ -1,6 +1,6 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
-import { ActionLog, Badge, Field, GoButton, Gantt, GanttDetail, MediaSlot, PlanSteps, SV } from "../components";
+import { Badge, Field, GoButton, Gantt, GanttDetail, MediaSlot, PlanSteps, SV } from "../components";
 
 const MEMBERS = ["Doan Bui Minh Phuong", "Le Duc Anh", "Nguyen Bao Son", "Phan Ngoc Tram"];
 
@@ -268,28 +268,7 @@ export default function PlanPage() {
           </div>
           <h3 style={{ margin: "26px 0 8px" }}>Step-by-step plan</h3>
           <PlanSteps sol="B" className="steps panel" style={{ padding: "6px 20px" }} />
-          <div className="grid g3" style={{ marginTop: "16px" }}>
-            <div className="comp">
-              <div className="comp-h">
-                <h3>Resources and cost</h3>
-              </div>
-              <ul className="clean small">
-                <li>
-                  Digital kitchen scale: <Field id="cost_b_scale">VND __</Field>
-                </li>
-                <li>
-                  3 labelled bins: <Field id="cost_b_bins">VND __</Field>
-                </li>
-                <li>
-                  Portion scoops (S/R/L): <Field id="cost_b_scoops">VND __</Field>
-                </li>
-                <li>
-                  Signs and QR posters: <Field id="cost_b_signs">VND __</Field>
-                </li>
-                <li>Google Sheets and Forms: free</li>
-                <li>Staff training: 1 hour</li>
-              </ul>
-            </div>
+          <div className="grid g2" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
                 <h3>How we measure</h3>
@@ -315,30 +294,6 @@ export default function PlanPage() {
                 <li>Inconsistent weighing → one scale, one sheet, fixed time</li>
               </ul>
             </div>
-          </div>
-          <div className="grid g2" style={{ marginTop: "16px" }}>
-            <figure>
-              <MediaSlot id="plan_b_1" className="media">
-                <div className="ph">
-                  <span className="ic">Photo</span>
-                  <b>Solution B in action: weighing or portion signs</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_plan_b_1">caption</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="plan_b_2" className="media">
-                <div className="ph">
-                  <span className="ic">Screenshot</span>
-                  <b>Our forecasting spreadsheet</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_plan_b_2">caption</Field>
-              </figcaption>
-            </figure>
           </div>
         </Tab>
         <Tab id="sola" label="Plan · Solution A">
@@ -416,13 +371,13 @@ export default function PlanPage() {
                     </tr>
                     <tr>
                       <td>
-                        Communications lead (<Field id="pa_comms">name</Field>)
+                        Communications lead (Doan Bui Minh Phuong)
                       </td>
                       <td>QR poster; “last call” messages in student groups</td>
                     </tr>
                     <tr>
                       <td>
-                        Data lead (<Field id="pa_data">name</Field>)
+                        Data lead (Doan Bui Minh Phuong)
                       </td>
                       <td>Records meals offered, sold and still binned each day</td>
                     </tr>
@@ -479,23 +434,8 @@ export default function PlanPage() {
             </div>
           </div>
           <h3 style={{ margin: "26px 0 8px" }}>Step-by-step plan</h3>
-          <PlanSteps sol="A" className="steps panel" style={{ padding: "6px 20px" }} />
-          <div className="grid g3" style={{ marginTop: "16px" }}>
-            <div className="comp">
-              <div className="comp-h">
-                <h3>Resources and cost</h3>
-              </div>
-              <ul className="clean small">
-                <li>
-                  A3 poster printing: <Field id="cost_a_poster">VND __</Field>
-                </li>
-                <li>
-                  Price stickers: <Field id="cost_a_stickers">VND __</Field>
-                </li>
-                <li>QR code and student groups: free</li>
-                <li>Record sheet in Google Sheets: free</li>
-              </ul>
-            </div>
+          <PlanSteps sol="A" status="Done" className="steps panel" style={{ padding: "6px 20px" }} />
+          <div className="grid g2" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
                 <h3>How we measure</h3>
@@ -522,17 +462,6 @@ export default function PlanPage() {
               </ul>
             </div>
           </div>
-          <figure style={{ marginTop: "16px" }}>
-            <MediaSlot id="plan_a_1" className="media wide">
-              <div className="ph">
-                <span className="ic">Photo</span>
-                <b>Last-hour poster or discounted meals</b>
-              </div>
-            </MediaSlot>
-            <figcaption>
-              <Field id="cap_plan_a_1">caption</Field>
-            </figcaption>
-          </figure>
         </Tab>
         <Tab id="solc" label="Plan · Solution C">
           <div className="planhead">
@@ -609,7 +538,7 @@ export default function PlanPage() {
                     </tr>
                     <tr>
                       <td>
-                        Partnership lead (<Field id="pc_partner">name</Field>)
+                        Partnership lead (Doan Bui Minh Phuong)
                       </td>
                       <td>Contacts partners, drafts the protocol, books pickups</td>
                     </tr>
@@ -665,23 +594,8 @@ export default function PlanPage() {
             </div>
           </div>
           <h3 style={{ margin: "26px 0 8px" }}>Step-by-step plan</h3>
-          <PlanSteps sol="C" className="steps panel" style={{ padding: "6px 20px" }} />
-          <div className="grid g3" style={{ marginTop: "16px" }}>
-            <div className="comp">
-              <div className="comp-h">
-                <h3>Resources and cost</h3>
-              </div>
-              <ul className="clean small">
-                <li>
-                  Food-safe containers: <Field id="cost_c_boxes">VND __</Field>
-                </li>
-                <li>
-                  Labels: <Field id="cost_c_labels">VND __</Field>
-                </li>
-                <li>Fridge space in the canteen</li>
-                <li>Transport: provided by the partner</li>
-              </ul>
-            </div>
+          <PlanSteps sol="C" status="Done" className="steps panel" style={{ padding: "6px 20px" }} />
+          <div className="grid g2" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
                 <h3>How we measure</h3>
@@ -707,17 +621,6 @@ export default function PlanPage() {
               </ul>
             </div>
           </div>
-          <figure style={{ marginTop: "16px" }}>
-            <MediaSlot id="plan_c_1" className="media wide">
-              <div className="ph">
-                <span className="ic">Photo</span>
-                <b>Packed, labelled surplus or the partner pickup</b>
-              </div>
-            </MediaSlot>
-            <figcaption>
-              <Field id="cap_plan_c_1">caption</Field>
-            </figcaption>
-          </figure>
         </Tab>
         <Tab id="kpis" label="How we measure">
           <div className="tab-title">
@@ -906,94 +809,6 @@ export default function PlanPage() {
                 </tr>
               </tbody>
             </table>
-          </div>
-        </Tab>
-        <Tab id="actions" label="Evidence of action">
-          <div className="tab-title">
-            <h2>What we actually did</h2>
-          </div>
-          <p className="tab-intro">Our action log and photos from each step.</p>
-          <div className="tbl">
-            <table>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Action</th>
-                  <th>Who</th>
-                  <th>Evidence</th>
-                </tr>
-              </thead>
-              <ActionLog />
-            </table>
-          </div>
-          <div className="grid g3" style={{ marginTop: "18px" }}>
-            <figure>
-              <MediaSlot id="act_meeting" className="media">
-                <div className="ph">
-                  <span className="ic">Photo</span>
-                  <b>Meeting with the canteen manager</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_act_meeting">date and caption</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="act_weigh" className="media">
-                <div className="ph">
-                  <span className="ic">Photo</span>
-                  <b>Baseline weighing: scale and bins</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_act_weigh">date and caption</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="act_training" className="media">
-                <div className="ph">
-                  <span className="ic">Photo</span>
-                  <b>Staff training session</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_act_training">date and caption</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="act_survey" className="media">
-                <div className="ph">
-                  <span className="ic">Screenshot</span>
-                  <b>Our survey</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_act_survey">date and caption</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="act_pilot" className="media">
-                <div className="ph">
-                  <span className="ic">Photo</span>
-                  <b>The pilot running</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_act_pilot">date and caption</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="act_video" className="media">
-                <div className="ph">
-                  <span className="ic">Video</span>
-                  <b>Behind the scenes</b>
-                  <span className="small muted">MP4 or WebM, under 20 MB</span>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                <Field id="cap_act_video">date and caption</Field>
-              </figcaption>
-            </figure>
           </div>
         </Tab>
         <Pager />

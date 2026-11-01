@@ -87,9 +87,6 @@ export const C_STEPS: PlanStep[] = [
  {k:"Pilot pickups",a:9,b:11,obj:"Redistribute food that was not sold even after Solution A.",act:"One or two pickups a week; only untouched, labelled, chilled food; never plate leftovers.",own:"Kitchen supervisor + partner",res:"Food-safe boxes, labels, fridge space",kpi:"0 safety incidents; meals and kg recorded"},
  {k:"Review and decide",a:12,b:12,obj:"Decide whether to continue.",act:"Review meals and kg donated, incidents, partner and recipient feedback; check the prevention KPI did not get worse.",own:"Project team + canteen manager + partner",res:"Pickup records, feedback",kpi:"A clear decision with reasons"}];
 
-
-export const LOG: string[] = ["Meeting with the canteen manager to agree the pilot","First baseline weighing","Survey launched","Staff training session","Pilot started","Results presented"];
-
 export const REFS: [type: string, html: string][] = [
  ["Academic","Aristotle. (2009). <i>The Nicomachean ethics</i> (W. D. Ross, Trans.; L. Brown, Ed.). Oxford University Press. (Original work written c. 340 BCE)"],
  ["News","Báo Pháp luật. (2025, January 2). Bài 1: Lãng phí đồ ăn từ mâm cơm gia đình tới nhà hàng ở Việt Nam. https://baophapluat.vn/bai-1-lang-phi-do-an-tu-mam-com-gia-dinh-toi-nha-hang-o-viet-nam-post535007.html"],
@@ -157,17 +154,6 @@ export const FEATS: [name: string, audience: string, status: string, sol: string
  ["Last-call alerts","For students","New","A","Discounted surplus after service, only when it really exists.","Rescues food on days the forecast is wrong."],
  ["Surplus and donation log","For the kitchen","New","C","Safety checklist, labels with time cooked, partner pickup record.","Makes safe redistribution traceable and accountable."],
  ["Impact view and weekly report","Reporting","New","Learn","Private impact for each student; KPI report for the canteen manager.","Measures the difference made and keeps reporting honest."]];
-
-/** Ethics › Voices. Entries with `field` are filled in by the team (see <Field>). */
-export const QUOTES: { q: string; w: string; s: string; field?: [quoteId: string, quotePh: string, whoId: string, whoPh: string] }[] = [
-  { q: "Food waste is a global tragedy. Millions will go hungry today as food is wasted across the world.", w: "Inger Andersen, Executive Director, UN Environment Programme", s: "UN News (2024)" },
-  { q: "Vietnam does not currently have a law that penalizes food waste or mandates the donation of surplus food.", w: "Global Food Donation Policy Atlas: Viet Nam", s: "Harvard FLPC & GFN (2024)" },
-  { q: "I have to work until I cannot work anymore.", w: "Phương, informal waste picker without health or social insurance", s: "Vu (2023), Eco-Business" },
-  { q: "If it is in our power to prevent something bad from happening, without thereby sacrificing anything of comparable moral importance, we ought, morally, to do it.", w: "Peter Singer, philosopher", s: "Singer (1972, p. 231)" },
-  { q: "A thing is right when it tends to preserve the integrity, stability, and beauty of the biotic community.", w: "Aldo Leopold, ecologist", s: "Leopold (1949, p. 224)" },
-  { q: "", w: "", s: "Team survey", field: ["cq_student", "Add a quote from a student in our survey or interview", "cq_student_who", "e.g. 2nd-year student"] },
-  { q: "", w: "", s: "Team interview", field: ["cq_staff", "Add a quote from the canteen manager or kitchen staff", "cq_staff_who", "role"] },
-];
 
 /** App › Kitchen forecast: example dashboard rows [canteen, dish, pre-orders, avg walk-ins, interest, old habit]. */
 export const DASH_ROWS: [string, string, number, number, number, number][] = [

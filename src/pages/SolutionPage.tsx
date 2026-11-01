@@ -1,6 +1,6 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
-import { Badge, Card, CardOpen, Field, FilterButtons, Front, MediaSlot, More, SV, ScoreBars, ScoreCalc, WeightReset, WeightSliders } from "../components";
+import { Badge, Card, CardOpen, Field, FilterButtons, Front, More, SV, ScoreBars, ScoreCalc, WeightReset, WeightSliders } from "../components";
 
 export default function SolutionPage() {
   return (
@@ -316,30 +316,6 @@ export default function SolutionPage() {
                 cooking methods or let students choose sides.
               </p>
             </div>
-          </div>
-          <div className="grid g2" style={{ marginTop: "18px" }}>
-            <figure>
-              <MediaSlot id="design_portion" className="media">
-                <div className="ph">
-                  <span className="ic">Photo</span>
-                  <b>New portion sizes or refill sign</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                Caption: <Field id="cap_design_portion">add a caption</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="design_qr" className="media">
-                <div className="ph">
-                  <span className="ic">Photo or screenshot</span>
-                  <b>The QR “why didn’t you finish?” survey</b>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                Caption: <Field id="cap_design_qr">add a caption</Field>
-              </figcaption>
-            </figure>
           </div>
           <div className="grid g3" style={{ marginTop: "16px" }}>
             <div className="comp">

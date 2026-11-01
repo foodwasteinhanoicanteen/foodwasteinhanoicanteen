@@ -106,7 +106,7 @@ export default function ProblemPage() {
           <div className="tier">
             <span>Vietnam</span>
           </div>
-          <MediaSlot id="scale_vietnam" className="media wide" fallback={{ src: "Ảnh/how big is the problem - vietnam, (đã đổi).jpg", alt: "A long pile of mixed rubbish and plastic bags dumped along a dirt road beside an abandoned building, with limestone hills behind", caption: "" }} style={{ marginBottom: "14px" }}>
+          <MediaSlot id="scale_vietnam" className="media wide" fallback={{ src: "Ảnh/02_Kitchen_and_store_staff (đã đổi).jpeg", alt: "Two kitchen staff in chef’s whites arranging Vietnamese dishes on a restaurant buffet", caption: "" }} style={{ marginBottom: "14px" }}>
             <div className="ph">
               <span className="ic">Photo</span>
               <b>Food waste in Vietnam</b>
@@ -353,32 +353,6 @@ export default function ProblemPage() {
               </More>
               <CardOpen>Read details</CardOpen>
             </Card>
-          </div>
-          <div className="grid g2" style={{ marginTop: "16px" }}>
-            <figure>
-              <MediaSlot id="kitchen_1" className="media">
-                <div className="ph">
-                  <span className="ic">Photo</span>
-                  <b>Our canteen’s serving counter</b>
-                  <span className="small muted">Show the standard portion students receive</span>
-                </div>
-              </MediaSlot>
-              <figcaption data-cap="kitchen_1">
-                Caption: <Field id="cap_kitchen_1">add a caption</Field>
-              </figcaption>
-            </figure>
-            <figure>
-              <MediaSlot id="kitchen_2" className="media">
-                <div className="ph">
-                  <span className="ic">Photo</span>
-                  <b>Leftovers after lunch</b>
-                  <span className="small muted">Trays or bins at the end of service</span>
-                </div>
-              </MediaSlot>
-              <figcaption>
-                Caption: <Field id="cap_kitchen_2">add a caption</Field>
-              </figcaption>
-            </figure>
           </div>
         </Tab>
         <Tab id="interview" label="Interview">
