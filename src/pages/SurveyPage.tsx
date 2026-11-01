@@ -395,6 +395,19 @@ export default function SurveyPage() {
             <Conclusion lang="en" className="conclusion" />
           </div>
         </Tab>
+        <Tab id="interview" label="Interview">
+          <div className="tab-title">
+            <h2>Interview</h2>
+          </div>
+          <video
+            src="Vid Busi Ethics/Survey and Analysis.mp4"
+            poster="Vid Busi Ethics/Survey and Analysis.jpg"
+            controls
+            preload="metadata"
+            playsInline
+            style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--r)" }}
+          />
+        </Tab>
         <Pager />
       </div>
     </PageSection>

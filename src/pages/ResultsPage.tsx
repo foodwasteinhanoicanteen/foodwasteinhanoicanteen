@@ -1,6 +1,6 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
-import { Field, MediaSlot, SV } from "../components";
+import { Field, SV } from "../components";
 
 export default function ResultsPage() {
   return (
@@ -298,7 +298,7 @@ export default function ResultsPage() {
             </figure>
           </div>
         </Tab>
-        <Tab id="awareness" label="Awareness Campaign">
+        <Tab id="awareness" label="Reach and Engagement">
           <div className="tab-title">
             <h2>Awareness campaign</h2>
           </div>
@@ -391,41 +391,145 @@ export default function ResultsPage() {
         </Tab>
         <Tab id="next" label="Limits & next steps">
           <div className="tab-title">
-            <h2>Limitations and next steps</h2>
+            <h2>Limitations</h2>
           </div>
           <div className="grid g2">
             <div className="panel stack">
-              <h3>Limitations</h3>
+              <h3>1. Short time frame and small scale</h3>
+              <p>
+                Our project ran for only a few weeks within one semester. The awareness campaign lasted 15 days (10–25 October) and focused
+                on one university. This is enough to test ideas and gauge reactions, but not to show lasting change in how canteens cook or
+                how students eat. Food waste also varies by season, menu and exam period, so a short window may not reflect a typical month.
+              </p>
+            </div>
+            <div className="panel stack">
+              <h3>2. Awareness is not the same as behaviour change</h3>
+              <p>
+                Our campaign reached 822 views and generated 638 interactions. These numbers show attention and conversation, not reduced
+                waste. One view can come from the same person more than once, and the people who react are mostly friends and peers who
+                already care. Without weighing waste before and after the campaign over a longer period, we cannot claim that our posters or
+                posts reduced the amount of food thrown away.
+              </p>
+            </div>
+            <div className="panel stack">
+              <h3>3. Survey limits</h3>
               <ul className="clean">
                 <li>
-                  Our pilot covers <Field id="n_scope">one canteen, lunch only, __ weeks</Field>, so results may differ in other canteens or
-                  seasons.
+                  <b>Sampling:</b> responses came mainly from students in our own networks (convenience sampling), so they may not
+                  represent all students, staff or other canteens.
                 </li>
-                <li>Benchmarks (Champions 12.3, Meliá Hồ Tràm) come from larger, international or resort operations.</li>
-                <li>Survey answers are self-reported.</li>
-                <li>Solution scores are our team’s judgement and should be revisited after the pilot.</li>
+                <li>
+                  <b>Self-report:</b> the survey measured what people say they think and would do. It did not measure what they actually do
+                  at lunch.
+                </li>
+                <li>
+                  <b>Social desirability:</b> respondents may have rated “ethical” options more favourably because they knew the topic was
+                  food waste.
+                </li>
+                <li>
+                  <b>Scope:</b> the ANOVA and Tukey tests show which solution students rated as most effective. They do not prove which
+                  solution works best in practice.
+                </li>
               </ul>
             </div>
             <div className="panel stack">
-              <h3>Next steps</h3>
+              <h3>4. Limited control over the root cause</h3>
               <p>
-                <Field id="n_next">
-                  e.g. present to university operations; extend to dinner; add a partner for Solution C; add composting
-                </Field>
+                The main driver of waste is a business decision: how much the kitchen cooks and how large a standard portion is. As
+                students we can recommend, persuade and pilot, but the canteen operator decides menus, portions and procurement. Real
+                progress on Solution B depends on the canteen’s willingness and capacity to change.
+              </p>
+            </div>
+            <div className="panel stack">
+              <h3>5. Legal and safety barriers for redistribution (Solution C)</h3>
+              <p>
+                Vietnam has no Good Samaritan law protecting food donors, and date labels do not separate safety from quality. Donating
+                surplus therefore carries legal and food-safety risk. For this reason we treat Solution C as a careful, partner-led
+                complement, not something students can run alone.
+              </p>
+            </div>
+            <div className="panel stack">
+              <h3>6. The CampusMeal app is a prototype</h3>
+              <p>
+                The app shows how forecasting, pre-orders, portion choice and waste logging could work together. However, it has not been
+                used by the canteen in daily service. Its forecasts need several weeks of real sales and waste data before they become
+                reliable.
               </p>
             </div>
           </div>
-          <figure style={{ marginTop: "18px" }}>
-            <MediaSlot id="team_photo" className="media wide">
-              <div className="ph">
-                <span className="ic">Photo</span>
-                <b>Team photo</b>
-              </div>
-            </MediaSlot>
-            <figcaption>
-              <Field id="cap_team_photo">caption</Field>
-            </figcaption>
-          </figure>
+          <div className="tab-title" style={{ marginTop: "30px" }}>
+            <h2>Next steps</h2>
+          </div>
+          <div className="tbl">
+            <table>
+              <thead>
+                <tr>
+                  <th>When</th>
+                  <th>Action</th>
+                  <th>Owner</th>
+                  <th>How we will measure it</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Next 2–4 weeks</td>
+                  <td>
+                    Weigh canteen waste (preparation, overproduction, plate waste) for at least 5 lunches to set a real baseline in g per meal
+                  </td>
+                  <td>Data and audit lead + canteen staff</td>
+                  <td>Baseline waste in g per meal; top 3 most-wasted dishes</td>
+                </tr>
+                <tr>
+                  <td>Next 2–4 weeks</td>
+                  <td>Share our survey findings and campaign results with the canteen manager; agree on one low-risk pilot</td>
+                  <td>Project leader + canteen liaison</td>
+                  <td>Pilot agreed in writing</td>
+                </tr>
+                <tr>
+                  <td>Month 2</td>
+                  <td>
+                    Pilot Solution B on 2–3 popular dishes: smaller default portion with free refill, plus simple forecasting from pre-orders
+                    or sales records
+                  </td>
+                  <td>Canteen manager + kitchen supervisor, with project team support</td>
+                  <td>At least 10–15% less waste on pilot dishes, with no drop in student satisfaction</td>
+                </tr>
+                <tr>
+                  <td>Month 2</td>
+                  <td>Re-run the campaign alongside the pilot, using posters at the counter that explain portion choice</td>
+                  <td>Communications lead</td>
+                  <td>Share of students choosing the smaller portion; waste weighed before vs after</td>
+                </tr>
+                <tr>
+                  <td>Month 3</td>
+                  <td>
+                    Add Solution A: discount genuine surplus in the last 30–60 minutes, with clear food-safety rules (cooked within 2 hours,
+                    kept hot)
+                  </td>
+                  <td>Canteen manager + cashier</td>
+                  <td>Share of surplus sold; zero safety complaints; check students are not waiting for discounts</td>
+                </tr>
+                <tr>
+                  <td>Month 3+</td>
+                  <td>
+                    Explore Solution C with a trained partner (Hanoi Food Rescue, VietHarvest or Food Bank Vietnam) and ask the university for
+                    advice on liability
+                  </td>
+                  <td>Partnership lead + university operations</td>
+                  <td>Partner agreement; meals and kg donated; zero safety incidents</td>
+                </tr>
+                <tr>
+                  <td>End of semester</td>
+                  <td>
+                    Evaluate results, check for unintended harms (staff workload, food quality, student choice), and present a recommendation
+                    to university management
+                  </td>
+                  <td>Whole team</td>
+                  <td>Decision to continue, change or scale up, based on evidence</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </Tab>
         <Pager />
       </div>
