@@ -1,6 +1,6 @@
 // Generated from the original HTML page, then edited by hand. Content lives here; behaviour lives in components.
 import { PageSection, Pager, StageStepper, SubTabs, Tab } from "../components/layout";
-import { BAShow, BAToggle, Field, GoButton, MediaSlot, SV } from "../components";
+import { Field, MediaSlot, SV } from "../components";
 
 export default function ResultsPage() {
   return (
