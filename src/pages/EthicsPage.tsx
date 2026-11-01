@@ -737,10 +737,12 @@ export default function EthicsPage() {
             </figure>
           </div>
         </Tab>
+
         <Tab id="sdgs" label="SDGs">
           <div className="tab-title">
             <h2>Links to the Sustainable Development Goals</h2>
           </div>
+          <img src="img/Ảnh/SGD adopted.png" alt="The Sustainable Development Goals" style={{ display: "block", width: "100%", height: "auto", marginBottom: "14px" }} />
           <p className="tab-intro">
             The SDGs are political commitments, not binding law (United Nations, 2015). A business that keeps wasting avoidable food falls
             short of commitments its country has made.

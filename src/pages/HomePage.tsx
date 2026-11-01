@@ -71,7 +71,7 @@ export default function HomePage() {
             <div className="src">Pham et al. (2025), 8 urban Hanoi school kitchens, food weighed</div>
           </div>
         </div>
-        <MediaSlot id="home_hero" className="media wide" fallback={{ src: "mam-com.jpg", alt: "A Vietnamese family tray meal seen from above: rice, braised meat, greens, soup and dipping sauce", caption: "An everyday Vietnamese family meal (mâm cơm). Photo: Hoangkid, CC BY-SA 4.0." }}>
+        <MediaSlot id="home_hero" className="media wide" fallback={{ src: "Ảnh/", alt: "A Vietnamese family tray meal seen from above: rice, braised meat, greens, soup and dipping sauce", caption: "An everyday Vietnamese family meal (mâm cơm). Photo: Hoangkid, CC BY-SA 4.0." }}>
           <div className="ph">
             <span className="ic">Photo or video</span>
             <b>Your hero image: the canteen at lunchtime, or a tray of leftovers</b>

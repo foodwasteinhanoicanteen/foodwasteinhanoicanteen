@@ -60,6 +60,8 @@ export default function ProblemPage() {
             <h2>How big is the problem?</h2>
           </div>
           <p className="tab-intro">Three levels, from the world down to our city. Hover or tap any number to see where it comes from.</p>
+          
+          <MediaSlot id="scale_vietnam" className="media wide" fallback={{ src: "Ảnh/how big is the problem - vietnam, (đã đổi).jpg", alt: "A green rice paddy in Vietnam under a hazy sky", caption: "" }} style={{ marginBottom: "14px" }}></MediaSlot>
           <div className="callout">
             <b>Problem statement.</b> Safe food thrown away by businesses <span className="hl">costs them money</span>,{" "}
             <span className="hl">adds methane to an overloaded landfill</span>, wastes the land, water and labour used to grow it, and
@@ -104,7 +106,7 @@ export default function ProblemPage() {
           <div className="tier">
             <span>Vietnam</span>
           </div>
-          <MediaSlot id="scale_vietnam" className="media wide" fallback={{ src: "rice-paddy.jpg", alt: "A green rice paddy in Vietnam under a hazy sky", caption: "A rice paddy in Vietnam: each wasted bowl wastes this land and water. Photo: Mig Gilbert, CC BY-SA 2.0." }} style={{ marginBottom: "14px" }}>
+          <MediaSlot id="scale_vietnam" className="media wide" fallback={{ src: "Ảnh/how big is the problem - vietnam, (đã đổi).jpg", alt: "A long pile of mixed rubbish and plastic bags dumped along a dirt road beside an abandoned building, with limestone hills behind", caption: "" }} style={{ marginBottom: "14px" }}>
             <div className="ph">
               <span className="ic">Photo</span>
               <b>Food waste in Vietnam</b>
@@ -250,6 +252,18 @@ export default function ProblemPage() {
             The best local evidence is a 2025 study that physically weighed food in 8 urban Hanoi school kitchens (4 primary, 4 secondary, 6
             districts) over 8 weeks in March–April 2024 (Pham et al., 2025).
           </p>
+
+          <div className="grid g2" style={{ marginBottom: "14px" }}>
+            <figure>
+              <img src="img/Ảnh/hanoi kitchen before.jpg" alt="A canteen lunch tray before eating: chicken leg, yellow rice, salad, cucumber, sauce and soup" style={{ display: "block", width: "100%", height: "auto" }} />
+              <figcaption>Before</figcaption>
+            </figure>
+            <figure>
+              <img src="img/Ảnh/hanoi kitchen after.jpg" alt="The same tray after eating: half the rice, most of the salad and the soup left over" style={{ display: "block", width: "100%", height: "auto" }} />
+              <figcaption>After</figcaption>
+            </figure>
+          </div>
+
           <div className="grid g2">
             <div className="panel stack">
               <h3>Waste per child per lunch, by food type</h3>
@@ -366,6 +380,19 @@ export default function ProblemPage() {
               </figcaption>
             </figure>
           </div>
+        </Tab>
+        <Tab id="interview" label="Interview">
+          <div className="tab-title">
+            <h2>An interview with canteen staff</h2>
+          </div>
+          <video
+            src="Vid Busi Ethics/The problem.mp4"
+            poster="Vid Busi Ethics/The problem.jpg"
+            controls
+            preload="metadata"
+            playsInline
+            style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--r)" }}
+          />
         </Tab>
         <Tab id="causes" label="Root causes">
           <div className="tab-title">

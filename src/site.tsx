@@ -19,6 +19,7 @@ import AppPage from "./pages/AppPage";
 import PlanPage from "./pages/PlanPage";
 import ResultsPage from "./pages/ResultsPage";
 import SourcesPage from "./pages/SourcesPage";
+import TeamPage from "./pages/TeamPage";
 
 function SiteApp() {
   return (
@@ -30,7 +31,7 @@ function SiteApp() {
               <TopBar />
               <main id="main">
                 <HomePage /><ProblemPage /><EthicsPage /><SolutionPage /><SurveyPage />
-                <DecisionPage /><AppPage /><PlanPage /><ResultsPage /><SourcesPage />
+                <DecisionPage /><AppPage /><PlanPage /><ResultsPage /><SourcesPage /><TeamPage />
               </main>
               <Footer />
             </EditModeProvider>

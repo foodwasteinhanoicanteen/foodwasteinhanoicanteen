@@ -331,6 +331,7 @@ export default function PlanPage() {
               <p className="muted">Sell genuine end-of-service surplus at a discount instead of binning it.</p>
             </div>
           </div>
+          <MediaSlot id="plan_a_hero" className="media wide" fallback={{ src: "Ảnh/solution a - action plan (đã đổi).webp", alt: "Solution A: Last-Hour Food Rescue", caption: "" }} style={{ marginBottom: "14px" }}></MediaSlot>
           <div className="quick">
             <div>
               <span className="k">Owner</span>
@@ -523,6 +524,7 @@ export default function PlanPage() {
               <p className="muted">Pass safe, untouched food that could not be sold to people who need it, through a trained partner.</p>
             </div>
           </div>
+          <img src="img/Ảnh/Action plan - solution c.png" alt="Solution C: Safe Redistribution of Surplus" style={{ display: "block", width: "100%", height: "auto", marginBottom: "14px" }} />
           <div className="quick">
             <div>
               <span className="k">Owner</span>

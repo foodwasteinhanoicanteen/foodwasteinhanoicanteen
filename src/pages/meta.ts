@@ -8,7 +8,7 @@ export interface PageMeta {
 export const PAGES: PageMeta[] = [
   { id: "home", n: "00", label: "Home", rub: "", desc: "", tabs: [] },
   { id: "problem", n: "01", label: "The problem", stage: "Empathise", ic: "search", rub: "Rubric 1", desc: "Scale, where waste happens, Hanoi kitchens, root causes, consequences, laws, who is affected.",
-    tabs: [["scale", "Scale"], ["where", "Where it happens"], ["kitchens", "Hanoi kitchens"], ["causes", "Root causes"], ["impact", "Consequences"], ["law", "Laws & policy"], ["who", "Who is affected"]] },
+    tabs: [["scale", "Scale"], ["where", "Where it happens"], ["kitchens", "Hanoi kitchens"], ["interview", "Interview"], ["causes", "Root causes"], ["impact", "Consequences"], ["law", "Laws & policy"], ["who", "Who is affected"]] },
   { id: "ethics", n: "02", label: "Why it’s ethical", stage: "Define", ic: "flag", rub: "Rubric 5", desc: "Five reasons, excuses vs reality, eight ethical lenses, six dilemmas, SDGs, verdict.",
     tabs: [["claim", "Our claim"], ["excuses", "Excuses vs reality"], ["responsibility", "Who is responsible?"], ["lenses", "8 ethical lenses"], ["dilemmas", "What would you do?"], ["voices", "Voices"], ["sdgs", "SDGs"], ["verdict", "The verdict"]] },
   { id: "solution", n: "03", label: "Our solutions", stage: "Ideate", ic: "bulb", rub: "Rubric 2", desc: "Solutions A, B and C presented, all six ideas, and our weighted analysis.",
@@ -22,9 +22,11 @@ export const PAGES: PageMeta[] = [
   { id: "plan", n: "07", label: "Action plans", stage: "Act", ic: "play", rub: "Rubric 3", desc: "One roadmap and a full plan for each solution, KPIs, team, risks, evidence of action.",
     tabs: [["roadmap", "Roadmap"], ["solb", "Plan · Solution B"], ["sola", "Plan · Solution A"], ["solc", "Plan · Solution C"], ["kpis", "How we measure"], ["team", "Our team"], ["risks", "Risks"], ["actions", "Evidence of action"]] },
   { id: "results", n: "08", label: "Results & learning", stage: "Learn", ic: "book", rub: "Rubric 4", desc: "Our numbers, before vs after, difference made, feedback, lessons, next steps.",
-    tabs: [["numbers", "Our numbers"], ["beforeafter", "Before vs after"], ["difference", "Difference made"], ["feedback", "What people told us"], ["learned", "What we learned"], ["next", "Limits & next steps"]] },
+    tabs: [["numbers", "Our numbers"], ["beforeafter", "Before vs after"], ["difference", "Difference made"], ["feedback", "What people told us"], ["learned", "What we learned"], ["campaign", "Campaign in Action"], ["awareness", "Awareness Campaign"], ["next", "Limits & next steps"]] },
   { id: "sources", n: "09", label: "Sources", rub: "Evidence", desc: "How we researched and every source in APA 7.",
     tabs: [["methods", "How we researched"], ["refs", "References"], ["laws", "Vietnamese law"]] },
+  { id: "team", n: "10", label: "Our team", rub: "Team", desc: "Who we are and what each of us contributed.",
+    tabs: [["members", "Our team"]] },
 ];
 
 export const STEPS = PAGES.filter((p) => p.stage);

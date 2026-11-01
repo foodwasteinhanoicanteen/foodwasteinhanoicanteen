@@ -478,3 +478,8 @@ footer.site .footname{font-family:var(--f-display);font-weight:800;font-size:cla
 .pim-q{background:var(--panel-2);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px;min-height:150px}
 .pim-q.hi{background:var(--leaf-soft)}
 .pim-q.lo{background:var(--waste-soft)}
+.gallery{display:grid;grid-template-columns:1fr;gap:24px}
+.gallery img{display:block;width:100%;height:auto;border-radius:var(--r)}
+.gallery figure{width:80%;margin:0 auto}
+.team img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:var(--r)}
+.team{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
