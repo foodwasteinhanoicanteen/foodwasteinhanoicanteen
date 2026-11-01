@@ -4,6 +4,7 @@
    a team member's edits stay local until they export content.json and commit it to public/. */
 import { ZodError } from "zod";
 import { demoSeed } from "../../shared/campusmeal/demo";
+import { STARTER, starterDish } from "../../shared/campusmeal/logic";
 import { COLLECTIONS, emptyCm, isCollection, type CmData } from "../../shared/schemas/campusmeal";
 import { FieldValue, MediaUpload, SurveyPayload, slotId, type SiteContent } from "../../shared/schemas/site";
 
@@ -99,6 +100,30 @@ const idb = () => (open ??= new Promise((resolve, reject) => {
   o.onerror = () => reject(o.error);
 }));
 
+/** Saved data from before the starter menu had counters and photos: add the missing starter dishes to every day that
+    served the starter menu, and give unedited starter dishes their photo, counter and (for old placeholders) name. */
+export function addMissingStarter(cm: Db["cm"]) {
+  let changed = false;
+  // repair: an earlier version of this upgrade added dishes once per day to a menu list the demo days shared
+  for (const day of Object.values(cm.days)) {
+    const unique = [...new Set(day.dishes || [])];
+    if (unique.length !== day.dishes?.length) { day.dishes = unique; changed = true; }
+  }
+  if (!cm.dishes["d-lk-teriyaki"]) return changed;
+  const missing: string[] = [];
+  for (const row of STARTER) {
+    const id = row[0], cur = cm.dishes[id], want = starterDish(row);
+    if (!cur) { cm.dishes[id] = want; missing.push(id); changed = true; }
+    else if (!cur.img) {
+      cm.dishes[id] = / of the day$/.test(cur.name) ? want : { ...cur, img: want.img, ...(want.counter && { counter: want.counter }) };
+      changed = true;
+    }
+  }
+  // a new list per day: days can share one list object (structured clone keeps shared references)
+  if (missing.length) for (const day of Object.values(cm.days)) if (day.dishes?.includes("d-lk-teriyaki")) day.dishes = [...new Set([...day.dishes, ...missing])];
+  return changed;
+}
+
 /** Read, change and save the database in one IndexedDB transaction, so two open tabs never overwrite each other. */
 export async function run(r: Req): Promise<unknown> {
   const pub = await loadPublished(), db = await idb();
@@ -110,10 +135,11 @@ export async function run(r: Req): Promise<unknown> {
       // a new browser starts with the sample CampusMeal weeks so the demo is not empty
       const d: Db = get.result || { rev: 0, site: null, cm: demoSeed() };
       d.cm = { ...emptyCm(), ...d.cm };
+      const upgraded = !!get.result && addMissingStarter(d.cm);
       try {
         const res = handle(d, pub, r);
         out = res.out;
-        if (res.changed || !get.result) { d.rev += +res.changed; (out as { rev: number }).rev = d.rev; kv.put(d, "db"); }
+        if (res.changed || !get.result || upgraded) { d.rev += +res.changed; (out as { rev: number }).rev = d.rev; kv.put(d, "db"); }
       } catch (e) { err = e; tx.abort(); }
     };
     tx.oncomplete = () => resolve(out);

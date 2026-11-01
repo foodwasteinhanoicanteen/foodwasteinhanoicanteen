@@ -24,6 +24,10 @@ export type Settings = z.infer<typeof Settings>;
 export const Dish = z.object({
   name: text(80).min(1), canteen: id, tags: z.array(text(30)).max(10).default([]),
   color: z.string().regex(/^#[0-9A-Fa-f]{6}$/), base: n.min(0).max(5000),
+  /** counter inside the canteen, e.g. Our Home's V-Halal */
+  counter: text(30).optional(),
+  /** photo file in img/ */
+  img: text(120).optional(),
 });
 export type Dish = z.infer<typeof Dish>;
 

@@ -28,12 +28,23 @@ export const DEFAULTS: FullSettings = {
   canteens: [{ k: "LK", n: "Little Kitchen" }, { k: "FD", n: "Foodology" }, { k: "OH", n: "Our Home" }],
 };
 export const COLORS = ["#D99A2B", "#D06A3F", "#5E9E58", "#3F8FA6", "#7C6BC4", "#2F7D6B", "#B8566E", "#6E8B3D"];
-/** [id, canteen, name, tags, colour index, baseline walk-ins] from the CampusMeal overview. */
-export const STARTER: [string, string, string, string[], number, number][] = [
-  ["d-lk-teriyaki", "LK", "Teriyaki chicken", ["Rice"], 0, 40], ["d-lk-sweetsour", "LK", "Sweet & sour chicken with fried rice", ["Rice"], 1, 35],
-  ["d-fd-salad", "FD", "Chicken salad", ["Light"], 2, 25], ["d-fd-noodle", "FD", "Fish noodle soup", ["Noodles"], 3, 30],
-  ["d-oh-vfood", "OH", "V-food: dish of the day", ["Vegetarian"], 4, 20], ["d-oh-vhalal", "OH", "V-Halal: dish of the day", ["Halal"], 5, 20],
+/** [id, canteen, name, tags, colour index, baseline walk-ins, counter, photo in img/]: the starter menu, 2 dishes per canteen or counter. */
+export const STARTER: [string, string, string, string[], number, number, string, string][] = [
+  ["d-lk-teriyaki", "LK", "Teriyaki chicken", ["Rice"], 0, 40, "", "dish-teriyaki.jpg"],
+  ["d-lk-sweetsour", "LK", "Sweet & sour chicken with fried rice", ["Rice"], 1, 35, "", "dish-sweetsour.jpg"],
+  ["d-fd-salad", "FD", "Chicken salad", ["Light"], 2, 25, "", "dish-chicken-salad.jpg"],
+  ["d-fd-noodle", "FD", "Fish noodle soup", ["Noodles"], 3, 30, "", "dish-fish-noodle.jpg"],
+  ["d-oh-vhalal", "OH", "Beef curry with rice", ["Halal"], 5, 20, "V-Halal", "dish-beef-curry.jpg"],
+  ["d-oh-biryani", "OH", "Chicken biryani", ["Halal"], 5, 15, "V-Halal", "dish-biryani.jpg"],
+  ["d-oh-vfood", "OH", "Broken rice with grilled pork (cơm tấm)", ["Rice"], 4, 20, "V-Food", "com-tam.jpg"],
+  ["d-oh-thitkho", "OH", "Braised pork and eggs (thịt kho trứng)", ["Rice"], 4, 15, "V-Food", "dish-thit-kho.jpg"],
+  ["d-oh-vnoodle", "OH", "Beef pho (phở bò)", ["Noodles"], 6, 20, "V-Noodle", "dish-pho.jpg"],
+  ["d-oh-buncha", "OH", "Grilled pork with noodles (bún chả)", ["Noodles"], 6, 15, "V-Noodle", "dish-bun-cha.jpg"],
+  ["d-oh-vstreet", "OH", "Bánh mì", ["Street food"], 7, 20, "V-Street Food", "dish-banh-mi.jpg"],
+  ["d-oh-banhcuon", "OH", "Steamed rice rolls (bánh cuốn)", ["Street food"], 7, 15, "V-Street Food", "dish-banh-cuon.jpg"],
 ];
+export const starterDish = ([, canteen, name, tags, ci, base, counter, img]: (typeof STARTER)[number]) =>
+  ({ name, canteen, tags, color: COLORS[ci], base, ...(counter && { counter }), img });
 export const PORT = { S: "Small", R: "Regular", L: "Large" } as const;
 export const AMOUNTS = ["All", "Most", "Half", "A little"] as const;
 export const REASONS = ["Portion too large", "Didn’t like the taste", "Too cold", "Too salty", "Not hungry"];

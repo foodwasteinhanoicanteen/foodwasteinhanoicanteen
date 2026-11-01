@@ -13,7 +13,7 @@ import { Empty, Hd, I, Kpi, Tags } from "../ui";
 import { downloadText } from "../../api/client";
 import type { Dish } from "../../../shared/schemas/campusmeal";
 import {
-  AMOUNTS, COLORS, DEFAULTS, PORT, STARTER, addDays, canteenName, clamp, dayStats, dishesOf, eid, feedbackFor, fmtDay, fmtT, forecast,
+  AMOUNTS, COLORS, DEFAULTS, PORT, STARTER, addDays, starterDish, canteenName, clamp, dayStats, dishesOf, eid, feedbackFor, fmtDay, fmtT, forecast,
   minsAgo, monday, nowHM, ordersFor, round1, settingsOf, sum, todayStr, weekCsv, weekRows, type Forecast,
 } from "../../../shared/campusmeal/logic";
 
@@ -313,6 +313,7 @@ function DishForm({ editId, onDone }: { editId: string | null; onDone: () => voi
     const ok = await put("dishes", id, {
       name: n, canteen: String(fd.get("canteen")), tags: String(fd.get("tags") || "").split(",").map((x) => x.trim()).filter(Boolean),
       base: num(fd.get("base")), color: D.dishes[id]?.color || COLORS[Object.keys(D.dishes).length % COLORS.length],
+      ...(String(fd.get("counter") || "").trim() && { counter: String(fd.get("counter")).trim() }), ...(D.dishes[id]?.img && { img: D.dishes[id].img }),
     }, editId ? "Dish updated" : "Dish added");
     if (ok) { onDone(); form.reset(); }
   };
@@ -321,6 +322,7 @@ function DishForm({ editId, onDone }: { editId: string | null; onDone: () => voi
       <div className="form">
         <Input label="Name" name="name" maxLength={80} defaultValue={d.name || ""} placeholder="e.g. Beef pho" />
         <NativeSelect label="Canteen" name="canteen" defaultValue={d.canteen} options={st.canteens.map((c) => ({ label: c.n, value: c.k }))} />
+        <Input label="Counter (optional)" name="counter" maxLength={30} defaultValue={d.counter || ""} placeholder="e.g. V-Halal" />
         <Input label="Labels (comma-separated)" name="tags" defaultValue={(d.tags || []).join(", ")} placeholder="Halal, Vegetarian, Contains nuts" />
         <Input label="Baseline walk-ins per day" name="base" type="number" defaultValue={String(d.base ?? 30)} />
       </div>
@@ -334,7 +336,7 @@ export function MenuPlanner() {
   const { D, put, toast } = useCm(), { S, set } = useNav(), st = settingsOf(D), wk = S.planWeek;
   const days = [0, 1, 2, 3, 4].map((i) => addDays(wk, i)), lib = Object.entries(D.dishes);
   const starter = async () => {
-    for (const [id, c, n, tg, ci, base] of STARTER) if (!(await put("dishes", id, { name: n, canteen: c, tags: tg, color: COLORS[ci], base }))) return;
+    for (const row of STARTER) if (!(await put("dishes", row[0], starterDish(row)))) return;
     const ids = STARTER.map((x) => x[0]);
     for (const w of [monday(todayStr()), addDays(monday(todayStr()), 7)]) for (let i = 0; i < 5; i++) await put("days", addDays(w, i), { dishes: ids });
     if (!D.settings.main?.cutoff) await put("settings", "main", { ...DEFAULTS });
@@ -349,7 +351,7 @@ export function MenuPlanner() {
       <Hd title="Menu planner" right={<div className="chips"><Button color="secondary" size="sm" onPress={() => set({ planWeek: addDays(wk, -7) })}>‹ Previous</Button><Week wk={wk} /><Button color="secondary" size="sm" onPress={() => set({ planWeek: addDays(wk, 7) })}>Next ›</Button></div>}>
         Publish the week’s menu by Thursday 17:00 so students can rate it and pre-order.
       </Hd>
-      {!lib.length && <Empty icon="bulb"><b>No dishes yet.</b><span>Start with the six dishes from our CampusMeal overview, then edit them.</span><Button size="md" onPress={starter}>Create starter menu</Button></Empty>}
+      {!lib.length && <Empty icon="bulb"><b>No dishes yet.</b><span>Start with the dishes from our CampusMeal overview, then edit them.</span><Button size="md" onPress={starter}>Create starter menu</Button></Empty>}
       <div style={{ overflowX: "auto" }}><div className="weekgrid">
         <div />{st.canteens.map((c) => <div key={c.k} className="h">{c.n}</div>)}
         {days.map((d) => [

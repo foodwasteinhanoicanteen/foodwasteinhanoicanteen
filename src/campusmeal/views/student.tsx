@@ -4,7 +4,7 @@ import { Button } from "@/components/base/buttons/button";
 import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
 import { useCm } from "../store";
 import { activeLastCalls, activeMine, canOrderOn, orderDates, pendingFeedback, useNav } from "../nav";
-import { Empty, Hd, I, Kpi, StatusBadge, Tags, Thumb } from "../ui";
+import { Empty, Hd, I, Kpi, StatusBadge, Tags, Thumb, byCounter } from "../ui";
 import type { Order } from "../../../shared/models/Order";
 import {
   AMOUNTS, PORT, REASONS, addDays, canteenName, dayStats, dishesOf, fmtDay, fmtT, hash, monday, noShows, settingsOf, todayStr,
@@ -54,10 +54,15 @@ export function Today() {
           return (
             <section className="grid" style={{ gap: 8 }} key={c.k}>
               <h3>{c.n}</h3>
-              <div className="grid g2">{list.map((id) => { const d = D.dishes[id]; return (
-                <AriaButton key={id} className={DISH} onPress={() => { set({ orderDate: t, sel: { dish: id, portion: "R" }, canteen: d.canteen }); go("order"); }}>
-                  <Thumb d={d} /><div><b>{d.name}</b><div><Tags d={d} /></div><span className="small muted">{canOrderOn(D, t) ? "Tap to pre-order" : "Pre-order closed · walk-in only"}</span></div>
-                </AriaButton>); })}</div>
+              {byCounter(D.dishes, list).map(([counter, group]) => (
+                <div className="grid" style={{ gap: 8 }} key={counter}>
+                  {counter && <h4>{counter}</h4>}
+                  <div className="grid g2">{group.map((id) => { const d = D.dishes[id]; return (
+                    <AriaButton key={id} className={DISH} onPress={() => { set({ orderDate: t, sel: { dish: id, portion: "R" }, canteen: d.canteen }); go("order"); }}>
+                      <Thumb d={d} /><div><b>{d.name}</b><div><Tags d={d} /></div><span className="small muted">{canOrderOn(D, t) ? "Tap to pre-order" : "Pre-order closed · walk-in only"}</span></div>
+                    </AriaButton>); })}</div>
+                </div>
+              ))}
             </section>
           );
         })}
@@ -101,8 +106,13 @@ export function PreOrder() {
       <ButtonGroup size="sm" className="flex-wrap" aria-label="Canteen" disallowEmptySelection selectedKeys={canteen ? [canteen] : []} onSelectionChange={(k) => { const c = first(k); if (c) set({ canteen: String(c), sel: { ...S.sel, dish: null } }); }}>
         {cans.map((c) => <ButtonGroupItem key={c.k} id={c.k}>{c.n}</ButtonGroupItem>)}
       </ButtonGroup>
-      <div className="grid g2">{list.map((id) => { const d = D.dishes[id]; return (
-        <ToggleButton key={id} className={DISH} isSelected={S.sel.dish === id} onChange={() => set({ sel: { ...S.sel, dish: id } })}><Thumb d={d} /><div><b>{d.name}</b><div><Tags d={d} /></div></div></ToggleButton>); })}</div>
+      {byCounter(D.dishes, list).map(([counter, group]) => (
+        <div className="grid" style={{ gap: 8 }} key={counter}>
+          {counter && <h4>{counter}</h4>}
+          <div className="grid g2">{group.map((id) => { const d = D.dishes[id]; return (
+            <ToggleButton key={id} className={DISH} isSelected={S.sel.dish === id} onChange={() => set({ sel: { ...S.sel, dish: id } })}><Thumb d={d} /><div><b>{d.name}</b><div><Tags d={d} /></div></div></ToggleButton>); })}</div>
+        </div>
+      ))}
       {dish && (
         <div className="card">
           <h3>Choose your portion</h3>

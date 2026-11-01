@@ -25,8 +25,6 @@ export const PAGES: PageMeta[] = [
     tabs: [["learned", "What we learned"], ["campaign", "Campaign in Action"], ["awareness", "Reach and Engagement"], ["next", "Limits & next steps"]] },
   { id: "sources", n: "09", label: "Sources", rub: "Evidence", desc: "How we researched and every source in APA 7.",
     tabs: [["methods", "How we researched"], ["refs", "References"], ["laws", "Vietnamese law"]] },
-  { id: "team", n: "10", label: "Our team", rub: "Team", desc: "Who we are and what each of us contributed.",
-    tabs: [["members", "Our team"]] },
 ];
 
 export const STEPS = PAGES.filter((p) => p.stage);

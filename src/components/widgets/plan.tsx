@@ -8,9 +8,9 @@ import { Input } from "@/components/base/input/input";
 import { Slider } from "@/components/base/slider/slider";
 import { Badge } from "@/components/base/badges/badges";
 import { createStore } from "../../state/createStore";
-import { Field, MediaSlot } from "../ui/EditMode";
+import { Field } from "../ui/EditMode";
 import { Html } from "../ui/Html";
-import { A_STEPS, C_STEPS, CRIT, DEFW, LOG, REFS, ROLES, SOL, STAGES, type PlanStep } from "../../data/content";
+import { A_STEPS, C_STEPS, CRIT, DEFW, LOG, REFS, SOL, STAGES, type PlanStep } from "../../data/content";
 
 type Attrs = { className?: string; style?: CSSProperties; children?: ReactNode };
 
@@ -118,21 +118,6 @@ export function PlanSteps({ sol, className, style }: Attrs & { sol: "A" | "B" | 
 }
 
 /* ---------- team and evidence of action ---------- */
-export function TeamCards({ className }: Attrs) {
-  return (
-    <div className={className} id="team">
-      {ROLES.map(([role, duty], i) => (
-        <div className="panel stack" key={role}>
-          <MediaSlot id={"team_" + (i + 1)} className="media tall" style={{ aspectRatio: "1/1" }}><div className="ph"><span className="ic">Photo</span><b>Team member {i + 1}</b></div></MediaSlot>
-          <h3><Field id={"team_name_" + (i + 1)}>Name</Field></h3>
-          <Badge size="sm" color="brand" className="justify-self-start">{role}</Badge>
-          <p className="small">{duty}</p>
-          <p className="small"><b>Contribution:</b> <Field id={"team_contrib_" + (i + 1)}>what they did, with evidence</Field></p>
-        </div>
-      ))}
-    </div>
-  );
-}
 export function ActionLog() {
   return (
     <tbody id="actionlog">

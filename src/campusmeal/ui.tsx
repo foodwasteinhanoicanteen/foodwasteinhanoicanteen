@@ -5,10 +5,17 @@ import type { Dish } from "../../shared/schemas/campusmeal";
 
 export const I = ({ n }: { n: string }) => <svg className="i"><use href={"#i-" + n} /></svg>;
 
-/** The dish's colour as a strip beside its name (no icon). */
-export const Thumb = ({ d, size }: { d?: Partial<Dish>; size?: number }) => (
-  <span className="thumb" aria-hidden="true" style={{ background: d?.color || "#6E8B3D", ...(size ? { height: size } : {}) }} />
-);
+/** The dish's photo, or its colour as a strip beside its name. */
+export const Thumb = ({ d, size }: { d?: Partial<Dish>; size?: number }) => d?.img
+  ? <img className="thumb photo" src={"img/" + d.img} alt="" loading="lazy" style={size ? { width: size, height: size } : undefined} />
+  : <span className="thumb" aria-hidden="true" style={{ background: d?.color || "#6E8B3D", ...(size ? { height: size } : {}) }} />;
+
+/** Dishes split by counter (e.g. Our Home's V-Halal), in menu order; one untitled group when no dish has a counter. */
+export function byCounter(dishes: Record<string, Partial<Dish>>, ids: string[]) {
+  const groups = new Map<string, string[]>();
+  for (const id of ids) { const c = dishes[id]?.counter || ""; groups.set(c, [...(groups.get(c) || []), id]); }
+  return [...groups];
+}
 
 export const Tags = ({ d }: { d?: Partial<Dish> }) => (
   <span className="inline-flex flex-wrap gap-1">{(d?.tags || []).map((t) => <Badge key={t} type="color" size="sm" color={/halal|vegetarian/i.test(t) ? "success" : "gray"}>{t}</Badge>)}</span>

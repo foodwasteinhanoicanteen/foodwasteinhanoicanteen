@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { ZodError } from "zod";
-import { HttpError, emptySite, handle, type Db, type Req } from "./local";
+import { HttpError, addMissingStarter, emptySite, handle, type Db, type Req } from "./local";
 import { emptyCm } from "../../shared/schemas/campusmeal";
 
 const STUDENT = "student-1234", OTHER = "student-9999";
@@ -45,4 +45,30 @@ test("uploads accept only photo and video data URLs", () => {
   assert.equal(d.site?.media.team_1.kind, "video");
   assert.equal(up("data:text/html;base64,PHNjcmlwdD4="), 400);
   assert.equal(up("javascript:alert(1)"), 400);
+});
+
+test("old saved data gets the full starter menu, with photos and counters", () => {
+  const cm = emptyCm();
+  cm.dishes["d-lk-teriyaki"] = { name: "Teriyaki chicken", canteen: "LK", tags: [], color: "#000000", base: 40 };
+  cm.dishes["d-oh-vfood"] = { name: "V-food: dish of the day", canteen: "OH", tags: [], color: "#000000", base: 20 };
+  cm.dishes["d-fd-salad"] = { name: "Our own salad", canteen: "FD", tags: [], color: "#000000", base: 25 };
+  cm.days["2026-10-21"] = { dishes: ["d-lk-teriyaki", "d-oh-vfood"] };
+  assert.equal(addMissingStarter(cm), true);
+  assert.equal(cm.dishes["d-oh-vfood"].counter, "V-Food");
+  assert.match(cm.dishes["d-oh-vfood"].name, /cơm tấm/);
+  assert.equal(cm.dishes["d-fd-salad"].name, "Our own salad"); // staff edits kept
+  assert.equal(cm.dishes["d-fd-salad"].img, "dish-chicken-salad.jpg");
+  assert.ok(cm.days["2026-10-21"].dishes!.includes("d-oh-banhcuon"));
+  assert.equal(addMissingStarter(cm), false);
+});
+
+test("days sharing one menu list get each new dish once, and duplicated menus are repaired", () => {
+  const cm = emptyCm(), shared = ["d-lk-teriyaki", "d-oh-vfood"];
+  cm.dishes["d-lk-teriyaki"] = { name: "Teriyaki chicken", canteen: "LK", tags: [], color: "#000000", base: 40 };
+  cm.days["2026-10-20"] = { dishes: shared };
+  cm.days["2026-10-21"] = { dishes: shared };
+  cm.days["2026-10-22"] = { dishes: ["d-oh-vfood", "d-oh-vfood", "d-oh-vfood"] };
+  addMissingStarter(cm);
+  for (const day of Object.values(cm.days)) assert.equal(new Set(day.dishes).size, day.dishes!.length);
+  assert.equal(cm.days["2026-10-21"].dishes!.filter((x) => x === "d-oh-banhcuon").length, 1);
 });

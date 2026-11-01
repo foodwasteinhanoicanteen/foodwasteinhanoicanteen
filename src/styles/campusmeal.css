@@ -94,3 +94,4 @@ td.n,th.n{text-align:right;font-family:var(--f-m);font-variant-numeric:tabular-n
 .mchip{display:flex;justify-content:space-between;gap:6px;align-items:center;background:var(--panel-2);border-radius:7px;padding:4px 6px 4px 8px;font-size:.8rem}
 :focus-visible{outline:2px solid var(--leaf);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.thumb.photo{width:72px;height:72px;object-fit:cover;border-radius:10px}

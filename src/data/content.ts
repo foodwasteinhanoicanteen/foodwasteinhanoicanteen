@@ -87,7 +87,6 @@ export const C_STEPS: PlanStep[] = [
  {k:"Pilot pickups",a:9,b:11,obj:"Redistribute food that was not sold even after Solution A.",act:"One or two pickups a week; only untouched, labelled, chilled food; never plate leftovers.",own:"Kitchen supervisor + partner",res:"Food-safe boxes, labels, fridge space",kpi:"0 safety incidents; meals and kg recorded"},
  {k:"Review and decide",a:12,b:12,obj:"Decide whether to continue.",act:"Review meals and kg donated, incidents, partner and recipient feedback; check the prevention KPI did not get worse.",own:"Project team + canteen manager + partner",res:"Pickup records, feedback",kpi:"A clear decision with reasons"}];
 
-export const ROLES: [role: string, duty: string][] = [["Project leader","Coordination, deadlines, contact with university management"],["Research lead","Literature and data on the problem (Page 1)"],["Ethics lead","Ethical analysis (Page 2)"],["Data and audit lead","Weighing, spreadsheet, KPI calculations"],["Survey and stakeholder lead","Survey design; interviews with students and staff"],["Canteen liaison and design lead","Working with the kitchen; website design"]];
 
 export const LOG: string[] = ["Meeting with the canteen manager to agree the pilot","First baseline weighing","Survey launched","Staff training session","Pilot started","Results presented"];
 
