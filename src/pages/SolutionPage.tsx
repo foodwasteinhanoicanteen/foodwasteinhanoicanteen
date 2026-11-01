@@ -735,7 +735,7 @@ export default function SolutionPage() {
               </p>
               <p>
                 <b>Support 4.0.</b> Saves money and fits student appetites, but there is no direct discount and some may see a smaller
-                default as “getting less”. Our survey: <Field id="sc_b10">% willing to choose a smaller portion</Field>.
+                default as “getting less”.
               </p>
               <p>
                 <b>Overall:</b> the strongest long-term solution, because it addresses root causes.

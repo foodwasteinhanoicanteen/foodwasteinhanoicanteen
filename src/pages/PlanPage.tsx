@@ -192,19 +192,19 @@ export default function PlanPage() {
                     </tr>
                     <tr>
                       <td>
-                        Data lead (<Field id="pb_data">name</Field>)
+                        Data lead (Doan Bui Minh Phuong)
                       </td>
                       <td>Baseline audit, forecasting sheet, KPI calculations</td>
                     </tr>
                     <tr>
                       <td>
-                        Survey lead (<Field id="pb_survey">name</Field>)
+                        Survey lead (Doan Bui Minh Phuong)
                       </td>
                       <td>QR plate-waste form, student survey</td>
                     </tr>
                     <tr>
                       <td>
-                        Project leader (<Field id="pb_lead">name</Field>)
+                        Project leader (Doan Bui Minh Phuong)
                       </td>
                       <td>Coordination; presents results to university operations</td>
                     </tr>
@@ -267,7 +267,7 @@ export default function PlanPage() {
             </div>
           </div>
           <h3 style={{ margin: "26px 0 8px" }}>Step-by-step plan</h3>
-          <PlanSteps sol="B" className="steps panel" style={{ padding: "6px 20px" }} />
+          <PlanSteps sol="B" status="Done" className="steps panel" style={{ padding: "6px 20px" }} />
           <div className="grid g2" style={{ marginTop: "16px" }}>
             <div className="comp">
               <div className="comp-h">
