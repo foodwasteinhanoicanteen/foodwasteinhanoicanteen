@@ -34,7 +34,7 @@ export default function ResultsPage() {
             <span>people surveyed</span>
           </div>
           <div>
-            <b>12</b>
+            <b>9</b>
             <span>lessons we learned</span>
           </div>
         </div>
@@ -45,210 +45,125 @@ export default function ResultsPage() {
           <div className="tab-title">
             <h2>What we learned</h2>
           </div>
-          <p className="tab-intro">
-            Twelve lessons in four groups: the problem, the ethics, the evidence and our own process. For each one: what we assumed at the
-            start, what we found, and what it changed in our project.
-          </p>
-          <h3 style={{ margin: "26px 0 12px" }}>About the problem</h3>
           <details className="acc" open>
-            <summary>1. Responsibility sits where decisions are made</summary>
+            <summary>1. Most social problems are designed, not accidental</summary>
             <div className="in">
               <p>
-                <b>What we assumed.</b> Food waste is mostly a household habit, so the answer is to tell people not to waste. Households do
-                produce about 60% of the food wasted worldwide (UNEP, 2024).
-              </p>
-              <p>
-                <b>What we found.</b> In a canteen, the customer chooses almost nothing. How much is bought, how much is cooked, how large
-                the default portion is and what happens to leftovers are all decided by the business, and one decision affects hundreds of
-                meals at once. Customers share responsibility for plate waste, but the business designs the choice.
-              </p>
-              <p>
-                <b>What it changed.</b> We stopped designing awareness campaigns and focused on the canteen’s own decisions. We also
-                learned to separate the firm from its staff: rules like “bin everything at closing” are company policy, so front-line
-                workers should never carry the blame (French, 1979).
+                We first assumed food waste came from careless individuals: students who don’t finish their plates. The research
+                showed something different. Most waste is built into the system: kitchens cook “just in case”, everyone gets the
+                same portion, and nobody measures what is thrown away. This changed how we see social problems in general. When
+                a harmful outcome repeats every day, it is usually the result of rules, habits and incentives, not individual
+                bad intentions. To fix a social problem, look first at the system that produces it, not only at the people
+                inside it.
               </p>
             </div>
           </details>
           <details className="acc">
-            <summary>2. What is not measured cannot be managed</summary>
+            <summary>2. Responsibility follows power and the capacity to act</summary>
             <div className="in">
               <p>
-                <b>What we assumed.</b> A canteen roughly knows how much it throws away.
-              </p>
-              <p>
-                <b>What we found.</b> Vietnam has no national data on food-service waste, and Hanoi school kitchens were first weighed only
-                in 2024 (Pham et al., 2025). Before our audit, our canteen <Field id="l_knew">did / did not</Field> know how much it
-                wasted. The Hanoi study also showed that <em>where</em> waste happens depends on how food is served: primary schools lost
-                most food before serving, secondary schools on the plate.
-              </p>
-              <p>
-                <b>What it changed.</b> Measuring became our first step, not an afterthought. Our audit separates preparation waste,
-                overproduction and plate waste, because each has a different fix. It costs little: one scale, three bins and one sheet.
+                Everyone contributes a little to food waste, but not everyone has the same power to stop it. A student decides
+                one plate; a canteen manager decides hundreds of meals a day. Iris Young’s social connection model helped us see
+                this clearly. Responsibility for structural injustice is shared, but those with more power, more privilege and
+                more ability to act carry more of it. The same applies to fast fashion, pollution or unfair wages: asking “who
+                can change this most easily?” is often more useful than asking “who is to blame?”
               </p>
             </div>
           </details>
           <details className="acc">
-            <summary>3. Waste has many causes, so no single fix works</summary>
+            <summary>3. Legal is not the same as ethical</summary>
             <div className="in">
               <p>
-                <b>What we assumed.</b> Portions are too big; make them smaller.
-              </p>
-              <p>
-                <b>What we found.</b> The causes sit in methods (cooking by habit, one portion size), people (dislike of certain dishes),
-                culture (the <em>mâm cơm đầy</em>, the full table as hospitality), law (no donor protection) and infrastructure (mixed
-                collection, landfill). Menu design alone matters: disliked mixed vegetables pushed vegetable plate waste from 25 g to 40 g
-                (Pham et al., 2025).
-              </p>
-              <p>
-                <b>What it changed.</b> We combined three solutions in a fixed order: prevent (B), then rescue (A), then redistribute
-                safely (C), with plate-waste feedback so the menu itself can change.
-              </p>
-            </div>
-          </details>
-          <h3 style={{ margin: "26px 0 12px" }}>About the ethics</h3>
-          <details className="acc">
-            <summary>4. Legal is not the same as ethical</summary>
-            <div className="in">
-              <p>
-                <b>What we assumed.</b> If wasting food were really wrong, the law would forbid it.
-              </p>
-              <p>
-                <b>What we found.</b> Vietnamese law does not penalise food waste, does not protect donors and does not separate safety
-                dates from quality dates (Harvard FLPC &amp; GFN, 2024). The new Law on Thrift and Anti-Waste (No. 110/2025/QH15) only{" "}
-                <em>encourages</em> thrift in private business. The legal gap even pulls the wrong way: liability risk makes the bin the
-                safest legal choice.
-              </p>
-              <p>
-                <b>What it changed.</b> We argued from Carroll’s (1991) ethical layer rather than from compliance, and wrote our own
-                safety protocol for Solution C instead of waiting for a Good Samaritan law.
+                Vietnamese law lets businesses throw away safe food and makes donating it legally risky. Nothing about food
+                waste breaks the law, yet it harms the environment, wastes resources and ignores people who go hungry. Carroll’s
+                CSR pyramid reminded us that legal compliance is the floor, not the ceiling. Ethics matters most precisely where
+                the law is silent, weak or slow, and in many social problems the law is all three.
               </p>
             </div>
           </details>
           <details className="acc">
-            <summary>5. Good solutions can create new ethical problems</summary>
+            <summary>4. What is not measured is not managed, and often not seen</summary>
             <div className="in">
               <p>
-                <b>What we assumed.</b> Any idea that reduces waste is a good idea.
-              </p>
-              <p>
-                <b>What we found.</b> Every solution carried its own risk. A reliable discount or donation channel can make a kitchen
-                careless about over-cooking (moral hazard). Food held too long can harm the people it is meant to help. A smaller default
-                portion can feel like “getting less”. An app collects personal data. Weighing adds work for staff.
-              </p>
-              <p>
-                <b>What it changed.</b> Each risk got a safeguard: last calls not every day, and never cooking “for donation”; a 2-hour,
-                above-60 °C rule (WHO, 2006); a free refill; the kitchen sees only totals of 5 people or more; weighing built into paid
-                shifts. Prevention stays the main KPI, so rescue never becomes the target.
+                Food waste is invisible because it disappears the moment a tray is scraped. Many social problems stay unsolved
+                for the same reason: unpaid care work, informal waste pickers, hidden supply-chain abuses. We learned that
+                making a problem visible, by counting, weighing and recording it, is the first ethical act. Data does not solve
+                a problem by itself, but without it, problems are easy to deny and impossible to track.
               </p>
             </div>
           </details>
           <details className="acc">
-            <summary>6. Different theories, one verdict, different duties</summary>
+            <summary>5. Every solution creates new ethical questions</summary>
             <div className="in">
               <p>
-                <b>What we assumed.</b> Choosing one ethical theory would be enough.
-              </p>
-              <p>
-                <b>What we found.</b> All eight lenses condemn a standing policy of binning safe food, so the verdict does not depend on
-                any single theory. They disagree on what follows: Friedman sees no duty to donate, while Kant, Rawls and Young see at least
-                an imperfect duty for firms that can. Sen (1981) warned that hunger is a lack of access, not of food, so surplus does not
-                automatically feed anyone.
-              </p>
-              <p>
-                <b>What it changed.</b> We treat prevention as obligatory and safe redistribution as strongly expected, and we rank{" "}
-                <b>prevention above donation</b> in every plan.
-              </p>
-            </div>
-          </details>
-          <h3 style={{ margin: "26px 0 12px" }}>About the evidence</h3>
-          <details className="acc">
-            <summary>7. Not all evidence is equal</summary>
-            <div className="in">
-              <p>
-                <b>What we assumed.</b> A published number is a reliable number.
-              </p>
-              <p>
-                <b>What we found.</b> A survey run with a refrigerator brand had a potential conflict of interest, so we did not rely on
-                it. Some widely repeated figures did not match their original sources. Self-reported surveys are weaker than weighed food.
-                Even good papers differ between sections, so we show ranges where they do.
-              </p>
-              <p>
-                <b>What it changed.</b> We check who funded a study, go back to the original source, and label each number with how it was
-                collected.
+                Discounting leftovers can teach customers to wait for cheap food and push kitchens to over-cook. Donating
+                surplus can harm dignity or safety if done badly. Even “nudges” like smaller default portions raise questions
+                about respecting people’s choices. We learned to ask of every solution: Who benefits? Who carries the risk?
+                Could this make the problem worse in another way? This is the heart of applied ethics. Good intentions are not
+                enough; consequences and fairness must be checked too.
               </p>
             </div>
           </details>
           <details className="acc">
-            <summary>8. Benchmarks are not predictions</summary>
+            <summary>6. Prevention is more ethical than cure</summary>
             <div className="in">
               <p>
-                <b>What we assumed.</b> If restaurants cut waste by 26% in a year, we can too.
-              </p>
-              <p>
-                <b>What we found.</b> The 21–36% benchmarks come from large international firms that chose to measure their waste and ran
-                programmes for a full year (Champions 12.3, 2018a, 2018b, 2019). A student pilot in one canteen is shorter and smaller.
-              </p>
-              <p>
-                <b>What it changed.</b> We set a realistic minimum target of 15% less waste per meal, with 20–30% as a stretch goal, and we
-                report the result honestly even if we miss it.
+                The food recovery hierarchy taught us that preventing waste is better than rescuing it, and rescuing it is
+                better than throwing it away. The same principle applies widely: preventing pollution is better than cleaning it
+                up, and preventing poverty is better than relying on charity. We also learned to recognise “CSR-washing”: when
+                an organisation is praised for donating surplus while continuing to over-produce. Real responsibility means
+                fixing the root cause, not only managing the symptoms.
               </p>
             </div>
           </details>
           <details className="acc">
-            <summary>9. Scores need judgement, and judgement should be visible</summary>
+            <summary>7. Different ethical theories light up different parts of the same problem</summary>
             <div className="in">
+              <ul className="clean">
+                <li>
+                  <b>Utilitarianism</b> showed us the total harm: money, emissions and land wasted.
+                </li>
+                <li>
+                  <b>Kant</b> reminded us that people must not be used as a free dumping ground for costs.
+                </li>
+                <li>
+                  <b>Rawls</b> asked us to judge the system from the position of the least advantaged.
+                </li>
+                <li>
+                  <b>Stakeholder theory</b> made us list everyone affected, from kitchen staff to landfill neighbours.
+                </li>
+                <li>
+                  <b>Virtue ethics</b> made us question whether “generous” portions were generosity or display.
+                </li>
+              </ul>
               <p>
-                <b>What we assumed.</b> Scoring the solutions would give one clear answer.
-              </p>
-              <p>
-                <b>What we found.</b> Without weights, Solutions A and B tied at 17.0 out of 20. The ranking depended on how much we
-                valued effectiveness against feasibility, which is a judgement, not a fact.
-              </p>
-              <p>
-                <b>What it changed.</b> We published our weights and reasons, let readers move the sliders themselves, and tested the
-                shortlist with people through the survey and statistical analysis instead of relying only on our own scores.
-              </p>
-            </div>
-          </details>
-          {/* <h3 style={{ margin: "26px 0 12px" }}>About our process</h3>
-          <details className="acc">
-            <summary>10. Talking to people changed our design</summary>
-            <div className="in">
-              <p>
-                <Field id="l_dt">
-                  Give one or two examples of feedback from students or staff that changed the design (e.g. dropping fines for leftovers in
-                  favour of a free refill).
-                </Field>
-              </p>
-            </div>
-          </details>
-          <details className="acc">
-            <summary>11. What happened in our pilot</summary>
-            <div className="in">
-              <p>
-                <Field id="l_pilot">
-                  What worked, what did not, what surprised us, what we would do differently, and how the team worked together.
-                </Field>
+                No single theory gave the full answer, but together they showed the problem from every side. Using several
+                lenses is the best protection against a one-sided judgement.
               </p>
             </div>
           </details>
           <details className="acc">
-            <summary>12. How we worked as a team, and what we would do again</summary>
+            <summary>8. Listening to stakeholders changes the solution</summary>
             <div className="in">
               <p>
-                <Field id="l_team">How we split the work, what went well, one conflict or difficulty and how we solved it.</Field>
-              </p>
-              <p>
-                <Field id="l_again">
-                  e.g. start weighing earlier, randomise the order of solutions in the survey, involve kitchen staff from day one.
-                </Field>
+                We first designed solutions for the canteen; talking with staff and students made them realistic. Students told
+                us what they actually eat; kitchen staff knew which dishes come back and why. Social change that ignores the
+                people it affects often fails or causes harm. The people closest to a problem usually hold the knowledge needed
+                to solve it, and including them is both more effective and more respectful.
               </p>
             </div>
-          </details> */}
-          <div className="callout g" style={{ marginTop: "18px" }}>
-            <b>The lesson behind all the others.</b> Food waste in a canteen is less a problem of bad habits than of decisions nobody
-            measures. Make the decisions visible, put prevention first, protect the people each fix could harm, and report honestly.
-          </div>
+          </details>
+          <details className="acc">
+            <summary>9. Awareness is the start of change, not the end</summary>
+            <div className="in">
+              <p>
+                Our campaign reached 822 views and created 638 interactions, far more than we expected. But we learned to be
+                honest: attention is not the same as impact. Awareness builds support and makes change socially acceptable, yet
+                it rarely changes behaviour on its own. The same is true of most social campaigns. Awareness works when it is
+                connected to an easy, concrete action and to a change in the system.
+              </p>
+            </div>
+          </details>
         </Tab>
         <Tab id="campaign" label="Campaign in Action">
           <div className="tab-title">
